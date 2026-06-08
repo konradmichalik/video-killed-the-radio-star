@@ -94,6 +94,11 @@ export function createPlayer(nodeId) {
   errorCount = 0;
   loadError.set(null);
   player = new YT.Player(nodeId, {
+    // Privacy-enhanced mode (youtube-nocookie.com). Reduces tracking cookies
+    // and in some cases shortens/limits pre-roll ads on third-party embeds.
+    // YouTube does not allow embed-side ad suppression beyond this on free
+    // accounts — full ad-free requires YouTube Premium per viewer.
+    host: 'https://www.youtube-nocookie.com',
     playerVars: PLAYER_VARS,
     events: {
       onReady: () => {
