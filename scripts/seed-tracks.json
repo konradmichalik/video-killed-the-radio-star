@@ -1,0 +1,296 @@
+[
+  {
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "year": 1975,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Heart of Glass",
+    "artist": "Blondie",
+    "year": 1979,
+    "genre": "New Wave",
+    "country": "United States"
+  },
+  {
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "year": 1983,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Sweet Dreams (Are Made of This)",
+    "artist": "Eurythmics",
+    "year": 1983,
+    "genre": "Synthpop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Every Breath You Take",
+    "artist": "The Police",
+    "year": 1983,
+    "genre": "New Wave",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "When Doves Cry",
+    "artist": "Prince",
+    "year": 1984,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Take On Me",
+    "artist": "a-ha",
+    "year": 1985,
+    "genre": "Synthpop",
+    "country": "Norway"
+  },
+  {
+    "title": "Sweet Child o' Mine",
+    "artist": "Guns N' Roses",
+    "year": 1987,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "I Wanna Dance with Somebody (Who Loves Me)",
+    "artist": "Whitney Houston",
+    "year": 1987,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Never Gonna Give You Up",
+    "artist": "Rick Astley",
+    "year": 1987,
+    "genre": "Pop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Like a Prayer",
+    "artist": "Madonna",
+    "year": 1989,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Enjoy the Silence",
+    "artist": "Depeche Mode",
+    "year": 1990,
+    "genre": "New Wave",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "year": 1991,
+    "genre": "Grunge",
+    "country": "United States"
+  },
+  {
+    "title": "Alive",
+    "artist": "Pearl Jam",
+    "year": 1991,
+    "genre": "Grunge",
+    "country": "United States"
+  },
+  {
+    "title": "Creep",
+    "artist": "Radiohead",
+    "year": 1992,
+    "genre": "Alternative",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Zombie",
+    "artist": "The Cranberries",
+    "year": 1994,
+    "genre": "Alternative",
+    "country": "Ireland"
+  },
+  {
+    "title": "Sabotage",
+    "artist": "Beastie Boys",
+    "year": 1994,
+    "genre": "Hip-Hop",
+    "country": "United States"
+  },
+  {
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "year": 1995,
+    "genre": "Britpop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Everlong",
+    "artist": "Foo Fighters",
+    "year": 1997,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "...Baby One More Time",
+    "artist": "Britney Spears",
+    "year": 1998,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "No Scrubs",
+    "artist": "TLC",
+    "year": 1999,
+    "genre": "R&B",
+    "country": "United States"
+  },
+  {
+    "title": "Say My Name",
+    "artist": "Destiny's Child",
+    "year": 1999,
+    "genre": "R&B",
+    "country": "United States"
+  },
+  {
+    "title": "I Want It That Way",
+    "artist": "Backstreet Boys",
+    "year": 1999,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Yellow",
+    "artist": "Coldplay",
+    "year": 2000,
+    "genre": "Alternative",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Clint Eastwood",
+    "artist": "Gorillaz",
+    "year": 2001,
+    "genre": "Alternative",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "In the End",
+    "artist": "Linkin Park",
+    "year": 2001,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Lose Yourself",
+    "artist": "Eminem",
+    "year": 2002,
+    "genre": "Hip-Hop",
+    "country": "United States"
+  },
+  {
+    "title": "Hey Ya!",
+    "artist": "OutKast",
+    "year": 2003,
+    "genre": "Hip-Hop",
+    "country": "United States"
+  },
+  {
+    "title": "Seven Nation Army",
+    "artist": "The White Stripes",
+    "year": 2003,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Crazy in Love",
+    "artist": "Beyoncé",
+    "year": 2003,
+    "genre": "R&B",
+    "country": "United States"
+  },
+  {
+    "title": "Mr. Brightside",
+    "artist": "The Killers",
+    "year": 2004,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Take Me Out",
+    "artist": "Franz Ferdinand",
+    "year": 2004,
+    "genre": "Indie",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Harder, Better, Faster, Stronger",
+    "artist": "Daft Punk",
+    "year": 2005,
+    "genre": "Dance",
+    "country": "France"
+  },
+  {
+    "title": "I Bet You Look Good on the Dancefloor",
+    "artist": "Arctic Monkeys",
+    "year": 2005,
+    "genre": "Indie",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Rehab",
+    "artist": "Amy Winehouse",
+    "year": 2006,
+    "genre": "Soul",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Umbrella",
+    "artist": "Rihanna",
+    "year": 2007,
+    "genre": "Pop",
+    "country": "Barbados"
+  },
+  {
+    "title": "Stronger",
+    "artist": "Kanye West",
+    "year": 2007,
+    "genre": "Hip-Hop",
+    "country": "United States"
+  },
+  {
+    "title": "Paper Planes",
+    "artist": "M.I.A.",
+    "year": 2007,
+    "genre": "Hip-Hop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Bad Romance",
+    "artist": "Lady Gaga",
+    "year": 2009,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Levels",
+    "artist": "Avicii",
+    "year": 2011,
+    "genre": "Dance",
+    "country": "Sweden"
+  },
+  {
+    "title": "Somebody That I Used to Know",
+    "artist": "Gotye",
+    "year": 2011,
+    "genre": "Indie",
+    "country": "Australia"
+  },
+  {
+    "title": "Get Lucky",
+    "artist": "Daft Punk",
+    "year": 2013,
+    "genre": "Dance",
+    "country": "France"
+  }
+]

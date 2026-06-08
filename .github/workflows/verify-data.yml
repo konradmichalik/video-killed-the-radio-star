@@ -1,0 +1,56 @@
+name: Verify data
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # every Monday 06:00 UTC
+  workflow_dispatch: {} # allow manual runs
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify:
+    name: Check video ids
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # No `npm ci` needed: verify.mjs is dependency-free (plain Node fetch).
+      - name: Verify video ids
+        id: verify
+        env:
+          # Optional: add a repo secret YT_API_KEY to use the authoritative
+          # Data API instead of the oEmbed heuristic.
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+        run: |
+          set +e
+          node scripts/verify.mjs --report verify-report.md
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Upload report
+        if: ${{ steps.verify.outputs.code != '0' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-report
+          path: verify-report.md
+
+      - name: Open / update issue
+        if: ${{ steps.verify.outputs.code != '0' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create data-verify --color FF2E63 \
+            --description "Automated data integrity checks" --force || true
+          existing=$(gh issue list --label data-verify --state open \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file verify-report.md
+          else
+            gh issue create --title "⚠️ VKTRS data verification failed" \
+              --label data-verify --body-file verify-report.md
+          fi

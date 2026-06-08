@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Maskable variant: black background fills the whole canvas so iOS/Android
+       home-screen icons have a solid backdrop, and the brutalist block sits
+       inside the 80% safe area so it survives any mask shape. -->
+  <rect width="100" height="100" fill="#050505"/>
+  <rect x="35" y="35" width="42" height="42" fill="#08d9d6"/>
+  <rect x="28" y="28" width="42" height="42" fill="#050505" stroke="#ffffff" stroke-width="4"/>
+  <text x="48" y="60" text-anchor="middle"
+        font-family="Impact, 'Arial Black', Helvetica, sans-serif"
+        font-weight="900" font-size="30" fill="#ffffff">V</text>
+  <circle cx="62" cy="39" r="3" fill="#ff2e63"/>
+</svg>

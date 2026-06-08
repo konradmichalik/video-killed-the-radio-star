@@ -1,0 +1,10 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VKTRS">
+  <!-- Neo-brutalist VKTRS block: pink offset shadow, black body, white border,
+       big V letter, pink on-air dot. Mirrors src/components/StationLogo.svelte. -->
+  <rect x="14" y="14" width="46" height="46" fill="#08d9d6"/>
+  <rect x="6" y="6" width="46" height="46" fill="#050505" stroke="#ffffff" stroke-width="4"/>
+  <text x="29" y="42" text-anchor="middle"
+        font-family="Impact, 'Arial Black', Helvetica, sans-serif"
+        font-weight="900" font-size="34" fill="#ffffff">V</text>
+  <circle cx="44" cy="18" r="3.5" fill="#ff2e63"/>
+</svg>
