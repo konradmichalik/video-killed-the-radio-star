@@ -178,8 +178,16 @@
       >?</button
     >
     <button class="icon-btn" type="button" aria-label="Display settings" on:click={openSettings}>
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
         <line x1="4" y1="21" x2="4" y2="14" />
         <line x1="4" y1="10" x2="4" y2="3" />
         <line x1="12" y1="21" x2="12" y2="12" />
@@ -192,15 +200,30 @@
       </svg>
     </button>
     <button class="icon-btn" type="button" aria-label="Search tracks" on:click={openSearch}>
-      <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <svg
+        viewBox="0 0 16 16"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
         <circle cx="7" cy="7" r="4.5" />
         <line x1="10.4" y1="10.4" x2="14.5" y2="14.5" />
       </svg>
     </button>
     <button class="icon-btn" type="button" aria-label="View queue" on:click={openQueue}>
-      <svg viewBox="0 0 16 16" width="18" height="18" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <svg
+        viewBox="0 0 16 16"
+        width="18"
+        height="18"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
         <line x1="2" y1="4" x2="14" y2="4" />
         <line x1="2" y1="8" x2="14" y2="8" />
         <line x1="2" y1="12" x2="14" y2="12" />

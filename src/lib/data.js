@@ -25,11 +25,38 @@ export function countriesOf(all) {
 // lookup. Anything not in the map falls through to "Other".
 const CONTINENT_OF = {
   europe: [
-    'Germany', 'United Kingdom', 'France', 'Netherlands', 'Italy', 'Sweden',
-    'Ireland', 'Austria', 'Belgium', 'Spain', 'Norway', 'Denmark', 'Finland',
-    'Switzerland', 'Iceland', 'Hungary', 'Poland', 'Czech Republic', 'Slovakia',
-    'Romania', 'Greece', 'Portugal', 'Russia', 'Ukraine', 'Croatia', 'Slovenia',
-    'Serbia', 'Bulgaria', 'Lithuania', 'Latvia', 'Estonia', 'Luxembourg',
+    'Germany',
+    'United Kingdom',
+    'France',
+    'Netherlands',
+    'Italy',
+    'Sweden',
+    'Ireland',
+    'Austria',
+    'Belgium',
+    'Spain',
+    'Norway',
+    'Denmark',
+    'Finland',
+    'Switzerland',
+    'Iceland',
+    'Hungary',
+    'Poland',
+    'Czech Republic',
+    'Slovakia',
+    'Romania',
+    'Greece',
+    'Portugal',
+    'Russia',
+    'Ukraine',
+    'Croatia',
+    'Slovenia',
+    'Serbia',
+    'Bulgaria',
+    'Lithuania',
+    'Latvia',
+    'Estonia',
+    'Luxembourg',
     'Moldova',
   ],
   'north america': ['United States', 'Canada', 'Mexico'],
@@ -49,8 +76,14 @@ const COUNTRY_TO_CONTINENT = (() => {
 })();
 
 const CONTINENT_ORDER = [
-  'europe', 'north america', 'south america', 'asia',
-  'africa', 'oceania', 'caribbean', 'other',
+  'europe',
+  'north america',
+  'south america',
+  'asia',
+  'africa',
+  'oceania',
+  'caribbean',
+  'other',
 ];
 
 const CONTINENT_LABEL = {
@@ -73,13 +106,11 @@ export function groupCountriesByContinent(countries) {
     if (!groups.has(cont)) groups.set(cont, []);
     groups.get(cont).push(c);
   }
-  return CONTINENT_ORDER
-    .filter((cont) => groups.has(cont))
-    .map((cont) => ({
-      continent: cont,
-      label: CONTINENT_LABEL[cont],
-      countries: groups.get(cont).sort(),
-    }));
+  return CONTINENT_ORDER.filter((cont) => groups.has(cont)).map((cont) => ({
+    continent: cont,
+    label: CONTINENT_LABEL[cont],
+    countries: groups.get(cont).sort(),
+  }));
 }
 
 export function yearBounds(all) {

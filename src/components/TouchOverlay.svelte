@@ -68,13 +68,9 @@
 ></div>
 
 {#if hoverZone === 'prev'}
-  <span class="edge-hint left" aria-hidden="true" transition:fade={{ duration: 140 }}
-    >◀ PREV</span
-  >
+  <span class="edge-hint left" aria-hidden="true" transition:fade={{ duration: 140 }}>◀ PREV</span>
 {:else if hoverZone === 'next'}
-  <span class="edge-hint right" aria-hidden="true" transition:fade={{ duration: 140 }}
-    >NEXT ▶</span
-  >
+  <span class="edge-hint right" aria-hidden="true" transition:fade={{ duration: 140 }}>NEXT ▶</span>
 {:else if hoverZone === 'center' && $paused}
   <!-- center hint only when paused — otherwise the running video would have
        a persistent "TAP · PLAY / PAUSE" label hovering over its middle -->

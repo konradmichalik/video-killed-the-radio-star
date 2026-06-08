@@ -4,229 +4,229 @@ Generated from `review-batch-1.md` (658 reviews). 23 DROPs were removed from `pu
 
 ## AUDIO — Cover/Standbild, kein Bewegbild — 141 tracks
 
-- [ ] **Chicago — If You Leave Me Now** *(1976)* — `-9_d-sFhmRM` — [YT](https://www.youtube.com/watch?v=-9_d-sFhmRM)
-- [ ] **The Trammps — Disco Inferno** *(1976)* — `pG8TyIEAqps` — [YT](https://www.youtube.com/watch?v=pG8TyIEAqps)
-- [ ] **Thelma Houston — Don't Leave Me This Way** *(1976)* — `rUdw7V-FC_Q` — [YT](https://www.youtube.com/watch?v=rUdw7V-FC_Q)
-- [ ] **Sister Sledge — We Are Family** *(1979)* — `lJh4L8NMHfw` — [YT](https://www.youtube.com/watch?v=lJh4L8NMHfw)
-- [ ] **Barbra Streisand — Woman in Love** *(1980)* — `hQLGCX8D-1Y` — [YT](https://www.youtube.com/watch?v=hQLGCX8D-1Y)
-- [ ] **Diana Ross — Upside Down** *(1980)* — `lZ9OP5dzkQg` — [YT](https://www.youtube.com/watch?v=lZ9OP5dzkQg)
-- [ ] **Frank Duval — Angel Of Mine** *(1980)* — `GUlkB2XDiRs` — [YT](https://www.youtube.com/watch?v=GUlkB2XDiRs)
-- [ ] **Lipps Inc. — Funkytown** *(1980)* — `Z6dqIYKIBSU` — [YT](https://www.youtube.com/watch?v=Z6dqIYKIBSU)
-- [ ] **Michel Berger — La groupie du pianiste** *(1980)* — `_hQrpgVK-r0` — [YT](https://www.youtube.com/watch?v=_hQrpgVK-r0)
-- [ ] **Anita Meyer — Why Tell Me Why** *(1981)* — `PrLHo0i5zjM` — [YT](https://www.youtube.com/watch?v=PrLHo0i5zjM)
-- [ ] **Central Line — Walking Into Sunshine** *(1981)* — `6wbHhepLzP0` — [YT](https://www.youtube.com/watch?v=6wbHhepLzP0)
-- [ ] **Foreigner — Juke Box Hero** *(1981)* — `jsGo_AZSb0E` — [YT](https://www.youtube.com/watch?v=jsGo_AZSb0E)
-- [ ] **Journey — Don't Stop Believin'** *(1981)* — `1k8craCGpgs` — [YT](https://www.youtube.com/watch?v=1k8craCGpgs)
-- [ ] **Rush — Tom Sawyer** *(1981)* — `Gztabfs5ngA` — [YT](https://www.youtube.com/watch?v=Gztabfs5ngA)
-- [ ] **Michael Jackson — Billie Jean** *(1982)* — `Kr4EQDVETuA` — [YT](https://www.youtube.com/watch?v=Kr4EQDVETuA)
-- [ ] **Accept — Balls to the Wall** *(1983)* — `3wMwuAEfKus` — [YT](https://www.youtube.com/watch?v=3wMwuAEfKus)
-- [ ] **Cyndi Lauper — Girls Just Want to Have Fun** *(1983)* — `jRr5EasAq84` — [YT](https://www.youtube.com/watch?v=jRr5EasAq84)
-- [ ] **Eurythmics — Sweet Dreams (Are Made of This)** *(1983)* — `eRhg7qPLeN8` — [YT](https://www.youtube.com/watch?v=eRhg7qPLeN8)
-- [ ] **Rufus, Chaka Khan — Ain't Nobody** *(1983)* — `uBnISf3Rjx8` — [YT](https://www.youtube.com/watch?v=uBnISf3Rjx8)
-- [ ] **Herbert Grönemeyer — Männer** *(1984)* — `UEJNMkEr1Ls` — [YT](https://www.youtube.com/watch?v=UEJNMkEr1Ls)
-- [ ] **John Waite — Missing You** *(1984)* — `Tg7vvmlrRzc` — [YT](https://www.youtube.com/watch?v=Tg7vvmlrRzc)
-- [ ] **Kirka — Hengaillaan** *(1984)* — `krEgwiA2ww8` — [YT](https://www.youtube.com/watch?v=krEgwiA2ww8)
-- [ ] **Klaus Lage — 1000 und 1 Nacht** *(1984)* — `s-Sqe30hn4U` — [YT](https://www.youtube.com/watch?v=s-Sqe30hn4U)
-- [ ] **Laura Branignan — Self Control** *(1984)* — `FQD0yGuZ2N8` — [YT](https://www.youtube.com/watch?v=FQD0yGuZ2N8)
-- [ ] **Peter et Sloane — Besoin de tien, envie de toi** *(1984)* — `Jy21qtn9zCg` — [YT](https://www.youtube.com/watch?v=Jy21qtn9zCg)
-- [ ] **Philip Bailey & Phil Collins — Easy Lover** *(1984)* — `Hr9GJUcP1-g` — [YT](https://www.youtube.com/watch?v=Hr9GJUcP1-g)
-- [ ] **Twisted Sister — I Wanna Rock** *(1984)* — `tyHpTG1MjVU` — [YT](https://www.youtube.com/watch?v=tyHpTG1MjVU)
-- [ ] **David Bowie & Pat Metheny Group — This Is Not America** *(1985)* — `6PRtZDQJXoE` — [YT](https://www.youtube.com/watch?v=6PRtZDQJXoE)
-- [ ] **Falco — Rock Me Amadeus** *(1985)* — `OKxBk4V79Co` — [YT](https://www.youtube.com/watch?v=OKxBk4V79Co)
-- [ ] **Kate Bush — Running Up That Hill (A Deal With God)** *(1985)* — `HYwNM1t9ltI` — [YT](https://www.youtube.com/watch?v=HYwNM1t9ltI)
-- [ ] **Paul Young — Every Time You Go Away - Radio Edit** *(1985)* — `p3tH4Ksu50o` — [YT](https://www.youtube.com/watch?v=p3tH4Ksu50o)
-- [ ] **Popeda — Kuuma kesä** *(1985)* — `YnD19AcVHEc` — [YT](https://www.youtube.com/watch?v=YnD19AcVHEc)
-- [ ] **Starship — We Built This City** *(1985)* — `NtM3jjLP7AE` — [YT](https://www.youtube.com/watch?v=NtM3jjLP7AE)
-- [ ] **Survivor — Burning Heart** *(1985)* — `NeCwJ1IiQQw` — [YT](https://www.youtube.com/watch?v=NeCwJ1IiQQw)
-- [ ] **Tears For Fears — Everybody Wants To Rule The World** *(1985)* — `U4zA0xnBEJU` — [YT](https://www.youtube.com/watch?v=U4zA0xnBEJU)
-- [ ] **Bon Jovi — Livin' On A Prayer** *(1986)* — `YBdyc1WDlBQ` — [YT](https://www.youtube.com/watch?v=YBdyc1WDlBQ)
-- [ ] **El DeBarge — Who's Johnny** *(1986)* — `BHFHyeUPu7I` — [YT](https://www.youtube.com/watch?v=BHFHyeUPu7I)
-- [ ] **Europe — The Final Countdown** *(1986)* — `lZzcQ-uQ8R0` — [YT](https://www.youtube.com/watch?v=lZzcQ-uQ8R0)
-- [ ] **Mel & Kim — Showing Out (Get Fresh At the Weekend)** *(1986)* — `gxt6hNgJ-fs` — [YT](https://www.youtube.com/watch?v=gxt6hNgJ-fs)
-- [ ] **Michael McDonald — Sweet Freedom** *(1986)* — `yvXFGUWBMHY` — [YT](https://www.youtube.com/watch?v=yvXFGUWBMHY)
-- [ ] **Run–D.M.C. — Walk This Way (feat. Aerosmith)** *(1986)* — `xUScFNXAq0w` — [YT](https://www.youtube.com/watch?v=xUScFNXAq0w)
-- [ ] **Eros Ramazzotti — Ma che bello questo amore** *(1987)* — `7UNIQyFkQuQ` — [YT](https://www.youtube.com/watch?v=7UNIQyFkQuQ)
-- [ ] **George Michael & Aretha Franklin — I Know You Were Waiting (For Me)** *(1987)* — `48SfMCr0PpY` — [YT](https://www.youtube.com/watch?v=48SfMCr0PpY)
-- [ ] **M/A/R/R/S — Pump up the Volume** *(1987)* — `QWMcUxU6mnA` — [YT](https://www.youtube.com/watch?v=QWMcUxU6mnA)
-- [ ] **Michael Jackson — Dirty Diana** *(1987)* — `aUD0juRwb3I` — [YT](https://www.youtube.com/watch?v=aUD0juRwb3I)
-- [ ] **Virve Rosti — Sata salamaa** *(1987)* — `oQHtS27iXBU` — [YT](https://www.youtube.com/watch?v=oQHtS27iXBU)
-- [ ] **Four Tops — Loco in Acapulco** *(1988)* — `yMmBOhM0y2g` — [YT](https://www.youtube.com/watch?v=yMmBOhM0y2g)
-- [ ] **Leonard Cohen — Everybody Knows** *(1988)* — `Gxd23UVID7k` — [YT](https://www.youtube.com/watch?v=Gxd23UVID7k)
-- [ ] **Milli Vanilli — Girl I'm Gonna Miss You** *(1988)* — `QLMUf1IN24c` — [YT](https://www.youtube.com/watch?v=QLMUf1IN24c)
-- [ ] **Neneh Cherry — Buffalo Stance** *(1988)* — `rFXhBEj6mEE` — [YT](https://www.youtube.com/watch?v=rFXhBEj6mEE)
-- [ ] **Patricia Kaas — Mon mec à moi** *(1988)* — `2bAMyiaIwNk` — [YT](https://www.youtube.com/watch?v=2bAMyiaIwNk)
-- [ ] **Robin Beck — First Time** *(1988)* — `Bh6-L98l6eE` — [YT](https://www.youtube.com/watch?v=Bh6-L98l6eE)
-- [ ] **Cher — If I Could Turn Back Time** *(1989)* — `_eorELNxxrU` — [YT](https://www.youtube.com/watch?v=_eorELNxxrU)
-- [ ] **Faith No More — Epic** *(1989)* — `WkqPVMKsN20` — [YT](https://www.youtube.com/watch?v=WkqPVMKsN20)
-- [ ] **Patrick Bruel — Casset la voix** *(1989)* — `r-951A8fuoU` — [YT](https://www.youtube.com/watch?v=r-951A8fuoU)
-- [ ] **C & C Music Factory — Gonna Make You Sweat (Everybody Dance Now) (feat. Freedom Williams)** *(1990)* — `4R6t7YWmM5E` — [YT](https://www.youtube.com/watch?v=4R6t7YWmM5E)
-- [ ] **Clouseau — Daar Gaat Ze** *(1990)* — `OSDV7IGNmwI` — [YT](https://www.youtube.com/watch?v=OSDV7IGNmwI)
-- [ ] **Depeche Mode — Policy Of Truth** *(1990)* — `7smG_3QdYtw` — [YT](https://www.youtube.com/watch?v=7smG_3QdYtw)
-- [ ] **Kolmas Nainen — Tästä Asti Aikaa** *(1990)* — `2rduNgC9ScA` — [YT](https://www.youtube.com/watch?v=2rduNgC9ScA)
-- [ ] **MC Hammer — U Can't Touch This** *(1990)* — `_NNYI8VbFyY` — [YT](https://www.youtube.com/watch?v=_NNYI8VbFyY)
-- [ ] **New Kids On The Block — Step By Step** *(1990)* — `GDEDQ8TCzW8` — [YT](https://www.youtube.com/watch?v=GDEDQ8TCzW8)
-- [ ] **Raptori — Oi Beibi** *(1990)* — `XFd4zTnJ8jg` — [YT](https://www.youtube.com/watch?v=XFd4zTnJ8jg)
-- [ ] **Mr. Big — To Be With You - 2021 Remastered** *(1991)* — `EMDAEZ4CHvk` — [YT](https://www.youtube.com/watch?v=EMDAEZ4CHvk)
-- [ ] **Right Said Fred — I'm Too Sexy** *(1991)* — `1l8KLXDhTMQ` — [YT](https://www.youtube.com/watch?v=1l8KLXDhTMQ)
-- [ ] **22-Pistepirkko — Birdy** *(1992)* — `MTSQakv6fuU` — [YT](https://www.youtube.com/watch?v=MTSQakv6fuU)
-- [ ] **Bobby Brown — Two Can Play That Game** *(1992)* — `c_W3uq8W-U8` — [YT](https://www.youtube.com/watch?v=c_W3uq8W-U8)
-- [ ] **Iron Maiden — Fear of the Dark** *(1992)* — `p32b5nNq1zw` — [YT](https://www.youtube.com/watch?v=p32b5nNq1zw)
-- [ ] **Megadeth — Symphony Of Destruction** *(1992)* — `zzcgZ_p3CMM` — [YT](https://www.youtube.com/watch?v=zzcgZ_p3CMM)
-- [ ] **Pop Wow — Le chat** *(1992)* — `6AN_45QjOLA` — [YT](https://www.youtube.com/watch?v=6AN_45QjOLA)
-- [ ] **Radiohead — Creep** *(1992)* — `fAuT8_dboWo` — [YT](https://www.youtube.com/watch?v=fAuT8_dboWo)
-- [ ] **Culture Beat — Mr Vain** *(1993)* — `V3qUoiwr5kQ` — [YT](https://www.youtube.com/watch?v=V3qUoiwr5kQ)
-- [ ] **Culture Beat — Mr. Vain** *(1993)* — `VAmq5-wcLHE` — [YT](https://www.youtube.com/watch?v=VAmq5-wcLHE)
-- [ ] **Reel 2 Real et The Mad Stuntman — I Like To Move It** *(1993)* — `v163GVkl9us` — [YT](https://www.youtube.com/watch?v=v163GVkl9us)
-- [ ] **Catcat — Bye Bye Baby (Original)** *(1994)* — `L2Pc57R-R7A` — [YT](https://www.youtube.com/watch?v=L2Pc57R-R7A)
-- [ ] **Movetron — Romeo & Julia** *(1994)* — `ns5lf81l0T8` — [YT](https://www.youtube.com/watch?v=ns5lf81l0T8)
-- [ ] **Seal — Kiss from a Rose** *(1994)* — `vx-Lzo9NxAQ` — [YT](https://www.youtube.com/watch?v=vx-Lzo9NxAQ)
-- [ ] **The Offspring — Self Esteem** *(1994)* — `EtNZnhxWLHo` — [YT](https://www.youtube.com/watch?v=EtNZnhxWLHo)
-- [ ] **The Rembrandts — I'll Be There for You** *(1994)* — `RIjTq_OdFvo` — [YT](https://www.youtube.com/watch?v=RIjTq_OdFvo)
-- [ ] **Weezer — Buddy Holly** *(1994)* — `SiJie3Z7DG8` — [YT](https://www.youtube.com/watch?v=SiJie3Z7DG8)
-- [ ] **Aikakone — Odota** *(1995)* — `H6amnBdpBUo` — [YT](https://www.youtube.com/watch?v=H6amnBdpBUo)
-- [ ] **Aki Sirkesalo — Naispaholainen** *(1995)* — `j_2IskCKUBM` — [YT](https://www.youtube.com/watch?v=j_2IskCKUBM)
-- [ ] **Alanis Morissette — Ironic** *(1995)* — `Adu-EfJbuBs` — [YT](https://www.youtube.com/watch?v=Adu-EfJbuBs)
-- [ ] **Coolio — Gangsta's Paradise** *(1995)* — `Tw0_qHNRAEA` — [YT](https://www.youtube.com/watch?v=Tw0_qHNRAEA)
-- [ ] **Oasis — Wonderwall** *(1995)* — `FVdjZYfDuLE` — [YT](https://www.youtube.com/watch?v=FVdjZYfDuLE)
-- [ ] **Paul Elstak — Rainbow In The Sky** *(1995)* — `cHdPfGOaauw` — [YT](https://www.youtube.com/watch?v=cHdPfGOaauw)
-- [ ] **Pulp — Common People - Full Length Version** *(1995)* — `t7HNUVCv_X0` — [YT](https://www.youtube.com/watch?v=t7HNUVCv_X0)
-- [ ] **TLC — Waterfalls** *(1995)* — `A_iTphwVNYs` — [YT](https://www.youtube.com/watch?v=A_iTphwVNYs)
-- [ ] **Tokyo Ghetto Pussy — I Kiss Your Lips** *(1995)* — `FmLCwkN2UtI` — [YT](https://www.youtube.com/watch?v=FmLCwkN2UtI)
-- [ ] **Céline Dion — Because You Loved Me** *(1996)* — `fpl4if07ics` — [YT](https://www.youtube.com/watch?v=fpl4if07ics)
-- [ ] **Eros Ramazzotti — Più Bella Cosa** *(1996)* — `luj0L5SZQwM` — [YT](https://www.youtube.com/watch?v=luj0L5SZQwM)
-- [ ] **Gina G — Ooh Aah...Just a Little Bit - Motiv8 Radio Edit** *(1996)* — `MRGN8IkeGUg` — [YT](https://www.youtube.com/watch?v=MRGN8IkeGUg)
-- [ ] **Mr. President — Coco Jamboo** *(1996)* — `_Jl-QpJNKiQ` — [YT](https://www.youtube.com/watch?v=_Jl-QpJNKiQ)
-- [ ] **Toni Braxton — Un-Break My Heart** *(1996)* — `O596XpES1rI` — [YT](https://www.youtube.com/watch?v=O596XpES1rI)
-- [ ] **Diddy — I'll Be Missing You (feat. Faith Evans, 112)** *(1997)* — `pNPf-aP-bsA` — [YT](https://www.youtube.com/watch?v=pNPf-aP-bsA)
-- [ ] **Eternal — I Wanna Be the Only One (feat. Bebe Winans)** *(1997)* — `IHNPlhUcpi4` — [YT](https://www.youtube.com/watch?v=IHNPlhUcpi4)
-- [ ] **Natalie Imbruglia — Torn** *(1997)* — `UOJkzcJigGI` — [YT](https://www.youtube.com/watch?v=UOJkzcJigGI)
-- [ ] **Robbie Williams — Let Me Entertain You** *(1997)* — `bYbUTJqLFUk` — [YT](https://www.youtube.com/watch?v=bYbUTJqLFUk)
-- [ ] **Five — Everybody Get Up - Radio Edit** *(1998)* — `aaO_ZLGLbBQ` — [YT](https://www.youtube.com/watch?v=aaO_ZLGLbBQ)
-- [ ] **Pras (feat. Ol' Dirty Bastard & Mýa) — Ghetto Supastar (That is What You Are)** *(1998)* — `MnWogQTfSIY` — [YT](https://www.youtube.com/watch?v=MnWogQTfSIY)
-- [ ] **Robbie Williams — Millennium** *(1998)* — `yk7DK4T8cz0` — [YT](https://www.youtube.com/watch?v=yk7DK4T8cz0)
-- [ ] **Maija Vilkkumaa — Satumaa-tango** *(1999)* — `zCLP7r2eiWo` — [YT](https://www.youtube.com/watch?v=zCLP7r2eiWo)
-- [ ] **Vanessa Amorosi — Absolutely Everybody** *(1999)* — `iSwkaNdlKOg` — [YT](https://www.youtube.com/watch?v=iSwkaNdlKOg)
-- [ ] **Alcatraz — Crying At the Discoteque** *(2000)* — `a1fFwOXBxik` — [YT](https://www.youtube.com/watch?v=a1fFwOXBxik)
-- [ ] **Anouk — Michel** *(2000)* — `QoidUBiApYs` — [YT](https://www.youtube.com/watch?v=QoidUBiApYs)
-- [ ] **Britney Spears — Oops!... I did it Again** *(2000)* — `OO0aTOIU_3w` — [YT](https://www.youtube.com/watch?v=OO0aTOIU_3w)
-- [ ] **Limp Bizkit — Rollin' (Air Raid Vehicle)** *(2000)* — `AMX7XkO2-Y8` — [YT](https://www.youtube.com/watch?v=AMX7XkO2-Y8)
-- [ ] **Modjo — Lady - Hear Me Tonight** *(2000)* — `vRB1MLGEHSc` — [YT](https://www.youtube.com/watch?v=vRB1MLGEHSc)
-- [ ] **Shaggy, Rik Rok — It Wasn't Me** *(2000)* — `sTMgX1PDGAE` — [YT](https://www.youtube.com/watch?v=sTMgX1PDGAE)
-- [ ] **Nickelback — How You Remind Me** *(2001)* — `hhSLkkLl750` — [YT](https://www.youtube.com/watch?v=hhSLkkLl750)
-- [ ] **Stereophonics — Have A Nice Day** *(2001)* — `tgkeg5sjPP4` — [YT](https://www.youtube.com/watch?v=tgkeg5sjPP4)
-- [ ] **The Crash — Lauren Caught My Eye** *(2001)* — `V55NewBzPJE` — [YT](https://www.youtube.com/watch?v=V55NewBzPJE)
-- [ ] **MadHouse — Like a Prayer** *(2002)* — `4v2SXG_fkWg` — [YT](https://www.youtube.com/watch?v=4v2SXG_fkWg)
-- [ ] **Nelly (feat. Kelly Rowland) — Dilemma** *(2002)* — `WwJm5hnWv6E` — [YT](https://www.youtube.com/watch?v=WwJm5hnWv6E)
-- [ ] **Outkast — Hey Ya!** *(2003)* — `ubk1skSE9OA` — [YT](https://www.youtube.com/watch?v=ubk1skSE9OA)
-- [ ] **Danzel — Pump It Up!** *(2004)* — `t-ILvwZrR5c` — [YT](https://www.youtube.com/watch?v=t-ILvwZrR5c)
-- [ ] **Slipknot — Duality** *(2004)* — `L67svuppHcc` — [YT](https://www.youtube.com/watch?v=L67svuppHcc)
-- [ ] **Green Day — Holiday** *(2005)* — `l2hA8g1cNvQ` — [YT](https://www.youtube.com/watch?v=l2hA8g1cNvQ)
-- [ ] **James Blunt — You're Beautiful** *(2005)* — `M_q82PPHduI` — [YT](https://www.youtube.com/watch?v=M_q82PPHduI)
-- [ ] **Shakira (feat. Wyclef Jean) — Hips Don't Lie** *(2005)* — `nOj6d-HOw2w` — [YT](https://www.youtube.com/watch?v=nOj6d-HOw2w)
-- [ ] **Weezer — Beverly Hills** *(2005)* — `q0EpIzx9pi0` — [YT](https://www.youtube.com/watch?v=q0EpIzx9pi0)
-- [ ] **Wolfmother — Joker And The Thief** *(2005)* — `Nr0SqIAFohk` — [YT](https://www.youtube.com/watch?v=Nr0SqIAFohk)
-- [ ] **Fedde Le Grand — Put Your Hands Up For Detroit** *(2006)* — `jkRDcu-QXyk` — [YT](https://www.youtube.com/watch?v=jkRDcu-QXyk)
-- [ ] **Irina — Pokka** *(2007)* — `LpPdSpYxo04` — [YT](https://www.youtube.com/watch?v=LpPdSpYxo04)
-- [ ] **LinkinPark — What I've Done** *(2007)* — `Jrprk5dNboI` — [YT](https://www.youtube.com/watch?v=Jrprk5dNboI)
-- [ ] **Coldplay — Viva La Vida** *(2008)* — `y4zdDXPYo0I` — [YT](https://www.youtube.com/watch?v=y4zdDXPYo0I)
-- [ ] **Peter Fox — Haus am See** *(2008)* — `j-XKgB5guDQ` — [YT](https://www.youtube.com/watch?v=j-XKgB5guDQ)
-- [ ] **Adele — Rolling in the Deep** *(2010)* — `bDtjO-R0QSo` — [YT](https://www.youtube.com/watch?v=bDtjO-R0QSo)
-- [ ] **My Chemical Romance — Na Na Na (Na Na Na Na Na Na Na Na Na)** *(2010)* — `4fZ4PyMQ9rU` — [YT](https://www.youtube.com/watch?v=4fZ4PyMQ9rU)
-- [ ] **Usher — More** *(2010)* — `r2sBIrhAQPY` — [YT](https://www.youtube.com/watch?v=r2sBIrhAQPY)
-- [ ] **Gotye (feat. Kimbra) — Somebody That I Used To Know** *(2011)* — `2FZZK8gBBOI` — [YT](https://www.youtube.com/watch?v=2FZZK8gBBOI)
-- [ ] **LMFAO (feat. Lauren Bennett and GoonRock) — Party Rock Anthem** *(2011)* — `zIh5AHxh-Ok` — [YT](https://www.youtube.com/watch?v=zIh5AHxh-Ok)
-- [ ] **Halestorm — I Miss the Misery** *(2012)* — `V5OC2IZW3Pg` — [YT](https://www.youtube.com/watch?v=V5OC2IZW3Pg)
-- [ ] **Kraftklub — Songs für Liam** *(2012)* — `w9V9jblqXo0` — [YT](https://www.youtube.com/watch?v=w9V9jblqXo0)
-- [ ] **Loreen — Euphoria** *(2012)* — `t5qURKt4maw` — [YT](https://www.youtube.com/watch?v=t5qURKt4maw)
-- [ ] **PSY — Gangnam Style (강남스타일)** *(2012)* — `4AgDYTuZWOw` — [YT](https://www.youtube.com/watch?v=4AgDYTuZWOw)
-- [ ] **Christian Steiffen — Ich fühl' mich Disco** *(2013)* — `FZfj5iPy5wU` — [YT](https://www.youtube.com/watch?v=FZfj5iPy5wU)
-- [ ] **Daft Punk (feat. Pharrell Williams & Nile Rodgers) — Get Lucky** *(2013)* — `5NV6Rdv1a3I` — [YT](https://www.youtube.com/watch?v=5NV6Rdv1a3I)
-- [ ] **Niels Geusebroek — Take Your Time Girl (live at ruud de wild/538)** *(2013)* — `HFZrC5Wo7K0` — [YT](https://www.youtube.com/watch?v=HFZrC5Wo7K0)
-- [ ] **Rudimental — Waiting All Night (feat. Ella Eyre)** *(2013)* — `0CGklDgkfpM` — [YT](https://www.youtube.com/watch?v=0CGklDgkfpM)
-- [ ] **Charlie Puth — One Call Away** *(2015)* — `IP4-Idp6BMs` — [YT](https://www.youtube.com/watch?v=IP4-Idp6BMs)
-- [ ] **Evelina — Honey** *(2015)* — `_9BsMuaHP48` — [YT](https://www.youtube.com/watch?v=_9BsMuaHP48)
+- [ ] **Chicago — If You Leave Me Now** _(1976)_ — `-9_d-sFhmRM` — [YT](https://www.youtube.com/watch?v=-9_d-sFhmRM)
+- [ ] **The Trammps — Disco Inferno** _(1976)_ — `pG8TyIEAqps` — [YT](https://www.youtube.com/watch?v=pG8TyIEAqps)
+- [ ] **Thelma Houston — Don't Leave Me This Way** _(1976)_ — `rUdw7V-FC_Q` — [YT](https://www.youtube.com/watch?v=rUdw7V-FC_Q)
+- [ ] **Sister Sledge — We Are Family** _(1979)_ — `lJh4L8NMHfw` — [YT](https://www.youtube.com/watch?v=lJh4L8NMHfw)
+- [ ] **Barbra Streisand — Woman in Love** _(1980)_ — `hQLGCX8D-1Y` — [YT](https://www.youtube.com/watch?v=hQLGCX8D-1Y)
+- [ ] **Diana Ross — Upside Down** _(1980)_ — `lZ9OP5dzkQg` — [YT](https://www.youtube.com/watch?v=lZ9OP5dzkQg)
+- [ ] **Frank Duval — Angel Of Mine** _(1980)_ — `GUlkB2XDiRs` — [YT](https://www.youtube.com/watch?v=GUlkB2XDiRs)
+- [ ] **Lipps Inc. — Funkytown** _(1980)_ — `Z6dqIYKIBSU` — [YT](https://www.youtube.com/watch?v=Z6dqIYKIBSU)
+- [ ] **Michel Berger — La groupie du pianiste** _(1980)_ — `_hQrpgVK-r0` — [YT](https://www.youtube.com/watch?v=_hQrpgVK-r0)
+- [ ] **Anita Meyer — Why Tell Me Why** _(1981)_ — `PrLHo0i5zjM` — [YT](https://www.youtube.com/watch?v=PrLHo0i5zjM)
+- [ ] **Central Line — Walking Into Sunshine** _(1981)_ — `6wbHhepLzP0` — [YT](https://www.youtube.com/watch?v=6wbHhepLzP0)
+- [ ] **Foreigner — Juke Box Hero** _(1981)_ — `jsGo_AZSb0E` — [YT](https://www.youtube.com/watch?v=jsGo_AZSb0E)
+- [ ] **Journey — Don't Stop Believin'** _(1981)_ — `1k8craCGpgs` — [YT](https://www.youtube.com/watch?v=1k8craCGpgs)
+- [ ] **Rush — Tom Sawyer** _(1981)_ — `Gztabfs5ngA` — [YT](https://www.youtube.com/watch?v=Gztabfs5ngA)
+- [ ] **Michael Jackson — Billie Jean** _(1982)_ — `Kr4EQDVETuA` — [YT](https://www.youtube.com/watch?v=Kr4EQDVETuA)
+- [ ] **Accept — Balls to the Wall** _(1983)_ — `3wMwuAEfKus` — [YT](https://www.youtube.com/watch?v=3wMwuAEfKus)
+- [ ] **Cyndi Lauper — Girls Just Want to Have Fun** _(1983)_ — `jRr5EasAq84` — [YT](https://www.youtube.com/watch?v=jRr5EasAq84)
+- [ ] **Eurythmics — Sweet Dreams (Are Made of This)** _(1983)_ — `eRhg7qPLeN8` — [YT](https://www.youtube.com/watch?v=eRhg7qPLeN8)
+- [ ] **Rufus, Chaka Khan — Ain't Nobody** _(1983)_ — `uBnISf3Rjx8` — [YT](https://www.youtube.com/watch?v=uBnISf3Rjx8)
+- [ ] **Herbert Grönemeyer — Männer** _(1984)_ — `UEJNMkEr1Ls` — [YT](https://www.youtube.com/watch?v=UEJNMkEr1Ls)
+- [ ] **John Waite — Missing You** _(1984)_ — `Tg7vvmlrRzc` — [YT](https://www.youtube.com/watch?v=Tg7vvmlrRzc)
+- [ ] **Kirka — Hengaillaan** _(1984)_ — `krEgwiA2ww8` — [YT](https://www.youtube.com/watch?v=krEgwiA2ww8)
+- [ ] **Klaus Lage — 1000 und 1 Nacht** _(1984)_ — `s-Sqe30hn4U` — [YT](https://www.youtube.com/watch?v=s-Sqe30hn4U)
+- [ ] **Laura Branignan — Self Control** _(1984)_ — `FQD0yGuZ2N8` — [YT](https://www.youtube.com/watch?v=FQD0yGuZ2N8)
+- [ ] **Peter et Sloane — Besoin de tien, envie de toi** _(1984)_ — `Jy21qtn9zCg` — [YT](https://www.youtube.com/watch?v=Jy21qtn9zCg)
+- [ ] **Philip Bailey & Phil Collins — Easy Lover** _(1984)_ — `Hr9GJUcP1-g` — [YT](https://www.youtube.com/watch?v=Hr9GJUcP1-g)
+- [ ] **Twisted Sister — I Wanna Rock** _(1984)_ — `tyHpTG1MjVU` — [YT](https://www.youtube.com/watch?v=tyHpTG1MjVU)
+- [ ] **David Bowie & Pat Metheny Group — This Is Not America** _(1985)_ — `6PRtZDQJXoE` — [YT](https://www.youtube.com/watch?v=6PRtZDQJXoE)
+- [ ] **Falco — Rock Me Amadeus** _(1985)_ — `OKxBk4V79Co` — [YT](https://www.youtube.com/watch?v=OKxBk4V79Co)
+- [ ] **Kate Bush — Running Up That Hill (A Deal With God)** _(1985)_ — `HYwNM1t9ltI` — [YT](https://www.youtube.com/watch?v=HYwNM1t9ltI)
+- [ ] **Paul Young — Every Time You Go Away - Radio Edit** _(1985)_ — `p3tH4Ksu50o` — [YT](https://www.youtube.com/watch?v=p3tH4Ksu50o)
+- [ ] **Popeda — Kuuma kesä** _(1985)_ — `YnD19AcVHEc` — [YT](https://www.youtube.com/watch?v=YnD19AcVHEc)
+- [ ] **Starship — We Built This City** _(1985)_ — `NtM3jjLP7AE` — [YT](https://www.youtube.com/watch?v=NtM3jjLP7AE)
+- [ ] **Survivor — Burning Heart** _(1985)_ — `NeCwJ1IiQQw` — [YT](https://www.youtube.com/watch?v=NeCwJ1IiQQw)
+- [ ] **Tears For Fears — Everybody Wants To Rule The World** _(1985)_ — `U4zA0xnBEJU` — [YT](https://www.youtube.com/watch?v=U4zA0xnBEJU)
+- [ ] **Bon Jovi — Livin' On A Prayer** _(1986)_ — `YBdyc1WDlBQ` — [YT](https://www.youtube.com/watch?v=YBdyc1WDlBQ)
+- [ ] **El DeBarge — Who's Johnny** _(1986)_ — `BHFHyeUPu7I` — [YT](https://www.youtube.com/watch?v=BHFHyeUPu7I)
+- [ ] **Europe — The Final Countdown** _(1986)_ — `lZzcQ-uQ8R0` — [YT](https://www.youtube.com/watch?v=lZzcQ-uQ8R0)
+- [ ] **Mel & Kim — Showing Out (Get Fresh At the Weekend)** _(1986)_ — `gxt6hNgJ-fs` — [YT](https://www.youtube.com/watch?v=gxt6hNgJ-fs)
+- [ ] **Michael McDonald — Sweet Freedom** _(1986)_ — `yvXFGUWBMHY` — [YT](https://www.youtube.com/watch?v=yvXFGUWBMHY)
+- [ ] **Run–D.M.C. — Walk This Way (feat. Aerosmith)** _(1986)_ — `xUScFNXAq0w` — [YT](https://www.youtube.com/watch?v=xUScFNXAq0w)
+- [ ] **Eros Ramazzotti — Ma che bello questo amore** _(1987)_ — `7UNIQyFkQuQ` — [YT](https://www.youtube.com/watch?v=7UNIQyFkQuQ)
+- [ ] **George Michael & Aretha Franklin — I Know You Were Waiting (For Me)** _(1987)_ — `48SfMCr0PpY` — [YT](https://www.youtube.com/watch?v=48SfMCr0PpY)
+- [ ] **M/A/R/R/S — Pump up the Volume** _(1987)_ — `QWMcUxU6mnA` — [YT](https://www.youtube.com/watch?v=QWMcUxU6mnA)
+- [ ] **Michael Jackson — Dirty Diana** _(1987)_ — `aUD0juRwb3I` — [YT](https://www.youtube.com/watch?v=aUD0juRwb3I)
+- [ ] **Virve Rosti — Sata salamaa** _(1987)_ — `oQHtS27iXBU` — [YT](https://www.youtube.com/watch?v=oQHtS27iXBU)
+- [ ] **Four Tops — Loco in Acapulco** _(1988)_ — `yMmBOhM0y2g` — [YT](https://www.youtube.com/watch?v=yMmBOhM0y2g)
+- [ ] **Leonard Cohen — Everybody Knows** _(1988)_ — `Gxd23UVID7k` — [YT](https://www.youtube.com/watch?v=Gxd23UVID7k)
+- [ ] **Milli Vanilli — Girl I'm Gonna Miss You** _(1988)_ — `QLMUf1IN24c` — [YT](https://www.youtube.com/watch?v=QLMUf1IN24c)
+- [ ] **Neneh Cherry — Buffalo Stance** _(1988)_ — `rFXhBEj6mEE` — [YT](https://www.youtube.com/watch?v=rFXhBEj6mEE)
+- [ ] **Patricia Kaas — Mon mec à moi** _(1988)_ — `2bAMyiaIwNk` — [YT](https://www.youtube.com/watch?v=2bAMyiaIwNk)
+- [ ] **Robin Beck — First Time** _(1988)_ — `Bh6-L98l6eE` — [YT](https://www.youtube.com/watch?v=Bh6-L98l6eE)
+- [ ] **Cher — If I Could Turn Back Time** _(1989)_ — `_eorELNxxrU` — [YT](https://www.youtube.com/watch?v=_eorELNxxrU)
+- [ ] **Faith No More — Epic** _(1989)_ — `WkqPVMKsN20` — [YT](https://www.youtube.com/watch?v=WkqPVMKsN20)
+- [ ] **Patrick Bruel — Casset la voix** _(1989)_ — `r-951A8fuoU` — [YT](https://www.youtube.com/watch?v=r-951A8fuoU)
+- [ ] **C & C Music Factory — Gonna Make You Sweat (Everybody Dance Now) (feat. Freedom Williams)** _(1990)_ — `4R6t7YWmM5E` — [YT](https://www.youtube.com/watch?v=4R6t7YWmM5E)
+- [ ] **Clouseau — Daar Gaat Ze** _(1990)_ — `OSDV7IGNmwI` — [YT](https://www.youtube.com/watch?v=OSDV7IGNmwI)
+- [ ] **Depeche Mode — Policy Of Truth** _(1990)_ — `7smG_3QdYtw` — [YT](https://www.youtube.com/watch?v=7smG_3QdYtw)
+- [ ] **Kolmas Nainen — Tästä Asti Aikaa** _(1990)_ — `2rduNgC9ScA` — [YT](https://www.youtube.com/watch?v=2rduNgC9ScA)
+- [ ] **MC Hammer — U Can't Touch This** _(1990)_ — `_NNYI8VbFyY` — [YT](https://www.youtube.com/watch?v=_NNYI8VbFyY)
+- [ ] **New Kids On The Block — Step By Step** _(1990)_ — `GDEDQ8TCzW8` — [YT](https://www.youtube.com/watch?v=GDEDQ8TCzW8)
+- [ ] **Raptori — Oi Beibi** _(1990)_ — `XFd4zTnJ8jg` — [YT](https://www.youtube.com/watch?v=XFd4zTnJ8jg)
+- [ ] **Mr. Big — To Be With You - 2021 Remastered** _(1991)_ — `EMDAEZ4CHvk` — [YT](https://www.youtube.com/watch?v=EMDAEZ4CHvk)
+- [ ] **Right Said Fred — I'm Too Sexy** _(1991)_ — `1l8KLXDhTMQ` — [YT](https://www.youtube.com/watch?v=1l8KLXDhTMQ)
+- [ ] **22-Pistepirkko — Birdy** _(1992)_ — `MTSQakv6fuU` — [YT](https://www.youtube.com/watch?v=MTSQakv6fuU)
+- [ ] **Bobby Brown — Two Can Play That Game** _(1992)_ — `c_W3uq8W-U8` — [YT](https://www.youtube.com/watch?v=c_W3uq8W-U8)
+- [ ] **Iron Maiden — Fear of the Dark** _(1992)_ — `p32b5nNq1zw` — [YT](https://www.youtube.com/watch?v=p32b5nNq1zw)
+- [ ] **Megadeth — Symphony Of Destruction** _(1992)_ — `zzcgZ_p3CMM` — [YT](https://www.youtube.com/watch?v=zzcgZ_p3CMM)
+- [ ] **Pop Wow — Le chat** _(1992)_ — `6AN_45QjOLA` — [YT](https://www.youtube.com/watch?v=6AN_45QjOLA)
+- [ ] **Radiohead — Creep** _(1992)_ — `fAuT8_dboWo` — [YT](https://www.youtube.com/watch?v=fAuT8_dboWo)
+- [ ] **Culture Beat — Mr Vain** _(1993)_ — `V3qUoiwr5kQ` — [YT](https://www.youtube.com/watch?v=V3qUoiwr5kQ)
+- [ ] **Culture Beat — Mr. Vain** _(1993)_ — `VAmq5-wcLHE` — [YT](https://www.youtube.com/watch?v=VAmq5-wcLHE)
+- [ ] **Reel 2 Real et The Mad Stuntman — I Like To Move It** _(1993)_ — `v163GVkl9us` — [YT](https://www.youtube.com/watch?v=v163GVkl9us)
+- [ ] **Catcat — Bye Bye Baby (Original)** _(1994)_ — `L2Pc57R-R7A` — [YT](https://www.youtube.com/watch?v=L2Pc57R-R7A)
+- [ ] **Movetron — Romeo & Julia** _(1994)_ — `ns5lf81l0T8` — [YT](https://www.youtube.com/watch?v=ns5lf81l0T8)
+- [ ] **Seal — Kiss from a Rose** _(1994)_ — `vx-Lzo9NxAQ` — [YT](https://www.youtube.com/watch?v=vx-Lzo9NxAQ)
+- [ ] **The Offspring — Self Esteem** _(1994)_ — `EtNZnhxWLHo` — [YT](https://www.youtube.com/watch?v=EtNZnhxWLHo)
+- [ ] **The Rembrandts — I'll Be There for You** _(1994)_ — `RIjTq_OdFvo` — [YT](https://www.youtube.com/watch?v=RIjTq_OdFvo)
+- [ ] **Weezer — Buddy Holly** _(1994)_ — `SiJie3Z7DG8` — [YT](https://www.youtube.com/watch?v=SiJie3Z7DG8)
+- [ ] **Aikakone — Odota** _(1995)_ — `H6amnBdpBUo` — [YT](https://www.youtube.com/watch?v=H6amnBdpBUo)
+- [ ] **Aki Sirkesalo — Naispaholainen** _(1995)_ — `j_2IskCKUBM` — [YT](https://www.youtube.com/watch?v=j_2IskCKUBM)
+- [ ] **Alanis Morissette — Ironic** _(1995)_ — `Adu-EfJbuBs` — [YT](https://www.youtube.com/watch?v=Adu-EfJbuBs)
+- [ ] **Coolio — Gangsta's Paradise** _(1995)_ — `Tw0_qHNRAEA` — [YT](https://www.youtube.com/watch?v=Tw0_qHNRAEA)
+- [ ] **Oasis — Wonderwall** _(1995)_ — `FVdjZYfDuLE` — [YT](https://www.youtube.com/watch?v=FVdjZYfDuLE)
+- [ ] **Paul Elstak — Rainbow In The Sky** _(1995)_ — `cHdPfGOaauw` — [YT](https://www.youtube.com/watch?v=cHdPfGOaauw)
+- [ ] **Pulp — Common People - Full Length Version** _(1995)_ — `t7HNUVCv_X0` — [YT](https://www.youtube.com/watch?v=t7HNUVCv_X0)
+- [ ] **TLC — Waterfalls** _(1995)_ — `A_iTphwVNYs` — [YT](https://www.youtube.com/watch?v=A_iTphwVNYs)
+- [ ] **Tokyo Ghetto Pussy — I Kiss Your Lips** _(1995)_ — `FmLCwkN2UtI` — [YT](https://www.youtube.com/watch?v=FmLCwkN2UtI)
+- [ ] **Céline Dion — Because You Loved Me** _(1996)_ — `fpl4if07ics` — [YT](https://www.youtube.com/watch?v=fpl4if07ics)
+- [ ] **Eros Ramazzotti — Più Bella Cosa** _(1996)_ — `luj0L5SZQwM` — [YT](https://www.youtube.com/watch?v=luj0L5SZQwM)
+- [ ] **Gina G — Ooh Aah...Just a Little Bit - Motiv8 Radio Edit** _(1996)_ — `MRGN8IkeGUg` — [YT](https://www.youtube.com/watch?v=MRGN8IkeGUg)
+- [ ] **Mr. President — Coco Jamboo** _(1996)_ — `_Jl-QpJNKiQ` — [YT](https://www.youtube.com/watch?v=_Jl-QpJNKiQ)
+- [ ] **Toni Braxton — Un-Break My Heart** _(1996)_ — `O596XpES1rI` — [YT](https://www.youtube.com/watch?v=O596XpES1rI)
+- [ ] **Diddy — I'll Be Missing You (feat. Faith Evans, 112)** _(1997)_ — `pNPf-aP-bsA` — [YT](https://www.youtube.com/watch?v=pNPf-aP-bsA)
+- [ ] **Eternal — I Wanna Be the Only One (feat. Bebe Winans)** _(1997)_ — `IHNPlhUcpi4` — [YT](https://www.youtube.com/watch?v=IHNPlhUcpi4)
+- [ ] **Natalie Imbruglia — Torn** _(1997)_ — `UOJkzcJigGI` — [YT](https://www.youtube.com/watch?v=UOJkzcJigGI)
+- [ ] **Robbie Williams — Let Me Entertain You** _(1997)_ — `bYbUTJqLFUk` — [YT](https://www.youtube.com/watch?v=bYbUTJqLFUk)
+- [ ] **Five — Everybody Get Up - Radio Edit** _(1998)_ — `aaO_ZLGLbBQ` — [YT](https://www.youtube.com/watch?v=aaO_ZLGLbBQ)
+- [ ] **Pras (feat. Ol' Dirty Bastard & Mýa) — Ghetto Supastar (That is What You Are)** _(1998)_ — `MnWogQTfSIY` — [YT](https://www.youtube.com/watch?v=MnWogQTfSIY)
+- [ ] **Robbie Williams — Millennium** _(1998)_ — `yk7DK4T8cz0` — [YT](https://www.youtube.com/watch?v=yk7DK4T8cz0)
+- [ ] **Maija Vilkkumaa — Satumaa-tango** _(1999)_ — `zCLP7r2eiWo` — [YT](https://www.youtube.com/watch?v=zCLP7r2eiWo)
+- [ ] **Vanessa Amorosi — Absolutely Everybody** _(1999)_ — `iSwkaNdlKOg` — [YT](https://www.youtube.com/watch?v=iSwkaNdlKOg)
+- [ ] **Alcatraz — Crying At the Discoteque** _(2000)_ — `a1fFwOXBxik` — [YT](https://www.youtube.com/watch?v=a1fFwOXBxik)
+- [ ] **Anouk — Michel** _(2000)_ — `QoidUBiApYs` — [YT](https://www.youtube.com/watch?v=QoidUBiApYs)
+- [ ] **Britney Spears — Oops!... I did it Again** _(2000)_ — `OO0aTOIU_3w` — [YT](https://www.youtube.com/watch?v=OO0aTOIU_3w)
+- [ ] **Limp Bizkit — Rollin' (Air Raid Vehicle)** _(2000)_ — `AMX7XkO2-Y8` — [YT](https://www.youtube.com/watch?v=AMX7XkO2-Y8)
+- [ ] **Modjo — Lady - Hear Me Tonight** _(2000)_ — `vRB1MLGEHSc` — [YT](https://www.youtube.com/watch?v=vRB1MLGEHSc)
+- [ ] **Shaggy, Rik Rok — It Wasn't Me** _(2000)_ — `sTMgX1PDGAE` — [YT](https://www.youtube.com/watch?v=sTMgX1PDGAE)
+- [ ] **Nickelback — How You Remind Me** _(2001)_ — `hhSLkkLl750` — [YT](https://www.youtube.com/watch?v=hhSLkkLl750)
+- [ ] **Stereophonics — Have A Nice Day** _(2001)_ — `tgkeg5sjPP4` — [YT](https://www.youtube.com/watch?v=tgkeg5sjPP4)
+- [ ] **The Crash — Lauren Caught My Eye** _(2001)_ — `V55NewBzPJE` — [YT](https://www.youtube.com/watch?v=V55NewBzPJE)
+- [ ] **MadHouse — Like a Prayer** _(2002)_ — `4v2SXG_fkWg` — [YT](https://www.youtube.com/watch?v=4v2SXG_fkWg)
+- [ ] **Nelly (feat. Kelly Rowland) — Dilemma** _(2002)_ — `WwJm5hnWv6E` — [YT](https://www.youtube.com/watch?v=WwJm5hnWv6E)
+- [ ] **Outkast — Hey Ya!** _(2003)_ — `ubk1skSE9OA` — [YT](https://www.youtube.com/watch?v=ubk1skSE9OA)
+- [ ] **Danzel — Pump It Up!** _(2004)_ — `t-ILvwZrR5c` — [YT](https://www.youtube.com/watch?v=t-ILvwZrR5c)
+- [ ] **Slipknot — Duality** _(2004)_ — `L67svuppHcc` — [YT](https://www.youtube.com/watch?v=L67svuppHcc)
+- [ ] **Green Day — Holiday** _(2005)_ — `l2hA8g1cNvQ` — [YT](https://www.youtube.com/watch?v=l2hA8g1cNvQ)
+- [ ] **James Blunt — You're Beautiful** _(2005)_ — `M_q82PPHduI` — [YT](https://www.youtube.com/watch?v=M_q82PPHduI)
+- [ ] **Shakira (feat. Wyclef Jean) — Hips Don't Lie** _(2005)_ — `nOj6d-HOw2w` — [YT](https://www.youtube.com/watch?v=nOj6d-HOw2w)
+- [ ] **Weezer — Beverly Hills** _(2005)_ — `q0EpIzx9pi0` — [YT](https://www.youtube.com/watch?v=q0EpIzx9pi0)
+- [ ] **Wolfmother — Joker And The Thief** _(2005)_ — `Nr0SqIAFohk` — [YT](https://www.youtube.com/watch?v=Nr0SqIAFohk)
+- [ ] **Fedde Le Grand — Put Your Hands Up For Detroit** _(2006)_ — `jkRDcu-QXyk` — [YT](https://www.youtube.com/watch?v=jkRDcu-QXyk)
+- [ ] **Irina — Pokka** _(2007)_ — `LpPdSpYxo04` — [YT](https://www.youtube.com/watch?v=LpPdSpYxo04)
+- [ ] **LinkinPark — What I've Done** _(2007)_ — `Jrprk5dNboI` — [YT](https://www.youtube.com/watch?v=Jrprk5dNboI)
+- [ ] **Coldplay — Viva La Vida** _(2008)_ — `y4zdDXPYo0I` — [YT](https://www.youtube.com/watch?v=y4zdDXPYo0I)
+- [ ] **Peter Fox — Haus am See** _(2008)_ — `j-XKgB5guDQ` — [YT](https://www.youtube.com/watch?v=j-XKgB5guDQ)
+- [ ] **Adele — Rolling in the Deep** _(2010)_ — `bDtjO-R0QSo` — [YT](https://www.youtube.com/watch?v=bDtjO-R0QSo)
+- [ ] **My Chemical Romance — Na Na Na (Na Na Na Na Na Na Na Na Na)** _(2010)_ — `4fZ4PyMQ9rU` — [YT](https://www.youtube.com/watch?v=4fZ4PyMQ9rU)
+- [ ] **Usher — More** _(2010)_ — `r2sBIrhAQPY` — [YT](https://www.youtube.com/watch?v=r2sBIrhAQPY)
+- [ ] **Gotye (feat. Kimbra) — Somebody That I Used To Know** _(2011)_ — `2FZZK8gBBOI` — [YT](https://www.youtube.com/watch?v=2FZZK8gBBOI)
+- [ ] **LMFAO (feat. Lauren Bennett and GoonRock) — Party Rock Anthem** _(2011)_ — `zIh5AHxh-Ok` — [YT](https://www.youtube.com/watch?v=zIh5AHxh-Ok)
+- [ ] **Halestorm — I Miss the Misery** _(2012)_ — `V5OC2IZW3Pg` — [YT](https://www.youtube.com/watch?v=V5OC2IZW3Pg)
+- [ ] **Kraftklub — Songs für Liam** _(2012)_ — `w9V9jblqXo0` — [YT](https://www.youtube.com/watch?v=w9V9jblqXo0)
+- [ ] **Loreen — Euphoria** _(2012)_ — `t5qURKt4maw` — [YT](https://www.youtube.com/watch?v=t5qURKt4maw)
+- [ ] **PSY — Gangnam Style (강남스타일)** _(2012)_ — `4AgDYTuZWOw` — [YT](https://www.youtube.com/watch?v=4AgDYTuZWOw)
+- [ ] **Christian Steiffen — Ich fühl' mich Disco** _(2013)_ — `FZfj5iPy5wU` — [YT](https://www.youtube.com/watch?v=FZfj5iPy5wU)
+- [ ] **Daft Punk (feat. Pharrell Williams & Nile Rodgers) — Get Lucky** _(2013)_ — `5NV6Rdv1a3I` — [YT](https://www.youtube.com/watch?v=5NV6Rdv1a3I)
+- [ ] **Niels Geusebroek — Take Your Time Girl (live at ruud de wild/538)** _(2013)_ — `HFZrC5Wo7K0` — [YT](https://www.youtube.com/watch?v=HFZrC5Wo7K0)
+- [ ] **Rudimental — Waiting All Night (feat. Ella Eyre)** _(2013)_ — `0CGklDgkfpM` — [YT](https://www.youtube.com/watch?v=0CGklDgkfpM)
+- [ ] **Charlie Puth — One Call Away** _(2015)_ — `IP4-Idp6BMs` — [YT](https://www.youtube.com/watch?v=IP4-Idp6BMs)
+- [ ] **Evelina — Honey** _(2015)_ — `_9BsMuaHP48` — [YT](https://www.youtube.com/watch?v=_9BsMuaHP48)
 
 ## LYRIC — Lyric/Visualizer Video — 7 tracks
 
-- [ ] **Matia Bazar — Ti Sento** *(1985)* — `ZoBrzWSOa24` — [YT](https://www.youtube.com/watch?v=ZoBrzWSOa24)
-- [ ] **Cindy Lauper — True Colors** *(1986)* — `2ecaYj14z3M` — [YT](https://www.youtube.com/watch?v=2ecaYj14z3M)
-- [ ] **Metallica — Master Of Puppets** *(1986)* — `6xjJ2XIbGRk` — [YT](https://www.youtube.com/watch?v=6xjJ2XIbGRk)
-- [ ] **R.E.M. — Everybody Hurts** *(1992)* — `5rOiW_xY-kc` — [YT](https://www.youtube.com/watch?v=5rOiW_xY-kc)
-- [ ] **Van Dik Hout — Stil In Mij** *(1994)* — `KAF67QRje_A` — [YT](https://www.youtube.com/watch?v=KAF67QRje_A)
-- [ ] **Vanessa Carlton — A Thousand Miles** *(2002)* — `z04o40nPQMU` — [YT](https://www.youtube.com/watch?v=z04o40nPQMU)
-- [ ] **Missy Elliott (feat. Ciara & Fat Man Scoop) — Lose Control** *(2005)* — `_EteTXbBSw4` — [YT](https://www.youtube.com/watch?v=_EteTXbBSw4)
+- [ ] **Matia Bazar — Ti Sento** _(1985)_ — `ZoBrzWSOa24` — [YT](https://www.youtube.com/watch?v=ZoBrzWSOa24)
+- [ ] **Cindy Lauper — True Colors** _(1986)_ — `2ecaYj14z3M` — [YT](https://www.youtube.com/watch?v=2ecaYj14z3M)
+- [ ] **Metallica — Master Of Puppets** _(1986)_ — `6xjJ2XIbGRk` — [YT](https://www.youtube.com/watch?v=6xjJ2XIbGRk)
+- [ ] **R.E.M. — Everybody Hurts** _(1992)_ — `5rOiW_xY-kc` — [YT](https://www.youtube.com/watch?v=5rOiW_xY-kc)
+- [ ] **Van Dik Hout — Stil In Mij** _(1994)_ — `KAF67QRje_A` — [YT](https://www.youtube.com/watch?v=KAF67QRje_A)
+- [ ] **Vanessa Carlton — A Thousand Miles** _(2002)_ — `z04o40nPQMU` — [YT](https://www.youtube.com/watch?v=z04o40nPQMU)
+- [ ] **Missy Elliott (feat. Ciara & Fat Man Scoop) — Lose Control** _(2005)_ — `_EteTXbBSw4` — [YT](https://www.youtube.com/watch?v=_EteTXbBSw4)
 
 ## LIVE — Live-Mitschnitt statt Studiovideo — 10 tracks
 
-- [ ] **Bloem — Even Aan Mijn Moeder Vragen** *(1980)* — `rrs6ATnaXSU` — [YT](https://www.youtube.com/watch?v=rrs6ATnaXSU)
-- [ ] **Frank Sinatra — Theme From New York, New York** *(1980)* — `TK0Vdb1RUCk` — [YT](https://www.youtube.com/watch?v=TK0Vdb1RUCk)
-- [ ] **Motörhead — Ace of Spades** *(1980)* — `3mbvWn1EY6g` — [YT](https://www.youtube.com/watch?v=3mbvWn1EY6g)
-- [ ] **Yarbrough & Peoples — Don't Stop The Music** *(1980)* — `-EDbXs9QoPo` — [YT](https://www.youtube.com/watch?v=-EDbXs9QoPo)
-- [ ] **George Thorogood & The Destroyers — Bad To The Bone** *(1982)* — `IyhJ69mD7xI` — [YT](https://www.youtube.com/watch?v=IyhJ69mD7xI)
-- [ ] **Mariah Carey — Hero** *(1993)* — `0IA3ZvCkRkQ` — [YT](https://www.youtube.com/watch?v=0IA3ZvCkRkQ)
-- [ ] **Backstreet Boys — As Long as You Love Me** *(1997)* — `01TnJ27SkEk` — [YT](https://www.youtube.com/watch?v=01TnJ27SkEk)
-- [ ] **LeAnn Rimes — How Do I Live** *(1997)* — `wZXouku_3rg` — [YT](https://www.youtube.com/watch?v=wZXouku_3rg)
-- [ ] **Patrick Fiori, Garou et Daniel Lavoie — Belle** *(1998)* — `FVnxKAoFzBg` — [YT](https://www.youtube.com/watch?v=FVnxKAoFzBg)
-- [ ] **Stone Sour — Absolute Zero** *(2012)* — `j98jxCqh1IA` — [YT](https://www.youtube.com/watch?v=j98jxCqh1IA)
+- [ ] **Bloem — Even Aan Mijn Moeder Vragen** _(1980)_ — `rrs6ATnaXSU` — [YT](https://www.youtube.com/watch?v=rrs6ATnaXSU)
+- [ ] **Frank Sinatra — Theme From New York, New York** _(1980)_ — `TK0Vdb1RUCk` — [YT](https://www.youtube.com/watch?v=TK0Vdb1RUCk)
+- [ ] **Motörhead — Ace of Spades** _(1980)_ — `3mbvWn1EY6g` — [YT](https://www.youtube.com/watch?v=3mbvWn1EY6g)
+- [ ] **Yarbrough & Peoples — Don't Stop The Music** _(1980)_ — `-EDbXs9QoPo` — [YT](https://www.youtube.com/watch?v=-EDbXs9QoPo)
+- [ ] **George Thorogood & The Destroyers — Bad To The Bone** _(1982)_ — `IyhJ69mD7xI` — [YT](https://www.youtube.com/watch?v=IyhJ69mD7xI)
+- [ ] **Mariah Carey — Hero** _(1993)_ — `0IA3ZvCkRkQ` — [YT](https://www.youtube.com/watch?v=0IA3ZvCkRkQ)
+- [ ] **Backstreet Boys — As Long as You Love Me** _(1997)_ — `01TnJ27SkEk` — [YT](https://www.youtube.com/watch?v=01TnJ27SkEk)
+- [ ] **LeAnn Rimes — How Do I Live** _(1997)_ — `wZXouku_3rg` — [YT](https://www.youtube.com/watch?v=wZXouku_3rg)
+- [ ] **Patrick Fiori, Garou et Daniel Lavoie — Belle** _(1998)_ — `FVnxKAoFzBg` — [YT](https://www.youtube.com/watch?v=FVnxKAoFzBg)
+- [ ] **Stone Sour — Absolute Zero** _(2012)_ — `j98jxCqh1IA` — [YT](https://www.youtube.com/watch?v=j98jxCqh1IA)
 
 ## FAN — Fan-Upload / Re-Cut — 13 tracks
 
-- [ ] **Pino D'Angiò — Ma quale idea** *(1980)* — `0Ylg-XD15jw` — [YT](https://www.youtube.com/watch?v=0Ylg-XD15jw)
-- [ ] **Leevi and the leavings — Pohjois-Karjala** *(1986)* — `e-2fUGkY_jw` — [YT](https://www.youtube.com/watch?v=e-2fUGkY_jw)
-- [ ] **Whitney Houston — I Wanna Dance with Somebody (Who Loves Me)** *(1987)* — `LX366rnYTB4` — [YT](https://www.youtube.com/watch?v=LX366rnYTB4)
-- [ ] **Die Toten Hosen — Zehn kleine Jägermeister** *(1996)* — `hNK-uT2vhqo` — [YT](https://www.youtube.com/watch?v=hNK-uT2vhqo)
-- [ ] **Fettes Brot — Jein** *(1996)* — `rPy7rWT5-Xg` — [YT](https://www.youtube.com/watch?v=rPy7rWT5-Xg)
-- [ ] **Mary J. Blige — Family Affair** *(2001)* — `1wh_UYUA0oA` — [YT](https://www.youtube.com/watch?v=1wh_UYUA0oA)
-- [ ] **Tiktak — Heilutaan** *(2003)* — `IqzMLhV52JI` — [YT](https://www.youtube.com/watch?v=IqzMLhV52JI)
-- [ ] **Killswitch Engage — My Curse** *(2006)* — `F5S2ahSapQc` — [YT](https://www.youtube.com/watch?v=F5S2ahSapQc)
-- [ ] **Flo Rida — Whistle** *(2012)* — `mRaffkti2us` — [YT](https://www.youtube.com/watch?v=mRaffkti2us)
-- [ ] **Indila — Dernière danse** *(2013)* — `HLCqZxwB290` — [YT](https://www.youtube.com/watch?v=HLCqZxwB290)
-- [ ] **Teflon Brothers — Maradona (kesä ´86)** *(2014)* — `D7RGeatsycM` — [YT](https://www.youtube.com/watch?v=D7RGeatsycM)
-- [ ] **Alvaro Soler — El Mismo Sol** *(2015)* — `srPJ-s5uMbI` — [YT](https://www.youtube.com/watch?v=srPJ-s5uMbI)
-- [ ] **Major Lazer — Lean On** *(2015)* — `rn9AQoI7mYU` — [YT](https://www.youtube.com/watch?v=rn9AQoI7mYU)
+- [ ] **Pino D'Angiò — Ma quale idea** _(1980)_ — `0Ylg-XD15jw` — [YT](https://www.youtube.com/watch?v=0Ylg-XD15jw)
+- [ ] **Leevi and the leavings — Pohjois-Karjala** _(1986)_ — `e-2fUGkY_jw` — [YT](https://www.youtube.com/watch?v=e-2fUGkY_jw)
+- [ ] **Whitney Houston — I Wanna Dance with Somebody (Who Loves Me)** _(1987)_ — `LX366rnYTB4` — [YT](https://www.youtube.com/watch?v=LX366rnYTB4)
+- [ ] **Die Toten Hosen — Zehn kleine Jägermeister** _(1996)_ — `hNK-uT2vhqo` — [YT](https://www.youtube.com/watch?v=hNK-uT2vhqo)
+- [ ] **Fettes Brot — Jein** _(1996)_ — `rPy7rWT5-Xg` — [YT](https://www.youtube.com/watch?v=rPy7rWT5-Xg)
+- [ ] **Mary J. Blige — Family Affair** _(2001)_ — `1wh_UYUA0oA` — [YT](https://www.youtube.com/watch?v=1wh_UYUA0oA)
+- [ ] **Tiktak — Heilutaan** _(2003)_ — `IqzMLhV52JI` — [YT](https://www.youtube.com/watch?v=IqzMLhV52JI)
+- [ ] **Killswitch Engage — My Curse** _(2006)_ — `F5S2ahSapQc` — [YT](https://www.youtube.com/watch?v=F5S2ahSapQc)
+- [ ] **Flo Rida — Whistle** _(2012)_ — `mRaffkti2us` — [YT](https://www.youtube.com/watch?v=mRaffkti2us)
+- [ ] **Indila — Dernière danse** _(2013)_ — `HLCqZxwB290` — [YT](https://www.youtube.com/watch?v=HLCqZxwB290)
+- [ ] **Teflon Brothers — Maradona (kesä ´86)** _(2014)_ — `D7RGeatsycM` — [YT](https://www.youtube.com/watch?v=D7RGeatsycM)
+- [ ] **Alvaro Soler — El Mismo Sol** _(2015)_ — `srPJ-s5uMbI` — [YT](https://www.youtube.com/watch?v=srPJ-s5uMbI)
+- [ ] **Major Lazer — Lean On** _(2015)_ — `rn9AQoI7mYU` — [YT](https://www.youtube.com/watch?v=rn9AQoI7mYU)
 
 ## Spoiler flags — 41 tracks
 
 Diese Videos blenden Titel/Artist/Jahr ein und verfälschen den Guess-Mode. Reviewer-Hinweis, nicht zwingend zu ersetzen.
 
-- [ ] **Van McCoy & The Soul City Symphony — The Hustle** *(1975)* — `SFzMs2SN--s` — spoilers: Titel/Artist
-- [ ] **Ozzy Osbourne — Crazy Train** *(1980)* — `tMDFv5m18Pw` — spoilers: Titel/Artist
-- [ ] **Yarbrough & Peoples — Don't Stop The Music** *(1980)* — `-EDbXs9QoPo` — spoilers: Titel/Artist
-- [ ] **Phil Collins — In The Air Tonight** *(1981)* — `YkADj0TPrJA` — spoilers: Titel/Artist
-- [ ] **Sheena Easton — For Your Eyes Only** *(1981)* — `itAEnpJsbx8` — spoilers: Titel/Artist
-- [ ] **George Thorogood & The Destroyers — Bad To The Bone** *(1982)* — `IyhJ69mD7xI` — spoilers: Titel/Artist
-- [ ] **Hans De Booij — Annabel** *(1983)* — `Ig9rlZLK0PE` — spoilers: Titel/Artist
-- [ ] **Paul Young — Come Back and Stay** *(1983)* — `aeeJhEpeUfc` — spoilers: Titel/Artist
-- [ ] **Falco — Rock Me Amadeus** *(1985)* — `OKxBk4V79Co` — spoilers: Titel/Artist
-- [ ] **Crowded House — Don't Dream It's Over** *(1986)* — `J9gKyRmic20` — spoilers: Titel/Artist
-- [ ] **Run–D.M.C. — Walk This Way (feat. Aerosmith)** *(1986)* — `xUScFNXAq0w` — spoilers: Titel/Artist
-- [ ] **Eddy Grant — Gimme Hope Jo'Anna** *(1988)* — `3P-imA4618Y` — spoilers: Titel/Artist
-- [ ] **Cher — If I Could Turn Back Time** *(1989)* — `_eorELNxxrU` — spoilers: Titel/Artist
-- [ ] **Kaoma — Lambada** *(1989)* — `iyLdoQGBchQ` — spoilers: Titel/Artist
-- [ ] **Lil' Louis — French Kiss** *(1989)* — `sIah2FJn5eY` — spoilers: Titel/Artist
-- [ ] **Roch Voisine — Hélène** *(1989)* — `SDipM1y1DC8` — spoilers: Titel/Artist
-- [ ] **EAV (Erste Allgemeine Verunsicherung) — Ding Dong** *(1990)* — `zyilSPsYdW8` — spoilers: Titel/Artist
-- [ ] **Aqua — Doctor Jones** *(1997)* — `-1jPUB7gRyg` — spoilers: Titel/Artist
-- [ ] **LeAnn Rimes — How Do I Live** *(1997)* — `wZXouku_3rg` — spoilers: Titel/Artist
-- [ ] **Jennifer Lopez — If You Had My Love** *(1999)* — `lYfkl-HXfuU` — spoilers: Titel/Artist
-- [ ] **Gorillaz — Clint Eastwood** *(2001)* — `1V_xRb0x9aw` — spoilers: Titel/Artist
-- [ ] **Mary J. Blige — Family Affair** *(2001)* — `1wh_UYUA0oA` — spoilers: Titel/Artist
-- [ ] **Missy Elliott — Get Ur Freak On** *(2001)* — `FPoKiGQzbSQ` — spoilers: Titel/Artist
-- [ ] **Vanessa Carlton — A Thousand Miles** *(2002)* — `z04o40nPQMU` — spoilers: Titel/Artist
-- [ ] **Tragédie — Hey Oh** *(2003)* — `ROqfklvWDAk` — spoilers: Titel/Artist
-- [ ] **Kanye West, Jamie Foxx — Gold Digger** *(2005)* — `6vwNcNOTVzY` — spoilers: Titel/Artist
-- [ ] **Korn — Coming Undone** *(2005)* — `CSJXle3LP_Q` — spoilers: Titel/Artist
-- [ ] **Ne-Yo — So Sick** *(2005)* — `IxszlJppRQI` — spoilers: Titel/Artist
-- [ ] **The Pussycat Dolls — Beep** *(2005)* — `1r9ghI7YcL0` — spoilers: Titel/Artist
-- [ ] **MGMT — Kids** *(2007)* — `fe4EK4HSPkI` — spoilers: Titel/Artist
-- [ ] **Rihanna Jay-Z — Umbrella** *(2007)* — `crVOEJ2FwLE` — spoilers: Titel/Artist
-- [ ] **Yelle — À cause des garçons** *(2007)* — `JqYhuwu614Y` — spoilers: Titel/Artist
-- [ ] **Britney Spears — Womanizer** *(2008)* — `rMqayQ-U74s` — spoilers: Titel/Artist
-- [ ] **Grégoire — Toi + Moi** *(2008)* — `kOru9ITtVIg` — spoilers: Titel/Artist
-- [ ] **Black Stone Cherry — White Trash Millionaire** *(2011)* — `ZQ8itDYP6HU` — spoilers: Titel/Artist
-- [ ] **Flo Rida — Good Feeling** *(2011)* — `3OnnDqH6Wj8` — spoilers: Titel/Artist
-- [ ] **The Black Keys — Lonely Boy** *(2011)* — `a_426RiwST8` — spoilers: Titel/Artist
-- [ ] **SDP feat. Sido — Die Nacht von Freitag auf Montag** *(2012)* — `388e_8mu1t4` — spoilers: Titel/Artist
-- [ ] **Daft Punk feat. Pharrell Williams and Nile Rodgers — Get Lucky** *(2013)* — `CCHdMIEGaaM` — spoilers: Titel/Artist
-- [ ] **Robin Thicke feat. T.I. & Pharrell Williams — Blurred Lines** *(2013)* — `yyDUC1LUXSU` — spoilers: Titel/Artist
-- [ ] **Avicii — Waiting For Love** *(2015)* — `ZMNekAx3LHI` — spoilers: Titel/Artist
+- [ ] **Van McCoy & The Soul City Symphony — The Hustle** _(1975)_ — `SFzMs2SN--s` — spoilers: Titel/Artist
+- [ ] **Ozzy Osbourne — Crazy Train** _(1980)_ — `tMDFv5m18Pw` — spoilers: Titel/Artist
+- [ ] **Yarbrough & Peoples — Don't Stop The Music** _(1980)_ — `-EDbXs9QoPo` — spoilers: Titel/Artist
+- [ ] **Phil Collins — In The Air Tonight** _(1981)_ — `YkADj0TPrJA` — spoilers: Titel/Artist
+- [ ] **Sheena Easton — For Your Eyes Only** _(1981)_ — `itAEnpJsbx8` — spoilers: Titel/Artist
+- [ ] **George Thorogood & The Destroyers — Bad To The Bone** _(1982)_ — `IyhJ69mD7xI` — spoilers: Titel/Artist
+- [ ] **Hans De Booij — Annabel** _(1983)_ — `Ig9rlZLK0PE` — spoilers: Titel/Artist
+- [ ] **Paul Young — Come Back and Stay** _(1983)_ — `aeeJhEpeUfc` — spoilers: Titel/Artist
+- [ ] **Falco — Rock Me Amadeus** _(1985)_ — `OKxBk4V79Co` — spoilers: Titel/Artist
+- [ ] **Crowded House — Don't Dream It's Over** _(1986)_ — `J9gKyRmic20` — spoilers: Titel/Artist
+- [ ] **Run–D.M.C. — Walk This Way (feat. Aerosmith)** _(1986)_ — `xUScFNXAq0w` — spoilers: Titel/Artist
+- [ ] **Eddy Grant — Gimme Hope Jo'Anna** _(1988)_ — `3P-imA4618Y` — spoilers: Titel/Artist
+- [ ] **Cher — If I Could Turn Back Time** _(1989)_ — `_eorELNxxrU` — spoilers: Titel/Artist
+- [ ] **Kaoma — Lambada** _(1989)_ — `iyLdoQGBchQ` — spoilers: Titel/Artist
+- [ ] **Lil' Louis — French Kiss** _(1989)_ — `sIah2FJn5eY` — spoilers: Titel/Artist
+- [ ] **Roch Voisine — Hélène** _(1989)_ — `SDipM1y1DC8` — spoilers: Titel/Artist
+- [ ] **EAV (Erste Allgemeine Verunsicherung) — Ding Dong** _(1990)_ — `zyilSPsYdW8` — spoilers: Titel/Artist
+- [ ] **Aqua — Doctor Jones** _(1997)_ — `-1jPUB7gRyg` — spoilers: Titel/Artist
+- [ ] **LeAnn Rimes — How Do I Live** _(1997)_ — `wZXouku_3rg` — spoilers: Titel/Artist
+- [ ] **Jennifer Lopez — If You Had My Love** _(1999)_ — `lYfkl-HXfuU` — spoilers: Titel/Artist
+- [ ] **Gorillaz — Clint Eastwood** _(2001)_ — `1V_xRb0x9aw` — spoilers: Titel/Artist
+- [ ] **Mary J. Blige — Family Affair** _(2001)_ — `1wh_UYUA0oA` — spoilers: Titel/Artist
+- [ ] **Missy Elliott — Get Ur Freak On** _(2001)_ — `FPoKiGQzbSQ` — spoilers: Titel/Artist
+- [ ] **Vanessa Carlton — A Thousand Miles** _(2002)_ — `z04o40nPQMU` — spoilers: Titel/Artist
+- [ ] **Tragédie — Hey Oh** _(2003)_ — `ROqfklvWDAk` — spoilers: Titel/Artist
+- [ ] **Kanye West, Jamie Foxx — Gold Digger** _(2005)_ — `6vwNcNOTVzY` — spoilers: Titel/Artist
+- [ ] **Korn — Coming Undone** _(2005)_ — `CSJXle3LP_Q` — spoilers: Titel/Artist
+- [ ] **Ne-Yo — So Sick** _(2005)_ — `IxszlJppRQI` — spoilers: Titel/Artist
+- [ ] **The Pussycat Dolls — Beep** _(2005)_ — `1r9ghI7YcL0` — spoilers: Titel/Artist
+- [ ] **MGMT — Kids** _(2007)_ — `fe4EK4HSPkI` — spoilers: Titel/Artist
+- [ ] **Rihanna Jay-Z — Umbrella** _(2007)_ — `crVOEJ2FwLE` — spoilers: Titel/Artist
+- [ ] **Yelle — À cause des garçons** _(2007)_ — `JqYhuwu614Y` — spoilers: Titel/Artist
+- [ ] **Britney Spears — Womanizer** _(2008)_ — `rMqayQ-U74s` — spoilers: Titel/Artist
+- [ ] **Grégoire — Toi + Moi** _(2008)_ — `kOru9ITtVIg` — spoilers: Titel/Artist
+- [ ] **Black Stone Cherry — White Trash Millionaire** _(2011)_ — `ZQ8itDYP6HU` — spoilers: Titel/Artist
+- [ ] **Flo Rida — Good Feeling** _(2011)_ — `3OnnDqH6Wj8` — spoilers: Titel/Artist
+- [ ] **The Black Keys — Lonely Boy** _(2011)_ — `a_426RiwST8` — spoilers: Titel/Artist
+- [ ] **SDP feat. Sido — Die Nacht von Freitag auf Montag** _(2012)_ — `388e_8mu1t4` — spoilers: Titel/Artist
+- [ ] **Daft Punk feat. Pharrell Williams and Nile Rodgers — Get Lucky** _(2013)_ — `CCHdMIEGaaM` — spoilers: Titel/Artist
+- [ ] **Robin Thicke feat. T.I. & Pharrell Williams — Blurred Lines** _(2013)_ — `yyDUC1LUXSU` — spoilers: Titel/Artist
+- [ ] **Avicii — Waiting For Love** _(2015)_ — `ZMNekAx3LHI` — spoilers: Titel/Artist

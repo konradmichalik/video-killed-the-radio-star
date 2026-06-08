@@ -35,7 +35,9 @@
     on:toggle={() => progressOn.update((v) => !v)}
   />
 
-  <button class="done" type="button" on:click={() => settingsOpen.set(false)}>&#x2713;&nbsp; DONE</button>
+  <button class="done" type="button" on:click={() => settingsOpen.set(false)}
+    >&#x2713;&nbsp; DONE</button
+  >
 </Sheet>
 
 <style>

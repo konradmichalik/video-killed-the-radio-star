@@ -37,7 +37,10 @@ const TAG_TO_GENRE = [
   [/(metal|nu metal|nu-metal|industrial metal|gothic metal|power metal)/, 'Metal'],
   [/(pop punk|punk rock|^punk$|hardcore punk|post-punk|new wave punk)/, 'Punk'],
   [/(new wave|no wave|post-new-wave)/, 'New Wave'],
-  [/(hard rock|classic rock|arena rock|soft rock|stadium rock|rock and roll|^rock$|prog|krautrock)/, 'Rock'],
+  [
+    /(hard rock|classic rock|arena rock|soft rock|stadium rock|rock and roll|^rock$|prog|krautrock)/,
+    'Rock',
+  ],
   // hiphop/r&b/soul
   [/(hip hop|hip-hop|hiphop|rap|trap|gangsta)/, 'Hip-Hop'],
   [/(r&b|rnb|rhythm and blues|contemporary r&b)/, 'R&B'],
@@ -54,25 +57,70 @@ const TAG_TO_GENRE = [
   [/blues/, 'Blues'],
   [/gospel|christian/, 'Gospel'],
   // pop (last so it's a fallback before generic)
-  [/(synthwave|chillwave|bedroom pop|art pop|baroque pop|teen pop|^pop$|adult contemporary)/, 'Pop'],
+  [
+    /(synthwave|chillwave|bedroom pop|art pop|baroque pop|teen pop|^pop$|adult contemporary)/,
+    'Pop',
+  ],
 ];
 
 // MB country ISO 3166-1 alpha-2 → display name (matches existing data).
 const ISO_TO_COUNTRY = {
-  US: 'United States', GB: 'United Kingdom', DE: 'Germany', FR: 'France',
-  CA: 'Canada', AU: 'Australia', NL: 'Netherlands', IT: 'Italy',
-  SE: 'Sweden', IE: 'Ireland', AT: 'Austria', BE: 'Belgium',
-  ES: 'Spain', NO: 'Norway', DK: 'Denmark', FI: 'Finland',
-  JM: 'Jamaica', BR: 'Brazil', JP: 'Japan', NZ: 'New Zealand',
-  MX: 'Mexico', CO: 'Colombia', MD: 'Moldova', CH: 'Switzerland',
-  IS: 'Iceland', HU: 'Hungary', PL: 'Poland', CZ: 'Czech Republic',
-  RO: 'Romania', GR: 'Greece', PT: 'Portugal', RU: 'Russia',
-  UA: 'Ukraine', TR: 'Turkey', IL: 'Israel', ZA: 'South Africa',
-  AR: 'Argentina', CL: 'Chile', PE: 'Peru', KR: 'South Korea',
-  CN: 'China', IN: 'India', PH: 'Philippines', TH: 'Thailand',
-  EG: 'Egypt', NG: 'Nigeria', GH: 'Ghana', SK: 'Slovakia',
-  HR: 'Croatia', SI: 'Slovenia', RS: 'Serbia', BG: 'Bulgaria',
-  LT: 'Lithuania', LV: 'Latvia', EE: 'Estonia', LU: 'Luxembourg',
+  US: 'United States',
+  GB: 'United Kingdom',
+  DE: 'Germany',
+  FR: 'France',
+  CA: 'Canada',
+  AU: 'Australia',
+  NL: 'Netherlands',
+  IT: 'Italy',
+  SE: 'Sweden',
+  IE: 'Ireland',
+  AT: 'Austria',
+  BE: 'Belgium',
+  ES: 'Spain',
+  NO: 'Norway',
+  DK: 'Denmark',
+  FI: 'Finland',
+  JM: 'Jamaica',
+  BR: 'Brazil',
+  JP: 'Japan',
+  NZ: 'New Zealand',
+  MX: 'Mexico',
+  CO: 'Colombia',
+  MD: 'Moldova',
+  CH: 'Switzerland',
+  IS: 'Iceland',
+  HU: 'Hungary',
+  PL: 'Poland',
+  CZ: 'Czech Republic',
+  RO: 'Romania',
+  GR: 'Greece',
+  PT: 'Portugal',
+  RU: 'Russia',
+  UA: 'Ukraine',
+  TR: 'Turkey',
+  IL: 'Israel',
+  ZA: 'South Africa',
+  AR: 'Argentina',
+  CL: 'Chile',
+  PE: 'Peru',
+  KR: 'South Korea',
+  CN: 'China',
+  IN: 'India',
+  PH: 'Philippines',
+  TH: 'Thailand',
+  EG: 'Egypt',
+  NG: 'Nigeria',
+  GH: 'Ghana',
+  SK: 'Slovakia',
+  HR: 'Croatia',
+  SI: 'Slovenia',
+  RS: 'Serbia',
+  BG: 'Bulgaria',
+  LT: 'Lithuania',
+  LV: 'Latvia',
+  EE: 'Estonia',
+  LU: 'Luxembourg',
   XW: null, // worldwide / supranational — skip
 };
 
@@ -81,7 +129,9 @@ export function mapTags(tags) {
   if (!Array.isArray(tags)) return null;
   const sorted = [...tags].sort((a, b) => (b.count ?? 0) - (a.count ?? 0));
   for (const { name } of sorted) {
-    const n = String(name || '').toLowerCase().trim();
+    const n = String(name || '')
+      .toLowerCase()
+      .trim();
     for (const [rx, genre] of TAG_TO_GENRE) {
       if (rx.test(n)) return genre;
     }
@@ -142,11 +192,18 @@ async function main() {
     if (cache[v.artist]) continue; // already looked up
     queue.push(v.artist);
   }
-  console.log(`videos: ${videos.length}  Other-or-missing-country artists to look up: ${queue.length}`);
-  console.log(`cache: ${Object.keys(cache).length} previously cached, limit: ${limit === Infinity ? 'no limit' : limit}`);
+  console.log(
+    `videos: ${videos.length}  Other-or-missing-country artists to look up: ${queue.length}`,
+  );
+  console.log(
+    `cache: ${Object.keys(cache).length} previously cached, limit: ${limit === Infinity ? 'no limit' : limit}`,
+  );
   if (!queue.length) console.log('nothing to do.');
 
-  let done = 0, hits = 0, lowScore = 0, errors = 0;
+  let done = 0,
+    hits = 0,
+    lowScore = 0,
+    errors = 0;
   for (const artist of queue) {
     if (done >= limit) break;
     try {
@@ -167,13 +224,16 @@ async function main() {
     // Persist after every lookup so we can resume on interruption.
     await writeFile(cachePath, JSON.stringify(cache, null, 2));
     if (done % 25 === 0 || done === queue.length) {
-      console.log(`  ${done}/${Math.min(queue.length, limit)}  hits=${hits} lowScore=${lowScore} errors=${errors}`);
+      console.log(
+        `  ${done}/${Math.min(queue.length, limit)}  hits=${hits} lowScore=${lowScore} errors=${errors}`,
+      );
     }
     await sleep(1100); // respect MB's 1 req/sec/UA limit
   }
 
   // Apply cache to videos.json
-  let genreFilled = 0, countryFilled = 0;
+  let genreFilled = 0,
+    countryFilled = 0;
   const updated = videos.map((v) => {
     const c = cache[v.artist];
     if (!c) return v;

@@ -2,17 +2,12 @@
   import { fade } from 'svelte/transition';
   import { progressOn, playPosition, playDuration, switching } from '../lib/stores.js';
 
-  $: pct =
-    $playDuration > 0 ? Math.min(100, ($playPosition / $playDuration) * 100) : 0;
+  $: pct = $playDuration > 0 ? Math.min(100, ($playPosition / $playDuration) * 100) : 0;
 </script>
 
 {#if $progressOn}
   <div class="progress" aria-hidden="true" transition:fade={{ duration: 200 }}>
-    <div
-      class="fill"
-      class:smooth={!$switching}
-      style="width: {pct}%"
-    ></div>
+    <div class="fill" class:smooth={!$switching} style="width: {pct}%"></div>
   </div>
 {/if}
 

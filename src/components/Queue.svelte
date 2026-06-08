@@ -54,9 +54,7 @@
       <span class="sheet-wm-1">VIDEO KILLED</span>
       <span class="sheet-wm-2">THE RADIO STAR</span>
     </span>
-    <span class="sheet-subheading"
-      >QUEUE <small class="count">{items.length} tracks</small></span
-    >
+    <span class="sheet-subheading">QUEUE <small class="count">{items.length} tracks</small></span>
   </svelte:fragment>
 
   <ol class="rows">

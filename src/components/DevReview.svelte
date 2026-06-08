@@ -66,10 +66,7 @@
       >
     </header>
 
-    <div
-      class="stats"
-      title="OK reviewed · issues found · not yet checked / total catalog"
-    >
+    <div class="stats" title="OK reviewed · issues found · not yet checked / total catalog">
       <span class="stat ok">✓ {stats.ok}</span>
       <span class="stat issue">✗ {stats.issue}</span>
       <span class="stat todo">? {stats.todo}</span>
@@ -147,7 +144,8 @@
         {#if selectedStatus}
           <span class="status-help-mark">▸ {selectedStatus.label}</span> — {selectedStatus.title}
         {:else}
-          Hover/tap a chip for the description. AUDIO = static cover, no motion. DROP = remove entirely.
+          Hover/tap a chip for the description. AUDIO = static cover, no motion. DROP = remove
+          entirely.
         {/if}
       </p>
     </fieldset>
