@@ -1,6 +1,6 @@
 <script>
   import { fade } from 'svelte/transition';
-  import { guideOpen, revealNowPlaying, paused } from '../lib/stores.js';
+  import { guideOpen, revealNowPlaying, paused, adPlaying } from '../lib/stores.js';
   import { next, prev, toggle } from '../lib/player.js';
   import { resolveGesture } from '../lib/gestures.js';
 
@@ -60,6 +60,7 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
   id="touch-overlay"
+  class:passthrough={$adPlaying}
   on:pointerdown={down}
   on:pointerup={up}
   on:pointercancel={cancel}
@@ -86,6 +87,13 @@
     z-index: 10;
     background: transparent;
     touch-action: none; /* we own the gestures; stop the browser scrolling/zooming */
+  }
+  /* While YouTube plays an ad, let clicks fall through to the iframe so the
+     user can hit YouTube's own "Skip Ad" button or interact with consent banners.
+     Our gestures are disabled for ~15 s — small price for being able to skip ads. */
+  #touch-overlay.passthrough {
+    pointer-events: none;
+    touch-action: auto;
   }
   /* Mouse-hover edge hints — visual only, never block taps. */
   .edge-hint {
