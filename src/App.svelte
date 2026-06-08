@@ -29,6 +29,7 @@
     toggle,
     toggleMute,
     armInitWatchdog,
+    debugPlayerState,
   } from './lib/player.js';
   import { enableWakeLock } from './lib/wakelock.js';
   import { requestAppFullscreen } from './lib/fullscreen.js';
@@ -128,6 +129,7 @@
     window.vktrsReviewsClear = () => {
       if (confirm('Wipe all video reviews?')) videoReviews.set({});
     };
+    window.vktrsPlayerState = () => debugPlayerState();
   });
 
   // Not async: keep fullscreen + wake-lock requests inside the click gesture.

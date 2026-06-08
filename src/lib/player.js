@@ -187,15 +187,16 @@ function startUpNextPoll() {
     playPosition.set(cur);
     playDuration.set(dur);
 
-    // Ad detection: YouTube swaps in an ad's video_id while a pre-roll / mid-roll
-    // plays. If what's loaded doesn't match our expected track, flag it as an ad.
+    // Ad detection — two signals combined because YouTube does not always
+    // swap getVideoData().video_id during ads.
+    //  1) video_id mismatch (when YT does swap it for the ad)
+    //  2) duration heuristic: pre-roll ads are typically 5–30 s, music
+    //     videos almost always > 45 s
     const data = typeof player.getVideoData === 'function' ? player.getVideoData() : null;
     const expected = get(playlist)[get(index)]?.video_id;
-    if (data && data.video_id && expected && data.video_id !== expected) {
-      adPlaying.set(true);
-    } else if (data && data.video_id === expected) {
-      adPlaying.set(false);
-    }
+    const idMismatch = !!(data && data.video_id && expected && data.video_id !== expected);
+    const suspiciouslyShort = dur > 0 && dur < 45;
+    adPlaying.set(idMismatch || suspiciouslyShort);
     if (dur > 0 && upNextArmed && dur - cur <= UPNEXT_LEAD_S) {
       upNextArmed = false;
       showUpNext.set(true);
@@ -244,6 +245,23 @@ export function toggle() {
     player.pauseVideo();
     pulse('pause');
   }
+}
+
+// Debug helper — snapshot what YouTube reports right now. Exposed via
+// window.vktrsPlayerState() in App.svelte so the user can verify ad
+// detection from the browser console.
+export function debugPlayerState() {
+  if (!ready || !player) return { ready: false };
+  return {
+    ready: true,
+    state: player.getPlayerState?.(),
+    videoData: player.getVideoData?.(),
+    currentTime: player.getCurrentTime?.(),
+    duration: player.getDuration?.(),
+    playlistIndex: player.getPlaylistIndex?.(),
+    expected: get(playlist)[get(index)]?.video_id,
+    adPlaying: get(adPlaying),
+  };
 }
 
 // Relative seek by `delta` seconds. Clamped to [0, duration] when known. Used
