@@ -38,6 +38,7 @@
   import CrtOverlay from './components/CrtOverlay.svelte';
   import ChannelStatic from './components/ChannelStatic.svelte';
   import LowerThird from './components/LowerThird.svelte';
+  import AdIndicator from './components/AdIndicator.svelte';
   import StationLogo from './components/StationLogo.svelte';
   import ProgressBar from './components/ProgressBar.svelte';
   import UpNext from './components/UpNext.svelte';
@@ -265,6 +266,7 @@
 
   {#if $started}
     <LowerThird />
+    <AdIndicator />
     <StationLogo />
     <ProgressBar />
     <UpNext />
