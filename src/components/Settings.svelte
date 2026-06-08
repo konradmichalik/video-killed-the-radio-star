@@ -1,5 +1,5 @@
 <script>
-  import { settingsOpen, crtOn, hintsOn, logoOn } from '../lib/stores.js';
+  import { settingsOpen, crtOn, hintsOn, logoOn, progressOn } from '../lib/stores.js';
   import Sheet from './Sheet.svelte';
   import Toggle from './Toggle.svelte';
 </script>
@@ -28,6 +28,12 @@
     on:toggle={() => hintsOn.update((v) => !v)}
   />
   <Toggle label="STATION LOGO" checked={$logoOn} on:toggle={() => logoOn.update((v) => !v)} />
+  <Toggle
+    label="PROGRESS BAR"
+    hint="(bottom edge)"
+    checked={$progressOn}
+    on:toggle={() => progressOn.update((v) => !v)}
+  />
 
   <button class="done" type="button" on:click={() => settingsOpen.set(false)}>&#x2713;&nbsp; DONE</button>
 </Sheet>

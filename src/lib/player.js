@@ -9,6 +9,8 @@ import {
   reannounce,
   loadError,
   needsUnmute,
+  playPosition,
+  playDuration,
 } from './stores.js';
 import {
   UPNEXT_LEAD_S,
@@ -162,6 +164,8 @@ function syncIndex() {
     reannounceArmed = true; // re-arm the mid-song lower-third re-show
     endPreemptArmed = true; // re-arm the end preempt
     showUpNext.set(false);
+    playPosition.set(0); // progress bar resets to the left edge on track change
+    playDuration.set(0);
   }
   index.set(i);
 }
@@ -173,6 +177,8 @@ function startUpNextPoll() {
     if (!ready || !player || typeof player.getDuration !== 'function') return;
     const dur = player.getDuration();
     const cur = typeof player.getCurrentTime === 'function' ? player.getCurrentTime() : 0;
+    playPosition.set(cur);
+    playDuration.set(dur);
     if (dur > 0 && upNextArmed && dur - cur <= UPNEXT_LEAD_S) {
       upNextArmed = false;
       showUpNext.set(true);

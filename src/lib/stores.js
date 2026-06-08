@@ -25,6 +25,14 @@ const loadLogo = () => {
   }
 };
 
+const loadProgress = () => {
+  try {
+    return localStorage.getItem('vktrs-progress') === 'on';
+  } catch {
+    return false;
+  }
+};
+
 const loadGuessStats = () => {
   try {
     const raw = localStorage.getItem('vktrs-guess');
@@ -64,6 +72,9 @@ export const switching = writable(false); // true while a new video is loading (
 export const crtOn = writable(loadCrt()); // CRT tube filter on/off
 export const hintsOn = writable(loadHints()); // false = guessing mode (hide artist/title/etc.)
 export const logoOn = writable(loadLogo()); // semi-transparent station bug on/off
+export const progressOn = writable(loadProgress()); // playback progress bar at the bottom
+export const playPosition = writable(0); // current playback seconds (set by player.js poll)
+export const playDuration = writable(0); // current track duration in seconds
 export const showUpNext = writable(false); // "coming up" teaser near the end of a clip
 export const reannounce = writable(0); // bump to re-show the lower third mid-song
 export const revealHint = writable(0); // bump to reveal the now-playing info once
@@ -134,6 +145,14 @@ hintsOn.subscribe((v) => {
 logoOn.subscribe((v) => {
   try {
     localStorage.setItem('vktrs-logo', v ? 'on' : 'off');
+  } catch {
+    /* storage unavailable */
+  }
+});
+
+progressOn.subscribe((v) => {
+  try {
+    localStorage.setItem('vktrs-progress', v ? 'on' : 'off');
   } catch {
     /* storage unavailable */
   }

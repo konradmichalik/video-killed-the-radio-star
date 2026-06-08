@@ -30,6 +30,8 @@ Thumbs.db
 
 # project-specific — track curated data, skip generated / intermediate files
 public/videos.json.bak
+public/videos.json.review-bak
 scripts/sources/_new-candidates.json
+scripts/sources/_review-parsed.json
 scripts/sources/mb-lookup.log
 scripts/sources/verify.log

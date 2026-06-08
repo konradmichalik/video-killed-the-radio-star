@@ -39,6 +39,7 @@
   import ChannelStatic from './components/ChannelStatic.svelte';
   import LowerThird from './components/LowerThird.svelte';
   import StationLogo from './components/StationLogo.svelte';
+  import ProgressBar from './components/ProgressBar.svelte';
   import UpNext from './components/UpNext.svelte';
   import CenterFeedback from './components/CenterFeedback.svelte';
   import GuessGame from './components/GuessGame.svelte';
@@ -265,6 +266,7 @@
   {#if $started}
     <LowerThird />
     <StationLogo />
+    <ProgressBar />
     <UpNext />
     <GuessGame />
     <TitleMask />
