@@ -81,6 +81,7 @@ export const revealHint = writable(0); // bump to reveal the now-playing info on
 export const helpHint = writable(0); // bump to re-show the gesture/key cheatsheet
 export const loadError = writable(null); // string when the channel can't play (data/dead)
 export const needsUnmute = writable(false); // autoplay started muted -> ask for a tap
+export const adPlaying = writable(false); // true while YouTube plays a pre-roll / mid-roll ad
 
 // pulse signal for the center play/pause feedback icon
 export const feedback = writable({ icon: null, n: 0 });

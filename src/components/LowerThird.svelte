@@ -1,5 +1,5 @@
 <script>
-  import { currentVideo, hintsOn, revealHint, reannounce } from '../lib/stores.js';
+  import { currentVideo, hintsOn, revealHint, reannounce, adPlaying } from '../lib/stores.js';
   import { LOWER_THIRD_MS } from '../lib/constants.js';
 
   let visible = false;
@@ -12,10 +12,20 @@
   let lastReann = 0;
 
   // React to track changes, the info toggle, manual reveals, and the mid-song re-show.
-  $: react($currentVideo, $hintsOn, $revealHint, $reannounce);
+  $: react($currentVideo, $hintsOn, $revealHint, $reannounce, $adPlaying);
 
-  function react(video, hints, reveal, reann) {
+  function react(video, hints, reveal, reann, adOn) {
     if (!video) return;
+    // While YouTube is playing an ad, never auto-show the lower third —
+    // AdIndicator handles the on-screen messaging instead.
+    if (adOn) {
+      hideNow();
+      lastId = video.video_id;
+      lastHints = hints;
+      lastReveal = reveal;
+      lastReann = reann;
+      return;
+    }
     const trackChanged = video.video_id !== lastId;
     const hintsTurnedOn = hints && !lastHints;
     const revealed = reveal !== lastReveal;

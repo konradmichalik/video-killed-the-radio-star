@@ -11,6 +11,7 @@ import {
   needsUnmute,
   playPosition,
   playDuration,
+  adPlaying,
 } from './stores.js';
 import {
   UPNEXT_LEAD_S,
@@ -125,6 +126,7 @@ export function loadQueue(startIndex = 0, resume = false) {
   const startSeconds =
     resume && typeof player.getCurrentTime === 'function' ? player.getCurrentTime() : 0;
   upNextArmed = true;
+  adPlaying.set(false);
   showUpNext.set(false);
   beginSwitch();
   player.loadPlaylist(
@@ -184,6 +186,16 @@ function startUpNextPoll() {
     const cur = typeof player.getCurrentTime === 'function' ? player.getCurrentTime() : 0;
     playPosition.set(cur);
     playDuration.set(dur);
+
+    // Ad detection: YouTube swaps in an ad's video_id while a pre-roll / mid-roll
+    // plays. If what's loaded doesn't match our expected track, flag it as an ad.
+    const data = typeof player.getVideoData === 'function' ? player.getVideoData() : null;
+    const expected = get(playlist)[get(index)]?.video_id;
+    if (data && data.video_id && expected && data.video_id !== expected) {
+      adPlaying.set(true);
+    } else if (data && data.video_id === expected) {
+      adPlaying.set(false);
+    }
     if (dur > 0 && upNextArmed && dur - cur <= UPNEXT_LEAD_S) {
       upNextArmed = false;
       showUpNext.set(true);
