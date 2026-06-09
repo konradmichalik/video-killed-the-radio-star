@@ -49,7 +49,15 @@
   import { loadFilters } from './lib/channel.js';
   import { phoneRoom } from './lib/stores.js';
   import { loadOrCreate } from './lib/multiplayer/identity.js';
-  import { isValidRoomId } from './lib/multiplayer/room.js';
+  import { isValidRoomId, generateRoomId } from './lib/multiplayer/room.js';
+  import { hostRoom } from './lib/multiplayer/peer.js';
+  import { encode, parseMessage } from './lib/multiplayer/protocol.js';
+  import {
+    addPlayer,
+    markPlayerDisconnected,
+    submitGuess as reduceSubmit,
+  } from './lib/multiplayer/state.js';
+  import { closestYearWinners } from './lib/multiplayer/scoring.js';
 
   import StartScreen from './components/StartScreen.svelte';
   import CrtOverlay from './components/CrtOverlay.svelte';
@@ -205,34 +213,128 @@
   // Solo self-rate state — only meaningful during Solo's 'revealed' phase.
   let soloRated = { year: false, title: false, artist: false };
 
+  // Connected-mode host handle (PeerJS room). null when not hosting.
+  let host = null;
+  const PEER_PREFIX = 'VKTRS-';
+
+  async function startConnectedRoom() {
+    const code = generateRoomId();
+    roomCode = code;
+    joinUrl = `${globalThis.location.origin}${import.meta.env.BASE_URL}?join=${code}`;
+    try {
+      host = await hostRoom(PEER_PREFIX + code, {
+        onJoin: (peerId) => {
+          // Send a welcome snapshot to the joining peer.
+          const r = get(room);
+          host?.sendTo(
+            peerId,
+            encode('welcome', {
+              sessionState: r.session,
+              players: r.players,
+              scoreboard: r.players.map(({ id, name, score }) => ({ id, name, score })),
+            }),
+          );
+        },
+        onLeave: (peerId) => {
+          const playerId = peerId.replace(/^VKTRS-PEER-/, '');
+          room.update((s) => markPlayerDisconnected(s, playerId));
+        },
+        onMessage: (peerId, raw) => onPeerMessage(peerId, raw),
+      });
+    } catch (err) {
+      console.error('Failed to open room', err);
+      // UI banner is added in Task 22.
+    }
+  }
+
+  function onPeerMessage(peerId, raw) {
+    const msg = parseMessage(raw);
+    if (!msg) return;
+    const playerId = peerId.replace(/^VKTRS-PEER-/, '');
+    if (msg.type === 'join') {
+      room.update((s) => addPlayer(s, { id: playerId, name: msg.payload.name || 'Player' }));
+      broadcastScore();
+    } else if (msg.type === 'guess') {
+      const r = get(room);
+      if (r.session?.phase === 'guessing') {
+        room.update((s) => reduceSubmit(s, playerId, msg.payload.year));
+      }
+    }
+  }
+
+  function onConnectedReveal() {
+    const r = get(room);
+    const cv = get(currentVideo);
+    const actual = cv?.year;
+    const winners = closestYearWinners(r.submissions, actual);
+    room.update((s) => reduceReveal(s, winners));
+    host?.broadcast(
+      encode('reveal', {
+        year: actual,
+        title: cv?.title,
+        artist: cv?.artist,
+        winners,
+      }),
+    );
+    broadcastScore();
+  }
+
+  function broadcastScore() {
+    const r = get(room);
+    host?.broadcast(
+      encode('score', {
+        scoreboard: r.players.map(({ id, name, score }) => ({ id, name, score })),
+      }),
+    );
+  }
+
+  function closeConnectedRoom() {
+    host?.close();
+    host = null;
+  }
+
   function onStartMode(e) {
     const mode = e.detail.mode;
     gameMode.set(mode);
     room.update((s) => startSession(s));
-    if (mode === 'connected') {
-      // Connected room hosting is wired in Task 18.
-    }
+    if (mode === 'connected') startConnectedRoom();
   }
 
   function onStartRound() {
     const cv = get(currentVideo);
     room.update((s) => reduceStartRound(s, cv));
     soloRated = { year: false, title: false, artist: false };
+    if (get(gameMode) === 'connected') {
+      const r = get(room);
+      host?.broadcast(encode('round', { round: r.session.round, phase: 'guessing' }));
+    }
   }
 
   function onReveal() {
-    if ($gameMode === 'solo') {
+    if (get(gameMode) === 'solo') {
       room.update((s) => reduceReveal(s, []));
     } else {
-      // Connected reveal in Task 18.
+      onConnectedReveal();
     }
   }
 
   function onNextRound() {
     room.update((s) => reduceNextRound(s));
+    if (get(gameMode) === 'connected') {
+      const r = get(room);
+      host?.broadcast(encode('round', { round: r.session.round, phase: 'idle' }));
+    }
   }
 
   function onEndSession() {
+    if (get(gameMode) === 'connected') {
+      host?.broadcast(
+        encode('end', {
+          finalScoreboard: get(room).players.map(({ id, name, score }) => ({ id, name, score })),
+        }),
+      );
+      closeConnectedRoom();
+    }
     room.update((s) => endSession(s));
     gameMode.set(null);
     roomCode = null;
@@ -370,7 +472,9 @@
   {/if}
 
   {#if $started}
-    <LowerThird />
+    {#if $gameMode !== 'connected' || $room.session?.phase !== 'guessing'}
+      <LowerThird />
+    {/if}
     <AdIndicator />
     <StationLogo />
     <ProgressBar />

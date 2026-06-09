@@ -12,6 +12,8 @@ import {
   playPosition,
   playDuration,
   adPlaying,
+  gameMode,
+  room,
 } from './stores.js';
 import {
   UPNEXT_LEAD_S,
@@ -137,6 +139,12 @@ export function loadQueue(startIndex = 0, resume = false) {
   player.setLoop(true); // continuous channel
 }
 
+// Connected Mode pins the current track on the TV between Start Round and
+// Reveal/Next. Manual user skips (next()/prev()) are NOT affected.
+function autoAdvanceBlocked() {
+  return get(gameMode) === 'connected' && get(room).session?.phase === 'guessing';
+}
+
 function onStateChange(e) {
   const S = YT.PlayerState;
   if (e.data === S.PLAYING) {
@@ -149,6 +157,9 @@ function onStateChange(e) {
   } else if (e.data === S.PAUSED) {
     paused.set(true);
   } else if (e.data === S.ENDED) {
+    // Connected game mode pins the current track on the TV until the host
+    // taps Reveal/Next, so suppress every auto-advance path while guessing.
+    if (autoAdvanceBlocked()) return;
     // native advance + loop should handle this; safety net if it doesn't
     clearTimeout(endedSafety);
     endedSafety = setTimeout(() => {
@@ -216,6 +227,8 @@ function startUpNextPoll() {
     // Skips to the next clip ~END_PREEMPT_S seconds early; the channel-change
     // static masks the gap so the transition still feels smooth.
     if (dur > 0 && endPreemptArmed && dur - cur <= END_PREEMPT_S) {
+      // While Connected guessing is active, pin the track for the players.
+      if (autoAdvanceBlocked()) return;
       endPreemptArmed = false;
       next();
     }
