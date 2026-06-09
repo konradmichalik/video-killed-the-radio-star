@@ -5,6 +5,10 @@
     play: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E\")",
     pause:
       "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M6 5h4v14H6zM14 5h4v14h-4z'/%3E%3C/svg%3E\")",
+    'fav-on':
+      "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe600'%3E%3Cpath d='M12 2l2.9 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.5 21.8l1.8-7.4L1.6 9.5l7.5-.6z'/%3E%3C/svg%3E\")",
+    'fav-off':
+      "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M12 2l2.9 6.9 7.5.6-5.7 4.9 1.8 7.4L12 17.8 5.5 21.8l1.8-7.4L1.6 9.5l7.5-.6z'/%3E%3C/svg%3E\")",
   };
 
   let pulseKey = 0;

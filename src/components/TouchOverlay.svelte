@@ -1,11 +1,21 @@
 <script>
   import { fade } from 'svelte/transition';
-  import { guideOpen, revealNowPlaying, paused, adPlaying } from '../lib/stores.js';
+  import {
+    guideOpen,
+    revealNowPlaying,
+    paused,
+    adPlaying,
+    currentVideo,
+    favorites,
+    toggleFavorite,
+    feedback,
+  } from '../lib/stores.js';
   import { next, prev, toggle } from '../lib/player.js';
   import { resolveGesture } from '../lib/gestures.js';
 
   let startX = 0;
   let startY = 0;
+  let startTime = 0;
   let tracking = false;
 
   // Mouse-only: show edge hints so desktop users can tell where prev/next
@@ -26,6 +36,7 @@
     tracking = true;
     startX = e.clientX;
     startY = e.clientY;
+    startTime = e.timeStamp || Date.now();
     hoverZone = null;
   }
 
@@ -33,13 +44,23 @@
     if (!tracking || !e.isPrimary) return;
     tracking = false;
 
+    const duration = (e.timeStamp || Date.now()) - startTime;
     const action = resolveGesture({
       startX,
       startY,
       endX: e.clientX,
       endY: e.clientY,
       viewportWidth: window.innerWidth,
+      duration,
     });
+
+    // Long-press = toggle favourite for the current track (with center-pulse feedback)
+    if (action === 'favorite' && $currentVideo) {
+      const wasFav = $favorites.has($currentVideo.video_id);
+      toggleFavorite($currentVideo.video_id);
+      feedback.update((f) => ({ icon: wasFav ? 'fav-off' : 'fav-on', n: f.n + 1 }));
+      return;
+    }
 
     // Touch edge-tap → require a confirming second tap before skipping
     if ((action === 'next' || action === 'prev') && e.pointerType === 'touch') {

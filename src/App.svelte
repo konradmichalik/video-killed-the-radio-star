@@ -20,6 +20,9 @@
     devMode,
     videoReviews,
     skipReviewedOk,
+    favorites,
+    toggleFavorite,
+    feedback,
   } from './lib/stores.js';
   import { loadVideos, shuffle, filterVideos } from './lib/data.js';
   import {
@@ -254,6 +257,15 @@
       case 'D':
         e.preventDefault();
         devMode.update((v) => !v);
+        break;
+      case 's':
+      case 'S':
+        e.preventDefault();
+        if ($currentVideo?.video_id) {
+          const wasFav = $favorites.has($currentVideo.video_id);
+          toggleFavorite($currentVideo.video_id);
+          feedback.update((f) => ({ icon: wasFav ? 'fav-off' : 'fav-on', n: f.n + 1 }));
+        }
         break;
     }
   }

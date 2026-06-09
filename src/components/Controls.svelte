@@ -24,6 +24,8 @@
       <dd>Play / pause</dd>
       <dt>Tap edge × 2</dt>
       <dd>Previous / next track</dd>
+      <dt>Long-press centre</dt>
+      <dd>Toggle ★ favourite for current track</dd>
       <dt>Swipe ▲</dt>
       <dd>Open TV Guide</dd>
       <dt>Swipe ▼</dt>
@@ -52,6 +54,8 @@
       <dd>Toggle mute</dd>
       <dt><kbd>F</kbd></dt>
       <dd>Toggle fullscreen</dd>
+      <dt><kbd>S</kbd></dt>
+      <dd>Toggle ★ favourite</dd>
       <dt><kbd>D</kbd></dt>
       <dd>Dev review mode</dd>
       <dt><kbd>Esc</kbd></dt>

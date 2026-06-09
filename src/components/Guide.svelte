@@ -8,6 +8,8 @@
     searchOpen,
     settingsOpen,
     controlsOpen,
+    favorites,
+    channelMode,
   } from '../lib/stores.js';
   import {
     genresOf,
@@ -92,13 +94,35 @@
     selCountry = { ...selCountry, [c]: !selCountry[c] };
   }
 
-  // one-tap channel presets, generated from the data
-  $: presets = buildPresets($videos);
+  // one-tap channel presets, generated from the data. Favorites preset is
+  // prepended whenever the user has tagged at least one track.
+  $: presets = [
+    ...($favorites.size > 0
+      ? [{ label: `★ Favorites (${$favorites.size})`, isFavorites: true }]
+      : []),
+    ...buildPresets($videos),
+  ];
   $: selectedGenreCount = genres.filter((g) => selected[g]).length;
   $: selectedCountryCount = countries.filter((c) => selCountry[c]).length;
   $: continentGroups = groupCountriesByContinent(countries);
 
   function applyPreset(p) {
+    if (p.isFavorites) {
+      const favSet = $favorites;
+      const filtered = $videos.filter((v) => favSet.has(v.video_id));
+      if (!filtered.length) {
+        foot = '// NO FAVORITES YET';
+        return;
+      }
+      foot = '';
+      playlist.set(shuffle(filtered));
+      index.set(0);
+      channelMode.set('favorites');
+      resetErrors();
+      guideOpen.set(false);
+      loadQueue(0);
+      return;
+    }
     yearLo = Math.min(Math.max(p.yearMin, boundsLo), boundsHi);
     yearHi = Math.min(Math.max(p.yearMax, boundsLo), boundsHi);
     const wantG = p.genres ? new Set(p.genres) : new Set(genres);
@@ -133,6 +157,7 @@
     });
     playlist.set(shuffle(filtered));
     index.set(0);
+    channelMode.set('custom');
     resetErrors();
     guideOpen.set(false);
     loadQueue(0);

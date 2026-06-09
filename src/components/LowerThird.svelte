@@ -1,5 +1,12 @@
 <script>
-  import { currentVideo, hintsOn, revealHint, reannounce, adPlaying } from '../lib/stores.js';
+  import {
+    currentVideo,
+    hintsOn,
+    revealHint,
+    reannounce,
+    adPlaying,
+    favorites,
+  } from '../lib/stores.js';
   import { LOWER_THIRD_MS } from '../lib/constants.js';
 
   let visible = false;
@@ -69,7 +76,10 @@
     <div class="lt-text">
       <div class="lt-artist">{v.artist}</div>
       <div class="lt-title">{v.title}</div>
-      <div class="lt-meta">{v.year} · {v.genre}{v.country ? ` · ${v.country}` : ''}</div>
+      <div class="lt-meta">
+        {v.year} · {v.genre}{v.country ? ` · ${v.country}` : ''}
+        {#if $favorites.has(v.video_id)}<span class="lt-fav" aria-label="Favourite">★</span>{/if}
+      </div>
     </div>
   </div>
 {/if}
@@ -144,5 +154,10 @@
     color: var(--accent-2);
     margin-top: 6px;
     text-transform: uppercase;
+  }
+  .lt-fav {
+    color: var(--bug-yellow);
+    margin-left: 10px;
+    text-shadow: 0 0 6px var(--bug-yellow);
   }
 </style>

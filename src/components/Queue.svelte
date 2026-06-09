@@ -1,6 +1,13 @@
 <script>
   import { get } from 'svelte/store';
-  import { queueOpen, playlist, index, currentVideo } from '../lib/stores.js';
+  import {
+    queueOpen,
+    playlist,
+    index,
+    currentVideo,
+    channelMode,
+    favorites,
+  } from '../lib/stores.js';
   import { loadQueue, resetErrors } from '../lib/player.js';
   import Sheet from './Sheet.svelte';
 
@@ -27,7 +34,18 @@
   }
   function remove(i) {
     if (items.length <= 1) return; // keep at least one track
+    const removed = items[i];
     items = items.filter((_, idx) => idx !== i);
+    // When the Favorites channel is active, removing from the queue also
+    // unfavourites the track so the user can prune their personal channel
+    // directly from here.
+    if (get(channelMode) === 'favorites' && removed?.video_id) {
+      favorites.update((s) => {
+        const next = new Set(s);
+        next.delete(removed.video_id);
+        return next;
+      });
+    }
   }
 
   function apply() {

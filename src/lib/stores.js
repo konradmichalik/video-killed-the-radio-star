@@ -59,6 +59,15 @@ const loadSkipOk = () => {
   }
 };
 
+const loadFavorites = () => {
+  try {
+    const raw = localStorage.getItem('vktrs-favorites');
+    return raw ? new Set(JSON.parse(raw)) : new Set();
+  } catch {
+    return new Set();
+  }
+};
+
 export const videos = writable([]); // all videos from videos.json
 export const playlist = writable([]); // current filtered + shuffled queue
 export const index = writable(0); // position in playlist
@@ -83,6 +92,24 @@ export const helpHint = writable(0); // bump to re-show the gesture/key cheatshe
 export const loadError = writable(null); // string when the channel can't play (data/dead)
 export const needsUnmute = writable(false); // autoplay started muted -> ask for a tap
 export const adPlaying = writable(false); // true while YouTube plays a pre-roll / mid-roll ad
+
+// User-tagged favourite tracks (Set of video_id). Persisted to localStorage so
+// the user can build a long-running personal channel across sessions.
+export const favorites = writable(loadFavorites());
+// Which channel preset is currently active. Lets Queue act as a favourites
+// editor when the user is browsing their Favorites playlist.
+export const channelMode = writable('default'); // 'default' | 'favorites' | 'custom'
+
+/** Toggle a track's favourite status. */
+export function toggleFavorite(videoId) {
+  if (!videoId) return;
+  favorites.update((s) => {
+    const next = new Set(s);
+    if (next.has(videoId)) next.delete(videoId);
+    else next.add(videoId);
+    return next;
+  });
+}
 
 // pulse signal for the center play/pause feedback icon
 export const feedback = writable({ icon: null, n: 0 });
@@ -179,6 +206,14 @@ videoReviews.subscribe((v) => {
 skipReviewedOk.subscribe((v) => {
   try {
     localStorage.setItem('vktrs-skip-reviewed-ok', v ? '1' : '0');
+  } catch {
+    /* storage unavailable */
+  }
+});
+
+favorites.subscribe((v) => {
+  try {
+    localStorage.setItem('vktrs-favorites', JSON.stringify([...v]));
   } catch {
     /* storage unavailable */
   }
