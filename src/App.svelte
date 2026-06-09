@@ -115,12 +115,9 @@
           );
         },
         onMessage: (raw) => onTvMessage(raw),
-        onClose: () =>
-          phoneRoom.update((s) => ({ ...s, connectionStatus: 'reconnecting' })),
-        onReconnecting: () =>
-          phoneRoom.update((s) => ({ ...s, connectionStatus: 'reconnecting' })),
-        onUnreachable: () =>
-          phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' })),
+        onClose: () => phoneRoom.update((s) => ({ ...s, connectionStatus: 'reconnecting' })),
+        onReconnecting: () => phoneRoom.update((s) => ({ ...s, connectionStatus: 'reconnecting' })),
+        onUnreachable: () => phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' })),
       });
     } catch (err) {
       console.error('phone-join failed', err);
@@ -163,9 +160,7 @@
   function onPhoneSetName(e) {
     const nextPlayer = persistName(e.detail.name);
     phoneRoom.update((s) => ({ ...s, player: nextPlayer }));
-    phoneClient?.send(
-      encode('join', { playerId: nextPlayer.id, name: nextPlayer.name }),
-    );
+    phoneClient?.send(encode('join', { playerId: nextPlayer.id, name: nextPlayer.name }));
   }
 
   function onPhoneGuess(e) {
@@ -539,101 +534,107 @@
   <LazyGameSheet open={true} isPhone={true} on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
 {:else}
   <main
-  id="tv"
-  class:dimmed={$guideOpen || $queueOpen || $searchOpen || $settingsOpen || $controlsOpen}
-  inert={$guideOpen ||
-    $queueOpen ||
-    $searchOpen ||
-    $settingsOpen ||
-    $controlsOpen ||
-    !!$loadError ||
-    undefined}
-  aria-label="Music video channel"
->
-  <div id="player"></div>
-
-  {#if $crtOn && $started}
-    <CrtOverlay />
-  {/if}
-
-  {#if $started}
-    {#if $gameMode !== 'connected' || $room.session?.phase !== 'guessing'}
-      <LowerThird />
-    {/if}
-    <AdIndicator />
-    <StationLogo />
-    <ProgressBar />
-    <UpNext />
-    <GuessGame />
-    <TitleMask />
-    <CenterFeedback />
-    <DevReview />
-    <TouchOverlay />
-    <ChannelStatic />
-    <UnmuteHint />
-    <FirstRunHint />
-    <RotateHint />
-  {/if}
-</main>
-
-<div class="sr-only" aria-live="polite" aria-atomic="true">
-  {#if $started && $hintsOn && $currentVideo}
-    Now playing: {$currentVideo.artist} – {$currentVideo.title}, {$currentVideo.year}
-  {/if}
-</div>
-
-<Guide on:openGame={() => (gameSheetOpen = true)} />
-<Queue />
-<Search />
-<Settings />
-<Controls />
-
-{#if gameSheetOpen || $gameMode !== null}
-  <LazyGameSheet
-    open={gameSheetOpen}
-    {roomCode}
-    {joinUrl}
-    on:close={() => (gameSheetOpen = false)}
-    on:startMode={onStartMode}
-    on:startRound={onStartRound}
-    on:reveal={onReveal}
-    on:nextRound={onNextRound}
-    on:endSession={onEndSession}
+    id="tv"
+    class:dimmed={$guideOpen || $queueOpen || $searchOpen || $settingsOpen || $controlsOpen}
+    inert={$guideOpen ||
+      $queueOpen ||
+      $searchOpen ||
+      $settingsOpen ||
+      $controlsOpen ||
+      !!$loadError ||
+      undefined}
+    aria-label="Music video channel"
   >
-    <svelte:fragment slot="solo">
-      {#if $room.session?.phase === 'revealed'}
-        <div class="solo-rate">
-          <p>Did you get it?</p>
-          <button
-            class="icon-btn"
-            type="button"
-            on:click={() => onSoloRate('year')}
-            disabled={soloRated.year}>Year ✓</button
-          >
-          <button
-            class="icon-btn"
-            type="button"
-            on:click={() => onSoloRate('title')}
-            disabled={soloRated.title}>Title ✓</button
-          >
-          <button
-            class="icon-btn"
-            type="button"
-            on:click={() => onSoloRate('artist')}
-            disabled={soloRated.artist}>Artist ✓</button
-          >
-        </div>
+    <div id="player"></div>
+
+    {#if $crtOn && $started}
+      <CrtOverlay />
+    {/if}
+
+    {#if $started}
+      {#if $gameMode !== 'connected' || $room.session?.phase !== 'guessing'}
+        <LowerThird />
       {/if}
-    </svelte:fragment>
-  </LazyGameSheet>
-{/if}
+      <AdIndicator />
+      <StationLogo />
+      <ProgressBar />
+      <UpNext />
+      <GuessGame />
+      <TitleMask />
+      <CenterFeedback />
+      <DevReview />
+      <TouchOverlay />
+      <ChannelStatic />
+      <UnmuteHint />
+      <FirstRunHint />
+      <RotateHint />
+    {/if}
+  </main>
 
-{#if !$started && !$loadError}
-  <StartScreen on:power={powerOn} />
-  <InstallHint />
-{/if}
+  <div class="sr-only" aria-live="polite" aria-atomic="true">
+    {#if $started && $hintsOn && $currentVideo}
+      Now playing: {$currentVideo.artist} – {$currentVideo.title}, {$currentVideo.year}
+    {/if}
+  </div>
 
-<ErrorScreen />
+  <Guide on:openGame={() => (gameSheetOpen = true)} />
+  <Queue />
+  <Search />
+  <Settings />
+  <Controls />
+
+  {#if $gameMode !== null}
+    {#await import('./components/game/GameRunningBadge.svelte') then m}
+      <svelte:component this={m.default} on:open={() => (gameSheetOpen = true)} />
+    {/await}
+  {/if}
+
+  {#if gameSheetOpen || $gameMode !== null}
+    <LazyGameSheet
+      open={gameSheetOpen}
+      {roomCode}
+      {joinUrl}
+      on:close={() => (gameSheetOpen = false)}
+      on:startMode={onStartMode}
+      on:startRound={onStartRound}
+      on:reveal={onReveal}
+      on:nextRound={onNextRound}
+      on:endSession={onEndSession}
+    >
+      <svelte:fragment slot="solo">
+        {#if $room.session?.phase === 'revealed'}
+          <div class="solo-rate">
+            <p>Did you get it?</p>
+            <button
+              class="icon-btn"
+              type="button"
+              on:click={() => onSoloRate('year')}
+              disabled={soloRated.year}>Year ✓</button
+            >
+            <button
+              class="icon-btn"
+              type="button"
+              on:click={() => onSoloRate('title')}
+              disabled={soloRated.title}>Title ✓</button
+            >
+            <button
+              class="icon-btn"
+              type="button"
+              on:click={() => onSoloRate('artist')}
+              disabled={soloRated.artist}>Artist ✓</button
+            >
+          </div>
+        {/if}
+      </svelte:fragment>
+    </LazyGameSheet>
+  {/if}
+
+  {#if !$started && !$loadError}
+    <StartScreen on:power={powerOn} />
+    <InstallHint />
+  {/if}
+
+  <ErrorScreen />
 {/if}
 
 <style>

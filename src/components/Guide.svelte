@@ -208,7 +208,28 @@
   </svelte:fragment>
 
   <svelte:fragment slot="actions">
-    <button class="icon-btn" type="button" aria-label="Game mode" on:click={openGame}>🎮</button>
+    <button class="icon-btn" type="button" aria-label="Game mode" on:click={openGame}>
+      <svg
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <!-- gamepad / controller silhouette -->
+        <path
+          d="M6 8 L4 14 a3 3 0 0 0 5 1.5 l1.5 -2 h3 l1.5 2 a3 3 0 0 0 5 -1.5 L18 8 a3 3 0 0 0 -3 -2 H9 a3 3 0 0 0 -3 2 z"
+        />
+        <line x1="8" y1="11" x2="10" y2="11" />
+        <line x1="9" y1="10" x2="9" y2="12" />
+        <circle cx="15" cy="10.5" r="0.8" fill="currentColor" />
+        <circle cx="16.5" cy="12" r="0.8" fill="currentColor" />
+      </svg>
+    </button>
     <button class="icon-btn" type="button" aria-label="Controls reference" on:click={openControls}
       >?</button
     >
