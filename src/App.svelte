@@ -180,6 +180,7 @@
   onMount(async () => {
     if (isPhoneMode) {
       await startPhone();
+      enableWakeLock();
       return;
     }
     try {
