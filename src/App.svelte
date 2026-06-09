@@ -33,7 +33,7 @@
     endSession,
   } from './lib/multiplayer/state.js';
   import { nextGuessStats } from './lib/game.js';
-  import { loadVideos, shuffle, filterVideos } from './lib/data.js';
+  import { loadVideos, shuffle, filterVideos, yearRange } from './lib/data.js';
   import {
     loadYouTubeAPI,
     createPlayer,
@@ -136,6 +136,7 @@
         ...s,
         session: msg.payload.sessionState,
         scoreboard: msg.payload.scoreboard || [],
+        yearRange: msg.payload.yearRange || { min: 1900, max: new Date().getFullYear() },
       }));
     } else if (msg.type === 'round') {
       phoneRoom.update((s) => ({
@@ -314,6 +315,7 @@
               sessionState: r.session,
               players: r.players,
               scoreboard: r.players.map(({ id, name, score }) => ({ id, name, score })),
+              yearRange: yearRange(get(videos)),
             }),
           );
         },

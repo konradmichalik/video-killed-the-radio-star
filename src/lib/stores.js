@@ -237,5 +237,6 @@ export const phoneRoom = writable({
   myScore: 0,
   scoreboard: [],
   mySubmission: null,
+  yearRange: { min: 1900, max: new Date().getFullYear() },
   connectionStatus: 'idle', // 'idle' | 'connecting' | 'open' | 'reconnecting' | 'unreachable'
 });
