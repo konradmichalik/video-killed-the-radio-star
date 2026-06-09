@@ -17,3 +17,9 @@ export const ERROR_SKIP_MS = 600; // pause before auto-skipping a failed video
 
 // --- UI ---
 export const LOWER_THIRD_MS = 7000; // how long the song lower-third stays visible
+
+// --- Connected Game Mode ---
+export const PEER_CONNECT_TIMEOUT_MS = 8000; // give up establishing a peer connection after this long
+export const PEER_RECONNECT_BACKOFF_MS = [1000, 3000, 9000]; // delays before each reconnect attempt
+export const MAX_PLAYERS = 8; // hard cap on players per room
+export const PLAYER_DISCONNECT_TIMEOUT_MS = 60000; // drop a player after this long without heartbeat
