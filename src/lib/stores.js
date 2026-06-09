@@ -171,6 +171,11 @@ export function recordGuess(correct) {
   guessStats.update((s) => nextGuessStats(s, correct));
 }
 
+/** Clear streak/best/played/correct — call when a new Solo session starts. */
+export function resetGuessStats() {
+  guessStats.set({ ...EMPTY_GUESS_STATS });
+}
+
 crtOn.subscribe((v) => {
   try {
     localStorage.setItem('vktrs-crt', v ? 'on' : 'off');

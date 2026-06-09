@@ -2,7 +2,7 @@
 <!--
   Full-screen TV overlay shown during the Connected game's "revealed" phase.
   Surfaces the actual year, song info, and every player's guess with distance.
-  Mounts above channel content and GameRunningBadge, below sheets so the host
+  Mounts above channel content and FloatingControls, below sheets so the host
   can still open the Guide.
 -->
 <script>

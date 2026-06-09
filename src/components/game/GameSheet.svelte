@@ -4,7 +4,8 @@
   import ModeSelector from './ModeSelector.svelte';
   import HostRoomView from './HostRoomView.svelte';
   import PhoneRoomView from './PhoneRoomView.svelte';
-  import { gameMode, room, phoneRoom } from '../../lib/stores.js';
+  import { gameMode, room, phoneRoom, guessStats } from '../../lib/stores.js';
+  import { hitRate } from '../../lib/game.js';
   import { createEventDispatcher } from 'svelte';
 
   export let open = false;
@@ -60,13 +61,29 @@
       on:kick={forward('kick')}
     />
   {:else if $gameMode === 'solo'}
-    <!-- Solo plays via the GuessGame HUD top-left (Reveal + self-rate).
-         This sheet exists only so the player can exit the session. -->
+    <!-- Solo plays via the GuessGame bar bottom-center (Reveal + self-rate).
+         The sheet shows running stats (analogous to Connected's scoreboard)
+         and the exit button. -->
     <section class="solo-shell">
-      <p class="solo-info">
-        Streak, REVEAL and self-rating live in the HUD on the screen. Close this sheet to keep
-        playing.
-      </p>
+      <h3 class="stats-title">Stats</h3>
+      <dl class="stats">
+        <div class="stat">
+          <dt>Streak</dt>
+          <dd>{$guessStats.streak}</dd>
+        </div>
+        <div class="stat">
+          <dt>Best</dt>
+          <dd>{$guessStats.best}</dd>
+        </div>
+        <div class="stat">
+          <dt>Played</dt>
+          <dd>{$guessStats.played}</dd>
+        </div>
+        <div class="stat">
+          <dt>Hit&nbsp;rate</dt>
+          <dd>{$guessStats.played ? `${hitRate($guessStats)}%` : '—'}</dd>
+        </div>
+      </dl>
       <button class="ghost" on:click={() => dispatch('endSession')}>End game</button>
     </section>
   {/if}
@@ -78,13 +95,42 @@
     gap: 18px;
     justify-items: start;
   }
-  .solo-info {
+  .stats-title {
     margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: var(--accent-2);
+    text-transform: uppercase;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+  }
+  .stat {
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 3px solid #fff;
+    box-shadow: 4px 4px 0 var(--accent-2);
+    display: grid;
+    gap: 4px;
+  }
+  .stat dt {
     font-family: 'VT323', monospace;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+  }
+  .stat dd {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(22px, 3vw, 28px);
+    letter-spacing: 2px;
+    color: var(--bug-yellow);
   }
   .ghost {
     min-height: 52px;

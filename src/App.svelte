@@ -24,6 +24,7 @@
     toggleFavorite,
     gameMode,
     room,
+    resetGuessStats,
   } from './lib/stores.js';
   import {
     startSession,
@@ -400,6 +401,8 @@
     priorHintsOn = get(hintsOn);
     hintsOn.set(false);
     if (mode === 'connected') startConnectedRoom();
+    // Solo HUD starts fresh each session — previous streak/best shouldn't bleed in.
+    if (mode === 'solo') resetGuessStats();
   }
 
   function onStartRound() {
@@ -626,7 +629,7 @@
       <ProgressBar />
       <UpNext />
       {#if $gameMode === 'solo'}
-        <GuessGame />
+        <GuessGame on:open={() => (gameSheetOpen = true)} />
       {/if}
       <TitleMask />
       <CenterFeedback />
@@ -650,12 +653,6 @@
   <Search />
   <Settings />
   <Controls />
-
-  {#if $gameMode !== null}
-    {#await import('./components/game/GameRunningBadge.svelte') then m}
-      <svelte:component this={m.default} on:open={() => (gameSheetOpen = true)} />
-    {/await}
-  {/if}
 
   {#if $gameMode === 'connected' && !gameSheetOpen && !celebrationOpen}
     {#await import('./components/game/FloatingControls.svelte') then m}

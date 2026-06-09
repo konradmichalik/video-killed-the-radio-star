@@ -200,3 +200,81 @@ body {
   transform: translate(2px, 2px);
   box-shadow: 0 0 0 transparent;
 }
+
+/* Shared bottom-center HUD bar — Solo (GuessGame) and Connected (FloatingControls)
+   both render a neo-brutalist bar with phase CTA + Open ghost button. Container
+   styles are shared here; phase-specific chips/colors stay local. */
+.game-bar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 41;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(5, 5, 5, 0.78);
+  border: 3px solid #050505;
+  box-shadow: 4px 4px 0 #050505;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  flex-wrap: wrap;
+  max-width: calc(100vw - 32px);
+  justify-content: center;
+}
+.game-bar__cta {
+  min-height: 40px;
+  padding: 0 16px;
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #050505;
+  background: var(--accent-2);
+  border: 3px solid #050505;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #050505;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+.game-bar__cta:hover:not(:disabled) {
+  box-shadow: 6px 6px 0 #050505;
+  transform: translate(-1px, -1px);
+}
+.game-bar__cta:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 #050505;
+}
+.game-bar__cta:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.game-bar__ghost {
+  min-height: 40px;
+  padding: 0 14px;
+  font-family: 'Anton', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  background: transparent;
+  border: 3px solid #fff;
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    color 0.12s ease,
+    border-color 0.12s ease;
+}
+.game-bar__ghost:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 4px 4px 0 var(--accent);
+  transform: translate(-1px, -1px);
+}
+.game-bar__ghost:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--accent);
+}
