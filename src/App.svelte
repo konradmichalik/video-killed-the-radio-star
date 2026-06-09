@@ -84,6 +84,7 @@
   import ErrorScreen from './components/ErrorScreen.svelte';
   import LazyGameSheet from './components/game/LazyGameSheet.svelte';
   import PhoneShell from './components/game/PhoneShell.svelte';
+  import RevealOverlay from './components/game/RevealOverlay.svelte';
 
   const params = new URLSearchParams(globalThis.location?.search || '');
   const joinParam = params.get('join');
@@ -439,6 +440,17 @@
     }
   }
 
+  function onScoreChange(e) {
+    const { playerId, delta } = e.detail;
+    room.update((s) => ({
+      ...s,
+      players: s.players.map((p) =>
+        p.id === playerId ? { ...p, score: Math.max(0, (p.score || 0) + delta) } : p,
+      ),
+    }));
+    broadcastScore();
+  }
+
   // Solo self-rate: each tap counts as one "correct" toward the existing
   // guessStats tracker so the streak/best-of stats keep working.
   function onSoloRate(key) {
@@ -570,8 +582,11 @@
     {/if}
 
     {#if $started}
-      {#if $gameMode !== 'connected' || $room.session?.phase !== 'guessing'}
+      {#if $gameMode !== 'connected' || ($room.session?.phase !== 'guessing' && $room.session?.phase !== 'revealed')}
         <LowerThird />
+      {/if}
+      {#if $gameMode === 'connected' && $room.session?.phase === 'revealed'}
+        <RevealOverlay />
       {/if}
       <AdIndicator />
       <StationLogo />
@@ -618,6 +633,7 @@
       on:reveal={onReveal}
       on:nextRound={onNextRound}
       on:endSession={onEndSession}
+      on:scoreChange={onScoreChange}
     >
       <svelte:fragment slot="solo">
         {#if $room.session?.phase === 'revealed'}

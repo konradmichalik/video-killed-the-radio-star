@@ -15,6 +15,7 @@
   const dispatch = createEventDispatcher();
   let qrEl;
   let qrError = '';
+  let activeTab = 'room'; // 'room' | 'game'
 
   onMount(async () => {
     try {
@@ -28,64 +29,124 @@
   $: phase = session?.phase || 'idle';
   $: round = session?.round || 0;
   $: submittedCount = Object.keys(submissions).length;
+
+  // Auto-switch to GAME tab when a round starts so the host sees status + controls.
+  $: if (session?.phase === 'guessing') activeTab = 'game';
+
+  function onScoreChange(e) {
+    dispatch('scoreChange', e.detail);
+  }
 </script>
 
 <section class="host">
-  <div class="qr-block">
-    <div class="qr-frame">
-      <canvas bind:this={qrEl}></canvas>
-    </div>
-    <div class="join-info">
-      <span class="join-label">SCAN OR ENTER</span>
-      <div class="code">{roomCode}</div>
-      {#if qrError}<p class="err">{qrError}</p>{/if}
-    </div>
+  <div class="tabs" role="tablist" aria-label="Game mode sections">
+    <button
+      type="button"
+      role="tab"
+      class="tab"
+      class:active={activeTab === 'room'}
+      aria-selected={activeTab === 'room'}
+      on:click={() => (activeTab = 'room')}>ROOM</button
+    >
+    <button
+      type="button"
+      role="tab"
+      class="tab"
+      class:active={activeTab === 'game'}
+      aria-selected={activeTab === 'game'}
+      on:click={() => (activeTab = 'game')}>GAME</button
+    >
   </div>
 
-  <div class="status">
-    <h3 class="round">ROUND {round}</h3>
-    <div class="phase-row">
-      <span class="phase-label">Phase:</span>
-      <span class="phase-value">{phase}</span>
+  {#if activeTab === 'room'}
+    <div class="qr-block">
+      <div class="qr-frame">
+        <canvas bind:this={qrEl}></canvas>
+      </div>
+      <div class="join-info">
+        <span class="join-label">SCAN OR ENTER</span>
+        <div class="code">{roomCode}</div>
+        {#if qrError}<p class="err">{qrError}</p>{/if}
+      </div>
     </div>
-    <div class="meta-row">
-      <NetworkBadge status="open" />
-      <span class="peers">{connectedCount}/{players.length} peers</span>
-    </div>
-    {#if phase === 'guessing'}
-      <p class="subs">Submissions: {submittedCount}/{connectedCount}</p>
-    {/if}
-  </div>
 
-  <div class="controls">
-    {#if phase === 'idle'}
-      <button class="cta" on:click={() => dispatch('startRound')} disabled={connectedCount === 0}
-        >Start round</button
-      >
-    {:else if phase === 'guessing'}
-      <button class="cta" on:click={() => dispatch('reveal')}>Reveal</button>
-    {:else}
-      <button class="cta" on:click={() => dispatch('nextRound')}>Next round</button>
-    {/if}
-    <button class="ghost" on:click={() => dispatch('end')}>End game</button>
-  </div>
-
-  <div class="lists">
     <div>
       <h4 class="lists-title">Players ({connectedCount})</h4>
       <PlayerList {players} {submissions} />
     </div>
+  {:else}
+    <div class="status">
+      <h3 class="round">ROUND {round}</h3>
+      <div class="phase-row">
+        <span class="phase-label">Phase:</span>
+        <span class="phase-value">{phase}</span>
+      </div>
+      <div class="meta-row">
+        <NetworkBadge status="open" />
+        <span class="peers">{connectedCount}/{players.length} peers</span>
+      </div>
+      {#if phase === 'guessing'}
+        <p class="subs">Submissions: {submittedCount}/{connectedCount}</p>
+      {/if}
+    </div>
+
+    <div class="controls">
+      {#if phase === 'idle'}
+        <button class="cta" on:click={() => dispatch('startRound')} disabled={connectedCount === 0}
+          >Start round</button
+        >
+      {:else if phase === 'guessing'}
+        <button class="cta" on:click={() => dispatch('reveal')}>Reveal</button>
+      {:else}
+        <button class="cta" on:click={() => dispatch('nextRound')}>Next round</button>
+      {/if}
+      <button class="ghost" on:click={() => dispatch('end')}>End game</button>
+    </div>
+
     <div>
       <h4 class="lists-title">Scoreboard</h4>
-      <Scoreboard {players} />
+      <Scoreboard {players} editable on:scoreChange={onScoreChange} />
     </div>
-  </div>
+  {/if}
 </section>
 
 <style>
   .host {
     display: grid;
     gap: 22px;
+  }
+  .tabs {
+    display: flex;
+    gap: 10px;
+  }
+  .tab {
+    flex: 1 1 auto;
+    min-height: 48px;
+    padding: 0 18px;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(16px, 2.4vw, 20px);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
+    background: transparent;
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition:
+      transform 0.1s ease,
+      box-shadow 0.1s ease,
+      background 0.12s ease,
+      color 0.12s ease,
+      border-color 0.12s ease;
+  }
+  .tab:hover {
+    color: var(--accent-2);
+    border-color: var(--accent-2);
+  }
+  .tab.active {
+    color: #050505;
+    background: var(--accent-2);
+    border-color: #050505;
+    box-shadow: 5px 5px 0 #050505;
   }
   .qr-block {
     display: flex;
@@ -238,11 +299,6 @@
     box-shadow: 0 0 0 var(--accent);
   }
 
-  .lists {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
   .lists-title {
     margin: 0 0 10px;
     font-family: 'Anton', sans-serif;
@@ -250,10 +306,5 @@
     letter-spacing: 3px;
     color: var(--accent-2);
     text-transform: uppercase;
-  }
-  @media (max-width: 540px) {
-    .lists {
-      grid-template-columns: 1fr;
-    }
   }
 </style>

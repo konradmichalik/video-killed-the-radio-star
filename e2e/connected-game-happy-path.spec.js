@@ -112,6 +112,9 @@ test.describe.serial('connected game happy path', () => {
       test.skip(true, 'PeerJS broker unavailable: phones did not connect to host');
     }
 
+    // Switch to the GAME tab to expose the round controls.
+    await tv.getByRole('tab', { name: /^game$/i }).tap();
+
     // Host starts a round.
     await tv.getByRole('button', { name: /start round/i }).tap();
 
