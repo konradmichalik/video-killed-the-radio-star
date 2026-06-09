@@ -3,6 +3,7 @@
   import { createEventDispatcher } from 'svelte';
   import Scoreboard from './Scoreboard.svelte';
   import YearInput from './YearInput.svelte';
+  import NetworkBadge from './NetworkBadge.svelte';
 
   export let player; // {id, name}
   export let roomCode;
@@ -33,6 +34,7 @@
 
   <header>
     <span>Room {roomCode}</span>
+    <NetworkBadge status={connectionStatus} />
     {#if editingName}
       <input bind:value={nameDraft} placeholder="Your name" maxlength="20" />
       <button on:click={saveName}>Save</button>

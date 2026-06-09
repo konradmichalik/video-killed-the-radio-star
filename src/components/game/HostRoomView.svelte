@@ -3,6 +3,7 @@
   import { onMount, createEventDispatcher } from 'svelte';
   import PlayerList from './PlayerList.svelte';
   import Scoreboard from './Scoreboard.svelte';
+  import NetworkBadge from './NetworkBadge.svelte';
 
   export let roomCode;
   export let joinUrl;
@@ -39,6 +40,8 @@
   <div class="status">
     <h3>Round {round}</h3>
     <p>Phase: <strong>{phase}</strong></p>
+    <NetworkBadge status="open" />
+    <span>{connectedCount}/{players.length} peers</span>
     {#if phase === 'guessing'}
       <p>Submissions: {submittedCount}/{connectedCount}</p>
     {/if}
