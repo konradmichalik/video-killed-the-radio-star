@@ -296,6 +296,9 @@
   let host = null;
   const PEER_PREFIX = 'VKTRS-';
 
+  // Remember the user's Song Info preference so we can restore it after a game.
+  let priorHintsOn = null;
+
   async function startConnectedRoom() {
     const code = generateRoomId();
     roomCode = code;
@@ -377,6 +380,9 @@
     const mode = e.detail.mode;
     gameMode.set(mode);
     room.update((s) => startSession(s));
+    // Hide Song Info during gameplay so the lower third can't spoil the year.
+    priorHintsOn = get(hintsOn);
+    hintsOn.set(false);
     if (mode === 'connected') startConnectedRoom();
   }
 
@@ -404,6 +410,8 @@
       const r = get(room);
       host?.broadcast(encode('round', { round: r.session.round, phase: 'idle' }));
     }
+    // Advance to the next track so each round plays something new.
+    next();
   }
 
   function onEndSession() {
@@ -419,6 +427,11 @@
     gameMode.set(null);
     roomCode = null;
     joinUrl = '';
+    // Restore the user's previous Song Info preference.
+    if (priorHintsOn !== null) {
+      hintsOn.set(priorHintsOn);
+      priorHintsOn = null;
+    }
   }
 
   // Solo self-rate: each tap counts as one "correct" toward the existing

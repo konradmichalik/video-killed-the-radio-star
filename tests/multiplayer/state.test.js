@@ -18,6 +18,13 @@ describe('state reducer', () => {
     expect(s.session.phase).toBe('idle');
   });
 
+  it('startSession resets all player scores to 0', () => {
+    let s = addPlayer(EMPTY_ROOM, { id: 'p1', name: 'Kim' });
+    s = { ...s, players: s.players.map((p) => ({ ...p, score: 7 })) };
+    s = startSession(s);
+    expect(s.players[0].score).toBe(0);
+  });
+
   it('addPlayer adds a fresh player with score 0', () => {
     const s = addPlayer(EMPTY_ROOM, { id: 'p1', name: 'Kim' });
     expect(s.players).toEqual([

@@ -10,6 +10,7 @@ export function startSession(state, now = Date.now()) {
     ...state,
     session: { startedAt: now, round: 1, phase: 'idle', currentVideo: null },
     submissions: {},
+    players: state.players.map((p) => ({ ...p, score: 0 })),
   };
 }
 
