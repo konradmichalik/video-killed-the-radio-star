@@ -1,5 +1,5 @@
 <script>
-  import { onMount, tick } from 'svelte';
+  import { onMount, onDestroy, tick } from 'svelte';
   import { get } from 'svelte/store';
   import {
     videos,
@@ -48,9 +48,9 @@
   import { requestAppFullscreen } from './lib/fullscreen.js';
   import { loadFilters } from './lib/channel.js';
   import { phoneRoom } from './lib/stores.js';
-  import { loadOrCreate } from './lib/multiplayer/identity.js';
+  import { loadOrCreate, setName as persistName } from './lib/multiplayer/identity.js';
   import { isValidRoomId, generateRoomId } from './lib/multiplayer/room.js';
-  import { hostRoom } from './lib/multiplayer/peer.js';
+  import { hostRoom, joinRoom } from './lib/multiplayer/peer.js';
   import { encode, parseMessage } from './lib/multiplayer/protocol.js';
   import {
     addPlayer,
@@ -93,12 +93,94 @@
     phoneRoom.update((s) => ({ ...s, roomCode: joinParam, player }));
   }
 
-  // Stubbed handlers — wired properly in Task 19.
-  const onPhoneSetName = () => {};
-  const onPhoneGuess = () => {};
+  let phoneClient = null;
+  const PHONE_PEER_PREFIX = 'VKTRS-PEER-';
+
+  async function startPhone() {
+    if (!isPhoneMode) return;
+    const me = get(phoneRoom).player;
+    if (!me) return;
+    const ownPeerId = PHONE_PEER_PREFIX + me.id;
+    phoneRoom.update((s) => ({ ...s, connectionStatus: 'connecting' }));
+    try {
+      phoneClient = await joinRoom(PEER_PREFIX + joinParam, ownPeerId, {
+        onOpen: () => {
+          phoneRoom.update((s) => ({ ...s, connectionStatus: 'open' }));
+          const p = get(phoneRoom).player;
+          phoneClient?.send(
+            encode('join', {
+              playerId: p.id,
+              name: p.name || 'Player',
+            }),
+          );
+        },
+        onMessage: (raw) => onTvMessage(raw),
+        onClose: () =>
+          phoneRoom.update((s) => ({ ...s, connectionStatus: 'reconnecting' })),
+        onReconnecting: () =>
+          phoneRoom.update((s) => ({ ...s, connectionStatus: 'reconnecting' })),
+        onUnreachable: () =>
+          phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' })),
+      });
+    } catch (err) {
+      console.error('phone-join failed', err);
+      phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' }));
+    }
+  }
+
+  function onTvMessage(raw) {
+    const msg = parseMessage(raw);
+    if (!msg) return;
+    if (msg.type === 'welcome') {
+      phoneRoom.update((s) => ({
+        ...s,
+        session: msg.payload.sessionState,
+        scoreboard: msg.payload.scoreboard || [],
+      }));
+    } else if (msg.type === 'round') {
+      phoneRoom.update((s) => ({
+        ...s,
+        session: { ...(s.session || {}), ...msg.payload },
+        mySubmission: msg.payload.phase === 'guessing' ? null : s.mySubmission,
+      }));
+    } else if (msg.type === 'reveal') {
+      phoneRoom.update((s) => ({
+        ...s,
+        session: { ...(s.session || {}), phase: 'revealed' },
+      }));
+    } else if (msg.type === 'score') {
+      phoneRoom.update((s) => ({ ...s, scoreboard: msg.payload.scoreboard || [] }));
+    } else if (msg.type === 'end') {
+      phoneRoom.update((s) => ({ ...s, session: null }));
+    } else if (msg.type === 'kick') {
+      phoneClient?.close();
+      phoneClient = null;
+      phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' }));
+    }
+  }
+
+  function onPhoneSetName(e) {
+    const nextPlayer = persistName(e.detail.name);
+    phoneRoom.update((s) => ({ ...s, player: nextPlayer }));
+    phoneClient?.send(
+      encode('join', { playerId: nextPlayer.id, name: nextPlayer.name }),
+    );
+  }
+
+  function onPhoneGuess(e) {
+    phoneClient?.send(encode('guess', { year: e.detail.year }));
+    phoneRoom.update((s) => ({ ...s, mySubmission: { year: e.detail.year } }));
+  }
+
+  onDestroy(() => {
+    phoneClient?.close();
+  });
 
   onMount(async () => {
-    if (isPhoneMode) return;
+    if (isPhoneMode) {
+      await startPhone();
+      return;
+    }
     try {
       const all = await loadVideos();
       if (!Array.isArray(all) || all.length === 0) throw new Error('empty');
