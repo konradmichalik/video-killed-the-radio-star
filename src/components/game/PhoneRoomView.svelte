@@ -32,6 +32,35 @@
   $: actualYear = lastReveal?.year ?? null;
   $: delta = actualYear != null && myGuessYear != null ? Math.abs(actualYear - myGuessYear) : null;
   $: didWin = !!(player?.id && lastReveal?.winners?.includes(player.id));
+
+  // Collapsed-by-default scoreboard so the prompt + year input dominate the
+  // phone viewport. The collapsed state shows just this player's rank/score;
+  // tapping the row expands the full sorted board with a max-height + scroll.
+  let scoreboardExpanded = false;
+  $: sortedBoard = [...scoreboard].sort((a, b) => (b.score || 0) - (a.score || 0));
+  $: myRank = (() => {
+    const i = sortedBoard.findIndex((p) => p.id === player?.id);
+    return i === -1 ? null : i + 1;
+  })();
+  $: myScore = sortedBoard.find((p) => p.id === player?.id)?.score ?? 0;
+  $: totalPlayers = sortedBoard.length;
+
+  // When the host ends the session we surface a brief "Game ended" view with
+  // the final standings instead of dropping back to the "waiting for host"
+  // prompt. We flip the local flag once we observe a session AND then watch
+  // for it disappearing — the welcome scoreboard alone is not enough.
+  let everHadSession = false;
+  let sessionEnded = false;
+  $: if (session) {
+    everHadSession = true;
+    sessionEnded = false;
+  } else if (everHadSession) {
+    sessionEnded = true;
+  }
+  function dismissEnded() {
+    sessionEnded = false;
+    everHadSession = false;
+  }
 </script>
 
 <section class="phone">
@@ -64,7 +93,15 @@
   </header>
 
   <main>
-    {#if !session}
+    {#if sessionEnded}
+      <div class="reveal-card ended">
+        <p class="reveal-label">Game ended</p>
+        <p class="ended-headline">Thanks for playing!</p>
+        <h4 class="board-title">Final scoreboard</h4>
+        <Scoreboard players={scoreboard} highlightId={player?.id} />
+        <button class="ghost" type="button" on:click={dismissEnded}>Dismiss</button>
+      </div>
+    {:else if !session}
       <p class="msg">Waiting for host to start a game…</p>
     {:else if phase === 'idle'}
       <p class="msg">Get ready — round {session.round} is about to start.</p>
@@ -113,10 +150,31 @@
     {/if}
   </main>
 
-  <footer>
-    <h4 class="board-title">Scoreboard</h4>
-    <Scoreboard players={scoreboard} highlightId={player?.id} />
-  </footer>
+  {#if !sessionEnded}
+    <footer>
+      <button
+        type="button"
+        class="board-toggle"
+        aria-expanded={scoreboardExpanded}
+        on:click={() => (scoreboardExpanded = !scoreboardExpanded)}
+      >
+        {#if myRank}
+          <span class="rank">#{myRank}</span>
+          <span class="meta">of {totalPlayers}</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span class="pts">{myScore} pts</span>
+        {:else}
+          <span class="meta">Scoreboard</span>
+        {/if}
+        <span class="chev" aria-hidden="true">{scoreboardExpanded ? '▴' : '▾'}</span>
+      </button>
+      {#if scoreboardExpanded}
+        <div class="board-expand">
+          <Scoreboard players={scoreboard} highlightId={player?.id} />
+        </div>
+      {/if}
+    </footer>
+  {/if}
 </section>
 
 <style>
@@ -342,5 +400,77 @@
     background: var(--accent);
     border-color: #050505;
     box-shadow: 4px 4px 0 #050505;
+  }
+
+  .reveal-card.ended {
+    box-shadow: 5px 5px 0 var(--accent-2);
+  }
+  .ended-headline {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(28px, 6vw, 40px);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--bug-yellow);
+  }
+
+  .board-toggle {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 3px solid #fff;
+    box-shadow: 4px 4px 0 var(--accent-2);
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    transition:
+      transform 0.1s ease,
+      box-shadow 0.1s ease,
+      border-color 0.12s ease;
+  }
+  .board-toggle:hover {
+    border-color: var(--accent-2);
+    transform: translate(-1px, -1px);
+    box-shadow: 6px 6px 0 var(--accent-2);
+  }
+  .board-toggle:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 var(--accent-2);
+  }
+  .board-toggle .rank {
+    color: var(--accent-2);
+    font-size: 20px;
+  }
+  .board-toggle .meta {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: none;
+  }
+  .board-toggle .dot {
+    color: rgba(255, 255, 255, 0.45);
+  }
+  .board-toggle .pts {
+    color: var(--bug-yellow);
+    font-variant-numeric: tabular-nums;
+  }
+  .board-toggle .chev {
+    margin-left: auto;
+    color: var(--accent-2);
+    font-size: 20px;
+  }
+  .board-expand {
+    margin-top: 10px;
+    max-height: 40vh;
+    overflow-y: auto;
+    padding-right: 2px;
   }
 </style>

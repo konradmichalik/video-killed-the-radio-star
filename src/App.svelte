@@ -420,24 +420,44 @@
     next();
   }
 
-  function onEndSession() {
+  // End-game flow is split in two so Connected mode can show a celebration
+  // overlay BEFORE the session is torn down. Solo skips the overlay because
+  // there's no scoreboard worth celebrating.
+  let celebrationOpen = false;
+  let celebrationPlayers = [];
+
+  function triggerEndGame() {
     if (get(gameMode) === 'connected') {
-      host?.broadcast(
-        encode('end', {
-          finalScoreboard: get(room).players.map(({ id, name, score }) => ({ id, name, score })),
-        }),
-      );
+      const finalPlayers = get(room).players.map(({ id, name, score }) => ({ id, name, score }));
+      host?.broadcast(encode('end', { finalScoreboard: finalPlayers }));
+      celebrationPlayers = finalPlayers;
+      celebrationOpen = true;
+      // Close the GameSheet so the celebration sits unobstructed on the TV.
+      gameSheetOpen = false;
+    } else {
+      finalizeEndGame();
+    }
+  }
+
+  function finalizeEndGame() {
+    if (get(gameMode) === 'connected') {
       closeConnectedRoom();
     }
     room.update((s) => endSession(s));
     gameMode.set(null);
     roomCode = null;
     joinUrl = '';
+    celebrationOpen = false;
+    celebrationPlayers = [];
     // Restore the user's previous Song Info preference.
     if (priorHintsOn !== null) {
       hintsOn.set(priorHintsOn);
       priorHintsOn = null;
     }
+  }
+
+  function onEndSession() {
+    triggerEndGame();
   }
 
   function onScoreChange(e) {
@@ -637,6 +657,28 @@
   {#if $gameMode !== null}
     {#await import('./components/game/GameRunningBadge.svelte') then m}
       <svelte:component this={m.default} on:open={() => (gameSheetOpen = true)} />
+    {/await}
+  {/if}
+
+  {#if $gameMode === 'connected' && !gameSheetOpen && !celebrationOpen}
+    {#await import('./components/game/FloatingControls.svelte') then m}
+      <svelte:component
+        this={m.default}
+        on:startRound={onStartRound}
+        on:reveal={onReveal}
+        on:nextRound={onNextRound}
+        on:open={() => (gameSheetOpen = true)}
+      />
+    {/await}
+  {/if}
+
+  {#if celebrationOpen}
+    {#await import('./components/game/EndGameCelebration.svelte') then m}
+      <svelte:component
+        this={m.default}
+        players={celebrationPlayers}
+        on:dismiss={finalizeEndGame}
+      />
     {/await}
   {/if}
 
