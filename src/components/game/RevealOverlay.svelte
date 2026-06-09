@@ -6,8 +6,16 @@
   can still open the Guide.
 -->
 <script>
+  import { createEventDispatcher } from 'svelte';
   import { currentVideo, room } from '../../lib/stores.js';
   import { closestYearWinners } from '../../lib/multiplayer/scoring.js';
+
+  const dispatch = createEventDispatcher();
+
+  // Local-only dismissal so the host can keep listening to the current track
+  // without ending the round. Resets automatically because the overlay
+  // unmounts when the phase leaves 'revealed' (App.svelte gates the mount).
+  let dismissed = false;
 
   $: video = $currentVideo;
   $: actualYear = video?.year ?? null;
@@ -27,36 +35,47 @@
     .sort((a, b) => (a.distance ?? Infinity) - (b.distance ?? Infinity));
 </script>
 
-<div class="reveal-overlay" role="dialog" aria-modal="false" aria-label="Reveal">
-  <div class="content">
-    <div class="year-block">
-      <span class="year-label">ACTUAL YEAR</span>
-      <div class="year-value">{actualYear ?? '????'}</div>
-    </div>
-
-    {#if video}
-      <div class="song">
-        <span class="song-title">{video.title}</span>
-        <span class="song-artist">{video.artist}</span>
+{#if !dismissed}
+  <div class="reveal-overlay" role="dialog" aria-modal="false" aria-label="Reveal">
+    <div class="content">
+      <div class="year-block">
+        <span class="year-label">ACTUAL YEAR</span>
+        <div class="year-value">{actualYear ?? '????'}</div>
       </div>
-    {/if}
 
-    {#if rows.length > 0}
-      <ul class="guesses">
-        {#each rows as r (r.id)}
-          <li class:winner={r.winner}>
-            <span class="g-name">{r.name}</span>
-            <span class="g-guess">{r.guess}</span>
-            <span class="g-dist">{r.distance === 0 ? 'EXACT' : `±${r.distance ?? '?'}`}</span>
-            {#if r.winner}<span class="g-badge">WINNER</span>{/if}
-          </li>
-        {/each}
-      </ul>
-    {:else}
-      <p class="no-subs">No submissions this round.</p>
-    {/if}
+      {#if video}
+        <div class="song">
+          <span class="song-title">{video.title}</span>
+          <span class="song-artist">{video.artist}</span>
+        </div>
+      {/if}
+
+      {#if rows.length > 0}
+        <ul class="guesses">
+          {#each rows as r (r.id)}
+            <li class:winner={r.winner}>
+              <span class="g-name">{r.name}</span>
+              <span class="g-guess">{r.guess}</span>
+              <span class="g-dist">{r.distance === 0 ? 'EXACT' : `±${r.distance ?? '?'}`}</span>
+              {#if r.winner}<span class="g-badge">WINNER</span>{/if}
+            </li>
+          {/each}
+        </ul>
+      {:else}
+        <p class="no-subs">No submissions this round.</p>
+      {/if}
+
+      <div class="actions" role="group" aria-label="Reveal actions">
+        <button class="game-bar__ghost" type="button" on:click={() => (dismissed = true)}>
+          Keep listening
+        </button>
+        <button class="game-bar__cta" type="button" on:click={() => dispatch('nextRound')}>
+          Next round
+        </button>
+      </div>
+    </div>
   </div>
-</div>
+{/if}
 
 <style>
   .reveal-overlay {
@@ -166,6 +185,13 @@
     font-size: 20px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.6);
+  }
+  .actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
   }
   @keyframes fade-in {
     from {

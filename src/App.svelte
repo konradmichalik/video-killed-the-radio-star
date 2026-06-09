@@ -622,7 +622,7 @@
         <LowerThird />
       {/if}
       {#if $gameMode === 'connected' && $room.session?.phase === 'revealed'}
-        <RevealOverlay />
+        <RevealOverlay on:nextRound={onNextRound} />
       {/if}
       <AdIndicator />
       <StationLogo />
