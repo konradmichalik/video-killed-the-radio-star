@@ -13,6 +13,14 @@
   // Hidden while a drag is in progress; cleared on pointer leave.
   let hoverZone = null; // 'prev' | 'center' | 'next' | null
 
+  // Touch double-tap requirement for prev/next so accidental edge taps don't
+  // skip tracks. First tap arms the action, second tap within DOUBLE_TAP_MS
+  // confirms. Mouse / trackpad single-clicks bypass this entirely.
+  const DOUBLE_TAP_MS = 500;
+  let pendingTapAction = null;
+  let pendingTapTime = 0;
+  let pendingTapTimer = null;
+
   function down(e) {
     if (!e.isPrimary) return; // ignore secondary touches (pinch etc.)
     tracking = true;
@@ -33,6 +41,34 @@
       viewportWidth: window.innerWidth,
     });
 
+    // Touch edge-tap → require a confirming second tap before skipping
+    if ((action === 'next' || action === 'prev') && e.pointerType === 'touch') {
+      const now = e.timeStamp || Date.now();
+      if (pendingTapAction === action && now - pendingTapTime < DOUBLE_TAP_MS) {
+        // Confirmed double-tap — fire the action
+        clearTimeout(pendingTapTimer);
+        pendingTapAction = null;
+        pendingTapTime = 0;
+        hoverZone = null;
+        if (action === 'next') next();
+        else prev();
+        return;
+      }
+      // First tap — flash the edge hint and arm the second-tap window
+      pendingTapAction = action;
+      pendingTapTime = now;
+      hoverZone = action;
+      clearTimeout(pendingTapTimer);
+      pendingTapTimer = setTimeout(() => {
+        if (pendingTapAction === action) {
+          pendingTapAction = null;
+          pendingTapTime = 0;
+          hoverZone = null;
+        }
+      }, DOUBLE_TAP_MS);
+      return;
+    }
+
     if (action === 'next') next();
     else if (action === 'prev') prev();
     else if (action === 'guide') guideOpen.set(true);
@@ -43,6 +79,9 @@
   function cancel() {
     tracking = false;
     hoverZone = null;
+    clearTimeout(pendingTapTimer);
+    pendingTapAction = null;
+    pendingTapTime = 0;
   }
 
   function move(e) {
@@ -124,11 +163,6 @@
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
   }
-  /* Touch-only devices never get hover events — keep these out of the DOM
-     defensively via a media-query opacity zero so even a stuck state is hidden. */
-  @media (hover: none) {
-    .edge-hint {
-      display: none;
-    }
-  }
+  /* On touch devices the edge hint now also doubles as the first-tap
+     feedback for the double-tap-to-skip flow, so we don't hide it. */
 </style>
