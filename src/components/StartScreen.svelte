@@ -11,8 +11,15 @@
       <span class="brand-dot"></span>
     </div>
     <h1 class="logo">
-      <span>VIDEO KILLED</span>
-      <span>THE RADIO STAR</span>
+      <span class="line line-1">
+        <span class="word" style="--i: 0">VIDEO</span>
+        <span class="word" style="--i: 1">KILLED</span>
+      </span>
+      <span class="line line-2">
+        <span class="word" style="--i: 2">THE</span>
+        <span class="word" style="--i: 3">RADIO</span>
+        <span class="word" style="--i: 4">STAR</span>
+      </span>
     </h1>
     <button id="power-btn" type="button" on:click={() => dispatch('power')}>
       <span class="power-glyph">&#x23FB;</span>
@@ -159,55 +166,60 @@
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-  .logo span {
+  .line {
     display: block;
-  }
-  .logo span:first-child {
+    white-space: nowrap;
     font-size: clamp(38px, 11vw, 120px);
+  }
+  .line-1 {
     color: var(--ink);
-    animation:
-      logo-scramble-1 900ms steps(8, end) 800ms backwards,
-      wordmark-glitch-1 4.6s steps(1, end) 1700ms infinite;
+    --final-shadow: none;
+    animation: wordmark-glitch-1 4.6s steps(1, end) 2400ms infinite;
   }
-  .logo span:last-child {
-    font-size: clamp(38px, 11vw, 120px);
+  .line-2 {
     color: var(--accent);
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
     text-shadow: 4px 4px 0 rgba(8, 217, 214, 0.55);
-    animation:
-      logo-scramble-2 1000ms steps(9, end) 1000ms backwards,
-      wordmark-glitch-2 4.6s steps(1, end) 2000ms infinite;
+    --final-shadow: 4px 4px 0 rgba(8, 217, 214, 0.55);
+    animation: wordmark-glitch-2 4.6s steps(1, end) 2600ms infinite;
   }
-  /* Heavy chromatic split that collapses into the stable wordmark — VHS
-     tracking-lock-in feel. Each step is a hard frame, no easing. */
-  @keyframes logo-scramble-1 {
+  /* Each word gets its own VHS tracking-lock scramble, staggered by --i. */
+  .word {
+    display: inline-block;
+    animation: word-in 850ms steps(7, end) calc(700ms + var(--i) * 180ms) backwards;
+  }
+  .word + .word {
+    margin-left: 0.32em;
+  }
+  @keyframes word-in {
     0% {
       opacity: 0;
-      transform: translateX(-60px) scaleX(1.4);
+      transform: translateX(-80px) scaleX(1.5);
       text-shadow:
-        18px 0 0 var(--accent-2),
-        -18px 0 0 var(--accent);
-      letter-spacing: 12px;
-      filter: blur(2px);
+        20px 0 0 var(--accent-2),
+        -20px 0 0 var(--accent);
+      letter-spacing: 14px;
+      filter: blur(2.5px);
     }
-    25% {
-      opacity: 0.7;
-      transform: translateX(24px) scaleX(0.9);
+    22% {
+      opacity: 0.75;
+      transform: translateX(28px) scaleX(0.85);
       text-shadow:
         -14px 0 0 var(--accent-2),
         14px 0 0 var(--accent);
       letter-spacing: -4px;
+      filter: blur(1px);
     }
-    50% {
+    45% {
       opacity: 1;
-      transform: translateX(-8px);
+      transform: translateX(-8px) scaleX(1.05);
       text-shadow:
         8px 0 0 var(--accent-2),
         -8px 0 0 var(--accent);
       letter-spacing: 4px;
       filter: none;
     }
-    75% {
+    70% {
       transform: translateX(3px);
       text-shadow:
         -3px 0 0 var(--accent-2),
@@ -216,51 +228,7 @@
     }
     100% {
       transform: none;
-      text-shadow: none;
-      letter-spacing: 1px;
-    }
-  }
-  @keyframes logo-scramble-2 {
-    0% {
-      opacity: 0;
-      transform: translateX(60px) scaleX(1.4);
-      text-shadow:
-        -18px 0 0 var(--accent-2),
-        18px 0 0 var(--accent),
-        4px 4px 0 rgba(8, 217, 214, 0.55);
-      letter-spacing: 12px;
-      filter: blur(2px);
-    }
-    25% {
-      opacity: 0.7;
-      transform: translateX(-24px) scaleX(0.9);
-      text-shadow:
-        14px 0 0 var(--accent-2),
-        -14px 0 0 var(--accent),
-        4px 4px 0 rgba(8, 217, 214, 0.55);
-      letter-spacing: -4px;
-    }
-    50% {
-      opacity: 1;
-      transform: translateX(8px);
-      text-shadow:
-        -8px 0 0 var(--accent-2),
-        8px 0 0 var(--accent),
-        4px 4px 0 rgba(8, 217, 214, 0.55);
-      letter-spacing: 4px;
-      filter: none;
-    }
-    75% {
-      transform: translateX(-3px);
-      text-shadow:
-        3px 0 0 var(--accent-2),
-        -3px 0 0 var(--accent),
-        4px 4px 0 rgba(8, 217, 214, 0.55);
-      letter-spacing: 1px;
-    }
-    100% {
-      transform: none;
-      text-shadow: 4px 4px 0 rgba(8, 217, 214, 0.55);
+      text-shadow: var(--final-shadow);
       letter-spacing: 1px;
     }
   }
@@ -281,7 +249,7 @@
     transition:
       transform 0.08s ease,
       box-shadow 0.08s ease;
-    animation: btn-in 400ms cubic-bezier(0.2, 1.5, 0.4, 1) 1800ms backwards;
+    animation: btn-in 400ms cubic-bezier(0.2, 1.5, 0.4, 1) 2400ms backwards;
   }
   @keyframes btn-in {
     0% {
@@ -330,7 +298,8 @@
   @media (prefers-reduced-motion: reduce) {
     .start-content,
     .brand-block,
-    .logo span,
+    .line,
+    .word,
     #power-btn {
       animation: none;
     }

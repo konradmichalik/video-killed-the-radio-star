@@ -2,7 +2,7 @@
   <img src="screenshot.jpg" alt="VKTRS start screen — VIDEO KILLED THE RADIO STAR wordmark with neo-brutalist VKTRS station block above the TURN ON TV button" width="720">
 </p>
 
-<h1 align="center">VideoKilledTheRadioStar (VKTRS)</h1>
+<h1 align="center"><a href="https://www.youtube.com/watch?v=W8r-tXRLazs">VideoKilledTheRadioStar (VKTRS)</a></h1>
 
 <p align="center">
   <a href="https://konradmichalik.github.io/video-killed-the-radio-star/"><img src="https://img.shields.io/badge/demo-live-FF2E63?style=flat-square&logo=github" alt="Live demo"></a>
