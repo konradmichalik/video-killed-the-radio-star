@@ -20,6 +20,7 @@
     devMode,
     videoReviews,
     skipReviewedOk,
+    skipReviewed,
     toggleFavorite,
     gameMode,
     room,
@@ -273,16 +274,28 @@
     });
   }
 
-  // Auto-skip every track that already has any review status — only un-checked
-  // tracks play in dev mode. Active only while dev mode is on so normal
-  // playback is never silently filtered.
+  // Dev-mode auto-skip filters. Two independent toggles drive playback skips:
+  //   - skipReviewedOk: skip tracks reviewed as 'OK' (issue tags still play)
+  //   - skipReviewed:   skip ANY reviewed track (unreviewed only)
+  // Both can be on at once — the combined effect equals "unreviewed only".
+  // Active only while dev mode is on so normal playback is never silently filtered.
   let lastAutoSkipId = null;
-  $: maybeAutoSkip($currentVideo, $videoReviews, $skipReviewedOk, $devMode, $started);
-  function maybeAutoSkip(video, reviews, skipOn, devOn, started) {
-    if (!started || !skipOn || !devOn || !video) return;
+  $: maybeAutoSkip(
+    $currentVideo,
+    $videoReviews,
+    $skipReviewedOk,
+    $skipReviewed,
+    $devMode,
+    $started,
+  );
+  function maybeAutoSkip(video, reviews, skipOkOn, skipReviewedOn, devOn, started) {
+    if (!started || !devOn || !video) return;
+    if (!skipOkOn && !skipReviewedOn) return;
     const id = video.video_id;
     if (id === lastAutoSkipId) return; // don't skip the same id twice
-    if (reviews[id]?.status) {
+    const status = reviews[id]?.status;
+    const shouldSkip = (skipOkOn && status === 'OK') || (skipReviewedOn && !!status);
+    if (shouldSkip) {
       lastAutoSkipId = id;
       setTimeout(() => next(), 250);
     }

@@ -6,6 +6,7 @@
     videoReviews,
     updateReview,
     skipReviewedOk,
+    skipReviewed,
   } from '../lib/stores.js';
   import { seekBy } from '../lib/player.js';
 
@@ -97,14 +98,26 @@
 
     <label
       class="auto-skip"
-      title="Auto-skip every track that already has a status — only un-checked tracks play (dev mode only)"
+      title="Auto-skip tracks already reviewed as OK — issue-tagged tracks still play (dev mode only)"
     >
       <input
         type="checkbox"
         checked={$skipReviewedOk}
         on:change={(e) => skipReviewedOk.set(e.currentTarget.checked)}
       />
-      play un-reviewed only
+      skip OK
+    </label>
+
+    <label
+      class="auto-skip"
+      title="Auto-skip every track with any review status — only un-checked tracks play (dev mode only)"
+    >
+      <input
+        type="checkbox"
+        checked={$skipReviewed}
+        on:change={(e) => skipReviewed.set(e.currentTarget.checked)}
+      />
+      unreviewed only
     </label>
 
     <fieldset>

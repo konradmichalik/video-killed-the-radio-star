@@ -60,6 +60,14 @@ const loadSkipOk = () => {
   }
 };
 
+const loadSkipReviewed = () => {
+  try {
+    return localStorage.getItem('vktrs-skip-reviewed') === '1';
+  } catch {
+    return false;
+  }
+};
+
 const loadFavorites = () => {
   try {
     const raw = localStorage.getItem('vktrs-favorites');
@@ -135,9 +143,13 @@ export function revealNowPlaying() {
 // Dev-mode video review: per-video annotations matching scripts/verify-videos.md.
 export const devMode = writable(false);
 export const videoReviews = writable(loadReviews());
-// When true, tracks reviewed as `OK` are auto-skipped during playback so the
-// user can focus on un-reviewed or problematic ones. Persisted across sessions.
+// When true, tracks whose review status is exactly `OK` are auto-skipped so the
+// user can revisit issue-tagged tracks without sitting through known-good ones.
+// Tracks with any other status (or none) keep playing. Persisted across sessions.
 export const skipReviewedOk = writable(loadSkipOk());
+// When true, ANY reviewed track (OK or issue) is auto-skipped — only tracks
+// with no review status play. Persisted across sessions.
+export const skipReviewed = writable(loadSkipReviewed());
 
 /** Merge a partial review for one video_id and persist to localStorage. */
 export function updateReview(videoId, partial) {
@@ -210,6 +222,14 @@ videoReviews.subscribe((v) => {
 skipReviewedOk.subscribe((v) => {
   try {
     localStorage.setItem('vktrs-skip-reviewed-ok', v ? '1' : '0');
+  } catch {
+    /* storage unavailable */
+  }
+});
+
+skipReviewed.subscribe((v) => {
+  try {
+    localStorage.setItem('vktrs-skip-reviewed', v ? '1' : '0');
   } catch {
     /* storage unavailable */
   }
