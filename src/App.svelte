@@ -36,6 +36,9 @@
   import { enableWakeLock } from './lib/wakelock.js';
   import { requestAppFullscreen } from './lib/fullscreen.js';
   import { loadFilters } from './lib/channel.js';
+  import { phoneRoom } from './lib/stores.js';
+  import { loadOrCreate } from './lib/multiplayer/identity.js';
+  import { isValidRoomId } from './lib/multiplayer/room.js';
 
   import StartScreen from './components/StartScreen.svelte';
   import CrtOverlay from './components/CrtOverlay.svelte';
@@ -60,8 +63,23 @@
   import Controls from './components/Controls.svelte';
   import UnmuteHint from './components/UnmuteHint.svelte';
   import ErrorScreen from './components/ErrorScreen.svelte';
+  import GameSheet from './components/game/GameSheet.svelte';
+
+  const params = new URLSearchParams(globalThis.location?.search || '');
+  const joinParam = params.get('join');
+  const isPhoneMode = !!joinParam && isValidRoomId(joinParam);
+
+  if (isPhoneMode) {
+    const player = loadOrCreate();
+    phoneRoom.update((s) => ({ ...s, roomCode: joinParam, player }));
+  }
+
+  // Stubbed handlers — wired properly in Task 19.
+  const onPhoneSetName = () => {};
+  const onPhoneGuess = () => {};
 
   onMount(async () => {
+    if (isPhoneMode) return;
     try {
       const all = await loadVideos();
       if (!Array.isArray(all) || all.length === 0) throw new Error('empty');
@@ -169,6 +187,7 @@
 
   // Keyboard / remote control (desktop). Ignored while typing in form controls.
   function onKey(e) {
+    if (isPhoneMode) return;
     // Escape always closes an open panel, even when a control inside is focused
     if (e.key === 'Escape') {
       if ($controlsOpen) {
@@ -267,7 +286,10 @@
 
 <svelte:window on:keydown={onKey} />
 
-<main
+{#if isPhoneMode}
+  <GameSheet open={true} isPhone={true} on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
+{:else}
+  <main
   id="tv"
   class:dimmed={$guideOpen || $queueOpen || $searchOpen || $settingsOpen || $controlsOpen}
   inert={$guideOpen ||
@@ -321,6 +343,7 @@
 {/if}
 
 <ErrorScreen />
+{/if}
 
 <style>
   #tv {
