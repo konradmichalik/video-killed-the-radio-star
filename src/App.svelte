@@ -82,7 +82,7 @@
   import Controls from './components/Controls.svelte';
   import UnmuteHint from './components/UnmuteHint.svelte';
   import ErrorScreen from './components/ErrorScreen.svelte';
-  import GameSheet from './components/game/GameSheet.svelte';
+  import LazyGameSheet from './components/game/LazyGameSheet.svelte';
 
   const params = new URLSearchParams(globalThis.location?.search || '');
   const joinParam = params.get('join');
@@ -536,7 +536,7 @@
 <svelte:window on:keydown={onKey} />
 
 {#if isPhoneMode}
-  <GameSheet open={true} isPhone={true} on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
+  <LazyGameSheet open={true} isPhone={true} on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
 {:else}
   <main
   id="tv"
@@ -588,43 +588,45 @@
 <Settings />
 <Controls />
 
-<GameSheet
-  open={gameSheetOpen}
-  {roomCode}
-  {joinUrl}
-  on:close={() => (gameSheetOpen = false)}
-  on:startMode={onStartMode}
-  on:startRound={onStartRound}
-  on:reveal={onReveal}
-  on:nextRound={onNextRound}
-  on:endSession={onEndSession}
->
-  <svelte:fragment slot="solo">
-    {#if $room.session?.phase === 'revealed'}
-      <div class="solo-rate">
-        <p>Did you get it?</p>
-        <button
-          class="icon-btn"
-          type="button"
-          on:click={() => onSoloRate('year')}
-          disabled={soloRated.year}>Year ✓</button
-        >
-        <button
-          class="icon-btn"
-          type="button"
-          on:click={() => onSoloRate('title')}
-          disabled={soloRated.title}>Title ✓</button
-        >
-        <button
-          class="icon-btn"
-          type="button"
-          on:click={() => onSoloRate('artist')}
-          disabled={soloRated.artist}>Artist ✓</button
-        >
-      </div>
-    {/if}
-  </svelte:fragment>
-</GameSheet>
+{#if gameSheetOpen || $gameMode !== null}
+  <LazyGameSheet
+    open={gameSheetOpen}
+    {roomCode}
+    {joinUrl}
+    on:close={() => (gameSheetOpen = false)}
+    on:startMode={onStartMode}
+    on:startRound={onStartRound}
+    on:reveal={onReveal}
+    on:nextRound={onNextRound}
+    on:endSession={onEndSession}
+  >
+    <svelte:fragment slot="solo">
+      {#if $room.session?.phase === 'revealed'}
+        <div class="solo-rate">
+          <p>Did you get it?</p>
+          <button
+            class="icon-btn"
+            type="button"
+            on:click={() => onSoloRate('year')}
+            disabled={soloRated.year}>Year ✓</button
+          >
+          <button
+            class="icon-btn"
+            type="button"
+            on:click={() => onSoloRate('title')}
+            disabled={soloRated.title}>Title ✓</button
+          >
+          <button
+            class="icon-btn"
+            type="button"
+            on:click={() => onSoloRate('artist')}
+            disabled={soloRated.artist}>Artist ✓</button
+          >
+        </div>
+      {/if}
+    </svelte:fragment>
+  </LazyGameSheet>
+{/if}
 
 {#if !$started && !$loadError}
   <StartScreen on:power={powerOn} />
