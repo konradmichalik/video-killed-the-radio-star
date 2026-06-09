@@ -37,6 +37,7 @@
     on:endSession
     on:setName
     on:guess
+    on:scoreChange
   >
     <svelte:fragment slot="solo">
       <slot name="solo" />

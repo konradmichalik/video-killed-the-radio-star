@@ -83,6 +83,8 @@
   import UnmuteHint from './components/UnmuteHint.svelte';
   import ErrorScreen from './components/ErrorScreen.svelte';
   import LazyGameSheet from './components/game/LazyGameSheet.svelte';
+  import PhoneShell from './components/game/PhoneShell.svelte';
+  import RevealOverlay from './components/game/RevealOverlay.svelte';
 
   const params = new URLSearchParams(globalThis.location?.search || '');
   const joinParam = params.get('join');
@@ -140,11 +142,14 @@
         ...s,
         session: { ...(s.session || {}), ...msg.payload },
         mySubmission: msg.payload.phase === 'guessing' ? null : s.mySubmission,
+        // A new guessing phase means the previous reveal is no longer relevant.
+        lastReveal: msg.payload.phase === 'guessing' ? null : s.lastReveal,
       }));
     } else if (msg.type === 'reveal') {
       phoneRoom.update((s) => ({
         ...s,
         session: { ...(s.session || {}), phase: 'revealed' },
+        lastReveal: msg.payload || null,
       }));
     } else if (msg.type === 'score') {
       phoneRoom.update((s) => ({ ...s, scoreboard: msg.payload.scoreboard || [] }));
@@ -296,6 +301,9 @@
   let host = null;
   const PEER_PREFIX = 'VKTRS-';
 
+  // Remember the user's Song Info preference so we can restore it after a game.
+  let priorHintsOn = null;
+
   async function startConnectedRoom() {
     const code = generateRoomId();
     roomCode = code;
@@ -354,6 +362,7 @@
         title: cv?.title,
         artist: cv?.artist,
         winners,
+        submissions: r.submissions,
       }),
     );
     broadcastScore();
@@ -377,6 +386,9 @@
     const mode = e.detail.mode;
     gameMode.set(mode);
     room.update((s) => startSession(s));
+    // Hide Song Info during gameplay so the lower third can't spoil the year.
+    priorHintsOn = get(hintsOn);
+    hintsOn.set(false);
     if (mode === 'connected') startConnectedRoom();
   }
 
@@ -404,6 +416,8 @@
       const r = get(room);
       host?.broadcast(encode('round', { round: r.session.round, phase: 'idle' }));
     }
+    // Advance to the next track so each round plays something new.
+    next();
   }
 
   function onEndSession() {
@@ -419,6 +433,22 @@
     gameMode.set(null);
     roomCode = null;
     joinUrl = '';
+    // Restore the user's previous Song Info preference.
+    if (priorHintsOn !== null) {
+      hintsOn.set(priorHintsOn);
+      priorHintsOn = null;
+    }
+  }
+
+  function onScoreChange(e) {
+    const { playerId, delta } = e.detail;
+    room.update((s) => ({
+      ...s,
+      players: s.players.map((p) =>
+        p.id === playerId ? { ...p, score: Math.max(0, (p.score || 0) + delta) } : p,
+      ),
+    }));
+    broadcastScore();
   }
 
   // Solo self-rate: each tap counts as one "correct" toward the existing
@@ -531,7 +561,7 @@
 <svelte:window on:keydown={onKey} />
 
 {#if isPhoneMode}
-  <LazyGameSheet open={true} isPhone={true} on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
+  <PhoneShell on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
 {:else}
   <main
     id="tv"
@@ -552,8 +582,11 @@
     {/if}
 
     {#if $started}
-      {#if $gameMode !== 'connected' || $room.session?.phase !== 'guessing'}
+      {#if $gameMode !== 'connected' || ($room.session?.phase !== 'guessing' && $room.session?.phase !== 'revealed')}
         <LowerThird />
+      {/if}
+      {#if $gameMode === 'connected' && $room.session?.phase === 'revealed'}
+        <RevealOverlay />
       {/if}
       <AdIndicator />
       <StationLogo />
@@ -600,6 +633,7 @@
       on:reveal={onReveal}
       on:nextRound={onNextRound}
       on:endSession={onEndSession}
+      on:scoreChange={onScoreChange}
     >
       <svelte:fragment slot="solo">
         {#if $room.session?.phase === 'revealed'}

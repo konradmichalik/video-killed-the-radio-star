@@ -112,6 +112,9 @@ test.describe.serial('connected game happy path', () => {
       test.skip(true, 'PeerJS broker unavailable: phones did not connect to host');
     }
 
+    // Switch to the GAME tab to expose the round controls.
+    await tv.getByRole('tab', { name: /^game$/i }).tap();
+
     // Host starts a round.
     await tv.getByRole('button', { name: /start round/i }).tap();
 
@@ -122,10 +125,12 @@ test.describe.serial('connected game happy path', () => {
     // Host sees both submissions counted.
     await expect(tv.getByText(/Submissions:\s*2\/2/i)).toBeVisible({ timeout: 10_000 });
 
-    // Host reveals — phones flip to the reveal phase ("Reveal! Scoreboard updating…").
+    // Host reveals — phones flip to the reveal phase. The new reveal card on
+    // the phone surfaces the actual year, so we wait for the "Actual year"
+    // label rather than the old generic "Reveal!" copy.
     await tv.getByRole('button', { name: /^reveal$/i }).tap();
-    await expect(p1.getByText(/reveal/i).first()).toBeVisible({ timeout: 10_000 });
-    await expect(p2.getByText(/reveal/i).first()).toBeVisible({ timeout: 10_000 });
+    await expect(p1.getByText(/actual year/i).first()).toBeVisible({ timeout: 10_000 });
+    await expect(p2.getByText(/actual year/i).first()).toBeVisible({ timeout: 10_000 });
 
     await phoneCtx1.close();
     await phoneCtx2.close();

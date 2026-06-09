@@ -4697,14 +4697,6 @@
     "country": "United States"
   },
   {
-    "title": "Oops!... I did it Again",
-    "artist": "Britney Spears",
-    "year": 2000,
-    "genre": "Pop",
-    "video_id": "CduA0TULnow",
-    "country": "United States"
-  },
-  {
     "title": "7 Days",
     "artist": "Craig David",
     "year": 2000,
@@ -5267,13 +5259,6 @@
     "genre": "Pop",
     "video_id": "XPpTgCho5ZA",
     "country": "United States"
-  },
-  {
-    "title": "Dilemma",
-    "artist": "Nelly (feat. Kelly Rowland)",
-    "year": 2002,
-    "genre": "Other",
-    "video_id": "8WYHDfJDPDc"
   },
   {
     "title": "Aicha",
@@ -7124,13 +7109,6 @@
     "country": "Australia"
   },
   {
-    "title": "Somebody That I Used To Know",
-    "artist": "Gotye (feat. Kimbra)",
-    "year": 2011,
-    "genre": "Other",
-    "video_id": "8UVNT4wvIGY"
-  },
-  {
     "title": "Stereo Hearts (feat. Adam Levine)",
     "artist": "Gym Class Heroes",
     "year": 2011,
@@ -7449,14 +7427,6 @@
   },
   {
     "title": "Gangnam Style",
-    "artist": "PSY",
-    "year": 2012,
-    "genre": "Hip-Hop",
-    "video_id": "9bZkp7q19f0",
-    "country": "South Korea"
-  },
-  {
-    "title": "Gangnam Style (강남스타일)",
     "artist": "PSY",
     "year": 2012,
     "genre": "Hip-Hop",
@@ -7998,13 +7968,6 @@
     "genre": "Reggae",
     "video_id": "YqeW9_5kURI",
     "country": "Jamaica"
-  },
-  {
-    "title": "Lean On (feat. MØ)",
-    "artist": "Major Lazer & DJ Snake",
-    "year": 2015,
-    "genre": "Other",
-    "video_id": "YqeW9_5kURI"
   },
   {
     "title": "El Perdón",

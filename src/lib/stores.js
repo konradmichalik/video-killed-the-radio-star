@@ -239,4 +239,5 @@ export const phoneRoom = writable({
   mySubmission: null,
   yearRange: { min: 1900, max: new Date().getFullYear() },
   connectionStatus: 'idle', // 'idle' | 'connecting' | 'open' | 'reconnecting' | 'unreachable'
+  lastReveal: null, // { year, title, artist, winners, submissions } — set on reveal, cleared on next round
 });

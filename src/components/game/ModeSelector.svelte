@@ -17,7 +17,7 @@
   <article class="card alt">
     <h3 class="title">CONNECTED</h3>
     <p class="desc">
-      Up to 8 players join from their phone. Closest to the actual year wins the point.
+      Up to 16 players join from their phone. Closest to the actual year wins the point.
     </p>
     <button
       type="button"

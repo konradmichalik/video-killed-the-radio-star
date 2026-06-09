@@ -11,6 +11,7 @@
   export let scoreboard = [];
   export let mySubmission = null;
   export let connectionStatus = 'open';
+  export let lastReveal = null; // { year, title, artist, winners, submissions }
   export let yearMin = 1900;
   export let yearMax = new Date().getFullYear();
 
@@ -25,6 +26,12 @@
   const lock = (e) => dispatch('guess', { year: e.detail.year });
 
   $: phase = session?.phase || 'idle';
+
+  // Reveal feedback derived from props (no mutation, no side effects).
+  $: myGuessYear = lastReveal?.submissions?.[player?.id]?.year ?? mySubmission?.year ?? null;
+  $: actualYear = lastReveal?.year ?? null;
+  $: delta = actualYear != null && myGuessYear != null ? Math.abs(actualYear - myGuessYear) : null;
+  $: didWin = !!(player?.id && lastReveal?.winners?.includes(player.id));
 </script>
 
 <section class="phone">
@@ -71,7 +78,38 @@
         <YearInput min={yearMin} max={yearMax} on:lock={lock} />
       {/if}
     {:else}
-      <p class="msg reveal">Reveal! Scoreboard updating…</p>
+      <div class="reveal-card">
+        {#if actualYear != null}
+          <p class="reveal-label">Actual year</p>
+          <p class="reveal-year">{actualYear}</p>
+          {#if lastReveal?.artist || lastReveal?.title}
+            <p class="reveal-track">
+              {lastReveal?.artist ?? ''}{lastReveal?.artist && lastReveal?.title
+                ? ' — '
+                : ''}{lastReveal?.title ?? ''}
+            </p>
+          {/if}
+          {#if myGuessYear != null}
+            <p class="reveal-guess">
+              Your guess: <strong>{myGuessYear}</strong>
+              {#if delta === 0}
+                — spot on!
+              {:else if delta != null}
+                — off by {delta} year{delta === 1 ? '' : 's'}
+              {/if}
+            </p>
+          {:else}
+            <p class="reveal-guess miss">No guess submitted this round.</p>
+          {/if}
+          {#if didWin}
+            <p class="reveal-badge win">You got the point!</p>
+          {:else}
+            <p class="reveal-badge">Closer luck next round.</p>
+          {/if}
+        {:else}
+          <p class="msg reveal">Reveal! Scoreboard updating…</p>
+        {/if}
+      </div>
     {/if}
   </main>
 
@@ -241,5 +279,68 @@
     letter-spacing: 3px;
     color: var(--accent-2);
     text-transform: uppercase;
+  }
+
+  .reveal-card {
+    display: grid;
+    gap: 10px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 3px solid #fff;
+    box-shadow: 5px 5px 0 var(--bug-yellow);
+  }
+  .reveal-label {
+    margin: 0;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+  }
+  .reveal-year {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(54px, 12vw, 96px);
+    letter-spacing: 6px;
+    line-height: 1;
+    color: var(--bug-yellow);
+    font-variant-numeric: tabular-nums;
+  }
+  .reveal-track {
+    margin: 0;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .reveal-guess {
+    margin: 6px 0 0;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .reveal-guess strong {
+    color: var(--accent-2);
+  }
+  .reveal-guess.miss {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .reveal-badge {
+    margin: 8px 0 0;
+    padding: 10px 14px;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    background: transparent;
+    border: 3px solid #fff;
+  }
+  .reveal-badge.win {
+    color: #050505;
+    background: var(--accent);
+    border-color: #050505;
+    box-shadow: 4px 4px 0 #050505;
   }
 </style>

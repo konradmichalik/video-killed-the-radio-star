@@ -1,7 +1,23 @@
 export async function loadVideos() {
   const res = await fetch(`${import.meta.env.BASE_URL}videos.json`);
   if (!res.ok) throw new Error(`videos.json: HTTP ${res.status}`);
-  return res.json();
+  const all = await res.json();
+  // Drop entries that re-use a video_id — keyed each blocks in Queue/Search
+  // throw `each_key_duplicate` on collisions, which aborts the Sheet's
+  // reactive update and the panel never visually opens.
+  return Array.isArray(all) ? dedupeById(all) : all;
+}
+
+function dedupeById(items) {
+  const seen = new Set();
+  const out = [];
+  for (const it of items) {
+    const id = it?.video_id;
+    if (!id || seen.has(id)) continue;
+    seen.add(id);
+    out.push(it);
+  }
+  return out;
 }
 
 export function shuffle(arr) {
