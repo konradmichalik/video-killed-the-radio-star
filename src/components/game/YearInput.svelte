@@ -1,4 +1,9 @@
 <!-- src/components/game/YearInput.svelte -->
+<!--
+  Retro range slider for picking a year. Big Anton number above, native
+  <input type="range"> styled with hard borders / offset shadows / tick
+  marks every 10 years, "Lock it in" CTA below.
+-->
 <script>
   import { createEventDispatcher } from 'svelte';
   export let min = 1900;
@@ -7,80 +12,162 @@
   export let disabled = false;
 
   const dispatch = createEventDispatcher();
-
-  const bump = (n) => {
-    value = Math.max(min, Math.min(max, value + n));
-  };
   const lockIn = () => dispatch('lock', { year: value });
+
+  // Build a CSS gradient of vertical ticks every 10 years. The track is
+  // (max - min) "units" wide, and each unit is 100/(max-min)%. A 10-year
+  // major tick sits every 10 units => major step = 1000/(max-min)%.
+  $: span = Math.max(1, max - min);
+  $: majorStepPct = (1000 / span).toFixed(4); // every 10 years
 </script>
 
 <div class="year-input">
   <output class="display" aria-live="polite">{value}</output>
-  <div class="row">
-    <button type="button" class="bump" aria-label="Minus 10" on:click={() => bump(-10)} {disabled}
-      >−10</button
-    >
-    <button type="button" class="bump" aria-label="Minus 1" on:click={() => bump(-1)} {disabled}
-      >−1</button
-    >
-    <button type="button" class="bump" aria-label="Plus 1" on:click={() => bump(1)} {disabled}
-      >+1</button
-    >
-    <button type="button" class="bump" aria-label="Plus 10" on:click={() => bump(10)} {disabled}
-      >+10</button
-    >
+
+  <div class="slider-wrap" style="--major-step: {majorStepPct}%">
+    <input
+      class="slider"
+      type="range"
+      {min}
+      {max}
+      step="1"
+      bind:value
+      {disabled}
+      aria-label="Year"
+    />
+    <div class="ticks" aria-hidden="true"></div>
+    <div class="bounds">
+      <span>{min}</span>
+      <span>{max}</span>
+    </div>
   </div>
+
   <button type="button" class="lock" on:click={lockIn} {disabled}>Lock it in</button>
 </div>
 
 <style>
   .year-input {
     display: grid;
-    gap: 14px;
+    gap: 18px;
   }
   .display {
     font-family: 'Anton', sans-serif;
-    font-size: clamp(56px, 12vw, 96px);
+    font-size: clamp(56px, 14vw, 112px);
     letter-spacing: 6px;
     text-align: center;
     color: var(--bug-yellow);
     background: #050505;
     border: 3px solid #050505;
     box-shadow: 5px 5px 0 var(--accent-2);
-    padding: 12px 8px;
+    padding: 14px 8px;
     font-variant-numeric: tabular-nums;
     line-height: 1;
   }
-  .row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+
+  .slider-wrap {
+    position: relative;
+    padding: 24px 4px 4px;
   }
-  .bump {
-    min-height: 52px;
-    font-family: 'Anton', sans-serif;
-    font-size: 22px;
-    letter-spacing: 2px;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.04);
-    border: 3px solid #fff;
+
+  /* Tick rail sits behind the slider; 1px lines every 10 years. */
+  .ticks {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 26px;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.5) 0 2px,
+      transparent 2px 100%
+    );
+    background-size: var(--major-step) 100%;
+    background-repeat: repeat-x;
+    opacity: 0.6;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    margin: 0;
+    height: 36px;
     cursor: pointer;
-    transition:
-      transform 0.1s ease,
-      box-shadow 0.1s ease,
-      color 0.12s ease,
-      border-color 0.12s ease;
   }
-  .bump:hover {
-    border-color: var(--accent-2);
-    color: var(--accent-2);
+  .slider:focus-visible {
+    outline: none;
+  }
+
+  /* WebKit track */
+  .slider::-webkit-slider-runnable-track {
+    height: 14px;
+    background: #050505;
+    border: 3px solid #fff;
     box-shadow: 4px 4px 0 var(--accent-2);
-    transform: translate(-2px, -2px);
   }
-  .bump:active {
+  /* Firefox track */
+  .slider::-moz-range-track {
+    height: 14px;
+    background: #050505;
+    border: 3px solid #fff;
+    box-shadow: 4px 4px 0 var(--accent-2);
+  }
+
+  /* WebKit thumb */
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border: 3px solid #050505;
+    box-shadow: 4px 4px 0 #050505;
+    /* Align thumb centre with 14px track centre: (14 - 36) / 2 = -11px */
+    margin-top: -11px;
+    cursor: grab;
+  }
+  .slider:active::-webkit-slider-thumb {
+    cursor: grabbing;
     transform: translate(2px, 2px);
-    box-shadow: none;
+    box-shadow: 1px 1px 0 #050505;
   }
+  /* Firefox thumb */
+  .slider::-moz-range-thumb {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border: 3px solid #050505;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 #050505;
+    cursor: grab;
+  }
+  .slider:focus-visible::-webkit-slider-thumb {
+    outline: 3px solid var(--accent-2);
+    outline-offset: 2px;
+  }
+  .slider:focus-visible::-moz-range-thumb {
+    outline: 3px solid var(--accent-2);
+    outline-offset: 2px;
+  }
+  .slider:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .bounds {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
   .lock {
     width: 100%;
     min-height: 60px;
@@ -105,7 +192,7 @@
     transform: translate(3px, 3px);
     box-shadow: 0 0 0 #050505;
   }
-  button:disabled {
+  .lock:disabled {
     opacity: 0.4;
     cursor: not-allowed;
     box-shadow: none;

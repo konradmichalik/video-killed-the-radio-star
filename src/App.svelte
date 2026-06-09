@@ -83,6 +83,7 @@
   import UnmuteHint from './components/UnmuteHint.svelte';
   import ErrorScreen from './components/ErrorScreen.svelte';
   import LazyGameSheet from './components/game/LazyGameSheet.svelte';
+  import PhoneShell from './components/game/PhoneShell.svelte';
 
   const params = new URLSearchParams(globalThis.location?.search || '');
   const joinParam = params.get('join');
@@ -140,11 +141,14 @@
         ...s,
         session: { ...(s.session || {}), ...msg.payload },
         mySubmission: msg.payload.phase === 'guessing' ? null : s.mySubmission,
+        // A new guessing phase means the previous reveal is no longer relevant.
+        lastReveal: msg.payload.phase === 'guessing' ? null : s.lastReveal,
       }));
     } else if (msg.type === 'reveal') {
       phoneRoom.update((s) => ({
         ...s,
         session: { ...(s.session || {}), phase: 'revealed' },
+        lastReveal: msg.payload || null,
       }));
     } else if (msg.type === 'score') {
       phoneRoom.update((s) => ({ ...s, scoreboard: msg.payload.scoreboard || [] }));
@@ -357,6 +361,7 @@
         title: cv?.title,
         artist: cv?.artist,
         winners,
+        submissions: r.submissions,
       }),
     );
     broadcastScore();
@@ -544,7 +549,7 @@
 <svelte:window on:keydown={onKey} />
 
 {#if isPhoneMode}
-  <LazyGameSheet open={true} isPhone={true} on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
+  <PhoneShell on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
 {:else}
   <main
     id="tv"
