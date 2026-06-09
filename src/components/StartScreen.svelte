@@ -188,9 +188,6 @@
     display: inline-block;
     animation: word-in 850ms steps(7, end) calc(700ms + var(--i) * 180ms) backwards;
   }
-  .word + .word {
-    margin-left: 0.32em;
-  }
   @keyframes word-in {
     0% {
       opacity: 0;
