@@ -47,8 +47,7 @@
     overflow-y: auto;
     background: var(--bg, #000);
     color: #fff;
-    padding: clamp(16px, 4vw, 28px) clamp(16px, 5vw, 26px)
-      calc(28px + env(safe-area-inset-bottom));
+    padding: clamp(16px, 4vw, 28px) clamp(16px, 5vw, 26px) calc(28px + env(safe-area-inset-bottom));
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 22px;

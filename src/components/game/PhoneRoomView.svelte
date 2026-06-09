@@ -84,8 +84,9 @@
           <p class="reveal-year">{actualYear}</p>
           {#if lastReveal?.artist || lastReveal?.title}
             <p class="reveal-track">
-              {lastReveal?.artist ?? ''}{lastReveal?.artist && lastReveal?.title ? ' — ' : ''}{lastReveal?.title ??
-                ''}
+              {lastReveal?.artist ?? ''}{lastReveal?.artist && lastReveal?.title
+                ? ' — '
+                : ''}{lastReveal?.title ?? ''}
             </p>
           {/if}
           {#if myGuessYear != null}

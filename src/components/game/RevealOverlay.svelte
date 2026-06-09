@@ -47,9 +47,7 @@
           <li class:winner={r.winner}>
             <span class="g-name">{r.name}</span>
             <span class="g-guess">{r.guess}</span>
-            <span class="g-dist"
-              >{r.distance === 0 ? 'EXACT' : `±${r.distance ?? '?'}`}</span
-            >
+            <span class="g-dist">{r.distance === 0 ? 'EXACT' : `±${r.distance ?? '?'}`}</span>
             {#if r.winner}<span class="g-badge">WINNER</span>{/if}
           </li>
         {/each}
