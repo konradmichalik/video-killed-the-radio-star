@@ -21,7 +21,18 @@
     videoReviews,
     skipReviewedOk,
     toggleFavorite,
+    gameMode,
+    room,
+    guessStats,
   } from './lib/stores.js';
+  import {
+    startSession,
+    startRound as reduceStartRound,
+    reveal as reduceReveal,
+    nextRound as reduceNextRound,
+    endSession,
+  } from './lib/multiplayer/state.js';
+  import { nextGuessStats } from './lib/game.js';
   import { loadVideos, shuffle, filterVideos } from './lib/data.js';
   import {
     loadYouTubeAPI,
@@ -185,6 +196,57 @@
     }
   }
 
+  // ----- Game Mode (TV side) ---------------------------------------------
+  // These bits are only meaningful when NOT in phone mode. Phone mode renders
+  // GameSheet at the top of the markup and exits early everywhere else.
+  let gameSheetOpen = false;
+  let roomCode = null;
+  let joinUrl = '';
+  // Solo self-rate state — only meaningful during Solo's 'revealed' phase.
+  let soloRated = { year: false, title: false, artist: false };
+
+  function onStartMode(e) {
+    const mode = e.detail.mode;
+    gameMode.set(mode);
+    room.update((s) => startSession(s));
+    if (mode === 'connected') {
+      // Connected room hosting is wired in Task 18.
+    }
+  }
+
+  function onStartRound() {
+    const cv = get(currentVideo);
+    room.update((s) => reduceStartRound(s, cv));
+    soloRated = { year: false, title: false, artist: false };
+  }
+
+  function onReveal() {
+    if ($gameMode === 'solo') {
+      room.update((s) => reduceReveal(s, []));
+    } else {
+      // Connected reveal in Task 18.
+    }
+  }
+
+  function onNextRound() {
+    room.update((s) => reduceNextRound(s));
+  }
+
+  function onEndSession() {
+    room.update((s) => endSession(s));
+    gameMode.set(null);
+    roomCode = null;
+    joinUrl = '';
+  }
+
+  // Solo self-rate: each tap counts as one "correct" toward the existing
+  // guessStats tracker so the streak/best-of stats keep working.
+  function onSoloRate(key) {
+    if (soloRated[key]) return;
+    soloRated = { ...soloRated, [key]: true };
+    guessStats.update((s) => nextGuessStats(s, true));
+  }
+
   // Keyboard / remote control (desktop). Ignored while typing in form controls.
   function onKey(e) {
     if (isPhoneMode) return;
@@ -331,11 +393,49 @@
   {/if}
 </div>
 
-<Guide />
+<Guide on:openGame={() => (gameSheetOpen = true)} />
 <Queue />
 <Search />
 <Settings />
 <Controls />
+
+<GameSheet
+  open={gameSheetOpen}
+  {roomCode}
+  {joinUrl}
+  on:close={() => (gameSheetOpen = false)}
+  on:startMode={onStartMode}
+  on:startRound={onStartRound}
+  on:reveal={onReveal}
+  on:nextRound={onNextRound}
+  on:endSession={onEndSession}
+>
+  <svelte:fragment slot="solo">
+    {#if $room.session?.phase === 'revealed'}
+      <div class="solo-rate">
+        <p>Did you get it?</p>
+        <button
+          class="icon-btn"
+          type="button"
+          on:click={() => onSoloRate('year')}
+          disabled={soloRated.year}>Year ✓</button
+        >
+        <button
+          class="icon-btn"
+          type="button"
+          on:click={() => onSoloRate('title')}
+          disabled={soloRated.title}>Title ✓</button
+        >
+        <button
+          class="icon-btn"
+          type="button"
+          on:click={() => onSoloRate('artist')}
+          disabled={soloRated.artist}>Artist ✓</button
+        >
+      </div>
+    {/if}
+  </svelte:fragment>
+</GameSheet>
 
 {#if !$started && !$loadError}
   <StartScreen on:power={powerOn} />
@@ -355,5 +455,15 @@
   }
   #tv.dimmed {
     filter: brightness(0.4);
+  }
+  .solo-rate {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .solo-rate p {
+    margin: 0;
+    width: 100%;
   }
 </style>

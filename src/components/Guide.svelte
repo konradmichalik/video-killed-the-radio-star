@@ -23,7 +23,10 @@
   import { loadFilters, saveFilters } from '../lib/channel.js';
   import { buildPresets } from '../lib/presets.js';
   import { slide } from 'svelte/transition';
+  import { createEventDispatcher } from 'svelte';
   import Sheet from './Sheet.svelte';
+
+  const dispatch = createEventDispatcher();
 
   // Each filter section starts collapsed and shows a teaser; click expands.
   let openSections = { channels: false, year: false, genres: false, origin: false };
@@ -183,6 +186,11 @@
     guideOpen.set(false);
     settingsOpen.set(true);
   }
+
+  function openGame() {
+    guideOpen.set(false);
+    dispatch('openGame');
+  }
 </script>
 
 <Sheet
@@ -200,6 +208,7 @@
   </svelte:fragment>
 
   <svelte:fragment slot="actions">
+    <button class="icon-btn" type="button" aria-label="Game mode" on:click={openGame}>🎮</button>
     <button class="icon-btn" type="button" aria-label="Controls reference" on:click={openControls}
       >?</button
     >
