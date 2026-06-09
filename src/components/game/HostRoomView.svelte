@@ -82,6 +82,11 @@
       </div>
     </div>
 
+    <div class="meta-row room-meta">
+      <NetworkBadge status="open" />
+      <span class="peers">{connectedCount}/{players.length} peers</span>
+    </div>
+
     <div>
       <h4 class="lists-title">Players ({connectedCount})</h4>
       <PlayerList {players} {submissions} editable={true} on:kick />
@@ -93,12 +98,13 @@
         <span class="phase-label">Phase:</span>
         <span class="phase-value">{phase}</span>
       </div>
-      <div class="meta-row">
-        <NetworkBadge status="open" />
-        <span class="peers">{connectedCount}/{players.length} peers</span>
-      </div>
       {#if phase === 'guessing'}
-        <p class="subs">Submissions: {submittedCount}/{connectedCount}</p>
+        <div class="subs-block" aria-live="polite">
+          <span class="subs-label">Guesses in</span>
+          <span class="subs-count"
+            ><strong>{submittedCount}</strong><span class="subs-sep">/</span>{connectedCount}</span
+          >
+        </div>
       {/if}
     </div>
 
@@ -255,12 +261,43 @@
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.65);
   }
-  .subs {
-    margin: 4px 0 0;
+  .room-meta {
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 3px solid #fff;
+    box-shadow: 5px 5px 0 var(--accent-2);
+  }
+  .subs-block {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-top: 6px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--bug-yellow);
+  }
+  .subs-label {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .subs-count {
     font-family: 'VT323', monospace;
-    font-size: 18px;
+    font-size: clamp(24px, 4vw, 32px);
     letter-spacing: 2px;
     color: var(--bug-yellow);
+    line-height: 1;
+  }
+  .subs-count strong {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(32px, 6vw, 48px);
+    margin-right: 2px;
+  }
+  .subs-sep {
+    margin: 0 2px;
+    color: rgba(255, 255, 255, 0.45);
   }
 
   .controls {
