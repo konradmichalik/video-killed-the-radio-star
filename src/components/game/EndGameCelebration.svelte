@@ -20,53 +20,55 @@
 
 <div class="curtain" role="dialog" aria-modal="true" aria-label="Game over">
   <div class="card">
-    <div class="trophy" aria-hidden="true">
-      <svg viewBox="0 0 64 64" width="96" height="96" focusable="false">
-        <!-- Cup body -->
-        <path
-          d="M16 8 H48 V20 C48 32 40 40 32 40 C24 40 16 32 16 20 Z"
-          fill="var(--bug-yellow)"
-          stroke="#050505"
-          stroke-width="3"
-          stroke-linejoin="round"
-        />
-        <!-- Left handle -->
-        <path
-          d="M16 14 C8 14 8 26 16 26"
-          fill="none"
-          stroke="#050505"
-          stroke-width="3"
-          stroke-linecap="round"
-        />
-        <!-- Right handle -->
-        <path
-          d="M48 14 C56 14 56 26 48 26"
-          fill="none"
-          stroke="#050505"
-          stroke-width="3"
-          stroke-linecap="round"
-        />
-        <!-- Stem -->
-        <rect
-          x="28"
-          y="40"
-          width="8"
-          height="8"
-          fill="var(--bug-yellow)"
-          stroke="#050505"
-          stroke-width="3"
-        />
-        <!-- Base -->
-        <rect
-          x="18"
-          y="48"
-          width="28"
-          height="8"
-          fill="var(--bug-yellow)"
-          stroke="#050505"
-          stroke-width="3"
-        />
-      </svg>
+    <div class="trophy-frame" aria-hidden="true">
+      <div class="trophy">
+        <svg viewBox="0 0 64 64" width="128" height="128" focusable="false">
+          <!-- Cup body -->
+          <path
+            d="M16 8 H48 V20 C48 32 40 40 32 40 C24 40 16 32 16 20 Z"
+            fill="var(--bug-yellow)"
+            stroke="#050505"
+            stroke-width="5"
+            stroke-linejoin="round"
+          />
+          <!-- Left handle -->
+          <path
+            d="M16 14 C8 14 8 26 16 26"
+            fill="none"
+            stroke="#050505"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+          <!-- Right handle -->
+          <path
+            d="M48 14 C56 14 56 26 48 26"
+            fill="none"
+            stroke="#050505"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+          <!-- Stem -->
+          <rect
+            x="28"
+            y="40"
+            width="8"
+            height="8"
+            fill="var(--bug-yellow)"
+            stroke="#050505"
+            stroke-width="5"
+          />
+          <!-- Base -->
+          <rect
+            x="16"
+            y="48"
+            width="32"
+            height="10"
+            fill="var(--bug-yellow)"
+            stroke="#050505"
+            stroke-width="5"
+          />
+        </svg>
+      </div>
     </div>
 
     <p class="kicker">Game over</p>
@@ -109,9 +111,95 @@
     border: 4px solid var(--accent-2);
     box-shadow: 8px 8px 0 var(--accent);
   }
+  .trophy-frame {
+    display: inline-block;
+    padding: 14px 18px;
+    background: var(--accent);
+    border: 5px solid #050505;
+    box-shadow:
+      8px 8px 0 var(--accent-2),
+      16px 16px 0 #050505;
+    transform: rotate(-2deg);
+    animation: trophy-frame-glitch 2.4s steps(1, end) infinite;
+  }
   .trophy {
     line-height: 0;
-    animation: wordmark-glitch-1 4.6s steps(1, end) infinite;
+    display: block;
+    filter: drop-shadow(4px 4px 0 #050505) drop-shadow(-3px 0 0 var(--accent-2));
+    animation: trophy-glitch 2.4s steps(1, end) infinite;
+  }
+  @keyframes trophy-glitch {
+    0%,
+    72%,
+    100% {
+      transform: translate(0, 0) skew(0deg);
+      filter: drop-shadow(4px 4px 0 #050505) drop-shadow(-3px 0 0 var(--accent-2));
+    }
+    73% {
+      transform: translate(-4px, 2px) skew(-3deg);
+      filter: drop-shadow(6px 0 0 var(--accent)) drop-shadow(-6px 0 0 var(--accent-2))
+        drop-shadow(4px 4px 0 #050505);
+    }
+    76% {
+      transform: translate(5px, -2px) skew(2deg);
+      filter: drop-shadow(-6px 0 0 var(--accent)) drop-shadow(6px 0 0 var(--accent-2))
+        drop-shadow(4px 4px 0 #050505);
+    }
+    79% {
+      transform: translate(-3px, 3px) skew(0deg);
+      filter: drop-shadow(0 -4px 0 var(--bug-yellow)) drop-shadow(4px 4px 0 #050505);
+    }
+    82% {
+      transform: translate(2px, -3px) skew(1deg);
+      filter: drop-shadow(4px 0 0 #ff00ea) drop-shadow(-4px 0 0 #00f0ff)
+        drop-shadow(4px 4px 0 #050505);
+    }
+    85% {
+      transform: translate(0, 0) skew(0deg);
+      filter: drop-shadow(4px 4px 0 #050505) drop-shadow(-3px 0 0 var(--accent-2));
+    }
+    88% {
+      transform: translate(-2px, 0) skew(-1deg);
+      filter: drop-shadow(3px 0 0 var(--accent)) drop-shadow(4px 4px 0 #050505);
+    }
+    91% {
+      transform: translate(0, 0) skew(0deg);
+      filter: drop-shadow(4px 4px 0 #050505) drop-shadow(-3px 0 0 var(--accent-2));
+    }
+  }
+  @keyframes trophy-frame-glitch {
+    0%,
+    72%,
+    100% {
+      transform: rotate(-2deg) translate(0, 0);
+      box-shadow:
+        8px 8px 0 var(--accent-2),
+        16px 16px 0 #050505;
+    }
+    74% {
+      transform: rotate(-2deg) translate(-3px, 2px);
+      box-shadow:
+        10px 6px 0 var(--accent),
+        18px 14px 0 #050505;
+    }
+    78% {
+      transform: rotate(-1deg) translate(3px, -2px);
+      box-shadow:
+        6px 10px 0 var(--accent-2),
+        14px 18px 0 #050505;
+    }
+    82% {
+      transform: rotate(-2deg) translate(-2px, 0);
+      box-shadow:
+        8px 8px 0 var(--bug-yellow),
+        16px 16px 0 #050505;
+    }
+    87% {
+      transform: rotate(-2deg) translate(0, 0);
+      box-shadow:
+        8px 8px 0 var(--accent-2),
+        16px 16px 0 #050505;
+    }
   }
   .kicker {
     margin: 0;
@@ -215,11 +303,15 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .trophy-frame,
     .trophy,
     .wm-1,
     .wm-2,
     .board :global(.scoreboard li.me) {
       animation: none !important;
+    }
+    .trophy-frame {
+      transform: none;
     }
   }
 </style>
