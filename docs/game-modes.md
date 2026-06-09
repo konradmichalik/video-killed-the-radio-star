@@ -1,0 +1,64 @@
+# Game modes
+
+Two opt-in modes selected from the **GAME MODE** sheet (top-right of the TV
+Guide). Picking a mode hides the lower-third so years/titles aren't spoiled.
+
+## Solo — self-rated guess game
+
+Lean-back single-player mode: listen, guess artist · title · year in your head,
+**REVEAL** when ready, then self-rate.
+
+- A bottom-center bar (`GuessGame`) shows the phase CTA:
+  `? Reveal` → `✓ I knew it` / `✗ Missed` → `▶ Next track`.
+- A correct call extends your **streak**; a miss resets it. Live stats
+  (Streak · Best · Played · Hit&nbsp;rate) appear inside the **GAME MODE**
+  sheet, analogous to Connected's scoreboard.
+- Stats are **cleared each time a new Solo session is started**. Best/streak
+  during the current session also persist to `localStorage` (`vktrs-guess`)
+  in case the tab is closed mid-game.
+- The reveal triggers the regular lower-third slide-in so the answer is
+  shown the same way it is in normal playback. The "▶ COMING UP" teaser and
+  the screen-reader now-playing announcement stay suppressed so the next
+  track isn't spoiled.
+
+Open the sheet (Open button in the bar) and tap **End game** to leave the mode.
+
+## Connected — multi-device WebRTC quiz
+
+Phones join the TV via QR code and submit a **year guess** per round; the
+player(s) closest to the actual release year score the point. No hard player
+cap is currently enforced in code — practical limit is the PeerJS broker's
+connection budget.
+
+- **Host (TV):** opens the GameSheet → the **ROOM** tab shows the room code,
+  QR code, join URL and a live players list. The **GAME** tab drives rounds
+  (`Start round` → `Reveal (X/Y)` shows submission count → `Next round`),
+  ends the game, and edits scores ad hoc.
+- Once the sheet is closed, a `FloatingControls` bar (bottom-center) keeps
+  the same phase CTA + round indicator + Open affordance visible while
+  music plays.
+- **Phones (`?join=ABCD`):** thin clients showing room status, a year input
+  (clamped to the catalogue's year range), submit + locked-in feedback, and
+  the post-reveal card (actual year · track · own guess · winner badge).
+- **End of game** → a neo-brutalist winner overlay with confetti glitch and
+  the final scoreboard.
+
+Transport: WebRTC P2P via the PeerJS public broker — no server. Same Vite
+bundle for TV and phone; phone mode is triggered by `?join=ABCD` in the URL.
+Both `peerjs` and `qrcode` are lazy-loaded so the channel-only path stays slim.
+
+## Under the hood
+
+- **Pure logic** in `src/lib/`:
+  - `game.js` — Solo scoring (`nextGuessStats`, `hitRate`), unit-tested.
+  - `multiplayer/state.js` — room reducer (`startSession`, `startRound`,
+    `reveal`, `nextRound`, …), pure and unit-tested.
+  - `multiplayer/scoring.js` — `closestYearWinners`, unit-tested.
+  - `multiplayer/room.js` — room ID generator/validator.
+- **Side-effectful**: `multiplayer/peer.js` (PeerJS host/client wrappers),
+  `multiplayer/protocol.js` (typed encode/parse).
+- **UI**: `components/GuessGame.svelte` (Solo bar), `components/game/`
+  (`GameSheet`, `HostRoomView`, `PhoneRoomView`, `FloatingControls`,
+  `EndGameCelebration`, `Scoreboard`, …).
+- **State**: `gameMode`, `room`, `phoneRoom`, `guessStats` stores in
+  `src/lib/stores.js`. Both bars share `.game-bar*` classes in `src/app.css`.

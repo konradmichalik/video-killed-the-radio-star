@@ -20,10 +20,22 @@ src/
     a11y.js                 focus-trap / focus-on-mount actions
     wakelock.js             keep the screen awake
     fullscreen.js           fullscreen request
+    multiplayer/            Connected-mode WebRTC layer
+      state.js              pure room reducer (round / reveal / nextRound)
+      scoring.js            closestYearWinners (pure)
+      protocol.js           typed encode/parse for peer messages
+      peer.js               PeerJS host/client wrappers (side-effectful)
+      room.js               room ID generator/validator
+      identity.js           phone-side player identity (localStorage)
   components/
     StartScreen · CrtOverlay · ChannelStatic · LowerThird · UpNext
-    GuessGame · CenterFeedback · GuideTab · TouchOverlay · StationLogo
+    GuessGame · CenterFeedback · TouchOverlay · StationLogo · DevReview
     UnmuteHint · ErrorScreen · Sheet · Toggle · Guide · Queue · Search
+    game/                   Game-mode UI (lazy-loaded multiplayer chunk)
+      GameSheet · LazyGameSheet · ModeSelector · HostRoomView
+      PhoneRoomView · PhoneShell · FloatingControls · Scoreboard
+      PlayerList · RevealOverlay · EndGameCelebration · YearInput
+      NetworkBadge
 public/
   videos.json               the "database"
   manifest.json             PWA manifest

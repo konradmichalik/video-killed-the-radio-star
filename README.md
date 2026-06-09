@@ -56,7 +56,7 @@ npm run verify     # Check all videos.json IDs are reachable and embeddable
 - **Full-screen channel** — shuffle play, smooth preloaded song-to-song transitions, "▶ COMING UP" teasers, end-screen suppression (~1.5 s preempt before YouTube's "more videos" overlay)
 - **TV Guide** — year range, genre and country filters, one-tap channel presets, CRT / SONG INFO / STATION LOGO toggles
 - **Search** with ranked autocomplete; **Queue** editor with drag-to-reorder; **Settings** panel
-- **Guess game** — lean-back mode with title mask, self-rated reveal, running streak and hit-rate
+- **Game modes** — opt-in **Solo** (self-rated guess game: REVEAL, ✓/✗, streak + hit-rate stats in the sheet) and **Connected** (phones join the TV via QR, year-guess per round, closest year wins) — see [`docs/game-modes.md`](docs/game-modes.md)
 - **Neo-brutalist UI** — VKTRS station-bug logo (player corner), "VIDEO KILLED / THE RADIO STAR" wordmark with RGB-glitch effect on the start screen and all overlay sheets, hard teal offset shadows
 - **Curated catalogue** — enriched via Hitster card datasets and MusicBrainz API, verified embeddable
 - **Installable PWA** — Workbox precaches the app shell and `videos.json`; launches offline (streaming still needs the network)

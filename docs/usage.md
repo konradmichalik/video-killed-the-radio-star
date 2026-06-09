@@ -69,8 +69,8 @@ straight through to the controls underneath.
 ## Coming up
 
 About 14 seconds before a clip ends, an MTV-style "▶ COMING UP" teaser slides in
-(top right) announcing the next track. It's suppressed in guess mode so the next
-song isn't spoiled — see [guess-game.md](guess-game.md).
+(top right) announcing the next track. It's suppressed in either game mode so
+the next song isn't spoiled — see [game-modes.md](game-modes.md).
 
 ## Station bug
 
