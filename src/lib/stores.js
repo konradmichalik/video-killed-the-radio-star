@@ -1,5 +1,6 @@
 import { writable, derived } from 'svelte/store';
 import { EMPTY_GUESS_STATS, nextGuessStats } from './game.js';
+import { EMPTY_ROOM } from './multiplayer/state.js';
 
 const loadCrt = () => {
   try {
@@ -220,4 +221,22 @@ favorites.subscribe((v) => {
   } catch {
     /* storage unavailable */
   }
+});
+
+// 'solo' | 'connected' | null — null means no active game.
+export const gameMode = writable(null);
+
+// TV-side room state. Source of truth for the connected game.
+export const room = writable(EMPTY_ROOM);
+
+// Phone-side mirror. Slim subset of room + own input state.
+export const phoneRoom = writable({
+  roomCode: null,
+  player: null,
+  session: null,
+  myScore: 0,
+  scoreboard: [],
+  mySubmission: null,
+  yearRange: { min: 1900, max: new Date().getFullYear() },
+  connectionStatus: 'idle', // 'idle' | 'connecting' | 'open' | 'reconnecting' | 'unreachable'
 });

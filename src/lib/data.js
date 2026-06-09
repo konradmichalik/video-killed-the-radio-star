@@ -118,6 +118,12 @@ export function yearBounds(all) {
   return [Math.min(...y), Math.max(...y)];
 }
 
+export function yearRange(videos) {
+  const years = (videos || []).map((v) => v.year).filter(Number.isFinite);
+  if (years.length === 0) return { min: 1900, max: new Date().getFullYear() };
+  return { min: Math.min(...years), max: Math.max(...years) };
+}
+
 export function filterVideos(all, { yearMin, yearMax, genres, countries }) {
   return all.filter((v) => {
     if (v.year < yearMin || v.year > yearMax) return false;
