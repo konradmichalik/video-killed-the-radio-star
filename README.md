@@ -29,6 +29,9 @@ npm run verify     # Check all videos.json IDs are reachable and embeddable
 > [!NOTE]
 > The PWA service worker only registers on **HTTPS or `localhost`**. Test offline behaviour there, not on a LAN IP.
 
+> [!TIP]
+> **About YouTube ads** — VKTRS streams via the YouTube IFrame Player, and YouTube serves pre-roll ads on embedded third-party sites. We use the privacy-enhanced `youtube-nocookie.com` host and detect ad playback (`ADVERTISEMENT` indicator + tap-through to YouTube's own "Skip Ad" button), but the ads themselves cannot be suppressed in a Terms-of-Service-compliant way. **For a (practically) ad-free experience, install VKTRS as a PWA on the iPad/iPhone home screen** — iOS Intelligent Tracking Prevention in standalone webview context dramatically reduces (and often eliminates) embedded ad delivery.
+
 ## ✨ Features
 
 - **Full-screen channel** — shuffle play, smooth preloaded song-to-song transitions, "▶ COMING UP" teasers, end-screen suppression (~1.5 s preempt before YouTube's "more videos" overlay)
