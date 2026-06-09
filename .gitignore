@@ -29,8 +29,7 @@ Thumbs.db
 *.swp
 
 # project-specific — track curated data, skip generated / intermediate files
-public/videos.json.bak
-public/videos.json.review-bak
+public/videos.json.*bak
 scripts/sources/_new-candidates.json
 scripts/sources/_review-parsed.json
 scripts/sources/mb-lookup.log
