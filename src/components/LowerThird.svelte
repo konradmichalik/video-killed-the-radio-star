@@ -159,5 +159,59 @@
     color: var(--bug-yellow);
     margin-left: 10px;
     text-shadow: 0 0 6px var(--bug-yellow);
+    display: inline-block;
+    animation: lt-fav-glitch 0.7s steps(1, end) both;
+  }
+  @keyframes lt-fav-glitch {
+    0% {
+      opacity: 0;
+      transform: translate(-1px, 0);
+      text-shadow:
+        2px 0 0 #ff00ea,
+        -2px 0 0 #00f0ff,
+        0 0 6px var(--bug-yellow);
+    }
+    12% {
+      opacity: 1;
+      transform: translate(2px, -1px);
+      text-shadow:
+        -3px 0 0 #ff00ea,
+        3px 0 0 #00f0ff,
+        0 0 6px var(--bug-yellow);
+    }
+    22% {
+      opacity: 0.35;
+      transform: translate(-2px, 1px);
+    }
+    34% {
+      opacity: 1;
+      transform: translate(1px, 2px);
+      text-shadow:
+        2px 0 0 #ff00ea,
+        -2px 0 0 #00f0ff,
+        0 0 6px var(--bug-yellow);
+    }
+    48% {
+      opacity: 0.7;
+      transform: translate(-1px, -2px);
+    }
+    62% {
+      opacity: 1;
+      transform: translate(1px, 0);
+      text-shadow:
+        -1px 0 0 #ff00ea,
+        1px 0 0 #00f0ff,
+        0 0 6px var(--bug-yellow);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+      text-shadow: 0 0 6px var(--bug-yellow);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lt-fav {
+      animation: none;
+    }
   }
 </style>
