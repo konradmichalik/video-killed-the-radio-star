@@ -19,10 +19,6 @@
       <span>TURN ON TV</span>
     </button>
     <p class="hint">Tap to start the channel</p>
-    <div class="legend">
-      <p>tap = play/pause · edges or swipe ◀▶ = skip · swipe ▲ = TV guide · swipe ▼ = song info</p>
-      <p>keys: space ⏯ · ← → skip · ↑ guide</p>
-    </div>
     <p class="legal">Videos streamed via YouTube · &copy; their respective owners</p>
   </div>
 </div>
@@ -171,16 +167,6 @@
     color: rgba(255, 255, 255, 0.45);
     margin-top: 26px;
     animation: blink 1.4s steps(2) infinite;
-  }
-  .legend {
-    margin-top: 20px;
-  }
-  .legend p {
-    font-family: 'VT323', monospace;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.4);
-    margin: 0 0 4px;
   }
   .legal {
     font-family: 'VT323', monospace;

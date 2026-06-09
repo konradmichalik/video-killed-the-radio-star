@@ -7,7 +7,7 @@
     queueOpen,
     searchOpen,
     settingsOpen,
-    helpHint,
+    controlsOpen,
   } from '../lib/stores.js';
   import {
     genresOf,
@@ -148,9 +148,9 @@
     searchOpen.set(true);
   }
 
-  function showHelp() {
+  function openControls() {
     guideOpen.set(false);
-    helpHint.update((n) => n + 1);
+    controlsOpen.set(true);
   }
 
   function openSettings() {
@@ -174,7 +174,7 @@
   </svelte:fragment>
 
   <svelte:fragment slot="actions">
-    <button class="icon-btn" type="button" aria-label="Show controls help" on:click={showHelp}
+    <button class="icon-btn" type="button" aria-label="Controls reference" on:click={openControls}
       >?</button
     >
     <button class="icon-btn" type="button" aria-label="Display settings" on:click={openSettings}>
@@ -364,21 +364,6 @@
 
   <button class="apply" type="button" on:click={apply}>&#x25B6;&nbsp; PLAY CHANNEL</button>
   {#if foot}<p class="foot">{foot}</p>{/if}
-
-  <div class="howto">
-    <p>
-      <b>TOUCH</b> &nbsp;tap center = play/pause · tap edges = skip · swipe ◀▶ = change · swipe ▲ = guide
-      · swipe ▼ = song info
-    </p>
-    <p>
-      <b>KEYS</b> &nbsp;Space = play/pause · ← → = skip · ↑ = guide · / = search · I = reveal · M = mute
-      · F = fullscreen
-    </p>
-    <p class="legal">
-      A nostalgic music-video channel. Videos are streamed via YouTube and remain &copy; their
-      respective owners; use is subject to YouTube's Terms of Service.
-    </p>
-  </div>
 </Sheet>
 
 <style>
@@ -618,25 +603,5 @@
     color: rgba(255, 255, 255, 0.5);
     text-align: center;
     margin: 14px 0 0;
-  }
-  .howto {
-    margin-top: 22px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-  .howto p {
-    font-family: 'VT323', monospace;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-    margin: 0 0 8px;
-  }
-  .howto b {
-    color: var(--accent-2);
-  }
-  .howto .legal {
-    color: rgba(255, 255, 255, 0.32);
-    font-size: 14px;
-    margin-top: 12px;
   }
 </style>

@@ -68,6 +68,7 @@ export const guideOpen = writable(false);
 export const queueOpen = writable(false); // queue editor panel
 export const searchOpen = writable(false); // search / autocomplete panel
 export const settingsOpen = writable(false); // display settings panel (CRT, hints, logo)
+export const controlsOpen = writable(false); // keyboard / touch reference panel
 export const switching = writable(false); // true while a new video is loading (channel change)
 export const crtOn = writable(loadCrt()); // CRT tube filter on/off
 export const hintsOn = writable(loadHints()); // false = guessing mode (hide artist/title/etc.)

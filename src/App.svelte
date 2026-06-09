@@ -10,6 +10,7 @@
     queueOpen,
     searchOpen,
     settingsOpen,
+    controlsOpen,
     switching,
     crtOn,
     loadError,
@@ -55,6 +56,7 @@
   import Queue from './components/Queue.svelte';
   import Search from './components/Search.svelte';
   import Settings from './components/Settings.svelte';
+  import Controls from './components/Controls.svelte';
   import UnmuteHint from './components/UnmuteHint.svelte';
   import ErrorScreen from './components/ErrorScreen.svelte';
 
@@ -168,6 +170,11 @@
   function onKey(e) {
     // Escape always closes an open panel, even when a control inside is focused
     if (e.key === 'Escape') {
+      if ($controlsOpen) {
+        e.preventDefault();
+        controlsOpen.set(false);
+        return;
+      }
       if ($settingsOpen) {
         e.preventDefault();
         settingsOpen.set(false);
@@ -201,7 +208,7 @@
       return;
     }
     // while a panel is open, don't let transport keys through
-    if ($guideOpen || $queueOpen || $searchOpen || $settingsOpen) return;
+    if ($guideOpen || $queueOpen || $searchOpen || $settingsOpen || $controlsOpen) return;
     switch (e.key) {
       case ' ':
         e.preventDefault();
@@ -256,8 +263,14 @@
 
 <main
   id="tv"
-  class:dimmed={$guideOpen || $queueOpen || $searchOpen || $settingsOpen}
-  inert={$guideOpen || $queueOpen || $searchOpen || $settingsOpen || !!$loadError || undefined}
+  class:dimmed={$guideOpen || $queueOpen || $searchOpen || $settingsOpen || $controlsOpen}
+  inert={$guideOpen ||
+    $queueOpen ||
+    $searchOpen ||
+    $settingsOpen ||
+    $controlsOpen ||
+    !!$loadError ||
+    undefined}
   aria-label="Music video channel"
 >
   <div id="player"></div>
@@ -294,6 +307,7 @@
 <Queue />
 <Search />
 <Settings />
+<Controls />
 
 {#if !$started && !$loadError}
   <StartScreen on:power={powerOn} />
