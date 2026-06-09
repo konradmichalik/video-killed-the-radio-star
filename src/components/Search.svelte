@@ -17,10 +17,10 @@
     lastOpen = $searchOpen;
   }
 
-  // Count all matches separately from the displayed top-N so the user can see
-  // refinement happening even when the visible list is already at the cap.
-  $: results = searchVideos($videos, query);
-  $: totalMatches = query.trim() ? searchVideos($videos, query, Infinity).length : 0;
+  // Single search pass; slice for display, count for the "X matches" hint.
+  $: allMatches = searchVideos($videos, query, Infinity);
+  $: results = allMatches.slice(0, 50);
+  $: totalMatches = allMatches.length;
   $: if (highlight > results.length - 1) highlight = results.length ? results.length - 1 : 0;
 
   function play(v) {

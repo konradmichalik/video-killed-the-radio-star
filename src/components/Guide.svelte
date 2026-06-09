@@ -96,11 +96,12 @@
 
   // one-tap channel presets, generated from the data. Favorites preset is
   // prepended whenever the user has tagged at least one track.
+  $: dataPresets = buildPresets($videos);
   $: presets = [
     ...($favorites.size > 0
       ? [{ label: `★ Favorites (${$favorites.size})`, isFavorites: true }]
       : []),
-    ...buildPresets($videos),
+    ...dataPresets,
   ];
   $: selectedGenreCount = genres.filter((g) => selected[g]).length;
   $: selectedCountryCount = countries.filter((c) => selCountry[c]).length;
