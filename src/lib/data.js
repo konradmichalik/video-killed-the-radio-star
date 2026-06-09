@@ -131,7 +131,7 @@ export function filterVideos(all, { yearMin, yearMax, genres, countries }) {
 
 // Ranked autocomplete search over artist/title (also matches year/country/genre).
 // Pure and synchronous so it can be unit-tested and run on every keystroke.
-export function searchVideos(all, query, limit = 8) {
+export function searchVideos(all, query, limit = 50) {
   const q = (query || '').trim().toLowerCase();
   if (!q) return [];
   const tokens = q.split(/\s+/);

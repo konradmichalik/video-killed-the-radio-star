@@ -17,7 +17,10 @@
     lastOpen = $searchOpen;
   }
 
+  // Count all matches separately from the displayed top-N so the user can see
+  // refinement happening even when the visible list is already at the cap.
   $: results = searchVideos($videos, query);
+  $: totalMatches = query.trim() ? searchVideos($videos, query, Infinity).length : 0;
   $: if (highlight > results.length - 1) highlight = results.length ? results.length - 1 : 0;
 
   function play(v) {
@@ -80,6 +83,14 @@
       spellcheck="false"
     />
   </div>
+
+  {#if totalMatches > 0}
+    <p class="match-count" aria-live="polite">
+      {totalMatches} match{totalMatches === 1 ? '' : 'es'}{totalMatches > results.length
+        ? ` · showing top ${results.length}`
+        : ''}
+    </p>
+  {/if}
 
   <ul class="results" id="search-results" role="listbox" aria-label="Matching tracks">
     {#each results as v, i (v.video_id)}
@@ -201,6 +212,14 @@
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.4);
     white-space: nowrap;
+  }
+  .match-count {
+    font-family: 'VT323', monospace;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: var(--bug-yellow);
+    margin: 0 0 10px;
+    text-align: right;
   }
   .empty {
     font-family: 'VT323', monospace;
