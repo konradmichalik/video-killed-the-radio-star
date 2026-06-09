@@ -57,6 +57,7 @@
       on:nextRound={forward('nextRound')}
       on:end={forward('endSession')}
       on:scoreChange={forward('scoreChange')}
+      on:kick={forward('kick')}
     />
   {:else if $gameMode === 'solo'}
     <!-- Solo round shell shares the same trio: Start round / Reveal / Next.

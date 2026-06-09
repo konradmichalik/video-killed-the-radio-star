@@ -38,6 +38,7 @@
     on:setName
     on:guess
     on:scoreChange
+    on:kick
   >
     <svelte:fragment slot="solo">
       <slot name="solo" />

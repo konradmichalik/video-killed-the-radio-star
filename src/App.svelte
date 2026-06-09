@@ -451,6 +451,22 @@
     broadcastScore();
   }
 
+  function onKickPlayer(e) {
+    const { playerId } = e.detail;
+    const peerId = `${PEER_PREFIX}PEER-${playerId}`;
+    // Send the kick notification BEFORE closing the connection.
+    host?.sendTo(peerId, encode('kick', { reason: 'Removed by host' }));
+    host?.kick(peerId);
+    room.update((s) => ({
+      ...s,
+      players: s.players.filter((p) => p.id !== playerId),
+      submissions: Object.fromEntries(
+        Object.entries(s.submissions).filter(([id]) => id !== playerId),
+      ),
+    }));
+    broadcastScore();
+  }
+
   // Solo self-rate: each tap counts as one "correct" toward the existing
   // guessStats tracker so the streak/best-of stats keep working.
   function onSoloRate(key) {
@@ -592,7 +608,9 @@
       <StationLogo />
       <ProgressBar />
       <UpNext />
-      <GuessGame />
+      {#if $gameMode !== 'connected'}
+        <GuessGame />
+      {/if}
       <TitleMask />
       <CenterFeedback />
       <DevReview />
@@ -634,6 +652,7 @@
       on:nextRound={onNextRound}
       on:endSession={onEndSession}
       on:scoreChange={onScoreChange}
+      on:kick={onKickPlayer}
     >
       <svelte:fragment slot="solo">
         {#if $room.session?.phase === 'revealed'}

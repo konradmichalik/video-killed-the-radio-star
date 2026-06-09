@@ -1,6 +1,6 @@
 <!-- src/components/game/HostRoomView.svelte -->
 <script>
-  import { onMount, createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, tick } from 'svelte';
   import PlayerList from './PlayerList.svelte';
   import Scoreboard from './Scoreboard.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
@@ -17,14 +17,23 @@
   let qrError = '';
   let activeTab = 'room'; // 'room' | 'game'
 
-  onMount(async () => {
+  async function drawQr() {
+    if (!qrEl || !joinUrl) return;
     try {
       const { default: QRCode } = await import('qrcode');
       await QRCode.toCanvas(qrEl, joinUrl, { width: 200, margin: 1 });
+      qrError = '';
     } catch {
       qrError = 'QR code unavailable — share the room code instead.';
     }
-  });
+  }
+
+  // Re-draw whenever the canvas remounts (tab switch) or the join URL changes.
+  // The canvas only exists while the ROOM tab is active, so we also key on
+  // activeTab to retrigger after a tab toggle.
+  $: if (activeTab === 'room' && qrEl && joinUrl) {
+    tick().then(drawQr);
+  }
 
   $: phase = session?.phase || 'idle';
   $: round = session?.round || 0;
@@ -66,13 +75,16 @@
       <div class="join-info">
         <span class="join-label">SCAN OR ENTER</span>
         <div class="code">{roomCode}</div>
+        {#if joinUrl}
+          <a class="url" href={joinUrl} target="_blank" rel="noopener">{joinUrl}</a>
+        {/if}
         {#if qrError}<p class="err">{qrError}</p>{/if}
       </div>
     </div>
 
     <div>
       <h4 class="lists-title">Players ({connectedCount})</h4>
-      <PlayerList {players} {submissions} />
+      <PlayerList {players} {submissions} editable={true} on:kick />
     </div>
   {:else}
     <div class="status">
@@ -187,6 +199,21 @@
     font-family: 'VT323', monospace;
     color: var(--accent);
     margin: 4px 0 0;
+  }
+  .url {
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: underline;
+    max-width: 100%;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    line-height: 1.2;
+  }
+  .url:hover,
+  .url:focus-visible {
+    color: var(--accent-2);
   }
 
   .status {
