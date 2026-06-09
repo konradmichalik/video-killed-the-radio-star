@@ -6,9 +6,7 @@
     paused,
     adPlaying,
     currentVideo,
-    favorites,
     toggleFavorite,
-    feedback,
   } from '../lib/stores.js';
   import { next, prev, toggle } from '../lib/player.js';
   import { resolveGesture } from '../lib/gestures.js';
@@ -56,9 +54,7 @@
 
     // Long-press = toggle favourite for the current track (with center-pulse feedback)
     if (action === 'favorite' && $currentVideo) {
-      const wasFav = $favorites.has($currentVideo.video_id);
       toggleFavorite($currentVideo.video_id);
-      feedback.update((f) => ({ icon: wasFav ? 'fav-off' : 'fav-on', n: f.n + 1 }));
       return;
     }
 

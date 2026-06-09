@@ -100,15 +100,18 @@ export const favorites = writable(loadFavorites());
 // editor when the user is browsing their Favorites playlist.
 export const channelMode = writable('default'); // 'default' | 'favorites' | 'custom'
 
-/** Toggle a track's favourite status. */
+/** Toggle a track's favourite status and pulse the centre feedback icon. */
 export function toggleFavorite(videoId) {
   if (!videoId) return;
+  let wasFav = false;
   favorites.update((s) => {
+    wasFav = s.has(videoId);
     const next = new Set(s);
-    if (next.has(videoId)) next.delete(videoId);
+    if (wasFav) next.delete(videoId);
     else next.add(videoId);
     return next;
   });
+  feedback.update((f) => ({ icon: wasFav ? 'fav-off' : 'fav-on', n: f.n + 1 }));
 }
 
 // pulse signal for the center play/pause feedback icon
