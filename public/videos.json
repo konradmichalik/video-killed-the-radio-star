@@ -1134,6 +1134,14 @@
     "country": "United States"
   },
   {
+    "title": "Up Around The Bend",
+    "artist": "Hanoi Rocks",
+    "year": 1984,
+    "genre": "Rock",
+    "video_id": "cE5kAaZRiYw",
+    "country": "Finland"
+  },
+  {
     "title": "Männer",
     "artist": "Herbert Grönemeyer",
     "year": 1984,
@@ -2159,6 +2167,14 @@
     "country": "Sweden"
   },
   {
+    "title": "Dressed For Success",
+    "artist": "Roxette",
+    "year": 1988,
+    "genre": "Pop",
+    "video_id": "kkxj5xVLyj0",
+    "country": "Sweden"
+  },
+  {
     "title": "Stop",
     "artist": "Sam Brown",
     "year": 1988,
@@ -3013,6 +3029,14 @@
     "genre": "R&B",
     "video_id": "FxYw0XPEoKE",
     "country": "United States"
+  },
+  {
+    "title": "No Limit",
+    "artist": "2 Unlimited",
+    "year": 1993,
+    "genre": "Dance",
+    "video_id": "r6FVk2k4qsM",
+    "country": "Netherlands"
   },
   {
     "title": "The Sign",
@@ -4057,6 +4081,14 @@
     "country": "United Kingdom"
   },
   {
+    "title": "Black Diamond",
+    "artist": "Stratovarius",
+    "year": 1997,
+    "genre": "Metal",
+    "video_id": "6vJ_zHe_p60",
+    "country": "Finland"
+  },
+  {
     "title": "What Can I Do",
     "artist": "The Corrs",
     "year": 1997,
@@ -4342,6 +4374,14 @@
     "country": "United States"
   },
   {
+    "title": "Better Off Alone",
+    "artist": "Alice Deejay",
+    "year": 1999,
+    "genre": "Dance",
+    "video_id": "Lgs9QUtWc3M",
+    "country": "Netherlands"
+  },
+  {
     "title": "I Want It That Way",
     "artist": "Backstreet Boys",
     "year": 1999,
@@ -4364,6 +4404,14 @@
     "genre": "Punk",
     "video_id": "9Ht5RZpzPqw",
     "country": "United States"
+  },
+  {
+    "title": "Freestyler",
+    "artist": "Bomfunk MC's",
+    "year": 1999,
+    "genre": "Hip-Hop",
+    "video_id": "ymNFyxvIdaM",
+    "country": "Finland"
   },
   {
     "title": "Genie In A Bottle",
@@ -4451,6 +4499,14 @@
     "year": 1999,
     "genre": "Other",
     "video_id": "tRFUiuXK5Hk"
+  },
+  {
+    "title": "Join Me In Death - Strongroom Mix",
+    "artist": "HIM",
+    "year": 1999,
+    "genre": "Alternative",
+    "video_id": "yiNhaq4ZfL0",
+    "country": "Finland"
   },
   {
     "title": "Drive",
@@ -5141,6 +5197,14 @@
     "country": "Colombia"
   },
   {
+    "title": "Move Your Feet",
+    "artist": "Junior Senior",
+    "year": 2002,
+    "genre": "Other",
+    "video_id": "SPlQpGeTbIE",
+    "country": "Denmark"
+  },
+  {
     "title": "Rock Your Body",
     "artist": "Justin Timberlake",
     "year": 2002,
@@ -5189,6 +5253,14 @@
     "country": "United Kingdom"
   },
   {
+    "title": "Like A Prayer",
+    "artist": "Mad'House",
+    "year": 2002,
+    "genre": "Dance",
+    "video_id": "hcRuYs_qsKQ",
+    "country": "France"
+  },
+  {
     "title": "This Love",
     "artist": "Maroon 5",
     "year": 2002,
@@ -5202,6 +5274,14 @@
     "year": 2002,
     "genre": "Other",
     "video_id": "8WYHDfJDPDc"
+  },
+  {
+    "title": "Aicha",
+    "artist": "Outlandish",
+    "year": 2002,
+    "genre": "Hip-Hop",
+    "video_id": "f0nFTdKlKLw",
+    "country": "Denmark"
   },
   {
     "title": "No One Knows",
@@ -5436,6 +5516,14 @@
     "country": "United States"
   },
   {
+    "title": "In the Shadows",
+    "artist": "The Rasmus",
+    "year": 2003,
+    "genre": "Alternative",
+    "video_id": "_ao2u7F_Qzg",
+    "country": "Finland"
+  },
+  {
     "title": "Seven Nation Army",
     "artist": "The White Stripes",
     "year": 2003,
@@ -5607,6 +5695,14 @@
     "year": 2004,
     "genre": "Other",
     "video_id": "mXC3h95PtDY"
+  },
+  {
+    "title": "Nemo",
+    "artist": "Nightwish",
+    "year": 2004,
+    "genre": "Metal",
+    "video_id": "kIBdpFJyFkc",
+    "country": "Finland"
   },
   {
     "title": "Duality",
@@ -6029,6 +6125,14 @@
     "country": "United States"
   },
   {
+    "title": "Hard Rock Hallelujah",
+    "artist": "Lordi",
+    "year": 2006,
+    "genre": "Rock",
+    "video_id": "6H4mJXcQaRU",
+    "country": "Finland"
+  },
+  {
     "title": "Supermassive Black Hole",
     "artist": "Muse",
     "year": 2006,
@@ -6177,6 +6281,14 @@
     "year": 2007,
     "genre": "Other",
     "video_id": "WBKnpyoFEBo"
+  },
+  {
+    "title": "D.A.N.C.E",
+    "artist": "Justice",
+    "year": 2007,
+    "genre": "Dance",
+    "video_id": "sy1dYFGkPUE",
+    "country": "France"
   },
   {
     "title": "Stronger",
@@ -6377,6 +6489,14 @@
     "country": "United Kingdom"
   },
   {
+    "title": "So Incredible",
+    "artist": "Ilse DeLange",
+    "year": 2008,
+    "genre": "Rock",
+    "video_id": "n6MVcBM4P74",
+    "country": "Netherlands"
+  },
+  {
     "title": "I'm Yours",
     "artist": "Jason Mraz",
     "year": 2008,
@@ -6504,6 +6624,14 @@
     "country": "United States"
   },
   {
+    "title": "A Night Like This",
+    "artist": "Caro Emerald",
+    "year": 2009,
+    "genre": "Jazz",
+    "video_id": "glidivhL7P4",
+    "country": "Netherlands"
+  },
+  {
     "title": "Fight For This Love",
     "artist": "Cheryl",
     "year": 2009,
@@ -6518,6 +6646,14 @@
     "genre": "Pop",
     "video_id": "U-fU_V7Boic",
     "country": "Canada"
+  },
+  {
+    "title": "When Love Takes Over (feat. Kelly Rowland)",
+    "artist": "David Guetta",
+    "year": 2009,
+    "genre": "Dance",
+    "video_id": "zudbz4hOcbc",
+    "country": "France"
   },
   {
     "title": "Replay",
@@ -6813,6 +6949,14 @@
     "country": "Barbados"
   },
   {
+    "title": "Hang with Me",
+    "artist": "Robyn",
+    "year": 2010,
+    "genre": "Pop",
+    "video_id": "-3a2qoyONVA",
+    "country": "Sweden"
+  },
+  {
     "title": "Waka Waka (This Time for Africa) ft. Freshlyground",
     "artist": "Shakira",
     "year": 2010,
@@ -7098,6 +7242,14 @@
     "country": "Australia"
   },
   {
+    "title": "Hollywood Hills",
+    "artist": "Sunrise Avenue",
+    "year": 2011,
+    "genre": "Other",
+    "video_id": "azPQZSlC2zk",
+    "country": "Finland"
+  },
+  {
     "title": "Hangover",
     "artist": "Taio Cruz, Flo Rida",
     "year": 2011,
@@ -7367,6 +7519,14 @@
     "country": "United States"
   },
   {
+    "title": "Wake Me Up",
+    "artist": "Avicii",
+    "year": 2013,
+    "genre": "Dance",
+    "video_id": "IcrbM1l_BoI",
+    "country": "Sweden"
+  },
+  {
     "title": "Sleepwalking",
     "artist": "Bring Me The Horizon",
     "year": 2013,
@@ -7428,6 +7588,14 @@
     "country": "Ireland"
   },
   {
+    "title": "Dernière danse",
+    "artist": "Indila",
+    "year": 2013,
+    "genre": "Folk",
+    "video_id": "K5KAc5CoCuk",
+    "country": "France"
+  },
+  {
     "title": "All of Me",
     "artist": "John Legend",
     "year": 2013,
@@ -7442,6 +7610,14 @@
     "genre": "Pop",
     "video_id": "uuZE_IRwLNI",
     "country": "United States"
+  },
+  {
+    "title": "Jubel - Radio Edit",
+    "artist": "Klingande",
+    "year": 2013,
+    "genre": "Dance",
+    "video_id": "0JDjtM10j7w",
+    "country": "France"
   },
   {
     "title": "Rude",
