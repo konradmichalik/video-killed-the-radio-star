@@ -14,8 +14,9 @@ describe('yearRange', () => {
     expect(typeof r.max).toBe('number');
   });
   it('ignores non-numeric years', () => {
-    expect(
-      yearRange([{ year: 1985 }, { year: null }, { year: 'oops' }, { year: 1990 }]),
-    ).toEqual({ min: 1985, max: 1990 });
+    expect(yearRange([{ year: 1985 }, { year: null }, { year: 'oops' }, { year: 1990 }])).toEqual({
+      min: 1985,
+      max: 1990,
+    });
   });
 });

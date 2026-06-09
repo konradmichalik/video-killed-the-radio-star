@@ -38,9 +38,7 @@ export function reveal(state, winnerIds) {
   const set = new Set(winnerIds);
   return {
     ...state,
-    players: state.players.map((p) =>
-      set.has(p.id) ? { ...p, score: (p.score || 0) + 1 } : p,
-    ),
+    players: state.players.map((p) => (set.has(p.id) ? { ...p, score: (p.score || 0) + 1 } : p)),
     session: { ...state.session, phase: 'revealed' },
   };
 }
@@ -68,25 +66,18 @@ export function addPlayer(state, { id, name }) {
   if (existing) {
     return {
       ...state,
-      players: state.players.map((p) =>
-        p.id === id ? { ...p, name, connected: true } : p,
-      ),
+      players: state.players.map((p) => (p.id === id ? { ...p, name, connected: true } : p)),
     };
   }
   return {
     ...state,
-    players: [
-      ...state.players,
-      { id, name, connected: true, score: 0, lastSubmission: null },
-    ],
+    players: [...state.players, { id, name, connected: true, score: 0, lastSubmission: null }],
   };
 }
 
 export function markPlayerDisconnected(state, playerId) {
   return {
     ...state,
-    players: state.players.map((p) =>
-      p.id === playerId ? { ...p, connected: false } : p,
-    ),
+    players: state.players.map((p) => (p.id === playerId ? { ...p, connected: false } : p)),
   };
 }
