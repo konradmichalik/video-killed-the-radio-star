@@ -28,7 +28,7 @@
     "artist": "Boston",
     "year": 1976,
     "genre": "Rock",
-    "video_id": "DCZNFmHJbV8",
+    "video_id": "t4QK8RxCAwo",
     "country": "United States"
   },
   {
@@ -84,7 +84,7 @@
     "artist": "Commodores",
     "year": 1977,
     "genre": "Funk",
-    "video_id": "0XRrYgByp28",
+    "video_id": "saaLW0jiiUE",
     "country": "United States"
   },
   {
@@ -244,7 +244,7 @@
     "artist": "Dolly Parton",
     "year": 1980,
     "genre": "Country",
-    "video_id": "E4OzdyxbOuU",
+    "video_id": "UbxUSsFXYo4",
     "country": "United States"
   },
   {
@@ -284,7 +284,7 @@
     "artist": "Lipps Inc.",
     "year": 1980,
     "genre": "Disco",
-    "video_id": "Z6dqIYKIBSU",
+    "video_id": "uhzy7JaU2Zc",
     "country": "United States"
   },
   {
@@ -331,7 +331,7 @@
     "artist": "Randy Crawford",
     "year": 1980,
     "genre": "Soul",
-    "video_id": "KimwFnbZHlk",
+    "video_id": "L8vAz3uqKig",
     "country": "United States"
   },
   {
@@ -387,7 +387,7 @@
     "artist": "Central Line",
     "year": 1981,
     "genre": "Funk",
-    "video_id": "6wbHhepLzP0",
+    "video_id": "MjBXnSaHHxs",
     "country": "United Kingdom"
   },
   {
@@ -412,14 +412,6 @@
     "year": 1981,
     "genre": "Rock",
     "video_id": "jsGo_AZSb0E",
-    "country": "United States"
-  },
-  {
-    "title": "I've Seen That Face Before (Libertango)",
-    "artist": "Grace Jones",
-    "year": 1981,
-    "genre": "Soul",
-    "video_id": "nIN3IE3DHqc",
     "country": "United States"
   },
   {
@@ -455,7 +447,7 @@
     "country": "United Kingdom"
   },
   {
-    "title": "Physical - Remastered 2021",
+    "title": "Physical",
     "artist": "Olivia Newton-John",
     "year": 1981,
     "genre": "Pop",
@@ -467,16 +459,8 @@
     "artist": "Ottawan",
     "year": 1981,
     "genre": "Other",
-    "video_id": "L2pihJJpP80",
+    "video_id": "tbWam7ql1Xw",
     "country": "France"
-  },
-  {
-    "title": "I Won't Let You Down",
-    "artist": "Ph.D.",
-    "year": 1981,
-    "genre": "Synthpop",
-    "video_id": "pX0WAE9u_O0",
-    "country": "United Kingdom"
   },
   {
     "title": "In The Air Tonight",
@@ -531,7 +515,7 @@
     "artist": "Spider Murphy Gang",
     "year": 1981,
     "genre": "Rock",
-    "video_id": "u-AwlK_wBJ8",
+    "video_id": "oESfa8jt0p8",
     "country": "Germany"
   },
   {
@@ -699,7 +683,7 @@
     "artist": "Peter Schilling",
     "year": 1982,
     "genre": "Synthpop",
-    "video_id": "vr_UK0tSb8M",
+    "video_id": "KQRaj1vcnrs",
     "country": "Germany"
   },
   {
@@ -783,14 +767,6 @@
     "country": "United Kingdom"
   },
   {
-    "title": "Balls to the Wall",
-    "artist": "Accept",
-    "year": 1983,
-    "genre": "Metal",
-    "video_id": "3wMwuAEfKus",
-    "country": "Germany"
-  },
-  {
     "title": "Paris Latino",
     "artist": "Bandolero",
     "year": 1983,
@@ -858,7 +834,7 @@
     "artist": "Gazebo",
     "year": 1983,
     "genre": "Synthpop",
-    "video_id": "4zwv9SiqlCI",
+    "video_id": "Dtrgwqei7ww",
     "country": "Italy"
   },
   {
@@ -996,14 +972,6 @@
     "genre": "Reggae",
     "video_id": "zXt56MB-3vc",
     "country": "United Kingdom"
-  },
-  {
-    "title": "Wahnsinn",
-    "artist": "Wolfgang Petry",
-    "year": 1983,
-    "genre": "Schlager",
-    "video_id": "ExgfgiW-BJI",
-    "country": "Germany"
   },
   {
     "title": "Owner of a Lonely Heart",
@@ -1146,7 +1114,7 @@
     "artist": "Herbert Grönemeyer",
     "year": 1984,
     "genre": "Rock",
-    "video_id": "UEJNMkEr1Ls",
+    "video_id": "_IZsxfo8ITw",
     "country": "Germany"
   },
   {
@@ -1162,7 +1130,7 @@
     "artist": "John Waite",
     "year": 1984,
     "genre": "Pop",
-    "video_id": "Tg7vvmlrRzc",
+    "video_id": "k9e157Ner90",
     "country": "United Kingdom"
   },
   {
@@ -1408,7 +1376,7 @@
     "artist": "Kate Bush",
     "year": 1985,
     "genre": "Pop",
-    "video_id": "HYwNM1t9ltI"
+    "video_id": "wp43OdtAAkM"
   },
   {
     "title": "Conga!",
@@ -1427,11 +1395,11 @@
     "country": "United States"
   },
   {
-    "title": "Every Time You Go Away - Radio Edit",
+    "title": "Every Time You Go Away",
     "artist": "Paul Young",
     "year": 1985,
     "genre": "Soul",
-    "video_id": "p3tH4Ksu50o",
+    "video_id": "nfk6sCzRTbM",
     "country": "United Kingdom"
   },
   {
@@ -1491,14 +1459,6 @@
     "country": "United Kingdom"
   },
   {
-    "title": "She Sells Sanctuary",
-    "artist": "The Cult",
-    "year": 1985,
-    "genre": "Rock",
-    "video_id": "tGGriaLbna0",
-    "country": "United Kingdom"
-  },
-  {
     "title": "The Whole Of The Moon",
     "artist": "The Waterboys",
     "year": 1985,
@@ -1535,7 +1495,7 @@
     "artist": "Bon Jovi",
     "year": 1986,
     "genre": "Rock",
-    "video_id": "Aqc3VTpz9HQ",
+    "video_id": "KrZHPOeOxQQ",
     "country": "United States"
   },
   {
@@ -1663,7 +1623,7 @@
     "artist": "Mel & Kim",
     "year": 1986,
     "genre": "Pop",
-    "video_id": "gxt6hNgJ-fs",
+    "video_id": "14b-BASNVdI",
     "country": "United Kingdom"
   },
   {
@@ -1794,14 +1754,6 @@
     "country": "United States"
   },
   {
-    "title": "Ma che bello questo amore",
-    "artist": "Eros Ramazzotti",
-    "year": 1987,
-    "genre": "Pop",
-    "video_id": "7UNIQyFkQuQ",
-    "country": "Italy"
-  },
-  {
     "title": "Everywhere",
     "artist": "Fleetwood Mac",
     "year": 1987,
@@ -1900,7 +1852,7 @@
     "artist": "Michael Jackson",
     "year": 1987,
     "genre": "Pop",
-    "video_id": "aUD0juRwb3I",
+    "video_id": "yUi_S6YWjZw",
     "country": "United States"
   },
   {
@@ -2027,7 +1979,7 @@
     "artist": "Die Ärzte",
     "year": 1988,
     "genre": "Punk",
-    "video_id": "G-NrSn3K6gM",
+    "video_id": "DTNntH4pvSk",
     "country": "Germany"
   },
   {
@@ -2071,14 +2023,6 @@
     "country": "United States"
   },
   {
-    "title": "Calling You (Bagdad Cafe)",
-    "artist": "Jevetta Steele",
-    "year": 1988,
-    "genre": "R&B",
-    "video_id": "hPPS0_rqwcw",
-    "country": "United States"
-  },
-  {
     "title": "I Hate Myself for Loving You",
     "artist": "Joan Jett & the Blackhearts",
     "year": 1988,
@@ -2115,7 +2059,7 @@
     "artist": "Neneh Cherry",
     "year": 1988,
     "genre": "Hip-Hop",
-    "video_id": "rFXhBEj6mEE",
+    "video_id": "JWsRz3TJDEY",
     "country": "Sweden"
   },
   {
@@ -2244,14 +2188,6 @@
     "genre": "Pop",
     "video_id": "X8TOhb_4jU0",
     "country": "France"
-  },
-  {
-    "title": "Licence To Kill",
-    "artist": "Gladys Knight",
-    "year": 1989,
-    "genre": "Soul",
-    "video_id": "v6Mzz9mLcsg",
-    "country": "United States"
   },
   {
     "title": "Oye Mi Canto",
@@ -2637,7 +2573,7 @@
     "artist": "Guns N' Roses",
     "year": 1991,
     "genre": "Rock",
-    "video_id": "8x23ajWSHyo",
+    "video_id": "8SbUC-UaAxE",
     "country": "United States"
   },
   {
@@ -2844,7 +2780,7 @@
     "artist": "Bobby Brown",
     "year": 1992,
     "genre": "Pop",
-    "video_id": "c_W3uq8W-U8",
+    "video_id": "ZFUQNC84HDM",
     "country": "United States"
   },
   {
@@ -2868,7 +2804,7 @@
     "artist": "Eric Clapton",
     "year": 1992,
     "genre": "Blues",
-    "video_id": "VVqXLXMch9g",
+    "video_id": "JxPj3GAYYZ0",
     "country": "United Kingdom"
   },
   {
@@ -2892,7 +2828,7 @@
     "artist": "Iron Maiden",
     "year": 1992,
     "genre": "Metal",
-    "video_id": "p32b5nNq1zw",
+    "video_id": "L4EDWVbNKnM",
     "country": "United Kingdom"
   },
   {
@@ -2995,7 +2931,7 @@
     "artist": "Tasmin Archer",
     "year": 1992,
     "genre": "Pop",
-    "video_id": "az7ym63snE0",
+    "video_id": "lOqVQPq8zm8",
     "country": "United Kingdom"
   },
   {
@@ -3019,7 +2955,7 @@
     "artist": "Van Halen",
     "year": 1992,
     "genre": "Rock",
-    "video_id": "DLQawHJ38Sc",
+    "video_id": "gU7d2EHV_OQ",
     "country": "United States"
   },
   {
@@ -3251,7 +3187,7 @@
     "artist": "Reel 2 Real",
     "year": 1993,
     "genre": "Dance",
-    "video_id": "_NkpHLq76ro",
+    "video_id": "vuo8kD5zF5I",
     "country": "United States"
   },
   {
@@ -3275,7 +3211,7 @@
     "artist": "Aerosmith",
     "year": 1994,
     "genre": "Rock",
-    "video_id": "DU5fiwedSCk",
+    "video_id": "NMNgbISmF4I",
     "country": "United States"
   },
   {
@@ -3322,7 +3258,7 @@
     "artist": "Green Day",
     "year": 1994,
     "genre": "Punk",
-    "video_id": "VKjEdYrx9P0",
+    "video_id": "NUTGr5t3MoY",
     "country": "United States"
   },
   {
@@ -3485,13 +3421,6 @@
     "country": "Germany"
   },
   {
-    "title": "J'irai où tu iras",
-    "artist": "Céline Dion et Jean-Jacques Goldman",
-    "year": 1995,
-    "genre": "Other",
-    "video_id": "0J3wIDAaLSU"
-  },
-  {
     "title": "December",
     "artist": "Collective Soul",
     "year": 1995,
@@ -3560,7 +3489,7 @@
     "artist": "Montell Jordan",
     "year": 1995,
     "genre": "Hip-Hop",
-    "video_id": "mTY31zVUqfs",
+    "video_id": "0hiUuL5uTKc",
     "country": "United States"
   },
   {
@@ -3726,14 +3655,6 @@
     "year": 1996,
     "genre": "Pop",
     "video_id": "eTOKcxIujgE",
-    "country": "Italy"
-  },
-  {
-    "title": "Più Bella Cosa",
-    "artist": "Eros Ramazzotti",
-    "year": 1996,
-    "genre": "Pop",
-    "video_id": "luj0L5SZQwM",
     "country": "Italy"
   },
   {
@@ -4069,7 +3990,7 @@
     "artist": "Robbie Williams",
     "year": 1997,
     "genre": "Pop",
-    "video_id": "bYbUTJqLFUk",
+    "video_id": "ymPu2PdLW3I",
     "country": "United Kingdom"
   },
   {
@@ -4093,7 +4014,7 @@
     "artist": "The Corrs",
     "year": 1997,
     "genre": "Rock",
-    "video_id": "RibtqL3Y0Cg",
+    "video_id": "GP4Cq3VTagU",
     "country": "Ireland"
   },
   {
@@ -4331,7 +4252,7 @@
     "artist": "The Goo Goo Dolls",
     "year": 1998,
     "genre": "Other",
-    "video_id": "zDOILKOOUCo"
+    "video_id": "NdYWuo9OFAw"
   },
   {
     "title": "Dance The Night Away",
@@ -4569,7 +4490,7 @@
     "artist": "Red Hot Chili Peppers",
     "year": 1999,
     "genre": "Rock",
-    "video_id": "YlUKcNNmywk",
+    "video_id": "mzJj5-lubeM",
     "country": "United States"
   },
   {
@@ -4577,7 +4498,7 @@
     "artist": "Ricky Martin",
     "year": 1999,
     "genre": "Latin",
-    "video_id": "CN5hQOI__10"
+    "video_id": "n8F55puGHIs"
   },
   {
     "title": "Maria Maria (feat. The Product G&B)",
@@ -4940,7 +4861,7 @@
     "artist": "Destiny's Child",
     "year": 2001,
     "genre": "R&B",
-    "video_id": "lXAdAa4ZuuY",
+    "video_id": "Wmc8bQoL-J0",
     "country": "United States"
   },
   {
@@ -5616,15 +5537,7 @@
     "artist": "Jay-Z & Linkin Park",
     "year": 2004,
     "genre": "Hip-Hop",
-    "video_id": "_1oO4wzPCmE",
-    "country": "United States"
-  },
-  {
-    "title": "Numb / Encore",
-    "artist": "JAY-Z, Linkin Park",
-    "year": 2004,
-    "genre": "Hip-Hop",
-    "video_id": "Ptgu47t9rKk",
+    "video_id": "DLlF2FMv968",
     "country": "United States"
   },
   {
@@ -5805,7 +5718,7 @@
     "artist": "Gym Class Heroes",
     "year": 2005,
     "genre": "Hip-Hop",
-    "video_id": "cRqTvWWX70Y",
+    "video_id": "eiiU-Fky18s",
     "country": "United States"
   },
   {
@@ -5860,7 +5773,7 @@
     "artist": "Nickelback",
     "year": 2005,
     "genre": "Rock",
-    "video_id": "ta-v8foO8r0",
+    "video_id": "DmeUuoxyt_E",
     "country": "Canada"
   },
   {
@@ -6613,7 +6526,7 @@
     "artist": "Caro Emerald",
     "year": 2009,
     "genre": "Jazz",
-    "video_id": "glidivhL7P4",
+    "video_id": "74LXx0wSqMI",
     "country": "Netherlands"
   },
   {
@@ -6782,14 +6695,6 @@
     "genre": "Pop",
     "video_id": "rYEDA3JcQqw",
     "country": "United Kingdom"
-  },
-  {
-    "title": "Nightmare",
-    "artist": "Avenged Sevenfold",
-    "year": 2010,
-    "genre": "Metal",
-    "video_id": "EEGAeVEy5T4",
-    "country": "United States"
   },
   {
     "title": "Airplanes",
@@ -7001,7 +6906,7 @@
     "artist": "Adele",
     "year": 2011,
     "genre": "Pop",
-    "video_id": "a2giXO6eyuI",
+    "video_id": "1twUUM0KxDg",
     "country": "United Kingdom"
   },
   {
@@ -7025,7 +6930,7 @@
     "artist": "Avicii",
     "year": 2011,
     "genre": "Dance",
-    "video_id": "NNC3iNivkEw",
+    "video_id": "_ovdm2yX4MA",
     "country": "Sweden"
   },
   {
@@ -7320,15 +7225,7 @@
     "artist": "Icona Pop (feat. Charli XCX)",
     "year": 2012,
     "genre": "Other",
-    "video_id": "W50HtcPAeSs"
-  },
-  {
-    "title": "I Love It (feat. Charli XCX)",
-    "artist": "Icona Pop, Charli XCX",
-    "year": 2012,
-    "genre": "Pop",
-    "video_id": "UxxajLWwzqY",
-    "country": "Sweden"
+    "video_id": "UxxajLWwzqY"
   },
   {
     "title": "On Top Of The World",
@@ -7586,7 +7483,7 @@
     "artist": "Klingande",
     "year": 2013,
     "genre": "Dance",
-    "video_id": "0JDjtM10j7w",
+    "video_id": "l5ojX-Z9hNk",
     "country": "France"
   },
   {
@@ -7676,14 +7573,6 @@
     "genre": "Dance",
     "video_id": "oiKj0Z_Xnjc",
     "country": "Belgium"
-  },
-  {
-    "title": "Lola Montez",
-    "artist": "Volbeat",
-    "year": 2013,
-    "genre": "Rock",
-    "video_id": "DdPpRdImfuA",
-    "country": "Denmark"
   },
   {
     "title": "Drop Dead Cynical",
@@ -7816,7 +7705,7 @@
     "artist": "Sia",
     "year": 2014,
     "genre": "Pop",
-    "video_id": "8DS-h67qEiY",
+    "video_id": "2vjPBrBU-TM",
     "country": "Australia"
   },
   {
@@ -7959,7 +7848,7 @@
     "artist": "Madcon (with Ray Dalton)",
     "year": 2015,
     "genre": "Other",
-    "video_id": "HO7uge9UUrA"
+    "video_id": "y74UPiaK7u0"
   },
   {
     "title": "Lean On",
@@ -7982,13 +7871,6 @@
     "year": 2015,
     "genre": "Other",
     "video_id": "UCsrozKOaR4"
-  },
-  {
-    "title": "Army of the Night",
-    "artist": "Powerwolf",
-    "year": 2015,
-    "genre": "Metal",
-    "video_id": "1zN7J64IeBo"
   },
   {
     "title": "Sugar",
@@ -8051,5 +7933,13 @@
     "genre": "Alternative",
     "video_id": "8j741TUIET0",
     "country": "United States"
+  },
+  {
+    "title": "Video Killed the Radio Star",
+    "artist": "The Buggles",
+    "year": 1979,
+    "genre": "New Wave",
+    "video_id": "W8r-tXRLazs",
+    "country": "United Kingdom"
   }
 ]

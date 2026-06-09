@@ -20,10 +20,10 @@
     devMode,
     videoReviews,
     skipReviewedOk,
+    skipReviewed,
     toggleFavorite,
     gameMode,
     room,
-    guessStats,
   } from './lib/stores.js';
   import {
     startSession,
@@ -32,7 +32,6 @@
     nextRound as reduceNextRound,
     endSession,
   } from './lib/multiplayer/state.js';
-  import { nextGuessStats } from './lib/game.js';
   import { loadVideos, shuffle, filterVideos, yearRange } from './lib/data.js';
   import {
     loadYouTubeAPI,
@@ -63,12 +62,12 @@
   import CrtOverlay from './components/CrtOverlay.svelte';
   import ChannelStatic from './components/ChannelStatic.svelte';
   import LowerThird from './components/LowerThird.svelte';
+  import GuessGame from './components/GuessGame.svelte';
   import AdIndicator from './components/AdIndicator.svelte';
   import StationLogo from './components/StationLogo.svelte';
   import ProgressBar from './components/ProgressBar.svelte';
   import UpNext from './components/UpNext.svelte';
   import CenterFeedback from './components/CenterFeedback.svelte';
-  import GuessGame from './components/GuessGame.svelte';
   import TitleMask from './components/TitleMask.svelte';
   import DevReview from './components/DevReview.svelte';
   import FirstRunHint from './components/FirstRunHint.svelte';
@@ -273,16 +272,28 @@
     });
   }
 
-  // Auto-skip every track that already has any review status — only un-checked
-  // tracks play in dev mode. Active only while dev mode is on so normal
-  // playback is never silently filtered.
+  // Dev-mode auto-skip filters. Two independent toggles drive playback skips:
+  //   - skipReviewedOk: skip tracks reviewed as 'OK' (issue tags still play)
+  //   - skipReviewed:   skip ANY reviewed track (unreviewed only)
+  // Both can be on at once — the combined effect equals "unreviewed only".
+  // Active only while dev mode is on so normal playback is never silently filtered.
   let lastAutoSkipId = null;
-  $: maybeAutoSkip($currentVideo, $videoReviews, $skipReviewedOk, $devMode, $started);
-  function maybeAutoSkip(video, reviews, skipOn, devOn, started) {
-    if (!started || !skipOn || !devOn || !video) return;
+  $: maybeAutoSkip(
+    $currentVideo,
+    $videoReviews,
+    $skipReviewedOk,
+    $skipReviewed,
+    $devMode,
+    $started,
+  );
+  function maybeAutoSkip(video, reviews, skipOkOn, skipReviewedOn, devOn, started) {
+    if (!started || !devOn || !video) return;
+    if (!skipOkOn && !skipReviewedOn) return;
     const id = video.video_id;
     if (id === lastAutoSkipId) return; // don't skip the same id twice
-    if (reviews[id]?.status) {
+    const status = reviews[id]?.status;
+    const shouldSkip = (skipOkOn && status === 'OK') || (skipReviewedOn && !!status);
+    if (shouldSkip) {
       lastAutoSkipId = id;
       setTimeout(() => next(), 250);
     }
@@ -295,7 +306,6 @@
   let roomCode = null;
   let joinUrl = '';
   // Solo self-rate state — only meaningful during Solo's 'revealed' phase.
-  let soloRated = { year: false, title: false, artist: false };
 
   // Connected-mode host handle (PeerJS room). null when not hosting.
   let host = null;
@@ -395,7 +405,6 @@
   function onStartRound() {
     const cv = get(currentVideo);
     room.update((s) => reduceStartRound(s, cv));
-    soloRated = { year: false, title: false, artist: false };
     if (get(gameMode) === 'connected') {
       const r = get(room);
       host?.broadcast(encode('round', { round: r.session.round, phase: 'guessing' }));
@@ -403,11 +412,7 @@
   }
 
   function onReveal() {
-    if (get(gameMode) === 'solo') {
-      room.update((s) => reduceReveal(s, []));
-    } else {
-      onConnectedReveal();
-    }
+    onConnectedReveal();
   }
 
   function onNextRound() {
@@ -420,24 +425,44 @@
     next();
   }
 
-  function onEndSession() {
+  // End-game flow is split in two so Connected mode can show a celebration
+  // overlay BEFORE the session is torn down. Solo skips the overlay because
+  // there's no scoreboard worth celebrating.
+  let celebrationOpen = false;
+  let celebrationPlayers = [];
+
+  function triggerEndGame() {
     if (get(gameMode) === 'connected') {
-      host?.broadcast(
-        encode('end', {
-          finalScoreboard: get(room).players.map(({ id, name, score }) => ({ id, name, score })),
-        }),
-      );
+      const finalPlayers = get(room).players.map(({ id, name, score }) => ({ id, name, score }));
+      host?.broadcast(encode('end', { finalScoreboard: finalPlayers }));
+      celebrationPlayers = finalPlayers;
+      celebrationOpen = true;
+      // Close the GameSheet so the celebration sits unobstructed on the TV.
+      gameSheetOpen = false;
+    } else {
+      finalizeEndGame();
+    }
+  }
+
+  function finalizeEndGame() {
+    if (get(gameMode) === 'connected') {
       closeConnectedRoom();
     }
     room.update((s) => endSession(s));
     gameMode.set(null);
     roomCode = null;
     joinUrl = '';
+    celebrationOpen = false;
+    celebrationPlayers = [];
     // Restore the user's previous Song Info preference.
     if (priorHintsOn !== null) {
       hintsOn.set(priorHintsOn);
       priorHintsOn = null;
     }
+  }
+
+  function onEndSession() {
+    triggerEndGame();
   }
 
   function onScoreChange(e) {
@@ -451,12 +476,20 @@
     broadcastScore();
   }
 
-  // Solo self-rate: each tap counts as one "correct" toward the existing
-  // guessStats tracker so the streak/best-of stats keep working.
-  function onSoloRate(key) {
-    if (soloRated[key]) return;
-    soloRated = { ...soloRated, [key]: true };
-    guessStats.update((s) => nextGuessStats(s, true));
+  function onKickPlayer(e) {
+    const { playerId } = e.detail;
+    const peerId = `${PEER_PREFIX}PEER-${playerId}`;
+    // Send the kick notification BEFORE closing the connection.
+    host?.sendTo(peerId, encode('kick', { reason: 'Removed by host' }));
+    host?.kick(peerId);
+    room.update((s) => ({
+      ...s,
+      players: s.players.filter((p) => p.id !== playerId),
+      submissions: Object.fromEntries(
+        Object.entries(s.submissions).filter(([id]) => id !== playerId),
+      ),
+    }));
+    broadcastScore();
   }
 
   // Keyboard / remote control (desktop). Ignored while typing in form controls.
@@ -592,7 +625,9 @@
       <StationLogo />
       <ProgressBar />
       <UpNext />
-      <GuessGame />
+      {#if $gameMode === 'solo'}
+        <GuessGame />
+      {/if}
       <TitleMask />
       <CenterFeedback />
       <DevReview />
@@ -622,6 +657,28 @@
     {/await}
   {/if}
 
+  {#if $gameMode === 'connected' && !gameSheetOpen && !celebrationOpen}
+    {#await import('./components/game/FloatingControls.svelte') then m}
+      <svelte:component
+        this={m.default}
+        on:startRound={onStartRound}
+        on:reveal={onReveal}
+        on:nextRound={onNextRound}
+        on:open={() => (gameSheetOpen = true)}
+      />
+    {/await}
+  {/if}
+
+  {#if celebrationOpen}
+    {#await import('./components/game/EndGameCelebration.svelte') then m}
+      <svelte:component
+        this={m.default}
+        players={celebrationPlayers}
+        on:dismiss={finalizeEndGame}
+      />
+    {/await}
+  {/if}
+
   {#if gameSheetOpen || $gameMode !== null}
     <LazyGameSheet
       open={gameSheetOpen}
@@ -634,33 +691,8 @@
       on:nextRound={onNextRound}
       on:endSession={onEndSession}
       on:scoreChange={onScoreChange}
-    >
-      <svelte:fragment slot="solo">
-        {#if $room.session?.phase === 'revealed'}
-          <div class="solo-rate">
-            <p>Did you get it?</p>
-            <button
-              class="icon-btn"
-              type="button"
-              on:click={() => onSoloRate('year')}
-              disabled={soloRated.year}>Year ✓</button
-            >
-            <button
-              class="icon-btn"
-              type="button"
-              on:click={() => onSoloRate('title')}
-              disabled={soloRated.title}>Title ✓</button
-            >
-            <button
-              class="icon-btn"
-              type="button"
-              on:click={() => onSoloRate('artist')}
-              disabled={soloRated.artist}>Artist ✓</button
-            >
-          </div>
-        {/if}
-      </svelte:fragment>
-    </LazyGameSheet>
+      on:kick={onKickPlayer}
+    />
   {/if}
 
   {#if !$started && !$loadError}
@@ -681,15 +713,5 @@
   }
   #tv.dimmed {
     filter: brightness(0.4);
-  }
-  .solo-rate {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-  }
-  .solo-rate p {
-    margin: 0;
-    width: 100%;
   }
 </style>

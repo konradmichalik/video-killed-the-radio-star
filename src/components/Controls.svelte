@@ -24,6 +24,8 @@
       <dd>Play / pause</dd>
       <dt>Tap edge × 2</dt>
       <dd>Previous / next track</dd>
+      <dt>Long-press edge</dt>
+      <dd>Seek -10 s / +10 s (repeats while held)</dd>
       <dt>Long-press centre</dt>
       <dd>Toggle ★ favourite for current track</dd>
       <dt>Swipe ▲</dt>

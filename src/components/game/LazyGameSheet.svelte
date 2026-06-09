@@ -3,12 +3,6 @@
   Lazy wrapper around GameSheet so that the multiplayer code (peerjs,
   protocol, scoring, room/peer wrappers, qrcode) is split into its own
   chunk instead of being bundled into the main entry.
-
-  GameSheet uses a named slot ("solo"), which Svelte cannot forward
-  through an `{#await}` + `<svelte:component>` reliably. Keeping the
-  await inside this wrapper lets the slot be declared as a normal
-  child of `<svelte:component>` at compile time, preserving slot
-  semantics.
 -->
 <script>
   export let open = false;
@@ -38,9 +32,6 @@
     on:setName
     on:guess
     on:scoreChange
-  >
-    <svelte:fragment slot="solo">
-      <slot name="solo" />
-    </svelte:fragment>
-  </svelte:component>
+    on:kick
+  />
 {/await}

@@ -8,7 +8,7 @@
     currentVideo,
     toggleFavorite,
   } from '../lib/stores.js';
-  import { next, prev, toggle } from '../lib/player.js';
+  import { next, prev, toggle, seekBy } from '../lib/player.js';
   import { resolveGesture } from '../lib/gestures.js';
 
   let startX = 0;
@@ -29,6 +29,35 @@
   let pendingTapTime = 0;
   let pendingTapTimer = null;
 
+  // Edge-zone long-press = scrub the current track by ±10 s, repeating every
+  // 500 ms while held. Distinct from the existing centre long-press (favourite)
+  // and the edge double-tap (skip track) gestures. Once a seek fires, the
+  // pointerup resolution is suppressed so the user doesn't also skip tracks.
+  const SEEK_THRESHOLD_MS = 500;
+  const SEEK_REPEAT_MS = 500;
+  const SEEK_STEP_S = 10;
+  let seekHoldTimer = null;
+  let seekRepeatTimer = null;
+  let seekTriggered = false;
+
+  function startSeekHold(zone) {
+    cancelSeekHold();
+    seekTriggered = false;
+    seekHoldTimer = setTimeout(() => {
+      seekTriggered = true;
+      const delta = zone === 'next' ? SEEK_STEP_S : -SEEK_STEP_S;
+      seekBy(delta);
+      seekRepeatTimer = setInterval(() => seekBy(delta), SEEK_REPEAT_MS);
+    }, SEEK_THRESHOLD_MS);
+  }
+
+  function cancelSeekHold() {
+    clearTimeout(seekHoldTimer);
+    clearInterval(seekRepeatTimer);
+    seekHoldTimer = null;
+    seekRepeatTimer = null;
+  }
+
   function down(e) {
     if (!e.isPrimary) return; // ignore secondary touches (pinch etc.)
     tracking = true;
@@ -36,11 +65,28 @@
     startY = e.clientY;
     startTime = e.timeStamp || Date.now();
     hoverZone = null;
+
+    // Arm the seek-hold timer if the press starts in an edge zone (the prev /
+    // next tap targets). Movement beyond the tap slop, or release before the
+    // threshold, cancels it and falls back to the normal gesture resolution.
+    const zone = e.clientX / window.innerWidth;
+    if (zone < 0.25) startSeekHold('prev');
+    else if (zone > 0.75) startSeekHold('next');
   }
 
   function up(e) {
     if (!tracking || !e.isPrimary) return;
     tracking = false;
+
+    // If a seek long-press fired, swallow the pointerup so we don't also
+    // trigger the double-tap-to-skip arming flow on the same gesture.
+    if (seekTriggered) {
+      cancelSeekHold();
+      seekTriggered = false;
+      hoverZone = null;
+      return;
+    }
+    cancelSeekHold();
 
     const duration = (e.timeStamp || Date.now()) - startTime;
     const action = resolveGesture({
@@ -99,9 +145,18 @@
     clearTimeout(pendingTapTimer);
     pendingTapAction = null;
     pendingTapTime = 0;
+    cancelSeekHold();
+    seekTriggered = false;
   }
 
   function move(e) {
+    // While a finger / pointer is down, watch for drift out of the edge zone
+    // and bail on the seek-hold so a swipe doesn't accidentally start scrubbing.
+    if (tracking && seekHoldTimer && !seekTriggered) {
+      const dx = Math.abs(e.clientX - startX);
+      const dy = Math.abs(e.clientY - startY);
+      if (dx > 12 || dy > 12) cancelSeekHold();
+    }
     if (e.pointerType !== 'mouse' || tracking) return;
     const x = e.clientX / window.innerWidth;
     const z = x < 0.25 ? 'prev' : x > 0.75 ? 'next' : 'center';

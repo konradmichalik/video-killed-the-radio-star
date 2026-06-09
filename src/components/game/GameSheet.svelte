@@ -57,30 +57,17 @@
       on:nextRound={forward('nextRound')}
       on:end={forward('endSession')}
       on:scoreChange={forward('scoreChange')}
+      on:kick={forward('kick')}
     />
   {:else if $gameMode === 'solo'}
-    <!-- Solo round shell shares the same trio: Start round / Reveal / Next.
-         The middle slot in solo is the existing three "I got it" toggles
-         provided by App.svelte via the "solo" named slot. -->
+    <!-- Solo plays via the GuessGame HUD top-left (Reveal + self-rate).
+         This sheet exists only so the player can exit the session. -->
     <section class="solo-shell">
-      <div class="status">
-        <h3 class="round">ROUND {$room.session?.round || 0}</h3>
-        <div class="phase-row">
-          <span class="phase-label">Phase:</span>
-          <span class="phase-value">{$room.session?.phase || 'idle'}</span>
-        </div>
-      </div>
-      <div class="controls">
-        {#if ($room.session?.phase || 'idle') === 'idle'}
-          <button class="cta" on:click={() => dispatch('startRound')}>Start round</button>
-        {:else if $room.session?.phase === 'guessing'}
-          <button class="cta" on:click={() => dispatch('reveal')}>Reveal</button>
-        {:else}
-          <button class="cta" on:click={() => dispatch('nextRound')}>Next round</button>
-        {/if}
-        <button class="ghost" on:click={() => dispatch('endSession')}>End game</button>
-      </div>
-      <slot name="solo" />
+      <p class="solo-info">
+        Streak, REVEAL and self-rating live in the HUD on the screen. Close this sheet to keep
+        playing.
+      </p>
+      <button class="ghost" on:click={() => dispatch('endSession')}>End game</button>
     </section>
   {/if}
 </Sheet>
@@ -88,67 +75,16 @@
 <style>
   .solo-shell {
     display: grid;
-    gap: 22px;
+    gap: 18px;
+    justify-items: start;
   }
-  .status {
-    display: grid;
-    gap: 8px;
-    padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 3px solid #fff;
-    box-shadow: 5px 5px 0 var(--accent-2);
-  }
-  .round {
+  .solo-info {
     margin: 0;
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(24px, 4vw, 32px);
-    letter-spacing: 3px;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  .phase-row {
     font-family: 'VT323', monospace;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 2px;
-  }
-  .phase-label {
-    color: rgba(255, 255, 255, 0.55);
-  }
-  .phase-value {
-    color: var(--accent-2);
-    text-transform: uppercase;
-    margin-left: 6px;
-  }
-  .controls {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .cta {
-    flex: 1 1 auto;
-    min-width: 180px;
-    min-height: 52px;
-    padding: 0 24px;
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(18px, 3vw, 22px);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #050505;
-    background: var(--accent-2);
-    border: 3px solid #050505;
-    cursor: pointer;
-    box-shadow: 5px 5px 0 #050505;
-    transition:
-      transform 0.1s ease,
-      box-shadow 0.1s ease;
-  }
-  .cta:hover {
-    box-shadow: 8px 8px 0 #050505;
-    transform: translate(-2px, -2px);
-  }
-  .cta:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0 0 0 #050505;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.4;
   }
   .ghost {
     min-height: 52px;
