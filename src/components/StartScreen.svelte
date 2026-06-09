@@ -66,6 +66,29 @@
     z-index: 2;
     text-align: center;
     padding: 24px;
+    animation: crt-on 700ms cubic-bezier(0.15, 0.85, 0.3, 1.15) backwards;
+  }
+  /* CRT power-on: collapsed scanline → horizontal stretch → vertical bloom →
+     settle. Mimics an old tube TV warming up. */
+  @keyframes crt-on {
+    0% {
+      transform: scaleY(0.005) scaleX(0.55);
+      filter: brightness(5) blur(2px);
+      opacity: 0.5;
+    }
+    32% {
+      transform: scaleY(0.005) scaleX(1);
+      filter: brightness(4) blur(1.5px);
+      opacity: 1;
+    }
+    55% {
+      transform: scaleY(1.04) scaleX(1);
+      filter: brightness(2) blur(0.4px);
+    }
+    100% {
+      transform: none;
+      filter: none;
+    }
   }
   /* Neo-brutalist VKTRS station block (matches Guide header + station bug). */
   .brand-block {
@@ -77,6 +100,28 @@
     background: #000;
     border: 3px solid #fff;
     box-shadow: 6px 6px 0 var(--accent-2);
+    animation: brand-drop 500ms steps(6, end) 550ms backwards;
+  }
+  @keyframes brand-drop {
+    0% {
+      transform: translateY(-40px) scale(0.8);
+      box-shadow: 14px 14px 0 var(--accent);
+      opacity: 0;
+    }
+    40% {
+      transform: translateY(8px) scale(1.06);
+      box-shadow: 10px 10px 0 var(--bug-yellow);
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(-3px) scale(0.98);
+      box-shadow: 4px 4px 0 var(--accent-2);
+    }
+    100% {
+      transform: none;
+      box-shadow: 6px 6px 0 var(--accent-2);
+      opacity: 1;
+    }
   }
   .brand-mark {
     font-family: 'Anton', sans-serif;
@@ -120,15 +165,104 @@
   .logo span:first-child {
     font-size: clamp(38px, 11vw, 120px);
     color: var(--ink);
-    animation: wordmark-glitch-1 4.6s steps(1, end) infinite;
+    animation:
+      logo-scramble-1 900ms steps(8, end) 800ms backwards,
+      wordmark-glitch-1 4.6s steps(1, end) 1700ms infinite;
   }
   .logo span:last-child {
     font-size: clamp(38px, 11vw, 120px);
     color: var(--accent);
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
     text-shadow: 4px 4px 0 rgba(8, 217, 214, 0.55);
-    animation: wordmark-glitch-2 4.6s steps(1, end) infinite;
-    animation-delay: 0.2s;
+    animation:
+      logo-scramble-2 1000ms steps(9, end) 1000ms backwards,
+      wordmark-glitch-2 4.6s steps(1, end) 2000ms infinite;
+  }
+  /* Heavy chromatic split that collapses into the stable wordmark — VHS
+     tracking-lock-in feel. Each step is a hard frame, no easing. */
+  @keyframes logo-scramble-1 {
+    0% {
+      opacity: 0;
+      transform: translateX(-60px) scaleX(1.4);
+      text-shadow:
+        18px 0 0 var(--accent-2),
+        -18px 0 0 var(--accent);
+      letter-spacing: 12px;
+      filter: blur(2px);
+    }
+    25% {
+      opacity: 0.7;
+      transform: translateX(24px) scaleX(0.9);
+      text-shadow:
+        -14px 0 0 var(--accent-2),
+        14px 0 0 var(--accent);
+      letter-spacing: -4px;
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-8px);
+      text-shadow:
+        8px 0 0 var(--accent-2),
+        -8px 0 0 var(--accent);
+      letter-spacing: 4px;
+      filter: none;
+    }
+    75% {
+      transform: translateX(3px);
+      text-shadow:
+        -3px 0 0 var(--accent-2),
+        3px 0 0 var(--accent);
+      letter-spacing: 1px;
+    }
+    100% {
+      transform: none;
+      text-shadow: none;
+      letter-spacing: 1px;
+    }
+  }
+  @keyframes logo-scramble-2 {
+    0% {
+      opacity: 0;
+      transform: translateX(60px) scaleX(1.4);
+      text-shadow:
+        -18px 0 0 var(--accent-2),
+        18px 0 0 var(--accent),
+        4px 4px 0 rgba(8, 217, 214, 0.55);
+      letter-spacing: 12px;
+      filter: blur(2px);
+    }
+    25% {
+      opacity: 0.7;
+      transform: translateX(-24px) scaleX(0.9);
+      text-shadow:
+        14px 0 0 var(--accent-2),
+        -14px 0 0 var(--accent),
+        4px 4px 0 rgba(8, 217, 214, 0.55);
+      letter-spacing: -4px;
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(8px);
+      text-shadow:
+        -8px 0 0 var(--accent-2),
+        8px 0 0 var(--accent),
+        4px 4px 0 rgba(8, 217, 214, 0.55);
+      letter-spacing: 4px;
+      filter: none;
+    }
+    75% {
+      transform: translateX(-3px);
+      text-shadow:
+        3px 0 0 var(--accent-2),
+        -3px 0 0 var(--accent),
+        4px 4px 0 rgba(8, 217, 214, 0.55);
+      letter-spacing: 1px;
+    }
+    100% {
+      transform: none;
+      text-shadow: 4px 4px 0 rgba(8, 217, 214, 0.55);
+      letter-spacing: 1px;
+    }
   }
   #power-btn {
     font-family: 'Anton', sans-serif;
@@ -147,6 +281,17 @@
     transition:
       transform 0.08s ease,
       box-shadow 0.08s ease;
+    animation: btn-in 400ms cubic-bezier(0.2, 1.5, 0.4, 1) 1800ms backwards;
+  }
+  @keyframes btn-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   #power-btn:hover {
     transform: translate(-2px, -2px);
@@ -178,6 +323,16 @@
   @keyframes blink {
     50% {
       opacity: 0.2;
+    }
+  }
+  /* Entrance animations are decorative — skip them if the user prefers
+     reduced motion. The idle wordmark glitch and pulsing dot also stop. */
+  @media (prefers-reduced-motion: reduce) {
+    .start-content,
+    .brand-block,
+    .logo span,
+    #power-btn {
+      animation: none;
     }
   }
 </style>
