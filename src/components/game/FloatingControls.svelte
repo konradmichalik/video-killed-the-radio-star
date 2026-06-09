@@ -1,20 +1,21 @@
 <!-- src/components/game/FloatingControls.svelte -->
 <!--
-  Mini control bar pinned to the bottom-center of the TV when a Connected
-  game is running but the host has closed the GameSheet. Mirrors the three
-  phase-aware CTAs from HostRoomView so a round can be driven without
-  reopening the sheet. Coexists with GameRunningBadge (bottom-right).
+  Mini control bar pinned to the bottom-center of the TV when a game is
+  running (solo or connected) but the host has closed the GameSheet.
+  Mirrors the three phase-aware CTAs (Start / Reveal / Next) so a round
+  can be driven without reopening the sheet. Coexists with
+  GameRunningBadge (bottom-right) which provides the reopen affordance.
 
-  Only mounted from App.svelte's TV branch and only when
-  $gameMode === 'connected' && !gameSheetOpen.
+  Only mounted from App.svelte's TV branch when $gameMode !== null && !gameSheetOpen.
 -->
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { room } from '../../lib/stores.js';
+  import { gameMode, room } from '../../lib/stores.js';
 
   const dispatch = createEventDispatcher();
   $: phase = $room.session?.phase || 'idle';
   $: connectedCount = ($room.players || []).filter((p) => p.connected !== false).length;
+  $: startDisabled = $gameMode === 'connected' && connectedCount === 0;
 </script>
 
 <div class="bar" role="group" aria-label="Game round controls">
@@ -23,7 +24,7 @@
       class="cta"
       type="button"
       on:click={() => dispatch('startRound')}
-      disabled={connectedCount === 0}
+      disabled={startDisabled}
     >
       Start round
     </button>

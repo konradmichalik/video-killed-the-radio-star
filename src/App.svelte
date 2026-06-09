@@ -24,7 +24,6 @@
     toggleFavorite,
     gameMode,
     room,
-    guessStats,
   } from './lib/stores.js';
   import {
     startSession,
@@ -33,7 +32,6 @@
     nextRound as reduceNextRound,
     endSession,
   } from './lib/multiplayer/state.js';
-  import { nextGuessStats } from './lib/game.js';
   import { loadVideos, shuffle, filterVideos, yearRange } from './lib/data.js';
   import {
     loadYouTubeAPI,
@@ -64,12 +62,12 @@
   import CrtOverlay from './components/CrtOverlay.svelte';
   import ChannelStatic from './components/ChannelStatic.svelte';
   import LowerThird from './components/LowerThird.svelte';
+  import GuessGame from './components/GuessGame.svelte';
   import AdIndicator from './components/AdIndicator.svelte';
   import StationLogo from './components/StationLogo.svelte';
   import ProgressBar from './components/ProgressBar.svelte';
   import UpNext from './components/UpNext.svelte';
   import CenterFeedback from './components/CenterFeedback.svelte';
-  import GuessGame from './components/GuessGame.svelte';
   import TitleMask from './components/TitleMask.svelte';
   import DevReview from './components/DevReview.svelte';
   import FirstRunHint from './components/FirstRunHint.svelte';
@@ -308,7 +306,6 @@
   let roomCode = null;
   let joinUrl = '';
   // Solo self-rate state — only meaningful during Solo's 'revealed' phase.
-  let soloRated = { year: false, title: false, artist: false };
 
   // Connected-mode host handle (PeerJS room). null when not hosting.
   let host = null;
@@ -408,7 +405,6 @@
   function onStartRound() {
     const cv = get(currentVideo);
     room.update((s) => reduceStartRound(s, cv));
-    soloRated = { year: false, title: false, artist: false };
     if (get(gameMode) === 'connected') {
       const r = get(room);
       host?.broadcast(encode('round', { round: r.session.round, phase: 'guessing' }));
@@ -416,11 +412,7 @@
   }
 
   function onReveal() {
-    if (get(gameMode) === 'solo') {
-      room.update((s) => reduceReveal(s, []));
-    } else {
-      onConnectedReveal();
-    }
+    onConnectedReveal();
   }
 
   function onNextRound() {
@@ -498,14 +490,6 @@
       ),
     }));
     broadcastScore();
-  }
-
-  // Solo self-rate: each tap counts as one "correct" toward the existing
-  // guessStats tracker so the streak/best-of stats keep working.
-  function onSoloRate(key) {
-    if (soloRated[key]) return;
-    soloRated = { ...soloRated, [key]: true };
-    guessStats.update((s) => nextGuessStats(s, true));
   }
 
   // Keyboard / remote control (desktop). Ignored while typing in form controls.
@@ -641,7 +625,7 @@
       <StationLogo />
       <ProgressBar />
       <UpNext />
-      {#if $gameMode !== 'connected'}
+      {#if $gameMode === 'solo'}
         <GuessGame />
       {/if}
       <TitleMask />
@@ -708,33 +692,7 @@
       on:endSession={onEndSession}
       on:scoreChange={onScoreChange}
       on:kick={onKickPlayer}
-    >
-      <svelte:fragment slot="solo">
-        {#if $room.session?.phase === 'revealed'}
-          <div class="solo-rate">
-            <p>Did you get it?</p>
-            <button
-              class="icon-btn"
-              type="button"
-              on:click={() => onSoloRate('year')}
-              disabled={soloRated.year}>Year ✓</button
-            >
-            <button
-              class="icon-btn"
-              type="button"
-              on:click={() => onSoloRate('title')}
-              disabled={soloRated.title}>Title ✓</button
-            >
-            <button
-              class="icon-btn"
-              type="button"
-              on:click={() => onSoloRate('artist')}
-              disabled={soloRated.artist}>Artist ✓</button
-            >
-          </div>
-        {/if}
-      </svelte:fragment>
-    </LazyGameSheet>
+    />
   {/if}
 
   {#if !$started && !$loadError}
@@ -755,15 +713,5 @@
   }
   #tv.dimmed {
     filter: brightness(0.4);
-  }
-  .solo-rate {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-  }
-  .solo-rate p {
-    margin: 0;
-    width: 100%;
   }
 </style>
