@@ -2,20 +2,37 @@
   <img src="screenshot.jpg" alt="VKTRS start screen — VIDEO KILLED THE RADIO STAR wordmark with neo-brutalist VKTRS station block above the TURN ON TV button" width="720">
 </p>
 
-# VideoKilledTheRadioStar (VKTRS)
+<h1 align="center">VideoKilledTheRadioStar (VKTRS)</h1>
 
+<p align="center">
+  <a href="https://konradmichalik.github.io/video-killed-the-radio-star/"><img src="https://img.shields.io/badge/demo-live-FF2E63?style=flat-square&logo=github" alt="Live demo"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-08D9D6?style=flat-square" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/Svelte-5-FF3E00?style=flat-square&logo=svelte&logoColor=white" alt="Svelte 5">
+  <img src="https://img.shields.io/badge/Vite-PWA-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite + PWA">
+  <img src="https://img.shields.io/badge/iPad-optimised-FFE600?style=flat-square" alt="iPad-optimised">
+</p>
+
+<p align="center">
 A full-screen retro-TV PWA that turns a curated catalogue of music videos into a lean-back MTV-style channel — complete with CRT overlay, channel-change static, neo-brutalist UI, and a self-rated guess game. Built with Vite + Svelte 5. Mobile-first, iPad-optimised, installable offline.
+</p>
 
 > It hosts no media. Videos stream via the YouTube IFrame Player API and remain © their respective owners.
 
 ## 🚀 Quick Start
+
+**Watch it live** → [konradmichalik.github.io/video-killed-the-radio-star](https://konradmichalik.github.io/video-killed-the-radio-star/)
+
+Works in any modern browser, but for the canonical experience: open the link on your **iPad / iPhone in Safari → Share → Add to Home Screen**. The installed PWA runs full-screen, supports offline launch, and (thanks to iOS ITP) is practically ad-free.
+
+<details>
+<summary><b>Run it locally</b> — for hacking or LAN testing</summary>
 
 ```bash
 npm install
 npm run dev        # Vite dev server on :5173, LAN-visible
 ```
 
-Open the printed **Network:** URL (e.g. `http://192.168.x.x:5173`) on your iPad or phone.
+Then open the printed **Network:** URL (e.g. `http://192.168.x.x:5173`) on your iPad/phone, or `http://localhost:5173` on desktop.
 
 > [!IMPORTANT]
 > YouTube embeds require an `http(s)` origin. Always use the dev server URL — never open `file://` directly.
@@ -28,6 +45,8 @@ npm run verify     # Check all videos.json IDs are reachable and embeddable
 
 > [!NOTE]
 > The PWA service worker only registers on **HTTPS or `localhost`**. Test offline behaviour there, not on a LAN IP.
+
+</details>
 
 > [!TIP]
 > **About YouTube ads** — VKTRS streams via the YouTube IFrame Player, and YouTube serves pre-roll ads on embedded third-party sites. We use the privacy-enhanced `youtube-nocookie.com` host and detect ad playback (`ADVERTISEMENT` indicator + tap-through to YouTube's own "Skip Ad" button), but the ads themselves cannot be suppressed in a Terms-of-Service-compliant way. **For a (practically) ad-free experience, install VKTRS as a PWA on the iPad/iPhone home screen** — iOS Intelligent Tracking Prevention in standalone webview context dramatically reduces (and often eliminates) embedded ad delivery.
@@ -43,34 +62,24 @@ npm run verify     # Check all videos.json IDs are reachable and embeddable
 - **Installable PWA** — Workbox precaches the app shell and `videos.json`; launches offline (streaming still needs the network)
 - **iPad-hardened** — wake lock, fullscreen API, autoplay fallback, test-card error states, reduced-motion support
 
-## 🎮 Controls
+## 🤝 Contributing
 
-### Keyboard
+The easiest way to contribute is to suggest tracks for the catalogue or to fix broken / wrong replacement IDs.
 
-| Key       | Action                       |
-| --------- | ---------------------------- |
-| `Space`   | Play / pause                 |
-| `←` / `→` | Previous / next track        |
-| `↑`       | Open TV Guide                |
-| `↓`       | Show song info (lower third) |
-| `Q`       | Open Queue                   |
-| `/`       | Open Search                  |
-| `I`       | Show/hide STATION LOGO       |
-| `M`       | Toggle CRT filter            |
-| `F`       | Toggle fullscreen            |
-| `D`       | Toggle dev review mode       |
-| `Esc`     | Close any open panel         |
+**Suggest a new song** — open an issue (or PR) with:
 
-### Touch / Swipe
+| Field                   | Example                                    |
+| ----------------------- | ------------------------------------------ |
+| Artist                  | `Talking Heads`                            |
+| Title                   | `Once in a Lifetime`                       |
+| Year (original release) | `1980`                                     |
+| Genre                   | `New Wave`                                 |
+| Country (artist origin) | `United States`                            |
+| YouTube `video_id`      | `I1wg1DNHbNU` (the 11-char `v=` parameter) |
 
-| Gesture                      | Action                |
-| ---------------------------- | --------------------- |
-| Tap left third               | Previous track        |
-| Tap right third              | Next track            |
-| Tap centre                   | Play / pause          |
-| Swipe up (≥ 60 px)           | Open TV Guide         |
-| Swipe down (≥ 60 px)         | Show song info        |
-| Swipe left / right (≥ 60 px) | Next / previous track |
+Bonus points if you've checked that the video is actually embeddable (no `not-embeddable` / `not-found` from `npm run verify`) and is the **official music video** — not a lyric video, audio rip, or fan upload.
+
+The maintainer will append your submission to `scripts/seed-tracks.json`, run `scripts/enrich.mjs` + `scripts/verify.mjs` to confirm embeddability, and add it to `public/videos.json`. See [DEVELOPMENT.md](DEVELOPMENT.md) for the in-app dev-review mode that lets active maintainers walk the catalogue and submit replacement IDs from the browser console.
 
 ## 🛠 Development
 
