@@ -5,7 +5,7 @@
     playlist,
     index,
     currentVideo,
-    channelMode,
+    favoritesMode,
     favorites,
   } from '../lib/stores.js';
   import { loadQueue, resetErrors } from '../lib/player.js';
@@ -39,7 +39,7 @@
     // When the Favorites channel is active, removing from the queue also
     // unfavourites the track so the user can prune their personal channel
     // directly from here.
-    if (get(channelMode) === 'favorites' && removed?.video_id) {
+    if (get(favoritesMode) && removed?.video_id) {
       favorites.update((s) => {
         const next = new Set(s);
         next.delete(removed.video_id);

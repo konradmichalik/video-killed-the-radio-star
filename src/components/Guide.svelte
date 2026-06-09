@@ -9,7 +9,7 @@
     settingsOpen,
     controlsOpen,
     favorites,
-    channelMode,
+    favoritesMode,
   } from '../lib/stores.js';
   import {
     genresOf,
@@ -117,7 +117,7 @@
       foot = '';
       playlist.set(shuffle(filtered));
       index.set(0);
-      channelMode.set('favorites');
+      favoritesMode.set(true);
       resetErrors();
       guideOpen.set(false);
       loadQueue(0);
@@ -157,7 +157,7 @@
     });
     playlist.set(shuffle(filtered));
     index.set(0);
-    channelMode.set('custom');
+    favoritesMode.set(false);
     resetErrors();
     guideOpen.set(false);
     loadQueue(0);

@@ -96,9 +96,9 @@ export const adPlaying = writable(false); // true while YouTube plays a pre-roll
 // User-tagged favourite tracks (Set of video_id). Persisted to localStorage so
 // the user can build a long-running personal channel across sessions.
 export const favorites = writable(loadFavorites());
-// Which channel preset is currently active. Lets Queue act as a favourites
-// editor when the user is browsing their Favorites playlist.
-export const channelMode = writable('default'); // 'default' | 'favorites' | 'custom'
+// True while the Favorites preset is the active channel — lets Queue act as a
+// favourites editor (its remove button also unfavourites in this mode).
+export const favoritesMode = writable(false);
 
 /** Toggle a track's favourite status and pulse the centre feedback icon. */
 export function toggleFavorite(videoId) {
