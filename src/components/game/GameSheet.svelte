@@ -53,6 +53,41 @@
     <!-- Solo round shell shares the same trio: Start round / Reveal / Next.
          The middle slot in solo is the existing three "I got it" toggles.
          Wired in Task 17. -->
-    <slot name="solo" />
+    <section class="solo-shell">
+      <div class="status">
+        <h3>Round {$room.session?.round || 0}</h3>
+        <p>Phase: <strong>{$room.session?.phase || 'idle'}</strong></p>
+      </div>
+      <div class="controls">
+        {#if ($room.session?.phase || 'idle') === 'idle'}
+          <button on:click={() => dispatch('startRound')}>Start round</button>
+        {:else if $room.session?.phase === 'guessing'}
+          <button on:click={() => dispatch('reveal')}>Reveal</button>
+        {:else}
+          <button on:click={() => dispatch('nextRound')}>Next round</button>
+        {/if}
+        <button class="ghost" on:click={() => dispatch('endSession')}>End game</button>
+      </div>
+      <slot name="solo" />
+    </section>
   {/if}
 </Sheet>
+
+<style>
+  .solo-shell { display: grid; gap: 18px; }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; }
+  .controls button {
+    min-height: 48px;
+    padding: 0 20px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    font-weight: 700;
+  }
+  .controls .ghost {
+    background: transparent;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+</style>
