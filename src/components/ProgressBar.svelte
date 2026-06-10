@@ -30,13 +30,50 @@
     background: var(--accent);
     box-shadow: 0 0 6px var(--accent);
     /* No transition by default — track changes snap to 0 instantly. */
+    /* Periodic VHS-tracking flicker — pairs with the station bug's idle
+       glitch cadence (14 s) so the channel feels alive without competing
+       overlays. Animates background/shadow/transform only — `width` is left
+       for the per-tick smooth transition below. */
+    animation: pb-idle-glitch 14s steps(1, end) infinite;
   }
   /* Smooth growth between poll ticks (1 s cadence in player.js). Disabled
      while switching tracks so the bar doesn't animate the wrap-around. */
   .fill.smooth {
     transition: width 1s linear;
   }
+  @keyframes pb-idle-glitch {
+    0%,
+    93%,
+    100% {
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+      transform: translateY(0);
+    }
+    94% {
+      background: var(--accent-2);
+      box-shadow: 0 0 10px var(--accent-2);
+      transform: translateY(-1px);
+    }
+    95% {
+      background: var(--bug-yellow);
+      box-shadow: 0 0 10px var(--bug-yellow);
+      transform: translateY(0);
+    }
+    96% {
+      background: var(--accent-2);
+      box-shadow: 0 0 8px var(--accent-2);
+      transform: translateY(1px);
+    }
+    97% {
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      transform: translateY(0);
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
+    .fill {
+      animation: none;
+    }
     .fill.smooth {
       transition: none;
     }

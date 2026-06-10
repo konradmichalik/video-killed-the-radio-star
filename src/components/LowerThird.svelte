@@ -7,7 +7,7 @@
     adPlaying,
     favorites,
   } from '../lib/stores.js';
-  import { LOWER_THIRD_MS } from '../lib/constants.js';
+  import { LOWER_THIRD_MS, LOWER_THIRD_TRACK_CHANGE_DELAY_MS } from '../lib/constants.js';
 
   let visible = false;
   let timer;
@@ -46,22 +46,35 @@
       showFor(video); // manual reveal (button / swipe down / "I"), works even in guess mode
     } else if (reannounced && hints) {
       showFor(video); // mid-song re-announce — normal mode only, never spoils guess mode
-    } else if (hints && (trackChanged || hintsTurnedOn)) {
-      showFor(video); // normal auto-show
+    } else if (hints && trackChanged) {
+      // Track change auto-show is delayed so the music can breathe for a beat
+      // before the title slides in (MTV "guess the song" feel). Manual reveals
+      // and the hints-toggle path stay immediate because the user asked.
+      showFor(video, LOWER_THIRD_TRACK_CHANGE_DELAY_MS);
+    } else if (hints && hintsTurnedOn) {
+      showFor(video); // user just flipped hints on — surface info immediately
     } else if (!hints && trackChanged) {
       hideNow(); // new track in guessing mode: keep it hidden
     }
   }
 
-  function showFor(video) {
+  function showFor(video, delayMs = 0) {
     v = video;
     visible = false;
     clearTimeout(timer);
     // next microtask flips it on so the slide-in animation restarts
-    requestAnimationFrame(() => {
-      visible = true;
-      timer = setTimeout(() => (visible = false), LOWER_THIRD_MS);
-    });
+    const reveal = () => {
+      requestAnimationFrame(() => {
+        visible = true;
+        clearTimeout(timer);
+        timer = setTimeout(() => (visible = false), LOWER_THIRD_MS);
+      });
+    };
+    if (delayMs > 0) {
+      timer = setTimeout(reveal, delayMs);
+    } else {
+      reveal();
+    }
   }
 
   function hideNow() {
@@ -112,6 +125,129 @@
       opacity: 1;
     }
   }
+  /* Text-shadow RGB split on the artist line — applied directly to the text
+     glyphs so the chromatic aberration reads, instead of bleeding around the
+     dark background block. Stepped frames during the second half of the slide. */
+  @keyframes lt-text-glitch {
+    0%,
+    45% {
+      text-shadow: none;
+      transform: translate(0, 0);
+    }
+    55% {
+      text-shadow:
+        3px 0 0 var(--accent),
+        -3px 0 0 var(--accent-2);
+      transform: translate(-2px, 0);
+    }
+    68% {
+      text-shadow:
+        -3px 0 0 var(--accent),
+        3px 0 0 var(--accent-2);
+      transform: translate(2px, 1px);
+    }
+    80% {
+      text-shadow:
+        2px 0 0 var(--accent),
+        -2px 0 0 var(--accent-2);
+      transform: translate(-1px, 0);
+    }
+    88%,
+    100% {
+      text-shadow: none;
+      transform: translate(0, 0);
+    }
+  }
+  /* Periodic re-glitch while the lower-third is visible — short burst once
+     per cycle, the rest quiet. Artist and title use the same keyframe but
+     are out-of-phase via different animation-delays so the bursts don't
+     line up exactly. */
+  @keyframes lt-text-idle-glitch {
+    0%,
+    5% {
+      text-shadow: none;
+      transform: translate(0, 0);
+    }
+    6% {
+      text-shadow:
+        2px 0 0 var(--accent),
+        -2px 0 0 var(--accent-2);
+      transform: translate(-1px, 0);
+    }
+    9% {
+      text-shadow:
+        -2px 0 0 var(--accent),
+        2px 0 0 var(--accent-2);
+      transform: translate(1px, 1px);
+    }
+    12% {
+      text-shadow:
+        1px 0 0 var(--accent),
+        -1px 0 0 var(--accent-2);
+      transform: translate(0, 0);
+    }
+    15%,
+    100% {
+      text-shadow: none;
+      transform: translate(0, 0);
+    }
+  }
+  /* Accent bar flickers through alt colours mid-entrance for the VHS punch. */
+  @keyframes lt-bar-glitch {
+    0%,
+    50% {
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+    60% {
+      background: var(--accent-2);
+      box-shadow: 0 0 18px var(--accent-2);
+    }
+    72% {
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+    84% {
+      background: var(--bug-yellow);
+      box-shadow: 0 0 18px var(--bug-yellow);
+    }
+    100% {
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+  }
+  /* Periodic bar colour flicker — same pacing as the text idle glitch. */
+  @keyframes lt-bar-idle-glitch {
+    0%,
+    5% {
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+    6% {
+      background: var(--accent-2);
+      box-shadow: 0 0 18px var(--accent-2);
+    }
+    9% {
+      background: var(--bug-yellow);
+      box-shadow: 0 0 18px var(--bug-yellow);
+    }
+    12% {
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+    15%,
+    100% {
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lt-artist,
+    .lt-title,
+    .lt-bar {
+      animation: none !important;
+    }
+  }
   @keyframes lt-out {
     from {
       transform: translateX(0);
@@ -127,6 +263,11 @@
     background: var(--accent);
     box-shadow: 0 0 18px var(--accent);
   }
+  #lower-third.show .lt-bar {
+    animation:
+      lt-bar-glitch 0.55s steps(1, end),
+      lt-bar-idle-glitch 5s steps(1, end) 1.4s infinite;
+  }
   .lt-text {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.55) 100%);
     backdrop-filter: blur(3px);
@@ -139,6 +280,16 @@
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: 1px;
+  }
+  #lower-third.show .lt-artist {
+    animation:
+      lt-text-glitch 0.55s steps(1, end),
+      lt-text-idle-glitch 5s steps(1, end) 1.2s infinite;
+  }
+  #lower-third.show .lt-title {
+    animation:
+      lt-text-glitch 0.55s steps(1, end) 40ms,
+      lt-text-idle-glitch 5s steps(1, end) 1.6s infinite;
   }
   .lt-title {
     font-family: 'Archivo', sans-serif;

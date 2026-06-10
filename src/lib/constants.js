@@ -17,6 +17,7 @@ export const ERROR_SKIP_MS = 600; // pause before auto-skipping a failed video
 
 // --- UI ---
 export const LOWER_THIRD_MS = 7000; // how long the song lower-third stays visible
+export const LOWER_THIRD_TRACK_CHANGE_DELAY_MS = 2000; // wait this long after a track change before auto-showing the lower third — lets the music play for a beat first (MTV "guess the song" feel)
 
 // --- Connected Game Mode ---
 export const PEER_CONNECT_TIMEOUT_MS = 8000; // give up establishing a peer connection after this long
