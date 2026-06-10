@@ -57,6 +57,10 @@ npm run verify     # Check all videos.json IDs are reachable and embeddable
 - **TV Guide** — year range, genre and country filters, one-tap channel presets, CRT / SONG INFO / STATION LOGO toggles
 - **Search** with ranked autocomplete; **Queue** editor with drag-to-reorder; **Settings** panel
 - **Game modes** — opt-in **Solo** (self-rated guess game: REVEAL, ✓/✗, streak + hit-rate stats in the sheet) and **Connected** (phones join the TV via QR, year-guess per round, closest year wins) — see [`docs/game-modes.md`](docs/game-modes.md)
+
+> [!NOTE]
+> **Connected mode signaling** runs through the **public [PeerJS](https://peerjs.com) broker** (`0.peerjs.com`). No data is stored there — only the WebRTC handshake passes through, after which TV and phones talk peer-to-peer. The broker is a free community service without SLA: if it is rate-limited or temporarily down, new rooms can't be created or joined until it recovers (in-flight rooms keep working). Hosts behind symmetric NAT (some corporate / mobile-carrier networks) may also fail to connect since no TURN server is configured. For reliable production use, run your own [`peerjs-server`](https://github.com/peers/peerjs-server) and point `new Peer(id, { host, port })` in `src/lib/multiplayer/peer.js` at it.
+
 - **Neo-brutalist UI** — VKTRS station-bug logo (player corner), "VIDEO KILLED / THE RADIO STAR" wordmark with RGB-glitch effect on the start screen and all overlay sheets, hard teal offset shadows
 - **Curated catalogue** — enriched via Hitster card datasets and MusicBrainz API, verified embeddable
 - **Installable PWA** — Workbox precaches the app shell and `videos.json`; launches offline (streaming still needs the network)

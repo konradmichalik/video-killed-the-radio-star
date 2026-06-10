@@ -43,9 +43,20 @@ connection budget.
 - **End of game** → a neo-brutalist winner overlay with confetti glitch and
   the final scoreboard.
 
-Transport: WebRTC P2P via the PeerJS public broker — no server. Same Vite
-bundle for TV and phone; phone mode is triggered by `?join=ABCD` in the URL.
-Both `peerjs` and `qrcode` are lazy-loaded so the channel-only path stays slim.
+Transport: WebRTC P2P via the **PeerJS public broker** (`0.peerjs.com`) for
+signaling only — the actual game traffic goes directly between TV and phones
+once the handshake is done. The broker is a free, community-run service without
+an SLA; if it is rate-limited or down, new rooms cannot be created or joined
+until it recovers. Already-connected rooms keep working because the data path
+is peer-to-peer. No TURN server is configured, so peers behind symmetric NAT
+(some corporate / mobile-carrier networks) may also fail to connect. For
+production-grade reliability, run your own [`peerjs-server`](https://github.com/peers/peerjs-server)
+and pass `{ host, port, path }` into `new Peer(...)` in
+`src/lib/multiplayer/peer.js`.
+
+Same Vite bundle for TV and phone; phone mode is triggered by `?join=ABCD` in
+the URL. Both `peerjs` and `qrcode` are lazy-loaded so the channel-only path
+stays slim.
 
 ## Under the hood
 
