@@ -1,15 +1,15 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import VktrsIcon from './VktrsIcon.svelte';
   const dispatch = createEventDispatcher();
 </script>
 
 <div id="start-screen">
   <div class="static-noise"></div>
   <div class="start-content">
-    <div class="brand-block" aria-hidden="true">
-      <span class="brand-mark">VKTRS</span>
-      <span class="brand-dot"></span>
-    </div>
+    <span class="brand-block" aria-hidden="true">
+      <VktrsIcon size={104} />
+    </span>
     <h1 class="logo">
       <span class="line line-1">
         <span class="word" style="--i: 0">VIDEO</span>
@@ -97,65 +97,74 @@
       filter: none;
     }
   }
-  /* Neo-brutalist VKTRS station block (matches Guide header + station bug). */
+  /* VKTRS square icon (matches favicon / PWA app icon / station bug). Drops
+     in from above, then runs an infinite low-frequency CRT-glitch with the
+     same character as the station-bug — quiet most of the cycle, then a
+     short burst of jitter + RGB drop-shadow split + clip-path tear. */
   .brand-block {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 6px clamp(12px, 2vw, 18px) 8px;
+    display: inline-block;
+    line-height: 0;
     margin-bottom: 22px;
-    background: #000;
-    border: 3px solid #fff;
-    box-shadow: 6px 6px 0 var(--accent-2);
-    animation: brand-drop 500ms steps(6, end) 550ms backwards;
+    animation:
+      brand-drop 400ms steps(6, end) 250ms backwards,
+      brand-glitch 7s steps(1, end) 1300ms infinite;
   }
   @keyframes brand-drop {
     0% {
       transform: translateY(-40px) scale(0.8);
-      box-shadow: 14px 14px 0 var(--accent);
       opacity: 0;
     }
     40% {
       transform: translateY(8px) scale(1.06);
-      box-shadow: 10px 10px 0 var(--bug-yellow);
       opacity: 1;
     }
     70% {
       transform: translateY(-3px) scale(0.98);
-      box-shadow: 4px 4px 0 var(--accent-2);
     }
     100% {
       transform: none;
-      box-shadow: 6px 6px 0 var(--accent-2);
       opacity: 1;
     }
   }
-  .brand-mark {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(22px, 3.6vw, 36px);
-    letter-spacing: 3px;
-    color: #fff;
-  }
-  .brand-dot {
-    width: clamp(10px, 1.3vw, 14px);
-    height: clamp(10px, 1.3vw, 14px);
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 12px var(--accent);
-    animation: pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes pulse {
+  @keyframes brand-glitch {
     0%,
+    90%,
     100% {
-      opacity: 0.55;
+      transform: translate(0, 0);
+      filter: none;
+      clip-path: inset(0 0 0 0);
     }
-    50% {
-      opacity: 1;
+    91% {
+      transform: translate(-3px, 1px);
+      filter: drop-shadow(3px 0 0 var(--accent)) drop-shadow(-3px 0 0 var(--accent-2));
     }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .brand-dot {
-      animation: none;
+    92% {
+      transform: translate(2px, -2px);
+      filter: drop-shadow(-2px 0 0 var(--accent)) drop-shadow(2px 0 0 var(--accent-2));
+      clip-path: inset(0 0 38% 0);
+    }
+    93% {
+      transform: translate(0, 1px);
+      filter: none;
+      clip-path: inset(0 0 0 0);
+    }
+    94% {
+      transform: translate(4px, 0);
+      filter: drop-shadow(0 2px 0 var(--bug-yellow));
+      clip-path: inset(32% 0 0 0);
+    }
+    95% {
+      transform: translate(-1px, 0);
+      filter: none;
+      clip-path: inset(0 0 0 0);
+    }
+    96% {
+      transform: translate(0, -1px);
+      filter: drop-shadow(2px 0 0 var(--accent)) drop-shadow(-2px 0 0 var(--accent-2));
+    }
+    97% {
+      transform: translate(0, 0);
+      filter: none;
     }
   }
   .logo {
@@ -174,19 +183,19 @@
   .line-1 {
     color: var(--ink);
     --final-shadow: none;
-    animation: wordmark-glitch-1 4.6s steps(1, end) 2400ms infinite;
+    animation: wordmark-glitch-1 4.6s steps(1, end) 1300ms infinite;
   }
   .line-2 {
     color: var(--accent);
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
     text-shadow: 4px 4px 0 rgba(8, 217, 214, 0.55);
     --final-shadow: 4px 4px 0 rgba(8, 217, 214, 0.55);
-    animation: wordmark-glitch-2 4.6s steps(1, end) 2600ms infinite;
+    animation: wordmark-glitch-2 4.6s steps(1, end) 1500ms infinite;
   }
   /* Each word gets its own VHS tracking-lock scramble, staggered by --i. */
   .word {
     display: inline-block;
-    animation: word-in 850ms steps(7, end) calc(700ms + var(--i) * 180ms) backwards;
+    animation: word-in 550ms steps(7, end) calc(350ms + var(--i) * 100ms) backwards;
   }
   @keyframes word-in {
     0% {
@@ -246,7 +255,7 @@
     transition:
       transform 0.08s ease,
       box-shadow 0.08s ease;
-    animation: btn-in 400ms cubic-bezier(0.2, 1.5, 0.4, 1) 2400ms backwards;
+    animation: btn-in 400ms cubic-bezier(0.2, 1.5, 0.4, 1) 1300ms backwards;
   }
   @keyframes btn-in {
     0% {
