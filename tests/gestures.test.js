@@ -2,8 +2,11 @@ import { describe, it, expect } from 'vitest';
 import { resolveGesture, SWIPE, TAP_MOVE } from '../src/lib/gestures.js';
 
 const VW = 1000;
+const VH = 1000;
+// Default helper places y=400 (inside the 0.25–0.75 vertical band of a 1000-px
+// viewport) so the existing edge-tap tests still resolve to prev/next.
 const g = (startX, startY, endX, endY) =>
-  resolveGesture({ startX, startY, endX, endY, viewportWidth: VW });
+  resolveGesture({ startX, startY, endX, endY, viewportWidth: VW, viewportHeight: VH });
 
 describe('swipes', () => {
   it('swipe left -> next', () => {
@@ -52,6 +55,25 @@ describe('taps by zone', () => {
 
   it('tiny jitter within slop still a tap', () => {
     expect(g(500, 400, 500 + TAP_MOVE, 400 + TAP_MOVE)).toBe('toggle');
+  });
+});
+
+describe('edge-tap vertical band', () => {
+  it('left-edge tap near the top (above band) -> null (falls through)', () => {
+    // y = 150, viewportHeight 1000 -> yFrac 0.15, outside 0.25–0.75 band
+    expect(g(100, 150, 100, 150)).toBeNull();
+  });
+
+  it('right-edge tap near the bottom (below band) -> null', () => {
+    // y = 850, yFrac 0.85 -> outside band
+    expect(g(900, 850, 900, 850)).toBeNull();
+  });
+
+  it('center tap outside the band still toggles (no vertical restriction)', () => {
+    // Centre column is unaffected by the edge band — toggle play/pause works
+    // anywhere outside the top UI strip.
+    expect(g(500, 200, 500, 200)).toBe('toggle');
+    expect(g(500, 800, 500, 800)).toBe('toggle');
   });
 });
 

@@ -9,7 +9,7 @@
     toggleFavorite,
   } from '../lib/stores.js';
   import { next, prev, toggle, seekBy } from '../lib/player.js';
-  import { resolveGesture } from '../lib/gestures.js';
+  import { resolveGesture, EDGE_ZONE_VERTICAL_INSET_FRAC } from '../lib/gestures.js';
 
   let startX = 0;
   let startY = 0;
@@ -69,12 +69,19 @@
     startTime = e.timeStamp || Date.now();
     hoverZone = null;
 
-    // Arm the seek-hold timer if the press starts in an edge zone (the prev /
-    // next tap targets). Movement beyond the tap slop, or release before the
-    // threshold, cancels it and falls back to the normal gesture resolution.
+    // Arm the seek-hold timer only when the press starts inside the edge tap
+    // target — left/right 25% horizontally AND within the vertical mid-band
+    // (so a thumb resting near the top/bottom corner can't accidentally arm
+    // a seek). Movement beyond the tap slop, or release before the threshold,
+    // cancels it and falls back to the normal gesture resolution.
     const zone = e.clientX / window.innerWidth;
-    if (zone < 0.25) startSeekHold('prev');
-    else if (zone > 0.75) startSeekHold('next');
+    const yFrac = window.innerHeight > 0 ? e.clientY / window.innerHeight : 0.5;
+    const inEdgeBand =
+      yFrac > EDGE_ZONE_VERTICAL_INSET_FRAC && yFrac < 1 - EDGE_ZONE_VERTICAL_INSET_FRAC;
+    if (inEdgeBand) {
+      if (zone < 0.25) startSeekHold('prev');
+      else if (zone > 0.75) startSeekHold('next');
+    }
   }
 
   function up(e) {
@@ -98,6 +105,7 @@
       endX: e.clientX,
       endY: e.clientY,
       viewportWidth: window.innerWidth,
+      viewportHeight: window.innerHeight,
       duration,
     });
 
