@@ -102,9 +102,6 @@ export function createPlayer(nodeId) {
     // YouTube does not allow embed-side ad suppression beyond this on free
     // accounts — full ad-free requires YouTube Premium per viewer.
     host: 'https://www.youtube-nocookie.com',
-    // Non-revealing iframe title. The browser tooltip shown on hover would
-    // otherwise leak the current video title and ruin the guess game.
-    title: 'VKTRS player',
     playerVars: PLAYER_VARS,
     events: {
       onReady: () => {
@@ -293,13 +290,21 @@ export function seekBy(delta) {
 }
 
 // embedding disabled / removed video -> skip; but stop after a full lap so a
-// fully-dead channel surfaces an error instead of looping forever.
-function handleError() {
+// fully-dead channel surfaces an error instead of looping forever. We record
+// the most recent YouTube error code so the test card can show *why* every
+// track failed (5 = HTML5 player / iOS Safari ITP, 100 = removed, 101/150 =
+// embedding disabled by owner, 2 = invalid parameter).
+let lastYtErrorCode = null;
+function handleError(e) {
+  const code = e?.data;
+  if (code != null) lastYtErrorCode = code;
+  console.error('YouTube IFrame error', code);
   errorCount += 1;
   const len = get(playlist).length || 1;
   if (errorCount >= len) {
     endSwitch();
-    loadError.set('No playable videos in this channel — try other filters.');
+    const suffix = lastYtErrorCode != null ? ` (YouTube error ${lastYtErrorCode})` : '';
+    loadError.set(`No playable videos in this channel — try other filters.${suffix}`);
     return;
   }
   setTimeout(next, ERROR_SKIP_MS);
