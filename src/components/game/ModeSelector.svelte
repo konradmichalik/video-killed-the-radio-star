@@ -1,7 +1,24 @@
 <!-- src/components/game/ModeSelector.svelte -->
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
+  import { brokerReachable } from '../../lib/stores.js';
+  import { checkBrokerReachable } from '../../lib/multiplayer/peer.js';
+
   const dispatch = createEventDispatcher();
+
+  // Probe the PeerJS broker on first mount so the "Open room" CTA can be
+  // disabled before the user wastes 8s on a doomed `hostRoom()` attempt. We
+  // keep the result in the store across re-mounts so closing/reopening the
+  // sheet doesn't re-probe — the broker either works for the whole session
+  // or the user needs to reload anyway.
+  onMount(async () => {
+    if ($brokerReachable !== null) return;
+    const ok = await checkBrokerReachable();
+    brokerReachable.set(ok);
+  });
+
+  $: connectedDisabled = $brokerReachable === false;
+  $: connectedLabel = connectedDisabled ? 'Broker offline' : 'Open room';
 </script>
 
 <div class="cards">
@@ -22,8 +39,14 @@
     <button
       type="button"
       class="cta alt-cta"
-      on:click={() => dispatch('start', { mode: 'connected' })}>Open room</button
+      disabled={connectedDisabled}
+      on:click={() => dispatch('start', { mode: 'connected' })}>{connectedLabel}</button
     >
+    {#if connectedDisabled}
+      <p class="warning" role="status">
+        PeerJS signaling broker unreachable — Connected mode is unavailable. Try again later.
+      </p>
+    {/if}
   </article>
 </div>
 
@@ -78,12 +101,24 @@
   .cta.alt-cta {
     background: var(--accent-2);
   }
-  .cta:hover {
+  .cta:hover:not(:disabled) {
     box-shadow: 8px 8px 0 #050505;
     transform: translate(-2px, -2px);
   }
-  .cta:active {
+  .cta:active:not(:disabled) {
     transform: translate(3px, 3px);
     box-shadow: 0 0 0 #050505;
+  }
+  .cta:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+    box-shadow: 5px 5px 0 #050505;
+  }
+  .warning {
+    margin: 12px 0 0;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: rgba(255, 100, 100, 0.85);
   }
 </style>

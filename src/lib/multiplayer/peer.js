@@ -3,6 +3,35 @@
 // with explicit lifecycle methods so callers don't depend on peerjs types.
 import { PEER_CONNECT_TIMEOUT_MS, PEER_RECONNECT_BACKOFF_MS } from '../constants.js';
 
+// Lightweight pre-flight: hit the public PeerJS broker's `/peerjs/id` endpoint
+// (returns a UUID when up) so we can disable Connected Mode in the UI before
+// the user wastes 8–13s on the regular connect-timeout path. Sends `cache:
+// 'no-store'` because a cached 200 from yesterday would lie about today's
+// availability. Returns false on any error (CORS, network, abort, !ok status,
+// offline) — the only `true` answer is a successful response within the
+// timeout. The `fetcher` and `url` overrides exist for testability.
+const BROKER_PROBE_URL = 'https://0.peerjs.com/peerjs/id';
+const BROKER_PROBE_TIMEOUT_MS = 3000;
+
+export async function checkBrokerReachable({
+  url = BROKER_PROBE_URL,
+  timeoutMs = BROKER_PROBE_TIMEOUT_MS,
+  fetcher = typeof fetch === 'function' ? fetch : null,
+} = {}) {
+  if (!fetcher) return false;
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) return false;
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), timeoutMs);
+  try {
+    const res = await fetcher(url, { method: 'GET', signal: ctl.signal, cache: 'no-store' });
+    return res.ok;
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(t);
+  }
+}
+
 let _Peer = null;
 async function loadPeer() {
   if (!_Peer) {

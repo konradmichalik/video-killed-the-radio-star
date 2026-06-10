@@ -105,6 +105,10 @@ export const adPlaying = writable(false); // true while YouTube plays a pre-roll
 // trigger the native PWA install prompt on demand. null until Chrome fires it
 // (or after the user installs / dismisses).
 export const installPromptEvent = writable(null);
+// Result of the PeerJS broker pre-flight probe. null = not yet checked,
+// true/false = last known reachability. Drives the "Open room" button state
+// in ModeSelector and short-circuits the phone-side join when known false.
+export const brokerReachable = writable(null);
 
 // User-tagged favourite tracks (Set of video_id). Persisted to localStorage so
 // the user can build a long-running personal channel across sessions.

@@ -47,10 +47,10 @@
   import { enableWakeLock } from './lib/wakelock.js';
   import { requestAppFullscreen } from './lib/fullscreen.js';
   import { loadFilters } from './lib/channel.js';
-  import { phoneRoom } from './lib/stores.js';
+  import { phoneRoom, brokerReachable } from './lib/stores.js';
   import { loadOrCreate, setName as persistName } from './lib/multiplayer/identity.js';
   import { isValidRoomId, generateRoomId } from './lib/multiplayer/room.js';
-  import { hostRoom, joinRoom } from './lib/multiplayer/peer.js';
+  import { hostRoom, joinRoom, checkBrokerReachable } from './lib/multiplayer/peer.js';
   import { encode, parseMessage } from './lib/multiplayer/protocol.js';
   import {
     addPlayer,
@@ -104,6 +104,14 @@
     if (!me) return;
     const ownPeerId = PHONE_PEER_PREFIX + me.id;
     phoneRoom.update((s) => ({ ...s, connectionStatus: 'connecting' }));
+    // Pre-flight the public broker so the phone doesn't sit on the ~13s
+    // retry-backoff path just to discover the signaling server is down.
+    const ok = await checkBrokerReachable();
+    brokerReachable.set(ok);
+    if (!ok) {
+      phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' }));
+      return;
+    }
     try {
       phoneClient = await joinRoom(PEER_PREFIX + joinParam, ownPeerId, {
         onOpen: () => {
@@ -393,8 +401,20 @@
     host = null;
   }
 
-  function onStartMode(e) {
+  async function onStartMode(e) {
     const mode = e.detail.mode;
+    // Connected mode needs the PeerJS broker. If a prior probe (ModeSelector)
+    // already came back false, refuse to enter the mode at all so we don't
+    // leave gameMode set with no working room. Re-probe when unknown to
+    // catch cases where ModeSelector was skipped or the result expired.
+    if (mode === 'connected') {
+      let ok = get(brokerReachable);
+      if (ok === null) {
+        ok = await checkBrokerReachable();
+        brokerReachable.set(ok);
+      }
+      if (!ok) return;
+    }
     gameMode.set(mode);
     room.update((s) => startSession(s));
     // Hide Song Info during gameplay so the lower third can't spoil the year.
