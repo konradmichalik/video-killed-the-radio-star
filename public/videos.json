@@ -7934,5 +7934,101 @@
     "genre": "New Wave",
     "video_id": "zuuObGsB0No",
     "country": "United Kingdom"
+  },
+  {
+    "title": "Blue Monday",
+    "artist": "New Order",
+    "year": 1983,
+    "genre": "Synthpop",
+    "video_id": "9GMjH1nR0ds",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Never Let Me Down Again",
+    "artist": "Depeche Mode",
+    "year": 1987,
+    "genre": "Synthpop",
+    "video_id": "snILjFUkk_A",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "A Forest",
+    "artist": "The Cure",
+    "year": 1980,
+    "genre": "New Wave",
+    "video_id": "xik-y0xlpZ0",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "How Soon Is Now?",
+    "artist": "The Smiths",
+    "year": 1984,
+    "genre": "Indie",
+    "video_id": "hnpILIIo9ek",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "The Mercy Seat",
+    "artist": "Nick Cave & The Bad Seeds",
+    "year": 1988,
+    "genre": "Alternative",
+    "video_id": "Ahr4KFl79WI",
+    "country": "Australia"
+  },
+  {
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "year": 1982,
+    "genre": "Pop",
+    "video_id": "4V90AmXnguw",
+    "country": "United States"
+  },
+  {
+    "title": "The Message",
+    "artist": "Grandmaster Flash & The Furious Five",
+    "year": 1982,
+    "genre": "Hip-Hop",
+    "video_id": "gYMkEMCHtJ4",
+    "country": "United States"
+  },
+  {
+    "title": "Tainted Love",
+    "artist": "Soft Cell",
+    "year": 1981,
+    "genre": "Synthpop",
+    "video_id": "XZVpR3Pk-r8",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Waiting Room",
+    "artist": "Fugazi",
+    "year": 1988,
+    "genre": "Punk",
+    "video_id": "Og7u3sKuegM",
+    "country": "United States"
+  },
+  {
+    "title": "Once In A Lifetime",
+    "artist": "Talking Heads",
+    "year": 1980,
+    "genre": "New Wave",
+    "video_id": "5IsSpAOD6K8",
+    "country": "United States"
+  },
+  {
+    "title": "Such A Shame",
+    "artist": "Talk Talk",
+    "year": 1984,
+    "genre": "Synthpop",
+    "video_id": "lLdvpFIPReA",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Where Is My Mind?",
+    "artist": "Pixies",
+    "year": 1988,
+    "genre": "Alternative",
+    "video_id": "I_aBmrYChfQ",
+    "country": "United States"
   }
 ]
