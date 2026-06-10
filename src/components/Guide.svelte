@@ -287,6 +287,12 @@
     </button>
   </svelte:fragment>
 
+  <p class="library-stat" aria-live="polite">
+    // LIBRARY · <strong>{$videos.length}</strong>
+    {$videos.length === 1 ? 'TRACK' : 'TRACKS'}{#if boundsLo && boundsHi}
+      · {boundsLo}–{boundsHi}{/if}
+  </p>
+
   <section class="block">
     <button
       type="button"
@@ -423,6 +429,18 @@
 </Sheet>
 
 <style>
+  .library-stat {
+    margin: 0 0 8px;
+    font-family: 'VT323', monospace;
+    font-size: clamp(15px, 1.7vw, 19px);
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+  }
+  .library-stat strong {
+    color: var(--accent-2);
+    font-weight: normal;
+  }
   .block {
     margin-bottom: 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
