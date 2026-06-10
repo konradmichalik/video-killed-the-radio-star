@@ -201,6 +201,78 @@ body {
   box-shadow: 0 0 0 transparent;
 }
 
+/* Shared neo-brutalist primary CTA — full-width, solid yellow body, hard
+   black border, chunky pink offset shadow, Anton uppercase. Matches the
+   start-screen TURN ON TV button so every "commit" action across overlays
+   reads the same. Override the accent shadow via --btn-shadow, the body via
+   --btn-bg, or the text via --btn-text when a sheet needs a different pair. */
+.btn-brutal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 56px;
+  padding: 14px 22px;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(18px, 3vw, 26px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--btn-text, #050505);
+  background: var(--btn-bg, var(--bug-yellow));
+  border: 3px solid #050505;
+  box-shadow: 6px 6px 0 var(--btn-shadow, var(--accent));
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+.btn-brutal:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 9px 9px 0 var(--btn-shadow, var(--accent));
+}
+.btn-brutal:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--btn-shadow, var(--accent));
+}
+.btn-brutal:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* Secondary / ghost variant — transparent body with white border, hover
+   flips to the pink accent. Used for "End game", "Dismiss", and other
+   non-commit secondary actions inside sheets. */
+.btn-brutal-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 12px 22px;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(16px, 2.4vw, 20px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  background: transparent;
+  border: 3px solid #fff;
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    color 0.12s ease,
+    border-color 0.12s ease;
+}
+.btn-brutal-ghost:hover:not(:disabled) {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 5px 5px 0 var(--accent);
+  transform: translate(-2px, -2px);
+}
+.btn-brutal-ghost:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--accent);
+}
+
 /* Shared bottom-center HUD bar — Solo (GuessGame) and Connected (FloatingControls)
    both render a neo-brutalist bar with phase CTA + Open ghost button. Container
    styles are shared here; phase-specific chips/colors stay local. */

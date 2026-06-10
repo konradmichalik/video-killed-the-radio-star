@@ -418,7 +418,7 @@
     </section>
   {/if}
 
-  <button class="apply" type="button" on:click={apply}>&#x25B6;&nbsp; PLAY CHANNEL</button>
+  <button class="btn-brutal apply" type="button" on:click={apply}>Play channel</button>
   {#if foot}<p class="foot">{foot}</p>{/if}
 </Sheet>
 
@@ -628,29 +628,10 @@
     transform: translate(-2px, -2px);
   }
 
+  /* All shared neo-brutalist button styling lives in src/app.css under
+     .btn-brutal — only sheet-level spacing stays here. */
   .apply {
-    width: 100%;
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(20px, 3.4vw, 28px);
-    letter-spacing: 3px;
-    color: #050505;
-    background: var(--bug-yellow);
-    border: 3px solid #050505;
-    padding: 16px;
-    cursor: pointer;
     margin-top: 6px;
-    box-shadow: 5px 5px 0 #050505;
-    transition:
-      transform 0.1s ease,
-      box-shadow 0.1s ease;
-  }
-  .apply:hover {
-    box-shadow: 8px 8px 0 #050505;
-    transform: translate(-2px, -2px);
-  }
-  .apply:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0 0 0 #050505;
   }
   .foot {
     font-family: 'VT323', monospace;

@@ -35,8 +35,8 @@
     on:toggle={() => progressOn.update((v) => !v)}
   />
 
-  <button class="done" type="button" on:click={() => settingsOpen.set(false)}
-    >&#x2713;&nbsp; DONE</button
+  <button class="btn-brutal done" type="button" on:click={() => settingsOpen.set(false)}
+    >Done</button
   >
 </Sheet>
 
@@ -48,28 +48,10 @@
     color: rgba(255, 255, 255, 0.55);
     margin: -6px 0 22px;
   }
+  /* Inherits .btn-brutal shape from src/app.css; only the cyan body +
+     spacing are sheet-local. */
   .done {
-    width: 100%;
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(18px, 3vw, 24px);
-    letter-spacing: 3px;
-    color: #050505;
-    background: var(--accent-2);
-    border: 3px solid #050505;
-    padding: 14px;
-    cursor: pointer;
+    --btn-bg: var(--accent-2);
     margin-top: 18px;
-    box-shadow: 5px 5px 0 #050505;
-    transition:
-      transform 0.1s ease,
-      box-shadow 0.1s ease;
-  }
-  .done:hover {
-    box-shadow: 8px 8px 0 #050505;
-    transform: translate(-2px, -2px);
-  }
-  .done:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0 0 0 #050505;
   }
 </style>

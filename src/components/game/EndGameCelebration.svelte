@@ -85,7 +85,7 @@
       <Scoreboard {players} highlightId={winner?.id} />
     </div>
 
-    <button class="cta" type="button" on:click={() => dispatch('dismiss')}>Done</button>
+    <button class="btn-brutal cta" type="button" on:click={() => dispatch('dismiss')}>Done</button>
   </div>
 </div>
 
@@ -277,29 +277,12 @@
     }
   }
 
+  /* Body and shadow come from .btn-brutal (src/app.css); we only need the
+     cyan accent for this celebration screen. */
   .cta {
-    min-height: 52px;
-    padding: 0 28px;
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(18px, 2.5vw, 22px);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #050505;
-    background: var(--accent-2);
-    border: 3px solid #050505;
-    cursor: pointer;
-    box-shadow: 5px 5px 0 #050505;
-    transition:
-      transform 0.1s ease,
-      box-shadow 0.1s ease;
-  }
-  .cta:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0 #050505;
-  }
-  .cta:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0 0 0 #050505;
+    --btn-bg: var(--accent-2);
+    width: auto;
+    align-self: center;
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -105,7 +105,7 @@
     {/each}
   </ol>
 
-  <button class="apply" type="button" on:click={apply}>&#x25B6;&nbsp; APPLY QUEUE</button>
+  <button class="btn-brutal apply" type="button" on:click={apply}>Apply queue</button>
   <p class="note">Reordering/removing here is a one-off edit of the current queue (not saved).</p>
 </Sheet>
 
@@ -194,20 +194,8 @@
     color: var(--accent);
   }
 
-  .apply {
-    width: 100%;
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(20px, 3.4vw, 28px);
-    letter-spacing: 3px;
-    color: #050505;
-    background: var(--bug-yellow);
-    border: none;
-    padding: 16px;
-    cursor: pointer;
-  }
-  .apply:active {
-    transform: scale(0.99);
-  }
+  /* All shared neo-brutalist button styling lives in src/app.css under
+     .btn-brutal. */
   .note {
     font-family: 'VT323', monospace;
     font-size: 15px;

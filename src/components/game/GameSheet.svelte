@@ -84,7 +84,7 @@
           <dd>{$guessStats.played ? `${hitRate($guessStats)}%` : '—'}</dd>
         </div>
       </dl>
-      <button class="ghost" on:click={() => dispatch('endSession')}>End game</button>
+      <button class="btn-brutal-ghost" on:click={() => dispatch('endSession')}>End game</button>
     </section>
   {/if}
 </Sheet>
@@ -132,31 +132,5 @@
     letter-spacing: 2px;
     color: var(--bug-yellow);
   }
-  .ghost {
-    min-height: 52px;
-    padding: 0 20px;
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(16px, 2.4vw, 20px);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #fff;
-    background: transparent;
-    border: 3px solid #fff;
-    cursor: pointer;
-    transition:
-      transform 0.1s ease,
-      box-shadow 0.1s ease,
-      color 0.12s ease,
-      border-color 0.12s ease;
-  }
-  .ghost:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    box-shadow: 5px 5px 0 var(--accent);
-    transform: translate(-2px, -2px);
-  }
-  .ghost:active {
-    transform: translate(2px, 2px);
-    box-shadow: 0 0 0 var(--accent);
-  }
+  /* End-game uses the shared .btn-brutal-ghost — no local styles needed. */
 </style>
