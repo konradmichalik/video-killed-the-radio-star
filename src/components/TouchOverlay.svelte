@@ -23,8 +23,11 @@
 
   // Touch double-tap requirement for prev/next so accidental edge taps don't
   // skip tracks. First tap arms the action, second tap within DOUBLE_TAP_MS
-  // confirms. Mouse / trackpad single-clicks bypass this entirely.
-  const DOUBLE_TAP_MS = 500;
+  // confirms. Mouse / trackpad single-clicks bypass this entirely. 800 ms is
+  // forgiving enough that a deliberate confirm-tap lands even when the first
+  // tap was a millisecond shy of a long-press; tighter values made the second
+  // tap feel "too late" on iPhone testing.
+  const DOUBLE_TAP_MS = 800;
   let pendingTapAction = null;
   let pendingTapTime = 0;
   let pendingTapTimer = null;

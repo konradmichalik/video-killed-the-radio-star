@@ -4,7 +4,7 @@
  * by tests in tests/gestures.test.js.
  */
 
-export const SWIPE = 60; // px a finger must travel to count as a swipe
+export const SWIPE = 45; // px a finger must travel to count as a swipe
 export const TAP_MOVE = 12; // px of slop still allowed for a "tap"
 export const TOP_UI_STRIP_PX = 100; // top zone reserved for logo button / guess-game UI — taps here resolve to null
 export const LONG_PRESS_MS = 700; // hold this long with no movement to toggle the current track as favourite
