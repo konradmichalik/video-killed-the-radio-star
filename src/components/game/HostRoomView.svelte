@@ -4,6 +4,8 @@
   import PlayerList from './PlayerList.svelte';
   import Scoreboard from './Scoreboard.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
+  import Toggle from '../Toggle.svelte';
+  import { autoAdvanceRound } from '../../lib/stores.js';
 
   export let roomCode;
   export let joinUrl;
@@ -120,6 +122,13 @@
       {/if}
       <button class="ghost" on:click={() => dispatch('end')}>End game</button>
     </div>
+
+    <Toggle
+      label="AUTO NEXT ROUND"
+      hint="(when the next track starts)"
+      checked={$autoAdvanceRound}
+      on:toggle={() => autoAdvanceRound.update((v) => !v)}
+    />
 
     <div>
       <h4 class="lists-title">Scoreboard</h4>

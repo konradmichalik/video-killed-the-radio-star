@@ -25,6 +25,8 @@
     gameMode,
     room,
     resetGuessStats,
+    autoAdvanceRound,
+    adPlaying,
   } from './lib/stores.js';
   import {
     startSession,
@@ -446,6 +448,48 @@
     }
     // Advance to the next track so each round plays something new.
     next();
+  }
+
+  // Auto-advance: when the host enables it, the next round starts as soon as
+  // YouTube auto-advances to the next track (pre-roll ad finished, video_id
+  // changed since the reveal). Skips the intermediate 'idle' state and goes
+  // straight to 'guessing' so the current track is the new round's track. We
+  // capture the video_id at reveal time and only fire ONCE per reveal —
+  // `autoAdvanceFired` is reset whenever the phase leaves 'revealed'.
+  let revealVideoId = null;
+  let autoAdvanceFired = false;
+
+  $: trackPhase($room.session?.phase, $currentVideo?.video_id);
+  function trackPhase(phase, videoId) {
+    if (phase === 'revealed') {
+      if (revealVideoId === null) revealVideoId = videoId;
+    } else {
+      revealVideoId = null;
+      autoAdvanceFired = false;
+    }
+  }
+
+  $: maybeAutoAdvance(
+    $autoAdvanceRound,
+    $gameMode,
+    $room.session?.phase,
+    $currentVideo?.video_id,
+    $adPlaying,
+  );
+  function maybeAutoAdvance(enabled, mode, phase, videoId, adOn) {
+    if (autoAdvanceFired) return;
+    if (!enabled || mode !== 'connected' || phase !== 'revealed') return;
+    if (!videoId || !revealVideoId) return;
+    if (videoId === revealVideoId) return; // track hasn't advanced yet
+    if (adOn) return; // still in a pre-roll — wait for the music to start
+    autoAdvanceFired = true;
+    // Skip 'idle' and jump straight to the next guessing round on the new
+    // track. No manual next() call here — YouTube has already advanced.
+    room.update((s) => reduceNextRound(s));
+    const cv = get(currentVideo);
+    room.update((s) => reduceStartRound(s, cv));
+    const r = get(room);
+    host?.broadcast(encode('round', { round: r.session.round, phase: 'guessing' }));
   }
 
   // End-game flow is split in two so Connected mode can show a celebration

@@ -68,6 +68,14 @@ const loadSkipReviewed = () => {
   }
 };
 
+const loadAutoAdvance = () => {
+  try {
+    return localStorage.getItem('vktrs-auto-advance') === '1';
+  } catch {
+    return false;
+  }
+};
+
 const loadFavorites = () => {
   try {
     const raw = localStorage.getItem('vktrs-favorites');
@@ -158,6 +166,10 @@ export const skipReviewedOk = writable(loadSkipOk());
 // When true, ANY reviewed track (OK or issue) is auto-skipped — only tracks
 // with no review status play. Persisted across sessions.
 export const skipReviewed = writable(loadSkipReviewed());
+// Connected mode: when true, the next round auto-starts as soon as the next
+// track plays (ad finished, fresh video_id), so the host doesn't have to tap
+// "Next round" between every track. Persisted across sessions.
+export const autoAdvanceRound = writable(loadAutoAdvance());
 
 /** Merge a partial review for one video_id and persist to localStorage. */
 export function updateReview(videoId, partial) {
@@ -243,6 +255,14 @@ skipReviewedOk.subscribe((v) => {
 skipReviewed.subscribe((v) => {
   try {
     localStorage.setItem('vktrs-skip-reviewed', v ? '1' : '0');
+  } catch {
+    /* storage unavailable */
+  }
+});
+
+autoAdvanceRound.subscribe((v) => {
+  try {
+    localStorage.setItem('vktrs-auto-advance', v ? '1' : '0');
   } catch {
     /* storage unavailable */
   }
