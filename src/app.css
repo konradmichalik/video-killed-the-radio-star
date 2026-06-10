@@ -350,3 +350,41 @@ body {
   transform: translate(2px, 2px);
   box-shadow: 0 0 0 var(--accent);
 }
+
+/* Shared VHS-tracking idle glitch for the canonical VKTRS square mark
+   (StationLogo in the player corner, PhoneShell brand-icon in the phone
+   header). Pair with `animation: vktrs-icon-glitch-idle 14s steps(1, end)
+   infinite` on the wrapper element. Quiet 92 % of the cycle, then ~700 ms
+   of position-jitter + RGB drop-shadow split + clip-path tear. Defined
+   globally so consumers don't duplicate the same ~30-line keyframe block. */
+@keyframes vktrs-icon-glitch-idle {
+  0%,
+  92%,
+  100% {
+    transform: translate(0, 0);
+    filter: none;
+    clip-path: inset(0 0 0 0);
+  }
+  93% {
+    transform: translate(-2px, 1px);
+    filter: drop-shadow(2px 0 0 var(--accent)) drop-shadow(-2px 0 0 var(--accent-2));
+  }
+  94% {
+    transform: translate(2px, -1px);
+    filter: drop-shadow(-3px 0 0 var(--accent)) drop-shadow(3px 0 0 var(--accent-2));
+    clip-path: inset(0 0 40% 0);
+  }
+  95% {
+    transform: translate(0, 1px);
+    filter: none;
+    clip-path: inset(0 0 0 0);
+  }
+  96% {
+    transform: translate(-1px, 0);
+    filter: drop-shadow(1px 0 0 var(--accent)) drop-shadow(-1px 0 0 var(--accent-2));
+  }
+  97% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+}

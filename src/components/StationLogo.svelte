@@ -33,8 +33,10 @@
     opacity: 0.45;
     cursor: pointer;
     font: inherit;
-    /* Idle: long calm stretch + brief glitch burst every ~14 s. */
-    animation: bug-glitch-idle 14s steps(1, end) infinite;
+    /* Idle: long calm stretch + brief glitch burst every ~14 s. Shares
+       the `vktrs-icon-glitch-idle` keyframe defined in src/app.css with
+       PhoneShell so both brand-mark instances jitter identically. */
+    animation: vktrs-icon-glitch-idle 14s steps(1, end) infinite;
   }
   /* Mouse/trackpad: hover triggers the aggressive CRT-glitch. */
   @media (hover: hover) and (pointer: fine) {
@@ -104,41 +106,9 @@
     }
   }
 
-  /* Occasional idle glitch — quiet most of the cycle, ~0.5 s burst at the end.
-     Pairs the position jitter with a stepped RGB drop-shadow split so the
-     bug picks up the same VHS-tracking character as the start-screen brand
-     icon and the lower-third / up-next entrances. */
-  @keyframes bug-glitch-idle {
-    0%,
-    92%,
-    100% {
-      transform: translate(0, 0);
-      filter: none;
-      clip-path: inset(0 0 0 0);
-    }
-    93% {
-      transform: translate(-2px, 1px);
-      filter: drop-shadow(2px 0 0 var(--accent)) drop-shadow(-2px 0 0 var(--accent-2));
-    }
-    94% {
-      transform: translate(2px, -1px);
-      filter: drop-shadow(-3px 0 0 var(--accent)) drop-shadow(3px 0 0 var(--accent-2));
-      clip-path: inset(0 0 40% 0);
-    }
-    95% {
-      transform: translate(0, 1px);
-      filter: none;
-      clip-path: inset(0 0 0 0);
-    }
-    96% {
-      transform: translate(-1px, 0);
-      filter: drop-shadow(1px 0 0 var(--accent)) drop-shadow(-1px 0 0 var(--accent-2));
-    }
-    97% {
-      transform: translate(0, 0);
-      filter: none;
-    }
-  }
+  /* `vktrs-icon-glitch-idle` for the idle burst lives in src/app.css —
+     shared with PhoneShell. Hover-state `bug-glitch` stays local because
+     it's a different (more aggressive) animation. */
   @media (prefers-reduced-motion: reduce) {
     .bug,
     .bug:hover {

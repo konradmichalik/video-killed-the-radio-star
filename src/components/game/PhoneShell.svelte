@@ -56,8 +56,9 @@
     gap: 22px;
     z-index: 60;
   }
-  /* App icon top-left — same square mark as favicon / station bug. Position
-     jitter + RGB drop-shadow split idle glitch picks up the VHS character. */
+  /* App icon top-left — same square mark as favicon / station bug. The
+     `vktrs-icon-glitch-idle` keyframe lives in src/app.css and is shared
+     with StationLogo so both brand icons jitter on the same VHS cadence. */
   .brand-icon {
     position: absolute;
     top: 14px;
@@ -65,7 +66,7 @@
     display: inline-block;
     line-height: 0;
     z-index: 1;
-    animation: brand-icon-glitch 14s steps(1, end) infinite;
+    animation: vktrs-icon-glitch-idle 14s steps(1, end) infinite;
   }
   /* Corner wordmark — small, condensed, top-right. The PhoneRoomView header
      carries the room code on the left, so this never overlaps. */
@@ -99,40 +100,6 @@
   .shell-body {
     min-height: 0;
     padding-top: 8px;
-  }
-  /* Quiet most of the 14 s cycle, ~5 % burst at the end — position jitter +
-     RGB drop-shadow split + clip-path tear, in the same family as the
-     station-bug idle glitch. */
-  @keyframes brand-icon-glitch {
-    0%,
-    92%,
-    100% {
-      transform: translate(0, 0);
-      filter: none;
-      clip-path: inset(0 0 0 0);
-    }
-    93% {
-      transform: translate(-2px, 1px);
-      filter: drop-shadow(2px 0 0 var(--accent)) drop-shadow(-2px 0 0 var(--accent-2));
-    }
-    94% {
-      transform: translate(2px, -1px);
-      filter: drop-shadow(-3px 0 0 var(--accent)) drop-shadow(3px 0 0 var(--accent-2));
-      clip-path: inset(0 0 40% 0);
-    }
-    95% {
-      transform: translate(0, 1px);
-      filter: none;
-      clip-path: inset(0 0 0 0);
-    }
-    96% {
-      transform: translate(-1px, 0);
-      filter: drop-shadow(1px 0 0 var(--accent)) drop-shadow(-1px 0 0 var(--accent-2));
-    }
-    97% {
-      transform: translate(0, 0);
-      filter: none;
-    }
   }
   @media (prefers-reduced-motion: reduce) {
     .phone-mark-1,
