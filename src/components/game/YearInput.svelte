@@ -14,6 +14,14 @@
   const dispatch = createEventDispatcher();
   const lockIn = () => dispatch('lock', { year: value });
 
+  // Hide the year + disable lock-in until the player actually moves the slider.
+  // The default mid-range value (e.g. 1995 on a 1900–2026 span) would otherwise
+  // anchor the guess; the placeholder forces a deliberate pick.
+  let touched = false;
+  const markTouched = () => {
+    touched = true;
+  };
+
   // Build a CSS gradient of vertical ticks every 10 years. The track is
   // (max - min) "units" wide, and each unit is 100/(max-min)%. A 10-year
   // major tick sits every 10 units => major step = 1000/(max-min)%.
@@ -22,7 +30,9 @@
 </script>
 
 <div class="year-input">
-  <output class="display" aria-live="polite">{value}</output>
+  <output class="display" class:placeholder={!touched} aria-live="polite"
+    >{touched ? value : '????'}</output
+  >
 
   <div class="slider-wrap" style="--major-step: {majorStepPct}%">
     <input
@@ -32,6 +42,8 @@
       {max}
       step="1"
       bind:value
+      on:input={markTouched}
+      on:change={markTouched}
       {disabled}
       aria-label="Year"
     />
@@ -42,7 +54,9 @@
     </div>
   </div>
 
-  <button type="button" class="lock" on:click={lockIn} {disabled}>Lock it in</button>
+  <button type="button" class="lock" on:click={lockIn} disabled={disabled || !touched}>
+    {touched ? 'Lock it in' : 'Pick a year'}
+  </button>
 </div>
 
 <style>
@@ -62,6 +76,9 @@
     padding: 14px 8px;
     font-variant-numeric: tabular-nums;
     line-height: 1;
+  }
+  .display.placeholder {
+    color: rgba(255, 255, 255, 0.35);
   }
 
   .slider-wrap {

@@ -2,12 +2,14 @@
 <!--
   Full-viewport phone container for connected game mode.
   Replaces the Sheet wrapper so the experience feels like a dedicated app:
-  VKTRS wordmark at top, PhoneRoomView in the middle, safe-area padding at
-  the bottom. Keeps the same event surface so App.svelte wiring is unchanged.
+  VKTRS app icon top-left, wordmark top-right, PhoneRoomView in the middle,
+  safe-area padding at the bottom. Keeps the same event surface so
+  App.svelte wiring is unchanged.
 -->
 <script>
   import { phoneRoom } from '../../lib/stores.js';
   import PhoneRoomView from './PhoneRoomView.svelte';
+  import VktrsIcon from '../VktrsIcon.svelte';
   import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
@@ -15,6 +17,10 @@
 </script>
 
 <div class="phone-shell" role="main" aria-label="Game mode">
+  <span class="brand-icon" aria-hidden="true">
+    <VktrsIcon size={42} />
+  </span>
+
   <span class="corner-mark" aria-hidden="true">
     <span class="phone-mark phone-mark-1">VIDEO KILLED</span>
     <span class="phone-mark phone-mark-2">THE RADIO STAR</span>
@@ -44,17 +50,28 @@
     overflow-y: auto;
     background: var(--bg, #000);
     color: #fff;
-    padding: clamp(16px, 4vw, 28px) clamp(16px, 5vw, 26px) calc(28px + env(safe-area-inset-bottom));
+    padding: clamp(64px, 14vw, 92px) clamp(16px, 5vw, 26px) calc(28px + env(safe-area-inset-bottom));
     display: grid;
     grid-template-rows: 1fr;
     gap: 22px;
     z-index: 60;
   }
+  /* App icon top-left — same square mark as favicon / station bug. Position
+     jitter + RGB drop-shadow split idle glitch picks up the VHS character. */
+  .brand-icon {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: inline-block;
+    line-height: 0;
+    z-index: 1;
+    animation: brand-icon-glitch 14s steps(1, end) infinite;
+  }
   /* Corner wordmark — small, condensed, top-right. The PhoneRoomView header
      carries the room code on the left, so this never overlaps. */
   .corner-mark {
     position: absolute;
-    top: 12px;
+    top: 18px;
     right: 14px;
     display: inline-flex;
     flex-direction: column;
@@ -83,9 +100,44 @@
     min-height: 0;
     padding-top: 8px;
   }
+  /* Quiet most of the 14 s cycle, ~5 % burst at the end — position jitter +
+     RGB drop-shadow split + clip-path tear, in the same family as the
+     station-bug idle glitch. */
+  @keyframes brand-icon-glitch {
+    0%,
+    92%,
+    100% {
+      transform: translate(0, 0);
+      filter: none;
+      clip-path: inset(0 0 0 0);
+    }
+    93% {
+      transform: translate(-2px, 1px);
+      filter: drop-shadow(2px 0 0 var(--accent)) drop-shadow(-2px 0 0 var(--accent-2));
+    }
+    94% {
+      transform: translate(2px, -1px);
+      filter: drop-shadow(-3px 0 0 var(--accent)) drop-shadow(3px 0 0 var(--accent-2));
+      clip-path: inset(0 0 40% 0);
+    }
+    95% {
+      transform: translate(0, 1px);
+      filter: none;
+      clip-path: inset(0 0 0 0);
+    }
+    96% {
+      transform: translate(-1px, 0);
+      filter: drop-shadow(1px 0 0 var(--accent)) drop-shadow(-1px 0 0 var(--accent-2));
+    }
+    97% {
+      transform: translate(0, 0);
+      filter: none;
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .phone-mark-1,
-    .phone-mark-2 {
+    .phone-mark-2,
+    .brand-icon {
       animation: none !important;
     }
   }

@@ -363,6 +363,95 @@
     line-height: 1;
     color: var(--bug-yellow);
     font-variant-numeric: tabular-nums;
+    text-shadow: 4px 4px 0 #050505;
+    animation:
+      pr-year-glitch-in 0.8s steps(1, end),
+      pr-year-glitch-idle 6s steps(1, end) 2s infinite;
+  }
+  /* Entrance VHS-tracking burst on the revealed year. Scaled down vs the
+     TV-side RevealOverlay (smaller font + tighter offsets) so it reads on
+     a phone but keeps the same chromatic-aberration vocabulary. */
+  @keyframes pr-year-glitch-in {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.94);
+      text-shadow:
+        4px 4px 0 #050505,
+        5px 0 0 var(--accent),
+        -5px 0 0 var(--accent-2);
+    }
+    12% {
+      opacity: 1;
+      transform: translate(-3px, 1px) scale(1.04);
+      text-shadow:
+        4px 4px 0 #050505,
+        4px 0 0 var(--accent),
+        -4px 0 0 var(--accent-2);
+      clip-path: inset(0 0 35% 0);
+    }
+    26% {
+      transform: translate(2px, -1px) scale(1);
+      text-shadow:
+        4px 4px 0 #050505,
+        -3px 0 0 var(--accent),
+        3px 0 0 var(--accent-2);
+      clip-path: inset(0 0 0 0);
+    }
+    40% {
+      transform: translate(0, 1px);
+      text-shadow:
+        4px 4px 0 #050505,
+        2px 0 0 var(--bug-yellow),
+        -2px 0 0 var(--accent-2);
+      clip-path: inset(35% 0 0 0);
+    }
+    55% {
+      transform: translate(-1px, 0);
+      text-shadow:
+        4px 4px 0 #050505,
+        1px 0 0 var(--accent),
+        -1px 0 0 var(--accent-2);
+      clip-path: inset(0 0 0 0);
+    }
+    72%,
+    100% {
+      transform: translate(0, 0);
+      text-shadow: 4px 4px 0 #050505;
+    }
+  }
+  @keyframes pr-year-glitch-idle {
+    0%,
+    90%,
+    100% {
+      transform: translate(0, 0);
+      text-shadow: 4px 4px 0 #050505;
+    }
+    92% {
+      transform: translate(-1px, 0);
+      text-shadow:
+        4px 4px 0 #050505,
+        2px 0 0 var(--accent),
+        -2px 0 0 var(--accent-2);
+    }
+    95% {
+      transform: translate(1px, 1px);
+      text-shadow:
+        4px 4px 0 #050505,
+        -2px 0 0 var(--accent),
+        2px 0 0 var(--accent-2);
+    }
+    97% {
+      transform: translate(0, 0);
+      text-shadow:
+        4px 4px 0 #050505,
+        1px 0 0 var(--accent),
+        -1px 0 0 var(--accent-2);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-year {
+      animation: none;
+    }
   }
   .reveal-track {
     margin: 0;

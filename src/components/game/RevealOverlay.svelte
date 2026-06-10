@@ -113,6 +113,105 @@
     color: var(--bug-yellow);
     line-height: 0.9;
     text-shadow: 6px 6px 0 #050505;
+    animation:
+      ry-glitch-in 0.85s steps(1, end),
+      ry-glitch-idle 5.5s steps(1, end) 1.8s infinite;
+  }
+  /* Entrance: stepped RGB-split text-shadow + position jitter + clip-path
+     tears for ~85 % of the duration, settles to the brutalist 6 px black
+     offset for the last frame. */
+  @keyframes ry-glitch-in {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.92);
+      text-shadow:
+        6px 6px 0 #050505,
+        8px 0 0 var(--accent),
+        -8px 0 0 var(--accent-2);
+    }
+    10% {
+      opacity: 1;
+      transform: translate(-4px, 2px) scale(1.04);
+      text-shadow:
+        6px 6px 0 #050505,
+        6px 0 0 var(--accent),
+        -6px 0 0 var(--accent-2);
+      clip-path: inset(0 0 32% 0);
+    }
+    22% {
+      transform: translate(3px, -2px) scale(1);
+      text-shadow:
+        6px 6px 0 #050505,
+        -5px 0 0 var(--accent),
+        5px 0 0 var(--accent-2);
+      clip-path: inset(0 0 0 0);
+    }
+    34% {
+      transform: translate(0, 1px);
+      text-shadow:
+        6px 6px 0 #050505,
+        3px 0 0 var(--bug-yellow),
+        -3px 0 0 var(--accent-2);
+      clip-path: inset(38% 0 0 0);
+    }
+    48% {
+      transform: translate(-2px, 0);
+      text-shadow:
+        6px 6px 0 #050505,
+        2px 0 0 var(--accent),
+        -2px 0 0 var(--accent-2);
+      clip-path: inset(0 0 0 0);
+    }
+    62% {
+      transform: translate(1px, 1px);
+      text-shadow:
+        6px 6px 0 #050505,
+        -2px 0 0 var(--accent),
+        2px 0 0 var(--accent-2);
+    }
+    78% {
+      transform: translate(0, 0);
+      text-shadow: 6px 6px 0 #050505;
+    }
+    100% {
+      transform: translate(0, 0);
+      text-shadow: 6px 6px 0 #050505;
+    }
+  }
+  /* Periodic short burst while the reveal stays on screen. */
+  @keyframes ry-glitch-idle {
+    0%,
+    88%,
+    100% {
+      transform: translate(0, 0);
+      text-shadow: 6px 6px 0 #050505;
+    }
+    90% {
+      transform: translate(-2px, 0);
+      text-shadow:
+        6px 6px 0 #050505,
+        3px 0 0 var(--accent),
+        -3px 0 0 var(--accent-2);
+    }
+    93% {
+      transform: translate(2px, 1px);
+      text-shadow:
+        6px 6px 0 #050505,
+        -3px 0 0 var(--accent),
+        3px 0 0 var(--accent-2);
+    }
+    96% {
+      transform: translate(0, 0);
+      text-shadow:
+        6px 6px 0 #050505,
+        1px 0 0 var(--accent),
+        -1px 0 0 var(--accent-2);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .year-value {
+      animation: none;
+    }
   }
   .song {
     display: grid;
