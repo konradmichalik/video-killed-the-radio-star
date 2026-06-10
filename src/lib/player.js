@@ -109,7 +109,6 @@ export function createPlayer(nodeId) {
     events: {
       onReady: () => {
         ready = true;
-        stripIframeTitle();
         loadQueue(get(index)); // hand YouTube the whole queue as a real playlist
         startUpNextPoll();
         // iOS autoplay fallback: if nothing is playing shortly after a gesture,
@@ -120,19 +119,6 @@ export function createPlayer(nodeId) {
       onError: handleError,
     },
   });
-}
-
-// Belt-and-braces: the IFrame API `title` option above usually sticks, but
-// YouTube has been known to overwrite it as videos change. Strip the title
-// attribute outright so the browser never shows the current video title in a
-// hover tooltip (which would defeat the guess game).
-function stripIframeTitle() {
-  // The IFrame API replaces the mount <div id="player"> with the iframe itself,
-  // so #player IS the iframe after onReady. Fall back to a nested lookup just
-  // in case YouTube ever wraps the iframe in a container.
-  const root = document.getElementById('player');
-  const iframe = root?.tagName === 'IFRAME' ? root : root?.querySelector('iframe');
-  if (iframe) iframe.removeAttribute('title');
 }
 
 // Load the current queue as a native YouTube playlist. YouTube then buffers the
@@ -170,9 +156,6 @@ function onStateChange(e) {
     errorCount = 0;
     playedOnce = true;
     clearTimeout(initWatchdog);
-    // YouTube re-applies the iframe's title on track change, so strip it again.
-    // setTimeout(0) lets YT finish its DOM update before we override it.
-    setTimeout(stripIframeTitle, 0);
     syncIndex();
   } else if (e.data === S.PAUSED) {
     paused.set(true);
