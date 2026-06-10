@@ -9,12 +9,21 @@ const g = (startX, startY, endX, endY) =>
   resolveGesture({ startX, startY, endX, endY, viewportWidth: VW, viewportHeight: VH });
 
 describe('swipes', () => {
-  it('swipe left -> next', () => {
-    expect(g(500, 400, 500 - (SWIPE + 20), 405)).toBe('next');
+  it('leftward swipe in right half -> next', () => {
+    expect(g(800, 400, 800 - (SWIPE + 20), 405)).toBe('next');
   });
 
-  it('swipe right -> prev', () => {
-    expect(g(500, 400, 500 + (SWIPE + 20), 405)).toBe('prev');
+  it('rightward swipe in left half -> prev', () => {
+    expect(g(200, 400, 200 + (SWIPE + 20), 405)).toBe('prev');
+  });
+
+  it('leftward swipe in left half -> null (wrong half)', () => {
+    // Thumb drifting back inward after a tap shouldn't skip a track.
+    expect(g(200, 400, 200 - (SWIPE + 20), 405)).toBeNull();
+  });
+
+  it('rightward swipe in right half -> null (wrong half)', () => {
+    expect(g(800, 400, 800 + (SWIPE + 20), 405)).toBeNull();
   });
 
   it('swipe up -> guide', () => {
@@ -25,9 +34,9 @@ describe('swipes', () => {
     expect(g(500, 400, 505, 400 + (SWIPE + 20))).toBe('info');
   });
 
-  it('diagonal but mostly horizontal -> horizontal wins', () => {
-    // dx = -80 (>SWIPE), dy = -70; |dx| > |dy| => next
-    expect(g(500, 400, 420, 330)).toBe('next');
+  it('diagonal but mostly horizontal in right half -> next', () => {
+    // dx = -80 (>SWIPE), dy = -70; |dx| > |dy| AND started in right half => next
+    expect(g(800, 400, 720, 330)).toBe('next');
   });
 
   it('diagonal but mostly vertical up -> guide', () => {

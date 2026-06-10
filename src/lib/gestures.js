@@ -45,7 +45,15 @@ export function resolveGesture({
   // --- SWIPE ---
   if (absX > SWIPE || absY > SWIPE) {
     if (absX > absY) {
-      return dx < 0 ? 'next' : 'prev'; // left -> next, right -> prev
+      // Horizontal swipe must originate in the matching half: a swipe that
+      // starts on the right and moves leftward is "push the current track
+      // away → next"; a swipe that starts on the left and moves rightward is
+      // "pull the previous track in → prev". Wrong-half drifts (e.g. thumb
+      // sliding back) return null so they don't trigger accidental skips.
+      const startedLeftHalf = startX < viewportWidth / 2;
+      if (!startedLeftHalf && dx < 0) return 'next';
+      if (startedLeftHalf && dx > 0) return 'prev';
+      return null;
     }
     return dy < 0 ? 'guide' : 'info'; // up -> guide, down -> re-show song info
   }
