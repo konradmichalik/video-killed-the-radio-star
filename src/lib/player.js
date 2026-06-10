@@ -107,6 +107,7 @@ export function createPlayer(nodeId) {
       onReady: () => {
         ready = true;
         loadQueue(get(index)); // hand YouTube the whole queue as a real playlist
+        disableCaptions(); // turn off subtitles by default — they spoil the guess game
         startUpNextPoll();
         // iOS autoplay fallback: if nothing is playing shortly after a gesture,
         // retry muted (always allowed) and ask the user for one tap for sound.
@@ -116,6 +117,26 @@ export function createPlayer(nodeId) {
       onError: handleError,
     },
   });
+}
+
+// Force captions off. Subtitles spoil the guess game (the track title often
+// appears in burned-in styled captions on official music videos) and on YouTube
+// embeds they default to whatever the viewer last used. There is no playerVar
+// to disable them, so unload the captions module directly. Wrapped in try/catch
+// because YouTube has renamed the module between API versions ('cc' → 'captions')
+// and calling unloadModule on an absent module throws.
+function disableCaptions() {
+  if (!player || typeof player.unloadModule !== 'function') return;
+  try {
+    player.unloadModule('cc');
+  } catch {
+    /* legacy name not supported on this player build */
+  }
+  try {
+    player.unloadModule('captions');
+  } catch {
+    /* newer name not supported on this player build */
+  }
 }
 
 // Load the current queue as a native YouTube playlist. YouTube then buffers the
@@ -153,6 +174,9 @@ function onStateChange(e) {
     errorCount = 0;
     playedOnce = true;
     clearTimeout(initWatchdog);
+    // Re-disable captions on every PLAYING — YouTube re-enables the cc module
+    // for some videos (e.g. ones with auto-generated subtitles) on track change.
+    disableCaptions();
     syncIndex();
   } else if (e.data === S.PAUSED) {
     paused.set(true);
