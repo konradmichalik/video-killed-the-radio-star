@@ -1,5 +1,5 @@
 <script>
-  import { settingsOpen, crtOn, hintsOn, logoOn, progressOn } from '../lib/stores.js';
+  import { settingsOpen, guideOpen, crtOn, hintsOn, logoOn, progressOn } from '../lib/stores.js';
   import Sheet from './Sheet.svelte';
   import Toggle from './Toggle.svelte';
 </script>
@@ -8,7 +8,12 @@
   open={$settingsOpen}
   label="Display settings"
   accent="var(--accent-2)"
+  backLabel="Back to TV Guide"
   on:close={() => settingsOpen.set(false)}
+  on:back={() => {
+    settingsOpen.set(false);
+    guideOpen.set(true);
+  }}
 >
   <svelte:fragment slot="title">
     <span class="sheet-wordmark" aria-hidden="true">

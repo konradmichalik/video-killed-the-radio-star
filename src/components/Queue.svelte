@@ -2,6 +2,7 @@
   import { get } from 'svelte/store';
   import {
     queueOpen,
+    guideOpen,
     playlist,
     index,
     currentVideo,
@@ -65,7 +66,12 @@
   open={$queueOpen}
   label="Queue — reorder and remove songs"
   accent="var(--accent-2)"
+  backLabel="Back to TV Guide"
   on:close={() => queueOpen.set(false)}
+  on:back={() => {
+    queueOpen.set(false);
+    guideOpen.set(true);
+  }}
 >
   <svelte:fragment slot="title">
     <span class="sheet-wordmark" aria-hidden="true">

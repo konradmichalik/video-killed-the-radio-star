@@ -6,9 +6,14 @@
   export let label; // aria-label (accessible name)
   export let heading = ''; // visible title; override with the "title" slot
   export let accent = 'var(--accent)'; // top border colour
+  // When set (non-empty), render a back arrow next to the close button that
+  // dispatches a `back` event. Consumers wire that to re-open whichever sheet
+  // navigated here (typically the TV Guide). Pass an accessible aria-label.
+  export let backLabel = '';
 
   const dispatch = createEventDispatcher();
   const close = () => dispatch('close');
+  const back = () => dispatch('back');
 
   // CSS slide-up needs a prior frame at translateY(110%) for the transition
   // to interpolate from. Permanently-mounted sheets get that for free (they
@@ -41,6 +46,23 @@
       <slot name="title">{heading}</slot>
       <div class="sheet-actions">
         <slot name="actions" />
+        {#if backLabel}
+          <button class="icon-btn" type="button" aria-label={backLabel} on:click={back}>
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="15 6 9 12 15 18" />
+            </svg>
+          </button>
+        {/if}
         <button class="icon-btn" type="button" aria-label="Close" on:click={close}>&#x2715;</button>
       </div>
     </div>

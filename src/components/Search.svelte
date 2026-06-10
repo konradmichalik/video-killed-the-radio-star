@@ -1,5 +1,5 @@
 <script>
-  import { videos, playlist, index, searchOpen } from '../lib/stores.js';
+  import { videos, playlist, index, searchOpen, guideOpen } from '../lib/stores.js';
   import { searchVideos, shuffle } from '../lib/data.js';
   import { loadQueue, resetErrors } from '../lib/player.js';
   import Sheet from './Sheet.svelte';
@@ -53,7 +53,12 @@
   open={$searchOpen}
   label="Search tracks"
   accent="var(--bug-yellow)"
+  backLabel="Back to TV Guide"
   on:close={() => searchOpen.set(false)}
+  on:back={() => {
+    searchOpen.set(false);
+    guideOpen.set(true);
+  }}
 >
   <svelte:fragment slot="title">
     <span class="sheet-wordmark" aria-hidden="true">

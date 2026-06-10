@@ -1,5 +1,5 @@
 <script>
-  import { controlsOpen } from '../lib/stores.js';
+  import { controlsOpen, guideOpen } from '../lib/stores.js';
   import Sheet from './Sheet.svelte';
 </script>
 
@@ -7,7 +7,12 @@
   open={$controlsOpen}
   label="Controls reference"
   accent="var(--bug-yellow)"
+  backLabel="Back to TV Guide"
   on:close={() => controlsOpen.set(false)}
+  on:back={() => {
+    controlsOpen.set(false);
+    guideOpen.set(true);
+  }}
 >
   <svelte:fragment slot="title">
     <span class="sheet-wordmark" aria-hidden="true">
