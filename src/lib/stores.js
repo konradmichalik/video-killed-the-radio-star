@@ -101,6 +101,10 @@ export const helpHint = writable(0); // bump to re-show the gesture/key cheatshe
 export const loadError = writable(null); // string when the channel can't play (data/dead)
 export const needsUnmute = writable(false); // autoplay started muted -> ask for a tap
 export const adPlaying = writable(false); // true while YouTube plays a pre-roll / mid-roll ad
+// Holds Chrome's captured `beforeinstallprompt` event so the InstallHint can
+// trigger the native PWA install prompt on demand. null until Chrome fires it
+// (or after the user installs / dismisses).
+export const installPromptEvent = writable(null);
 
 // User-tagged favourite tracks (Set of video_id). Persisted to localStorage so
 // the user can build a long-running personal channel across sessions.
