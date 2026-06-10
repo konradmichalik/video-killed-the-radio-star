@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
   import { trapFocus } from '../lib/a11y.js';
 
   export let open = false;
@@ -9,10 +9,24 @@
 
   const dispatch = createEventDispatcher();
   const close = () => dispatch('close');
+
+  // CSS slide-up needs a prior frame at translateY(110%) for the transition
+  // to interpolate from. Permanently-mounted sheets get that for free (they
+  // start closed, then `open` flips true). Lazy-mounted sheets (e.g.
+  // LazyGameSheet behind an {#if}) would otherwise render directly at the
+  // open state and skip the animation. Defer the open class by one rAF so
+  // the closed state commits first.
+  let mounted = false;
+  onMount(() => {
+    requestAnimationFrame(() => {
+      mounted = true;
+    });
+  });
+  $: visibleOpen = mounted && open;
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
-<div class="sheet-root" class:open inert={!open || undefined} on:click={close}>
+<div class="sheet-root" class:open={visibleOpen} inert={!visibleOpen || undefined} on:click={close}>
   <div
     class="sheet"
     role="dialog"
