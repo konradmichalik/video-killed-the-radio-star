@@ -7910,5 +7910,29 @@
     "genre": "New Wave",
     "video_id": "W8r-tXRLazs",
     "country": "United Kingdom"
+  },
+  {
+    "title": "Der Kommissar",
+    "artist": "Falco",
+    "year": 1981,
+    "genre": "Pop",
+    "video_id": "8-bgiiTxhzM",
+    "country": "Austria"
+  },
+  {
+    "title": "Out of the Dark",
+    "artist": "Falco",
+    "year": 1998,
+    "genre": "Pop",
+    "video_id": "cyrdPtEHKzE",
+    "country": "Austria"
+  },
+  {
+    "title": "Love Will Tear Us Apart",
+    "artist": "Joy Division",
+    "year": 1980,
+    "genre": "New Wave",
+    "video_id": "zuuObGsB0No",
+    "country": "United Kingdom"
   }
 ]
