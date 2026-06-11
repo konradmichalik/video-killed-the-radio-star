@@ -103,7 +103,12 @@
         <p class="reveal-label">Game ended</p>
         <p class="ended-headline">Thanks for playing!</p>
         <h4 class="board-title">Final scoreboard</h4>
-        <Scoreboard players={scoreboard} highlightId={player?.id} />
+        <!-- Scroll-cap so the Dismiss button stays in view with a full roster
+             (up to MAX_PLAYERS = 16). Without this, 12+ players push Dismiss
+             below the fold and the user has to scroll to leave the screen. -->
+        <div class="board-final">
+          <Scoreboard players={scoreboard} highlightId={player?.id} />
+        </div>
         <button class="ghost" type="button" on:click={dismissEnded}>Dismiss</button>
       </div>
     {:else if !session}
@@ -504,6 +509,11 @@
 
   .reveal-card.ended {
     box-shadow: 5px 5px 0 var(--accent-2);
+  }
+  .board-final {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 2px;
   }
   .ended-headline {
     margin: 0;
