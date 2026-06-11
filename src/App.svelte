@@ -451,23 +451,22 @@
   }
 
   // Auto-advance: when the host enables it, the next round starts as soon as
-  // YouTube auto-advances to the next track (pre-roll ad finished, video_id
-  // changed since the reveal). Skips the intermediate 'idle' state and goes
-  // straight to 'guessing' so the current track is the new round's track. We
-  // capture the video_id at reveal time and only fire ONCE per reveal —
-  // `autoAdvanceFired` is reset whenever the phase leaves 'revealed'.
-  let revealVideoId = null;
+  // YouTube has moved off the round's track (pre-roll finished, music plays).
+  // Skips the intermediate 'idle' state and goes straight to 'guessing' so
+  // the current track is the new round's track.
+  //
+  // The reference id is the round's IMMUTABLE start track
+  // (`session.currentVideo`, set once in `reduceStartRound`), NOT a snapshot
+  // of `$currentVideo` taken at reveal time. Reason: `setLoop(true)` +
+  // `loadPlaylist` makes YouTube natively auto-advance between tracks, and
+  // `autoAdvanceBlocked()` in player.js only stops our own next() calls, not
+  // YT's native end-of-track advance. If a track ends during 'guessing',
+  // `$currentVideo` is already the next track by the time the host reveals —
+  // a reveal-time snapshot would then never differ from $currentVideo and
+  // the trigger would be stuck. Comparing against the round's start track
+  // is robust to that drift.
   let autoAdvanceFired = false;
-
-  $: trackPhase($room.session?.phase, $currentVideo?.video_id);
-  function trackPhase(phase, videoId) {
-    if (phase === 'revealed') {
-      if (revealVideoId === null) revealVideoId = videoId;
-    } else {
-      revealVideoId = null;
-      autoAdvanceFired = false;
-    }
-  }
+  $: if ($room.session?.phase !== 'revealed') autoAdvanceFired = false;
 
   $: maybeAutoAdvance(
     $autoAdvanceRound,
@@ -475,13 +474,14 @@
     $room.session?.phase,
     $currentVideo?.video_id,
     $adPlaying,
+    $room.session?.currentVideo?.video_id,
   );
-  function maybeAutoAdvance(enabled, mode, phase, videoId, adOn) {
+  function maybeAutoAdvance(enabled, mode, phase, videoId, adOn, roundTrackId) {
     if (autoAdvanceFired) return;
     if (!enabled || mode !== 'connected' || phase !== 'revealed') return;
-    if (!videoId || !revealVideoId) return;
-    if (videoId === revealVideoId) return; // track hasn't advanced yet
-    if (adOn) return; // still in a pre-roll — wait for the music to start
+    if (!videoId || !roundTrackId) return;
+    if (videoId === roundTrackId) return; // still on the round's track
+    if (adOn) return; // pre-roll still playing — wait for the music
     autoAdvanceFired = true;
     // Skip 'idle' and jump straight to the next guessing round on the new
     // track. No manual next() call here — YouTube has already advanced.
