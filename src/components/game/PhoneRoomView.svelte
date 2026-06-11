@@ -121,6 +121,9 @@
         <div class="board-final">
           <Scoreboard players={scoreboard} highlightId={player?.id} />
         </div>
+        <!-- Browsers don't let us close the tab programmatically (the tab
+             wasn't opened by script), so the best we can do is ask. -->
+        <p class="ended-cta">You can close this tab now.</p>
         <button class="ghost" type="button" on:click={dismissEnded}>Dismiss</button>
       </div>
     {:else if !session}
@@ -717,6 +720,14 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--bug-yellow);
+  }
+  .ended-cta {
+    margin: 4px 0 0;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
   }
 
   .board-toggle {
