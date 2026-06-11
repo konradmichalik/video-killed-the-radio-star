@@ -224,13 +224,19 @@ function startUpNextPoll() {
 
     // Ad detection — two signals combined because YouTube does not always
     // swap getVideoData().video_id during ads.
-    //  1) video_id mismatch (when YT does swap it for the ad)
+    //  1) video_id match/mismatch against the expected playlist entry
     //  2) duration heuristic: pre-roll ads are typically 5–30 s, music
     //     videos almost always > 45 s
+    // A positive id match is the strongest signal we have — when YT confirms
+    // the expected track is playing, trust it and don't second-guess based
+    // on duration. Without this, a briefly stale `getDuration()` reading or
+    // a genuinely short music video would leave `adPlaying` stuck `true`,
+    // blocking the connected-mode auto-advance trigger indefinitely.
     const data = typeof player.getVideoData === 'function' ? player.getVideoData() : null;
     const expected = get(playlist)[get(index)]?.video_id;
     const idMismatch = !!(data && data.video_id && expected && data.video_id !== expected);
-    const suspiciouslyShort = dur > 0 && dur < 45;
+    const idMatch = !!(data && data.video_id && expected && data.video_id === expected);
+    const suspiciouslyShort = dur > 0 && dur < 45 && !idMatch;
     adPlaying.set(idMismatch || suspiciouslyShort);
     if (dur > 0 && upNextArmed && dur - cur <= UPNEXT_LEAD_S) {
       upNextArmed = false;
