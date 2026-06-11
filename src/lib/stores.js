@@ -142,6 +142,9 @@ export const skipReviewed = persistedBool('vktrs-skip-reviewed', false);
 // track plays (ad finished, fresh video_id), so the host doesn't have to tap
 // "Next round" between every track. Persisted across sessions.
 export const autoAdvanceRound = persistedBool('vktrs-auto-advance', false);
+// Connected mode: when true, an EXACT year hit awards 2 points instead of 1.
+// Non-exact closest guesses still get the standard 1 point. Persisted.
+export const exactMatchBonus = persistedBool('vktrs-exact-bonus', false);
 
 /** Merge a partial review for one video_id and persist to localStorage. */
 export function updateReview(videoId, partial) {

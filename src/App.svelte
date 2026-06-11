@@ -26,6 +26,7 @@
     room,
     resetGuessStats,
     autoAdvanceRound,
+    exactMatchBonus,
     adPlaying,
   } from './lib/stores.js';
   import {
@@ -376,7 +377,15 @@
     const cv = get(currentVideo);
     const actual = cv?.year;
     const winners = closestYearWinners(r.submissions, actual);
-    room.update((s) => reduceReveal(s, winners));
+    // Exact-match bonus: when the toggle is on AND every winner guessed the
+    // exact year (distance 0), award 2 points instead of 1. Non-exact closest
+    // guesses keep the standard 1 point. `winners` from closestYearWinners
+    // all share the same distance, so checking one is enough — an empty
+    // array yields `undefined === actual` which is false for any real year.
+    const exact =
+      get(exactMatchBonus) && actual != null && r.submissions[winners[0]]?.year === actual;
+    const points = exact ? 2 : 1;
+    room.update((s) => reduceReveal(s, winners, points));
     host?.broadcast(
       encode('reveal', {
         year: actual,
@@ -384,6 +393,7 @@
         artist: cv?.artist,
         winners,
         submissions: r.submissions,
+        points,
       }),
     );
     broadcastScore();

@@ -34,12 +34,14 @@ export function submitGuess(state, playerId, year, now = Date.now()) {
   };
 }
 
-export function reveal(state, winnerIds) {
+export function reveal(state, winnerIds, points = 1) {
   if (!state.session) return state;
   const set = new Set(winnerIds);
   return {
     ...state,
-    players: state.players.map((p) => (set.has(p.id) ? { ...p, score: (p.score || 0) + 1 } : p)),
+    players: state.players.map((p) =>
+      set.has(p.id) ? { ...p, score: (p.score || 0) + points } : p,
+    ),
     session: { ...state.session, phase: 'revealed' },
   };
 }

@@ -66,6 +66,18 @@ describe('state reducer', () => {
     expect(s.players.find((p) => p.id === 'p2').score).toBe(0);
   });
 
+  it('reveal awards the supplied point value to every winner (exact-match bonus)', () => {
+    let s = startSession(EMPTY_ROOM);
+    s = addPlayer(s, { id: 'p1', name: 'Kim' });
+    s = addPlayer(s, { id: 'p2', name: 'Jordan' });
+    s = addPlayer(s, { id: 'p3', name: 'Sam' });
+    s = startRound(s, { video_id: 'x', year: 1987 });
+    s = reveal(s, ['p1', 'p2'], 2);
+    expect(s.players.find((p) => p.id === 'p1').score).toBe(2);
+    expect(s.players.find((p) => p.id === 'p2').score).toBe(2);
+    expect(s.players.find((p) => p.id === 'p3').score).toBe(0);
+  });
+
   it('nextRound clears submissions and increments round', () => {
     let s = startSession(EMPTY_ROOM);
     s = startRound(s, { video_id: 'x', year: 1987 });

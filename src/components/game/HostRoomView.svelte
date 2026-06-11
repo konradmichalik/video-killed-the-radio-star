@@ -5,7 +5,7 @@
   import Scoreboard from './Scoreboard.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
   import Toggle from '../Toggle.svelte';
-  import { autoAdvanceRound } from '../../lib/stores.js';
+  import { autoAdvanceRound, exactMatchBonus } from '../../lib/stores.js';
 
   export let roomCode;
   export let joinUrl;
@@ -128,6 +128,13 @@
       hint="(when the next track starts)"
       checked={$autoAdvanceRound}
       on:toggle={() => autoAdvanceRound.update((v) => !v)}
+    />
+
+    <Toggle
+      label="EXACT BONUS"
+      hint="(+2 points on a direct hit)"
+      checked={$exactMatchBonus}
+      on:toggle={() => exactMatchBonus.update((v) => !v)}
     />
 
     <div>

@@ -11,7 +11,7 @@
   export let scoreboard = [];
   export let mySubmission = null;
   export let connectionStatus = 'open';
-  export let lastReveal = null; // { year, title, artist, winners, submissions }
+  export let lastReveal = null; // { year, title, artist, winners, submissions, points }
   export let yearMin = 1900;
   export let yearMax = new Date().getFullYear();
 
@@ -32,6 +32,11 @@
   $: actualYear = lastReveal?.year ?? null;
   $: delta = actualYear != null && myGuessYear != null ? Math.abs(actualYear - myGuessYear) : null;
   $: didWin = !!(player?.id && lastReveal?.winners?.includes(player.id));
+  // Bonus pill shown when this player won AND the host had EXACT BONUS on AND
+  // the winning guess hit on the nose. `points` is included on the reveal
+  // payload from the host (see App.svelte onConnectedReveal); falls back to
+  // `false` for older hosts that don't include the field.
+  $: exactBonus = didWin && delta === 0 && lastReveal?.points === 2;
 
   // Collapsed-by-default scoreboard so the prompt + year input dominate the
   // phone viewport. The collapsed state shows just this player's rank/score;
@@ -139,7 +144,9 @@
             <p class="reveal-guess miss">No guess submitted this round.</p>
           {/if}
           {#if didWin}
-            <p class="reveal-badge win">You got the point!</p>
+            <p class="reveal-badge win" class:exact={exactBonus}>
+              {exactBonus ? '★ Exact! +2 points' : 'You got the point!'}
+            </p>
           {:else}
             <p class="reveal-badge">Closer luck next round.</p>
           {/if}
@@ -489,6 +496,10 @@
     background: var(--accent);
     border-color: #050505;
     box-shadow: 4px 4px 0 #050505;
+  }
+  .reveal-badge.win.exact {
+    background: var(--bug-yellow);
+    box-shadow: 6px 6px 0 #050505;
   }
 
   .reveal-card.ended {

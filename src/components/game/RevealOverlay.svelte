@@ -7,7 +7,7 @@
 -->
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { currentVideo, room } from '../../lib/stores.js';
+  import { currentVideo, room, exactMatchBonus } from '../../lib/stores.js';
   import { closestYearWinners } from '../../lib/multiplayer/scoring.js';
 
   const dispatch = createEventDispatcher();
@@ -33,6 +33,14 @@
       winner: winners.has(id),
     }))
     .sort((a, b) => (a.distance ?? Infinity) - (b.distance ?? Infinity));
+
+  // Surface "+2" on the winner badge when the host has the exact-match bonus
+  // toggled on and the winner(s) hit the actual year on the nose. Mirrors the
+  // points calculation in App.svelte's onConnectedReveal — both must agree
+  // because the scoreboard update has already happened by the time the
+  // overlay mounts.
+  $: bonusAwarded =
+    $exactMatchBonus && winners.size > 0 && rows.some((r) => r.winner && r.distance === 0);
 </script>
 
 {#if !dismissed}
@@ -53,11 +61,15 @@
       {#if rows.length > 0}
         <ul class="guesses">
           {#each rows as r (r.id)}
-            <li class:winner={r.winner}>
+            <li class:winner={r.winner} class:exact={r.winner && r.distance === 0 && bonusAwarded}>
               <span class="g-name">{r.name}</span>
               <span class="g-guess">{r.guess}</span>
               <span class="g-dist">{r.distance === 0 ? 'EXACT' : `±${r.distance ?? '?'}`}</span>
-              {#if r.winner}<span class="g-badge">WINNER</span>{/if}
+              {#if r.winner}
+                <span class="g-badge" class:bonus={r.distance === 0 && bonusAwarded}>
+                  {r.distance === 0 && bonusAwarded ? '★ +2' : 'WINNER'}
+                </span>
+              {/if}
             </li>
           {/each}
         </ul>
@@ -273,10 +285,21 @@
     border: 2px solid #050505;
     padding: 2px 8px;
   }
+  .g-badge.bonus {
+    background: var(--accent);
+    color: #fff;
+    border-color: #050505;
+    box-shadow: 2px 2px 0 #050505;
+  }
   .winner {
     border-color: var(--bug-yellow);
     box-shadow: 4px 4px 0 var(--bug-yellow);
     animation: winner-pulse 1.4s ease-in-out infinite;
+  }
+  .winner.exact {
+    border-color: var(--accent);
+    box-shadow: 4px 4px 0 var(--accent);
+    animation: exact-pulse 1.2s ease-in-out infinite;
   }
   .no-subs {
     margin: 0;
@@ -309,11 +332,21 @@
       box-shadow: 8px 8px 0 var(--bug-yellow);
     }
   }
+  @keyframes exact-pulse {
+    0%,
+    100% {
+      box-shadow: 4px 4px 0 var(--accent);
+    }
+    50% {
+      box-shadow: 9px 9px 0 var(--accent);
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .reveal-overlay {
       animation: none;
     }
-    .winner {
+    .winner,
+    .winner.exact {
       animation: none;
     }
   }
