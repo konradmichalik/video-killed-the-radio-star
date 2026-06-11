@@ -38,6 +38,18 @@
   // `false` for older hosts that don't include the field.
   $: exactBonus = didWin && delta === 0 && lastReveal?.points === 2;
 
+  // Mood bucket for the post-reveal animation: exact hit, close call, or
+  // off the mark. Drives the .mood-* class on the reveal-card and the label
+  // text below. No-guess players fall into FAR — same OFF THE MARK styling
+  // rather than a featureless reveal.
+  $: feedbackMood = delta == null ? 'far' : delta === 0 ? 'exact' : delta <= 5 ? 'close' : 'far';
+  $: moodLabel =
+    feedbackMood === 'exact'
+      ? '★ BULLSEYE'
+      : feedbackMood === 'close'
+        ? 'CLOSE CALL'
+        : 'OFF THE MARK';
+
   // Collapsed-by-default scoreboard so the prompt + year input dominate the
   // phone viewport. The collapsed state shows just this player's rank/score;
   // tapping the row expands the full sorted board with a max-height + scroll.
@@ -125,9 +137,14 @@
         <YearInput min={yearMin} max={yearMax} on:lock={lock} />
       {/if}
     {:else}
-      <div class="reveal-card">
+      <div
+        class="reveal-card"
+        class:mood-exact={actualYear != null && feedbackMood === 'exact'}
+        class:mood-close={actualYear != null && feedbackMood === 'close'}
+        class:mood-far={actualYear != null && feedbackMood === 'far'}
+      >
         {#if actualYear != null}
-          <p class="reveal-label">Actual year</p>
+          <p class="mood-label">{moodLabel}</p>
           <p class="reveal-year">{actualYear}</p>
           {#if lastReveal?.artist || lastReveal?.title}
             <p class="reveal-track">
@@ -514,6 +531,184 @@
     max-height: 50vh;
     overflow-y: auto;
     padding-right: 2px;
+  }
+
+  /* Mood feedback — three brutalist responses to the player's distance.
+     Border + shadow colour replaces the default yellow; a steps()-based
+     entry keyframe gives the jagged VHS feel. The base reveal-card layout
+     (padding, gap, background, border thickness) is preserved. */
+  .reveal-card.mood-exact {
+    border-color: var(--bug-yellow);
+    box-shadow: 5px 5px 0 var(--bug-yellow);
+    animation: mood-exact-in 1.1s steps(1, end);
+  }
+  .reveal-card.mood-close {
+    border-color: var(--accent-2);
+    box-shadow: 5px 5px 0 var(--accent-2);
+    animation: mood-close-in 0.9s steps(1, end);
+  }
+  .reveal-card.mood-far {
+    border-color: var(--accent);
+    box-shadow: 5px 5px 0 var(--accent);
+    animation: mood-far-in 1s steps(1, end);
+  }
+
+  /* Mood-specific label — replaces the generic "Actual year" caption with
+     a stimmung-bezogene tagline. Uses Anton to match the reveal-year
+     hierarchy and the same RGB-split glitch vocabulary as the year burst. */
+  .mood-label {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(20px, 3.6vw, 26px);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #050505;
+  }
+  .mood-exact .mood-label {
+    color: var(--bug-yellow);
+    animation: mood-label-burst 700ms steps(1, end);
+  }
+  .mood-close .mood-label {
+    color: var(--accent-2);
+    animation: mood-label-burst 500ms steps(1, end);
+  }
+  .mood-far .mood-label {
+    color: var(--accent);
+    animation: mood-label-burst 600ms steps(1, end);
+  }
+
+  @keyframes mood-exact-in {
+    0% {
+      transform: translate(0, 12px) scale(0.94);
+      box-shadow:
+        8px 8px 0 var(--bug-yellow),
+        0 0 0 0 transparent;
+      background: rgba(255, 255, 255, 0.04);
+    }
+    10% {
+      transform: translate(-4px, 4px) scale(1.04);
+      box-shadow:
+        8px 8px 0 var(--bug-yellow),
+        0 0 32px rgba(255, 220, 0, 0.8);
+      background: rgba(255, 220, 0, 0.26);
+    }
+    24% {
+      transform: translate(3px, -2px) scale(1.02);
+      box-shadow:
+        6px 6px 0 var(--bug-yellow),
+        0 0 22px rgba(255, 220, 0, 0.55);
+      background: rgba(255, 220, 0, 0.14);
+    }
+    42% {
+      transform: translate(-1px, 1px) scale(1);
+      box-shadow:
+        6px 6px 0 var(--bug-yellow),
+        0 0 10px rgba(255, 220, 0, 0.3);
+      background: rgba(255, 220, 0, 0.06);
+    }
+    70%,
+    100% {
+      transform: translate(0, 0);
+      box-shadow: 5px 5px 0 var(--bug-yellow);
+      background: rgba(255, 255, 255, 0.04);
+    }
+  }
+
+  @keyframes mood-close-in {
+    0% {
+      transform: translate(-5px, 6px);
+      box-shadow:
+        8px 8px 0 var(--accent-2),
+        -3px 0 0 var(--accent),
+        3px 0 0 var(--bug-yellow);
+    }
+    15% {
+      transform: translate(4px, -2px);
+      box-shadow:
+        6px 6px 0 var(--accent-2),
+        2px 0 0 var(--accent),
+        -2px 0 0 var(--bug-yellow);
+    }
+    35% {
+      transform: translate(-2px, 1px);
+      box-shadow: 6px 6px 0 var(--accent-2);
+    }
+    60%,
+    100% {
+      transform: translate(0, 0);
+      box-shadow: 5px 5px 0 var(--accent-2);
+    }
+  }
+
+  @keyframes mood-far-in {
+    0% {
+      transform: translate(3px, -8px);
+      box-shadow: 8px 8px 0 var(--accent);
+      background: rgba(255, 0, 100, 0.18);
+    }
+    10% {
+      transform: translate(-5px, 3px);
+      box-shadow:
+        6px 6px 0 var(--accent),
+        -4px 0 0 var(--accent-2);
+      background: rgba(255, 0, 100, 0.1);
+    }
+    28% {
+      transform: translate(4px, -1px);
+      box-shadow: 6px 6px 0 var(--accent);
+      background: rgba(255, 0, 100, 0.05);
+    }
+    50%,
+    100% {
+      transform: translate(0, 0);
+      box-shadow: 5px 5px 0 var(--accent);
+      background: rgba(255, 255, 255, 0.04);
+    }
+  }
+
+  /* Tiny chromatic-aberration burst on the mood label — matches the
+     reveal-year's pr-year-glitch-in vocabulary at a smaller scale. */
+  @keyframes mood-label-burst {
+    0% {
+      opacity: 0;
+      transform: translate(-3px, 0);
+      text-shadow:
+        2px 2px 0 #050505,
+        4px 0 0 var(--accent),
+        -4px 0 0 var(--accent-2);
+    }
+    20% {
+      opacity: 1;
+      transform: translate(2px, 0);
+      text-shadow:
+        2px 2px 0 #050505,
+        -3px 0 0 var(--accent),
+        3px 0 0 var(--accent-2);
+    }
+    45% {
+      transform: translate(-1px, 0);
+      text-shadow:
+        2px 2px 0 #050505,
+        2px 0 0 var(--accent-2);
+    }
+    70%,
+    100% {
+      transform: translate(0, 0);
+      text-shadow: 2px 2px 0 #050505;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-card.mood-exact,
+    .reveal-card.mood-close,
+    .reveal-card.mood-far {
+      animation: none;
+    }
+    .mood-exact .mood-label,
+    .mood-close .mood-label,
+    .mood-far .mood-label {
+      animation: none;
+    }
   }
   .ended-headline {
     margin: 0;
