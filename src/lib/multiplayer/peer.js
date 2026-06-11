@@ -96,13 +96,49 @@ export async function joinRoom(roomId, ownPeerId, handlers = {}) {
   const peer = new Peer(ownPeerId);
   await waitForOpen(peer);
 
-  let conn = peer.connect(roomId, { reliable: true });
   let attempts = 0;
+  let connectTimeout = null;
+  let opened = false;
+
+  // After the broker is open, errors arrive on the peer instance. The
+  // important one is `peer-unavailable` — PeerJS emits it when the target
+  // peer id doesn't exist on the broker (host hasn't opened the room yet
+  // or the roomId is mistyped). Without this handler the connection sits
+  // on 'connecting' indefinitely because conn.on('open') never fires.
+  peer.on('error', (err) => {
+    if (err?.type === 'peer-unavailable') {
+      clearTimeout(connectTimeout);
+      handlers.onUnreachable?.();
+    } else {
+      handlers.onError?.(err);
+    }
+  });
+
+  function armConnectTimeout() {
+    clearTimeout(connectTimeout);
+    connectTimeout = setTimeout(() => {
+      // Belt-and-braces fallback for the cases where PeerJS doesn't surface
+      // an error (WebRTC ICE failure on strict / symmetric-NAT networks the
+      // bundled STUN can't traverse). Without this the spinner stays on
+      // forever; with it we surface 'unreachable' so the user can retry.
+      if (!opened) handlers.onUnreachable?.();
+    }, PEER_CONNECT_TIMEOUT_MS);
+  }
+
+  let conn = peer.connect(roomId, { reliable: true });
+  armConnectTimeout();
 
   const wire = () => {
-    conn.on('open', () => handlers.onOpen?.());
+    conn.on('open', () => {
+      opened = true;
+      clearTimeout(connectTimeout);
+      handlers.onOpen?.();
+    });
     conn.on('data', (raw) => handlers.onMessage?.(raw));
-    conn.on('close', () => handlers.onClose?.());
+    conn.on('close', () => {
+      opened = false;
+      handlers.onClose?.();
+    });
     conn.on('error', (err) => handlers.onError?.(err));
   };
   wire();
@@ -116,6 +152,7 @@ export async function joinRoom(roomId, ownPeerId, handlers = {}) {
     handlers.onReconnecting?.(attempts, delay);
     setTimeout(() => {
       conn = peer.connect(roomId, { reliable: true });
+      armConnectTimeout();
       wire();
     }, delay);
   }
@@ -127,6 +164,7 @@ export async function joinRoom(roomId, ownPeerId, handlers = {}) {
       if (conn && conn.open) conn.send(message);
     },
     close() {
+      clearTimeout(connectTimeout);
       try {
         peer.destroy();
       } catch {
