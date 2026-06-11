@@ -24,7 +24,7 @@
     actualYear != null ? new Set(closestYearWinners(submissions, actualYear)) : new Set();
   $: playerName = (id) => $room.players.find((p) => p.id === id)?.name || 'Player';
 
-  $: rows = Object.entries(submissions)
+  $: allRows = Object.entries(submissions)
     .map(([id, sub]) => ({
       id,
       name: playerName(id),
@@ -34,13 +34,23 @@
     }))
     .sort((a, b) => (a.distance ?? Infinity) - (b.distance ?? Infinity));
 
+  // Cap the on-screen list at the top three closest guesses so the overlay
+  // still fits a TV when the room is crowded. Scores still update for every
+  // player — only the per-round preview is truncated, and we surface "+N
+  // more" so the host can see how many didn't make the cut.
+  const PODIUM_SIZE = 3;
+  $: rows = allRows.slice(0, PODIUM_SIZE);
+  $: hiddenCount = Math.max(0, allRows.length - rows.length);
+
   // Surface "+2" on the winner badge when the host has the exact-match bonus
-  // toggled on and the winner(s) hit the actual year on the nose. Mirrors the
-  // points calculation in App.svelte's onConnectedReveal — both must agree
-  // because the scoreboard update has already happened by the time the
-  // overlay mounts.
+  // toggled on and the winner(s) hit the actual year on the nose. Computed
+  // from `allRows` rather than the truncated `rows` so a hidden exact-match
+  // winner (e.g. five-way tie at distance 0) still flips the bonus styling
+  // for the visible winners. Mirrors the points calculation in App.svelte's
+  // onConnectedReveal — both must agree because the scoreboard update has
+  // already happened by the time the overlay mounts.
   $: bonusAwarded =
-    $exactMatchBonus && winners.size > 0 && rows.some((r) => r.winner && r.distance === 0);
+    $exactMatchBonus && winners.size > 0 && allRows.some((r) => r.winner && r.distance === 0);
 </script>
 
 {#if !dismissed}
@@ -73,6 +83,9 @@
             </li>
           {/each}
         </ul>
+        {#if hiddenCount > 0}
+          <p class="more">+{hiddenCount} more {hiddenCount === 1 ? 'guess' : 'guesses'}</p>
+        {/if}
       {:else}
         <p class="no-subs">No submissions this round.</p>
       {/if}
@@ -307,6 +320,14 @@
     font-size: 20px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.6);
+  }
+  .more {
+    margin: 4px 0 0;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.55);
   }
   .actions {
     display: flex;
