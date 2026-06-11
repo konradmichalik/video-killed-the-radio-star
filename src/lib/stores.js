@@ -2,37 +2,33 @@ import { writable, derived } from 'svelte/store';
 import { EMPTY_GUESS_STATS, nextGuessStats } from './game.js';
 import { EMPTY_ROOM } from './multiplayer/state.js';
 
-const loadCrt = () => {
-  try {
-    return localStorage.getItem('vktrs-crt') !== 'off';
-  } catch {
-    return true;
-  }
-};
-
-const loadHints = () => {
-  try {
-    return localStorage.getItem('vktrs-hints') !== 'off';
-  } catch {
-    return true;
-  }
-};
-
-const loadLogo = () => {
-  try {
-    return localStorage.getItem('vktrs-logo') !== 'off';
-  } catch {
-    return true;
-  }
-};
-
-const loadProgress = () => {
-  try {
-    return localStorage.getItem('vktrs-progress') === 'on';
-  } catch {
-    return false;
-  }
-};
+// Boolean settings that should outlive a session. Centralises the try/catch
+// dance around localStorage (private-browsing, quota-exceeded) and the
+// load+subscribe duplication that used to repeat per setting. Accepts both
+// the legacy `'on'/'off'` encoding (older settings) and the canonical
+// `'1'/'0'` encoding (newer ones); the first store update after load
+// rewrites legacy values to the canonical form.
+function persistedBool(key, defaultValue = false) {
+  const load = () => {
+    try {
+      const raw = localStorage.getItem(key);
+      if (raw === '1' || raw === 'on') return true;
+      if (raw === '0' || raw === 'off') return false;
+      return defaultValue;
+    } catch {
+      return defaultValue;
+    }
+  };
+  const store = writable(load());
+  store.subscribe((v) => {
+    try {
+      localStorage.setItem(key, v ? '1' : '0');
+    } catch {
+      /* storage unavailable */
+    }
+  });
+  return store;
+}
 
 const loadGuessStats = () => {
   try {
@@ -49,30 +45,6 @@ const loadReviews = () => {
     return raw ? JSON.parse(raw) : {};
   } catch {
     return {};
-  }
-};
-
-const loadSkipOk = () => {
-  try {
-    return localStorage.getItem('vktrs-skip-reviewed-ok') === '1';
-  } catch {
-    return false;
-  }
-};
-
-const loadSkipReviewed = () => {
-  try {
-    return localStorage.getItem('vktrs-skip-reviewed') === '1';
-  } catch {
-    return false;
-  }
-};
-
-const loadAutoAdvance = () => {
-  try {
-    return localStorage.getItem('vktrs-auto-advance') === '1';
-  } catch {
-    return false;
   }
 };
 
@@ -96,10 +68,10 @@ export const searchOpen = writable(false); // search / autocomplete panel
 export const settingsOpen = writable(false); // display settings panel (CRT, hints, logo)
 export const controlsOpen = writable(false); // keyboard / touch reference panel
 export const switching = writable(false); // true while a new video is loading (channel change)
-export const crtOn = writable(loadCrt()); // CRT tube filter on/off
-export const hintsOn = writable(loadHints()); // false = guessing mode (hide artist/title/etc.)
-export const logoOn = writable(loadLogo()); // semi-transparent station bug on/off
-export const progressOn = writable(loadProgress()); // playback progress bar at the bottom
+export const crtOn = persistedBool('vktrs-crt', true); // CRT tube filter on/off
+export const hintsOn = persistedBool('vktrs-hints', true); // false = guessing mode (hide artist/title/etc.)
+export const logoOn = persistedBool('vktrs-logo', true); // semi-transparent station bug on/off
+export const progressOn = persistedBool('vktrs-progress', false); // playback progress bar at the bottom
 export const playPosition = writable(0); // current playback seconds (set by player.js poll)
 export const playDuration = writable(0); // current track duration in seconds
 export const showUpNext = writable(false); // "coming up" teaser near the end of a clip
@@ -162,14 +134,14 @@ export const videoReviews = writable(loadReviews());
 // When true, tracks whose review status is exactly `OK` are auto-skipped so the
 // user can revisit issue-tagged tracks without sitting through known-good ones.
 // Tracks with any other status (or none) keep playing. Persisted across sessions.
-export const skipReviewedOk = writable(loadSkipOk());
+export const skipReviewedOk = persistedBool('vktrs-skip-reviewed-ok', false);
 // When true, ANY reviewed track (OK or issue) is auto-skipped — only tracks
 // with no review status play. Persisted across sessions.
-export const skipReviewed = writable(loadSkipReviewed());
+export const skipReviewed = persistedBool('vktrs-skip-reviewed', false);
 // Connected mode: when true, the next round auto-starts as soon as the next
 // track plays (ad finished, fresh video_id), so the host doesn't have to tap
 // "Next round" between every track. Persisted across sessions.
-export const autoAdvanceRound = writable(loadAutoAdvance());
+export const autoAdvanceRound = persistedBool('vktrs-auto-advance', false);
 
 /** Merge a partial review for one video_id and persist to localStorage. */
 export function updateReview(videoId, partial) {
@@ -196,38 +168,6 @@ export function resetGuessStats() {
   guessStats.set({ ...EMPTY_GUESS_STATS });
 }
 
-crtOn.subscribe((v) => {
-  try {
-    localStorage.setItem('vktrs-crt', v ? 'on' : 'off');
-  } catch {
-    /* storage unavailable */
-  }
-});
-
-hintsOn.subscribe((v) => {
-  try {
-    localStorage.setItem('vktrs-hints', v ? 'on' : 'off');
-  } catch {
-    /* storage unavailable */
-  }
-});
-
-logoOn.subscribe((v) => {
-  try {
-    localStorage.setItem('vktrs-logo', v ? 'on' : 'off');
-  } catch {
-    /* storage unavailable */
-  }
-});
-
-progressOn.subscribe((v) => {
-  try {
-    localStorage.setItem('vktrs-progress', v ? 'on' : 'off');
-  } catch {
-    /* storage unavailable */
-  }
-});
-
 guessStats.subscribe((v) => {
   try {
     localStorage.setItem('vktrs-guess', JSON.stringify(v));
@@ -239,30 +179,6 @@ guessStats.subscribe((v) => {
 videoReviews.subscribe((v) => {
   try {
     localStorage.setItem('vktrs-reviews', JSON.stringify(v));
-  } catch {
-    /* storage unavailable */
-  }
-});
-
-skipReviewedOk.subscribe((v) => {
-  try {
-    localStorage.setItem('vktrs-skip-reviewed-ok', v ? '1' : '0');
-  } catch {
-    /* storage unavailable */
-  }
-});
-
-skipReviewed.subscribe((v) => {
-  try {
-    localStorage.setItem('vktrs-skip-reviewed', v ? '1' : '0');
-  } catch {
-    /* storage unavailable */
-  }
-});
-
-autoAdvanceRound.subscribe((v) => {
-  try {
-    localStorage.setItem('vktrs-auto-advance', v ? '1' : '0');
   } catch {
     /* storage unavailable */
   }
