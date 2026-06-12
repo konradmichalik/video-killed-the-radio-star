@@ -13,6 +13,7 @@
   export let submissions = {};
   export let session; // { round, phase }
   export let connectedCount = 0;
+  export let roomError = false; // hostRoom() failed — the code/QR would be dead
 
   const dispatch = createEventDispatcher();
   let qrEl;
@@ -97,22 +98,32 @@
   </div>
 
   {#if activeTab === 'room'}
-    <div class="qr-block">
-      <div class="qr-frame">
-        <canvas bind:this={qrEl}></canvas>
+    {#if roomError}
+      <div class="room-error" role="alert">
+        <p class="room-error-title">Room could not be opened</p>
+        <p class="room-error-text">
+          The signaling server rejected the room. Check the TV's internet connection, then close
+          Game mode and open a new room.
+        </p>
       </div>
-      <div class="join-info">
-        <span class="join-label">SCAN OR ENTER</span>
-        <div class="code">{roomCode}</div>
-        {#if joinUrl}
-          <a class="url" href={joinUrl} target="_blank" rel="noopener">{joinUrl}</a>
-        {/if}
-        {#if qrError}<p class="err">{qrError}</p>{/if}
+    {:else}
+      <div class="qr-block">
+        <div class="qr-frame">
+          <canvas bind:this={qrEl}></canvas>
+        </div>
+        <div class="join-info">
+          <span class="join-label">SCAN OR ENTER</span>
+          <div class="code">{roomCode}</div>
+          {#if joinUrl}
+            <a class="url" href={joinUrl} target="_blank" rel="noopener">{joinUrl}</a>
+          {/if}
+          {#if qrError}<p class="err">{qrError}</p>{/if}
+        </div>
       </div>
-    </div>
+    {/if}
 
     <div class="meta-row room-meta">
-      <NetworkBadge status="open" />
+      <NetworkBadge status={roomError ? 'unreachable' : 'open'} />
       <span class="peers">{connectedCount}/{players.length} peers</span>
     </div>
 
@@ -274,6 +285,29 @@
     font-family: 'VT323', monospace;
     color: var(--accent);
     margin: 4px 0 0;
+  }
+  .room-error {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+    background: rgba(255, 0, 100, 0.08);
+    border: 3px solid var(--accent);
+    box-shadow: 5px 5px 0 var(--accent);
+  }
+  .room-error-title {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .room-error-text {
+    margin: 0;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
   }
   .url {
     font-family: 'VT323', monospace;

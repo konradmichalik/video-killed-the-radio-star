@@ -9,6 +9,7 @@
   export let isPhone = false;
   export let roomCode = null;
   export let joinUrl = '';
+  export let roomError = false;
 
   // Start the import as soon as this wrapper is mounted. In TV mode the
   // parent only mounts us when the user has actually opened the game or
@@ -23,6 +24,7 @@
     {isPhone}
     {roomCode}
     {joinUrl}
+    {roomError}
     on:close
     on:startMode
     on:startRound

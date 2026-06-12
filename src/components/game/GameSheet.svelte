@@ -12,6 +12,7 @@
   export let isPhone = false; // App.svelte passes true when ?join is set
   export let roomCode = null;
   export let joinUrl = '';
+  export let roomError = false;
 
   const dispatch = createEventDispatcher();
   const close = () => dispatch('close');
@@ -49,6 +50,7 @@
     <HostRoomView
       {roomCode}
       {joinUrl}
+      {roomError}
       players={$room.players}
       submissions={$room.submissions}
       session={$room.session}

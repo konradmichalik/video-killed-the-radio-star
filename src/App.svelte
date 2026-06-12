@@ -325,6 +325,9 @@
   let gameSheetOpen = false;
   let roomCode = null;
   let joinUrl = '';
+  // True when hostRoom() failed — HostRoomView shows an error banner instead
+  // of a join code that doesn't exist on the broker.
+  let roomError = false;
   // Solo self-rate state — only meaningful during Solo's 'revealed' phase.
 
   // Connected-mode host handle (PeerJS room). null when not hosting.
@@ -337,6 +340,7 @@
   async function startConnectedRoom() {
     const code = generateRoomId();
     roomCode = code;
+    roomError = false;
     joinUrl = `${globalThis.location.origin}${import.meta.env.BASE_URL}?join=${code}`;
     try {
       host = await hostRoom(PEER_PREFIX + code, {
@@ -361,7 +365,7 @@
       });
     } catch (err) {
       console.error('Failed to open room', err);
-      // UI banner is added in Task 22.
+      roomError = true;
     }
   }
 
@@ -537,6 +541,7 @@
     gameMode.set(null);
     roomCode = null;
     joinUrl = '';
+    roomError = false;
     celebrationOpen = false;
     celebrationPlayers = [];
     // Restore the user's previous Song Info preference.
@@ -763,6 +768,7 @@
       open={gameSheetOpen}
       {roomCode}
       {joinUrl}
+      {roomError}
       on:close={() => (gameSheetOpen = false)}
       on:startMode={onStartMode}
       on:startRound={onStartRound}
