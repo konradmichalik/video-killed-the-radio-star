@@ -118,19 +118,21 @@ test.describe.serial('connected game happy path', () => {
     // Host starts a round.
     await tv.getByRole('button', { name: /start round/i }).tap();
 
-    // Both phones see the year input — lock in.
+    // Both phones see the year input. The lock button is disabled and reads
+    // "Pick a year" until the slider is touched, so pick a year first.
+    await p1.getByRole('slider', { name: 'Year' }).fill('1990');
     await p1.getByRole('button', { name: /lock it in/i }).tap();
+    await p2.getByRole('slider', { name: 'Year' }).fill('2001');
     await p2.getByRole('button', { name: /lock it in/i }).tap();
 
-    // Host sees both submissions counted.
-    await expect(tv.getByText(/Submissions:\s*2\/2/i)).toBeVisible({ timeout: 10_000 });
+    // Host sees both submissions counted ("Guesses in 2/2" block).
+    await expect(tv.locator('.subs-count')).toHaveText('2/2', { timeout: 10_000 });
 
-    // Host reveals — phones flip to the reveal phase. The new reveal card on
-    // the phone surfaces the actual year, so we wait for the "Actual year"
-    // label rather than the old generic "Reveal!" copy.
+    // Host reveals — phones flip to the reveal phase. The reveal card shows
+    // the actual year big (.reveal-year) plus a mood label.
     await tv.getByRole('button', { name: /^reveal$/i }).tap();
-    await expect(p1.getByText(/actual year/i).first()).toBeVisible({ timeout: 10_000 });
-    await expect(p2.getByText(/actual year/i).first()).toBeVisible({ timeout: 10_000 });
+    await expect(p1.locator('.reveal-year')).toBeVisible({ timeout: 10_000 });
+    await expect(p2.locator('.reveal-year')).toBeVisible({ timeout: 10_000 });
 
     await phoneCtx1.close();
     await phoneCtx2.close();
