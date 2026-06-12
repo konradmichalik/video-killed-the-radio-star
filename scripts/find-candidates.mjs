@@ -41,7 +41,8 @@ const MIN_VIEWS = Number(values['min-views']);
 const LIMIT = values.limit ? Number(values.limit) : Infinity;
 const DELAY = Number(values.delay);
 
-const BAD_TITLE = /\b(live|cover|tribute|reaction|karaoke|instrumental|remix|tutorial|lesson|guitar lesson|playthrough)\b/i;
+const BAD_TITLE =
+  /\b(live|cover|tribute|reaction|karaoke|instrumental|remix|tutorial|lesson|guitar lesson|playthrough)\b/i;
 const OFFICIAL = /(VEVO|official|records|topic|- topic)/i;
 
 function parseViews(v) {
@@ -103,11 +104,14 @@ async function main() {
           const info = await yt.getBasicInfo(vid);
           if (info?.basic_info) {
             if (typeof info.basic_info.view_count === 'number') views = info.basic_info.view_count;
-            if ('is_embeddable' in info.basic_info) embeddable = info.basic_info.is_embeddable !== false;
+            if ('is_embeddable' in info.basic_info)
+              embeddable = info.basic_info.is_embeddable !== false;
             channel = info.basic_info.channel?.name || info.basic_info.author || channel;
             title = info.basic_info.title || title;
           }
-        } catch { /* swallow per-video errors */ }
+        } catch {
+          /* swallow per-video errors */
+        }
         candidates.push({ video_id: vid, channel, views, title, embeddable });
       }
     } catch (e) {
@@ -126,18 +130,23 @@ async function main() {
       embeddable: best?.embeddable ?? null,
       meets_threshold: (best?.views || 0) >= MIN_VIEWS,
       candidates: candidates.map(({ video_id, channel, views, title, embeddable }) => ({
-        video_id, channel, views, title, embeddable,
+        video_id,
+        channel,
+        views,
+        title,
+        embeddable,
       })),
     };
     out.push(entry);
 
-    const vTag = entry.view_count >= 1e9
-      ? `${(entry.view_count / 1e9).toFixed(2)}B`
-      : entry.view_count >= 1e6
-        ? `${(entry.view_count / 1e6).toFixed(1)}M`
-        : entry.view_count >= 1e3
-          ? `${Math.round(entry.view_count / 1e3)}k`
-          : String(entry.view_count);
+    const vTag =
+      entry.view_count >= 1e9
+        ? `${(entry.view_count / 1e9).toFixed(2)}B`
+        : entry.view_count >= 1e6
+          ? `${(entry.view_count / 1e6).toFixed(1)}M`
+          : entry.view_count >= 1e3
+            ? `${Math.round(entry.view_count / 1e3)}k`
+            : String(entry.view_count);
     console.log(
       entry.video_id
         ? `→ ${entry.video_id} (${vTag} · ${entry.channel || '?'}${entry.embeddable ? '' : ' · NOT-EMBEDDABLE'})`
