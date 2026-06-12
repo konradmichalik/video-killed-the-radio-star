@@ -3,13 +3,11 @@
   import Sheet from '../Sheet.svelte';
   import ModeSelector from './ModeSelector.svelte';
   import HostRoomView from './HostRoomView.svelte';
-  import PhoneRoomView from './PhoneRoomView.svelte';
-  import { gameMode, room, phoneRoom, guessStats } from '../../lib/stores.js';
+  import { gameMode, room, guessStats } from '../../lib/stores.js';
   import { hitRate } from '../../lib/game.js';
   import { createEventDispatcher } from 'svelte';
 
   export let open = false;
-  export let isPhone = false; // App.svelte passes true when ?join is set
   export let roomCode = null;
   export let joinUrl = '';
   export let roomError = false;
@@ -31,20 +29,7 @@
     <span class="sheet-subheading">GAME MODE</span>
   </svelte:fragment>
 
-  {#if isPhone}
-    <PhoneRoomView
-      player={$phoneRoom.player}
-      roomCode={$phoneRoom.roomCode}
-      session={$phoneRoom.session}
-      scoreboard={$phoneRoom.scoreboard}
-      mySubmission={$phoneRoom.mySubmission}
-      connectionStatus={$phoneRoom.connectionStatus}
-      yearMin={$phoneRoom.yearRange?.min}
-      yearMax={$phoneRoom.yearRange?.max}
-      on:setName={forward('setName')}
-      on:guess={forward('guess')}
-    />
-  {:else if $gameMode === null}
+  {#if $gameMode === null}
     <ModeSelector on:start={forward('startMode')} />
   {:else if $gameMode === 'connected'}
     <HostRoomView

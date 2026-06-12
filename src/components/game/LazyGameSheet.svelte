@@ -6,14 +6,13 @@
 -->
 <script>
   export let open = false;
-  export let isPhone = false;
   export let roomCode = null;
   export let joinUrl = '';
   export let roomError = false;
 
-  // Start the import as soon as this wrapper is mounted. In TV mode the
-  // parent only mounts us when the user has actually opened the game or
-  // a session is active; in phone mode we mount immediately.
+  // Start the import as soon as this wrapper is mounted. The parent only
+  // mounts us when the user has actually opened the game or a session is
+  // active. (Phone mode renders PhoneShell directly, never this sheet.)
   const loader = import('./GameSheet.svelte');
 </script>
 
@@ -21,7 +20,6 @@
   <svelte:component
     this={m.default}
     {open}
-    {isPhone}
     {roomCode}
     {joinUrl}
     {roomError}
@@ -31,8 +29,6 @@
     on:reveal
     on:nextRound
     on:endSession
-    on:setName
-    on:guess
     on:scoreChange
     on:kick
   />
