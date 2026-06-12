@@ -1,0 +1,618 @@
+[
+  {
+    "title": "Strawberry Fields Forever",
+    "artist": "The Beatles",
+    "year": 1967,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "A Day in the Life",
+    "artist": "The Beatles",
+    "year": 1967,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "What's Going On",
+    "artist": "Marvin Gaye",
+    "year": 1971,
+    "genre": "Soul",
+    "country": "United States"
+  },
+  {
+    "title": "There Is a Light That Never Goes Out",
+    "artist": "The Smiths",
+    "year": 1986,
+    "genre": "Alternative",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "God Only Knows",
+    "artist": "The Beach Boys",
+    "year": 1966,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Heroes",
+    "artist": "David Bowie",
+    "year": 1977,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Hallelujah",
+    "artist": "Leonard Cohen",
+    "year": 1984,
+    "genre": "Folk",
+    "country": "Canada"
+  },
+  {
+    "title": "London Calling",
+    "artist": "The Clash",
+    "year": 1979,
+    "genre": "Punk",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Waterloo Sunset",
+    "artist": "The Kinks",
+    "year": 1967,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Wuthering Heights",
+    "artist": "Kate Bush",
+    "year": 1978,
+    "genre": "Pop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Like a Rolling Stone",
+    "artist": "Bob Dylan",
+    "year": 1965,
+    "genre": "Folk",
+    "country": "United States"
+  },
+  {
+    "title": "Wichita Lineman",
+    "artist": "Glen Campbell",
+    "year": 1968,
+    "genre": "Country",
+    "country": "United States"
+  },
+  {
+    "title": "I Believe in You",
+    "artist": "Talk Talk",
+    "year": 1988,
+    "genre": "Pop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Paranoid Android",
+    "artist": "Radiohead",
+    "year": 1997,
+    "genre": "Alternative",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "I Want You",
+    "artist": "Bob Dylan",
+    "year": 1966,
+    "genre": "Folk",
+    "country": "United States"
+  },
+  {
+    "title": "Being Boring",
+    "artist": "Pet Shop Boys",
+    "year": 1990,
+    "genre": "Synthpop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Autobahn",
+    "artist": "Kraftwerk",
+    "year": 1974,
+    "genre": "Other",
+    "country": "Germany"
+  },
+  {
+    "title": "Good Vibrations",
+    "artist": "The Beach Boys",
+    "year": 1966,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "year": 1975,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Unfinished Sympathy",
+    "artist": "Massive Attack",
+    "year": 1991,
+    "genre": "Other",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Sea Song",
+    "artist": "Robert Wyatt",
+    "year": 1974,
+    "genre": "Other",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Perfect Day",
+    "artist": "Lou Reed",
+    "year": 1972,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "I Would Die 4 U",
+    "artist": "Prince and The Revolution",
+    "year": 1984,
+    "genre": "Funk",
+    "country": "United States"
+  },
+  {
+    "title": "Gimme Shelter",
+    "artist": "The Rolling Stones",
+    "year": 1969,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Imagine",
+    "artist": "John Lennon",
+    "year": 1971,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Rock the Casbah",
+    "artist": "The Clash",
+    "year": 1982,
+    "genre": "Punk",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Sabotage",
+    "artist": "Beastie Boys",
+    "year": 1994,
+    "genre": "Hip-Hop",
+    "country": "United States"
+  },
+  {
+    "title": "Roadrunner",
+    "artist": "The Modern Lovers",
+    "year": 1976,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Stairway to Heaven",
+    "artist": "Led Zeppelin",
+    "year": 1971,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Subterranean Homesick Blues",
+    "artist": "Bob Dylan",
+    "year": 1965,
+    "genre": "Folk",
+    "country": "United States"
+  },
+  {
+    "title": "Cloudbusting",
+    "artist": "Kate Bush",
+    "year": 1985,
+    "genre": "Pop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Rumble",
+    "artist": "Link Wray & His Ray Men",
+    "year": 1958,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Verstärker",
+    "artist": "Blumfeld",
+    "year": 1994,
+    "genre": "Alternative",
+    "country": "Germany"
+  },
+  {
+    "title": "God Save the Queen",
+    "artist": "Sex Pistols",
+    "year": 1977,
+    "genre": "Punk",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Move On Up",
+    "artist": "Curtis Mayfield",
+    "year": 1970,
+    "genre": "Soul",
+    "country": "United States"
+  },
+  {
+    "title": "Marquee Moon",
+    "artist": "Television",
+    "year": 1977,
+    "genre": "Punk",
+    "country": "United States"
+  },
+  {
+    "title": "Life on Mars?",
+    "artist": "David Bowie",
+    "year": 1971,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Thunder Road",
+    "artist": "Bruce Springsteen",
+    "year": 1975,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "year": 1976,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Be My Baby",
+    "artist": "The Ronettes",
+    "year": 1963,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "This Town Ain't Big Enough for Both of Us",
+    "artist": "Sparks",
+    "year": 1974,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Idioteque",
+    "artist": "Radiohead",
+    "year": 2000,
+    "genre": "Alternative",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "A Change Is Gonna Come",
+    "artist": "Sam Cooke",
+    "year": 1964,
+    "genre": "Soul",
+    "country": "United States"
+  },
+  {
+    "title": "Space Oddity",
+    "artist": "David Bowie",
+    "year": 1969,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Into My Arms",
+    "artist": "Nick Cave & The Bad Seeds",
+    "year": 1997,
+    "genre": "Alternative",
+    "country": "Australia"
+  },
+  {
+    "title": "Surf's Up",
+    "artist": "The Beach Boys",
+    "year": 1971,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Venus in Furs",
+    "artist": "The Velvet Underground",
+    "year": 1967,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "The Passenger",
+    "artist": "Iggy Pop",
+    "year": 1977,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Computerliebe",
+    "artist": "Kraftwerk",
+    "year": 1981,
+    "genre": "Other",
+    "country": "Germany"
+  },
+  {
+    "title": "Losing My Edge",
+    "artist": "LCD Soundsystem",
+    "year": 2002,
+    "genre": "Dance",
+    "country": "United States"
+  },
+  {
+    "title": "Little Wing",
+    "artist": "The Jimi Hendrix Experience",
+    "year": 1967,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Station to Station",
+    "artist": "David Bowie",
+    "year": 1976,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Visions of Johanna",
+    "artist": "Bob Dylan",
+    "year": 1966,
+    "genre": "Folk",
+    "country": "United States"
+  },
+  {
+    "title": "Angel of Death",
+    "artist": "Slayer",
+    "year": 1986,
+    "genre": "Metal",
+    "country": "United States"
+  },
+  {
+    "title": "Family Affair",
+    "artist": "Sly & The Family Stone",
+    "year": 1971,
+    "genre": "Funk",
+    "country": "United States"
+  },
+  {
+    "title": "Pink Moon",
+    "artist": "Nick Drake",
+    "year": 1972,
+    "genre": "Folk",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "MacArthur Park",
+    "artist": "Richard Harris",
+    "year": 1968,
+    "genre": "Pop",
+    "country": "Ireland"
+  },
+  {
+    "title": "Girl from the North Country",
+    "artist": "Bob Dylan",
+    "year": 1963,
+    "genre": "Folk",
+    "country": "United States"
+  },
+  {
+    "title": "Enjoy the Silence",
+    "artist": "Depeche Mode",
+    "year": 1990,
+    "genre": "Synthpop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Hurt",
+    "artist": "Nine Inch Nails",
+    "year": 1994,
+    "genre": "Alternative",
+    "country": "United States"
+  },
+  {
+    "title": "Blackbird",
+    "artist": "The Beatles",
+    "year": 1968,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Like a Hurricane",
+    "artist": "Neil Young & Crazy Horse",
+    "year": 1977,
+    "genre": "Rock",
+    "country": "Canada"
+  },
+  {
+    "title": "This Must Be the Place (Naive Melody)",
+    "artist": "Talking Heads",
+    "year": 1983,
+    "genre": "Alternative",
+    "country": "United States"
+  },
+  {
+    "title": "Louie Louie",
+    "artist": "The Kingsmen",
+    "year": 1963,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Bonny",
+    "artist": "Prefab Sprout",
+    "year": 1985,
+    "genre": "Pop",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Famous Blue Raincoat",
+    "artist": "Leonard Cohen",
+    "year": 1971,
+    "genre": "Folk",
+    "country": "Canada"
+  },
+  {
+    "title": "Heart of Gold",
+    "artist": "Neil Young",
+    "year": 1972,
+    "genre": "Folk",
+    "country": "Canada"
+  },
+  {
+    "title": "Paul ist tot",
+    "artist": "Fehlfarben",
+    "year": 1980,
+    "genre": "Punk",
+    "country": "Germany"
+  },
+  {
+    "title": "Pale Blue Eyes",
+    "artist": "The Velvet Underground",
+    "year": 1969,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Under the Milky Way",
+    "artist": "The Church",
+    "year": 1988,
+    "genre": "Alternative",
+    "country": "Australia"
+  },
+  {
+    "title": "America",
+    "artist": "Simon & Garfunkel",
+    "year": 1968,
+    "genre": "Folk",
+    "country": "United States"
+  },
+  {
+    "title": "Penny Lane",
+    "artist": "The Beatles",
+    "year": 1967,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Walk on the Wild Side",
+    "artist": "Lou Reed",
+    "year": 1972,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Out of Time",
+    "artist": "Blur",
+    "year": 2003,
+    "genre": "Alternative",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Only Shallow",
+    "artist": "My Bloody Valentine",
+    "year": 1991,
+    "genre": "Alternative",
+    "country": "Ireland"
+  },
+  {
+    "title": "Tangled Up in Blue",
+    "artist": "Bob Dylan",
+    "year": 1975,
+    "genre": "Folk",
+    "country": "United States"
+  },
+  {
+    "title": "Le vent nous portera",
+    "artist": "Noir Désir",
+    "year": 2001,
+    "genre": "Rock",
+    "country": "France"
+  },
+  {
+    "title": "Don't Give Up",
+    "artist": "Peter Gabriel & Kate Bush",
+    "year": 1986,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Fight the Power",
+    "artist": "Public Enemy",
+    "year": 1989,
+    "genre": "Hip-Hop",
+    "country": "United States"
+  },
+  {
+    "title": "This Charming Man",
+    "artist": "The Smiths",
+    "year": 1983,
+    "genre": "Alternative",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Cheree",
+    "artist": "Suicide",
+    "year": 1977,
+    "genre": "Other",
+    "country": "United States"
+  },
+  {
+    "title": "Alone Again Or",
+    "artist": "Love",
+    "year": 1967,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Teenage Riot",
+    "artist": "Sonic Youth",
+    "year": 1988,
+    "genre": "Alternative",
+    "country": "United States"
+  },
+  {
+    "title": "The Sound of Silence",
+    "artist": "Simon & Garfunkel",
+    "year": 1964,
+    "genre": "Folk",
+    "country": "United States"
+  },
+  {
+    "title": "You Can't Hurry Love",
+    "artist": "The Supremes",
+    "year": 1966,
+    "genre": "Soul",
+    "country": "United States"
+  },
+  {
+    "title": "Helter Skelter",
+    "artist": "The Beatles",
+    "year": 1968,
+    "genre": "Rock",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Eight Miles High",
+    "artist": "The Byrds",
+    "year": 1966,
+    "genre": "Rock",
+    "country": "United States"
+  },
+  {
+    "title": "Over and Over",
+    "artist": "Hot Chip",
+    "year": 2006,
+    "genre": "Dance",
+    "country": "United Kingdom"
+  }
+]
