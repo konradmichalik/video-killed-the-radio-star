@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Run Like Hell",
+    "artist": "Pink Floyd",
+    "year": 1980,
+    "genre": "Rock"
+  },
+  {
+    "title": "Our House",
+    "artist": "Madness",
+    "year": 1982,
+    "genre": "Reggae",
+    "country": "United Kingdom"
+  },
+  {
+    "title": "Summer Of '69",
+    "artist": "Bryan Adams",
+    "year": 1984,
+    "genre": "Rock",
+    "country": "Canada"
+  },
+  {
+    "title": "I'm Like A Bird",
+    "artist": "Nelly Furtado",
+    "year": 2000,
+    "genre": "Pop",
+    "country": "Canada"
+  },
+  {
+    "title": "I'm Yours",
+    "artist": "Jason Mraz",
+    "year": 2008,
+    "genre": "Pop",
+    "country": "United States"
+  },
+  {
+    "title": "Ho Hey",
+    "artist": "The Lumineers",
+    "year": 2012,
+    "genre": "Folk",
+    "country": "United States"
+  }
+]
