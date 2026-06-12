@@ -106,19 +106,25 @@
     const me = get(phoneRoom).player;
     if (!me) return;
     const ownPeerId = PHONE_PEER_PREFIX + me.id;
-    phoneRoom.update((s) => ({ ...s, connectionStatus: 'connecting' }));
+    const unreachable = (reason) =>
+      phoneRoom.update((s) => ({
+        ...s,
+        connectionStatus: 'unreachable',
+        unreachableReason: reason,
+      }));
+    phoneRoom.update((s) => ({ ...s, connectionStatus: 'connecting', unreachableReason: null }));
     // Pre-flight the public broker so the phone doesn't sit on the ~13s
     // retry-backoff path just to discover the signaling server is down.
     const ok = await checkBrokerReachable();
     brokerReachable.set(ok);
     if (!ok) {
-      phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' }));
+      unreachable('broker-down');
       return;
     }
     try {
       phoneClient = await joinRoom(PEER_PREFIX + joinParam, ownPeerId, {
         onOpen: () => {
-          phoneRoom.update((s) => ({ ...s, connectionStatus: 'open' }));
+          phoneRoom.update((s) => ({ ...s, connectionStatus: 'open', unreachableReason: null }));
           const p = get(phoneRoom).player;
           phoneClient?.send(
             encode('join', {
@@ -130,11 +136,13 @@
         onMessage: (raw) => onTvMessage(raw),
         onClose: () => phoneRoom.update((s) => ({ ...s, connectionStatus: 'reconnecting' })),
         onReconnecting: () => phoneRoom.update((s) => ({ ...s, connectionStatus: 'reconnecting' })),
-        onUnreachable: () => phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' })),
+        onUnreachable: (reason) => unreachable(reason || 'timeout'),
       });
     } catch (err) {
       console.error('phone-join failed', err);
-      phoneRoom.update((s) => ({ ...s, connectionStatus: 'unreachable' }));
+      // joinRoom only throws before the connect attempt (own broker
+      // registration failed) — treat it like a signaling-server problem.
+      unreachable('broker-down');
     }
   }
 

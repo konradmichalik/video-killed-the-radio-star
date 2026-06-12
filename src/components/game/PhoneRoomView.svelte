@@ -11,6 +11,7 @@
   export let scoreboard = [];
   export let mySubmission = null;
   export let connectionStatus = 'open';
+  export let unreachableReason = null; // 'room-not-found' | 'timeout' | 'broker-down'
   export let lastReveal = null; // { year, title, artist, winners, submissions, points }
   export let yearMin = 1900;
   export let yearMax = new Date().getFullYear();
@@ -78,10 +79,39 @@
     sessionEnded = false;
     everHadSession = false;
   }
+
+  // Reason-specific copy for the unreachable card. 'timeout' is the WebRTC
+  // failure mode (different networks, guest/office Wi-Fi with client
+  // isolation) — the one actionable hint we can give without a TURN relay.
+  const unreachableCopy = {
+    'room-not-found': {
+      title: 'Room not found',
+      text: 'This room is not open (anymore). Check the code on the TV or scan the QR code again.',
+    },
+    timeout: {
+      title: "Can't reach the TV",
+      text: 'Make sure this phone and the TV are on the same Wi-Fi. Guest, hotel and office networks often block connections between devices.',
+    },
+    'broker-down': {
+      title: 'Connection service unavailable',
+      text: 'The signaling server could not be reached. Check your internet connection and try again.',
+    },
+  };
+  $: unreachableInfo = unreachableCopy[unreachableReason] || unreachableCopy.timeout;
+
+  // A full reload is the honest retry: it re-runs the broker probe and the
+  // whole join handshake with a clean PeerJS instance.
+  const retry = () => globalThis.location.reload();
+
+  // Only take over the screen when the join itself failed (no session yet).
+  // Mid-game, 'unreachable' can simply mean the broker websocket dropped
+  // while the P2P data channel still works — keep the game UI playable and
+  // let the banner carry the status instead.
+  $: showUnreachableCard = connectionStatus === 'unreachable' && !session;
 </script>
 
 <section class="phone">
-  {#if connectionStatus !== 'open'}
+  {#if connectionStatus !== 'open' && !showUnreachableCard}
     <div class="banner">Connection: {connectionStatus}</div>
   {/if}
 
@@ -110,7 +140,13 @@
   </header>
 
   <main>
-    {#if sessionEnded}
+    {#if showUnreachableCard}
+      <div class="unreachable-card" role="alert">
+        <p class="unreachable-title">{unreachableInfo.title}</p>
+        <p class="unreachable-text">{unreachableInfo.text}</p>
+        <button class="retry" type="button" on:click={retry}>Try again</button>
+      </div>
+    {:else if sessionEnded}
       <div class="reveal-card ended">
         <p class="reveal-label">Game ended</p>
         <p class="ended-headline">Thanks for playing!</p>
@@ -334,6 +370,55 @@
   .ghost:active {
     transform: translate(2px, 2px);
     box-shadow: 0 0 0 var(--accent);
+  }
+
+  .unreachable-card {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    background: rgba(255, 0, 100, 0.08);
+    border: 3px solid var(--accent);
+    box-shadow: 5px 5px 0 var(--accent);
+  }
+  .unreachable-title {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(20px, 4.5vw, 26px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .unreachable-text {
+    margin: 0;
+    font-family: 'VT323', monospace;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .retry {
+    justify-self: start;
+    min-height: 44px;
+    padding: 0 18px;
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #050505;
+    background: var(--bug-yellow);
+    border: 3px solid #050505;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #050505;
+    transition:
+      transform 0.1s ease,
+      box-shadow 0.1s ease;
+  }
+  .retry:hover {
+    box-shadow: 6px 6px 0 #050505;
+    transform: translate(-1px, -1px);
+  }
+  .retry:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 #050505;
   }
 
   .msg {

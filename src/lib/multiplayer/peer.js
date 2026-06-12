@@ -105,10 +105,12 @@ export async function joinRoom(roomId, ownPeerId, handlers = {}) {
   // peer id doesn't exist on the broker (host hasn't opened the room yet
   // or the roomId is mistyped). Without this handler the connection sits
   // on 'connecting' indefinitely because conn.on('open') never fires.
+  // onUnreachable receives a reason ('room-not-found' | 'timeout') so the
+  // UI can tell "wrong/closed room" apart from "network blocks WebRTC".
   peer.on('error', (err) => {
     if (err?.type === 'peer-unavailable') {
       clearTimeout(connectTimeout);
-      handlers.onUnreachable?.();
+      handlers.onUnreachable?.('room-not-found');
     } else {
       handlers.onError?.(err);
     }
@@ -121,7 +123,7 @@ export async function joinRoom(roomId, ownPeerId, handlers = {}) {
       // an error (WebRTC ICE failure on strict / symmetric-NAT networks the
       // bundled STUN can't traverse). Without this the spinner stays on
       // forever; with it we surface 'unreachable' so the user can retry.
-      if (!opened) handlers.onUnreachable?.();
+      if (!opened) handlers.onUnreachable?.('timeout');
     }, PEER_CONNECT_TIMEOUT_MS);
   }
 
@@ -145,7 +147,7 @@ export async function joinRoom(roomId, ownPeerId, handlers = {}) {
 
   function reconnect() {
     if (attempts >= PEER_RECONNECT_BACKOFF_MS.length) {
-      handlers.onUnreachable?.();
+      handlers.onUnreachable?.('timeout');
       return;
     }
     const delay = PEER_RECONNECT_BACKOFF_MS[attempts++];

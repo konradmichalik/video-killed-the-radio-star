@@ -34,6 +34,7 @@
       scoreboard={$phoneRoom.scoreboard}
       mySubmission={$phoneRoom.mySubmission}
       connectionStatus={$phoneRoom.connectionStatus}
+      unreachableReason={$phoneRoom.unreachableReason}
       lastReveal={$phoneRoom.lastReveal}
       yearMin={$phoneRoom.yearRange?.min}
       yearMax={$phoneRoom.yearRange?.max}
