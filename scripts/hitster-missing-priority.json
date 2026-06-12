@@ -1,0 +1,344 @@
+[
+  {
+    "in_editions": ["classic", "rock", "celebration"],
+    "artist": "Roy Orbison",
+    "title": "Oh, Pretty Woman",
+    "year": 1964
+  },
+  {
+    "in_editions": ["rock", "summer", "celebration"],
+    "artist": "T. Rex",
+    "title": "Get It On",
+    "year": 1971
+  },
+  {
+    "in_editions": ["classic", "rock", "celebration"],
+    "artist": "Lynyrd Skynyrd",
+    "title": "Sweet Home Alabama",
+    "year": 1974
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "Bill Haley & His Comets",
+    "title": "(We're Gonna) Rock Around The Clock",
+    "year": 1954
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Bill Haley & His Comets",
+    "title": "See You Later, Alligator",
+    "year": 1956
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "Elvis Presley",
+    "title": "Jailhouse Rock",
+    "year": 1957
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "Chuck Berry",
+    "title": "Johnny B. Goode",
+    "year": 1958
+  },
+  {
+    "in_editions": ["classic", "summer"],
+    "artist": "Ritchie Valens",
+    "title": "La Bamba",
+    "year": 1958
+  },
+  {
+    "in_editions": ["rock", "guilty"],
+    "artist": "Ray Charles",
+    "title": "Hit The Road Jack",
+    "year": 1961
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "The Beach Boys",
+    "title": "Surfin' U.S.A.",
+    "year": 1963
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Lesley Gore",
+    "title": "It's My Party",
+    "year": 1963
+  },
+  {
+    "in_editions": ["classic", "guilty"],
+    "artist": "Siw Malmkvist",
+    "title": "Liebeskummer lohnt sich nicht",
+    "year": 1964
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "The Monkees",
+    "title": "I'm A Believer",
+    "year": 1966
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Aretha Franklin",
+    "title": "Respect",
+    "year": 1967
+  },
+  {
+    "in_editions": ["rock", "bingo"],
+    "artist": "Cream",
+    "title": "Sunshine Of Your Love",
+    "year": 1967
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "Steppenwolf",
+    "title": "Born To Be Wild",
+    "year": 1968
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Neil Diamond",
+    "title": "Sweet Caroline",
+    "year": 1969
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "The 5th Dimension",
+    "title": "Aquarius/Let The Sunshine In",
+    "year": 1969
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "The Beatles",
+    "title": "Let It Be",
+    "year": 1970
+  },
+  {
+    "in_editions": ["classic", "summer"],
+    "artist": "Creedence Clearwater Revival",
+    "title": "Have You Ever Seen The Rain?",
+    "year": 1971
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "The Guess Who",
+    "title": "American Woman",
+    "year": 1971
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Carly Simon",
+    "title": "You're So Vain",
+    "year": 1972
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Alice Cooper",
+    "title": "School's Out",
+    "year": 1972
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Bachman-Turner Overdrive",
+    "title": "You Ain't Seen Nothing Yet",
+    "year": 1974
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "George McCrae",
+    "title": "Rock Your Baby",
+    "year": 1974
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Thin Lizzy",
+    "title": "The Boys Are Back In Town",
+    "year": 1976
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Boney M.",
+    "title": "Daddy Cool",
+    "year": 1976
+  },
+  {
+    "in_editions": ["bingo", "celebration"],
+    "artist": "Queen",
+    "title": "We Will Rock You",
+    "year": 1977
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Toto",
+    "title": "Hold The Line",
+    "year": 1978
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Village People",
+    "title": "Y.M.C.A.",
+    "year": 1978
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Gloria Gaynor",
+    "title": "I Will Survive",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "The Knack",
+    "title": "My Sharona",
+    "year": 1979
+  },
+  {
+    "in_editions": ["summer", "movies"],
+    "artist": "Kenny Loggins",
+    "title": "Footloose",
+    "year": 1984
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Eddy Grant",
+    "title": "Gimme Hope Joana",
+    "year": 1988
+  },
+  {
+    "in_editions": ["summer", "bingo"],
+    "artist": "Mariah Carey",
+    "title": "Without You",
+    "year": 1994
+  },
+  {
+    "in_editions": ["classic", "guilty"],
+    "artist": "Backstreet Boys",
+    "title": "Everybody (Backstreet's Back)",
+    "year": 1997
+  },
+  {
+    "in_editions": ["celebration", "celebration"],
+    "artist": "Tiesto & BT",
+    "title": "Love Comes Again",
+    "year": 2004
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Alexandra Stan",
+    "title": "Mr. Saxobeat",
+    "year": 2010
+  },
+  {
+    "in_editions": ["summer", "guilty"],
+    "artist": "Lady Gaga",
+    "title": "The Edge Of Glory",
+    "year": 2011
+  },
+  {
+    "in_editions": ["guilty", "bingo"],
+    "artist": "Robbie Williams",
+    "title": "Candy",
+    "year": 2012
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Justin Timberlake",
+    "title": "Can't Stop The Feeling",
+    "year": 2016
+  },
+  {
+    "in_editions": ["classic", "guilty"],
+    "artist": "Luis Fonsi & Demi Lovato",
+    "title": "Échame La Culpa",
+    "year": 2017
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "J Balvin & Willy William",
+    "title": "Mi Gente",
+    "year": 2017
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Calvin Harris & Dua Lipa",
+    "title": "One Kiss",
+    "year": 2018
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Panic! At The Disco",
+    "title": "High Hopes",
+    "year": 2018
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Billie Eilish",
+    "title": "Bad Guy",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Tones And I",
+    "title": "Dance Monkey",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic", "summer"],
+    "artist": "Jonas Brothers",
+    "title": "Sucker",
+    "year": 2019
+  },
+  {
+    "in_editions": ["summer", "bingo"],
+    "artist": "Glass Animals",
+    "title": "Heat Waves",
+    "year": 2020
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "BTS",
+    "title": "Dynamite",
+    "year": 2020
+  },
+  {
+    "in_editions": ["bingo", "celebration"],
+    "artist": "Olivia Rodrigo",
+    "title": "Good 4 U",
+    "year": 2021
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Alvaro Soler & Topic",
+    "title": "Solo Para Ti",
+    "year": 2022
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "OneRepublic",
+    "title": "I Ain't Worried",
+    "year": 2022
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Harry Styles",
+    "title": "As It Was",
+    "year": 2022
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Miley Cyrus",
+    "title": "Flowers",
+    "year": 2023
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Peggy Gou",
+    "title": "(It Goes Like) Nanana",
+    "year": 2023
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Linkin Park",
+    "title": "The Emptiness Machine",
+    "year": 2024
+  }
+]

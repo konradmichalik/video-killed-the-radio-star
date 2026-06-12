@@ -1,0 +1,7952 @@
+[
+  {
+    "in_editions": ["classic", "rock", "celebration"],
+    "artist": "Roy Orbison",
+    "title": "Oh, Pretty Woman",
+    "year": 1964
+  },
+  {
+    "in_editions": ["rock", "summer", "celebration"],
+    "artist": "T. Rex",
+    "title": "Get It On",
+    "year": 1971
+  },
+  {
+    "in_editions": ["classic", "rock", "celebration"],
+    "artist": "Lynyrd Skynyrd",
+    "title": "Sweet Home Alabama",
+    "year": 1974
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "Bill Haley & His Comets",
+    "title": "(We're Gonna) Rock Around The Clock",
+    "year": 1954
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Bill Haley & His Comets",
+    "title": "See You Later, Alligator",
+    "year": 1956
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "Elvis Presley",
+    "title": "Jailhouse Rock",
+    "year": 1957
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "Chuck Berry",
+    "title": "Johnny B. Goode",
+    "year": 1958
+  },
+  {
+    "in_editions": ["classic", "summer"],
+    "artist": "Ritchie Valens",
+    "title": "La Bamba",
+    "year": 1958
+  },
+  {
+    "in_editions": ["rock", "guilty"],
+    "artist": "Ray Charles",
+    "title": "Hit The Road Jack",
+    "year": 1961
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "The Beach Boys",
+    "title": "Surfin' U.S.A.",
+    "year": 1963
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Lesley Gore",
+    "title": "It's My Party",
+    "year": 1963
+  },
+  {
+    "in_editions": ["classic", "guilty"],
+    "artist": "Siw Malmkvist",
+    "title": "Liebeskummer lohnt sich nicht",
+    "year": 1964
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "The Monkees",
+    "title": "I'm A Believer",
+    "year": 1966
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Aretha Franklin",
+    "title": "Respect",
+    "year": 1967
+  },
+  {
+    "in_editions": ["rock", "bingo"],
+    "artist": "Cream",
+    "title": "Sunshine Of Your Love",
+    "year": 1967
+  },
+  {
+    "in_editions": ["classic", "rock"],
+    "artist": "Steppenwolf",
+    "title": "Born To Be Wild",
+    "year": 1968
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Neil Diamond",
+    "title": "Sweet Caroline",
+    "year": 1969
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "The 5th Dimension",
+    "title": "Aquarius/Let The Sunshine In",
+    "year": 1969
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "The Beatles",
+    "title": "Let It Be",
+    "year": 1970
+  },
+  {
+    "in_editions": ["classic", "summer"],
+    "artist": "Creedence Clearwater Revival",
+    "title": "Have You Ever Seen The Rain?",
+    "year": 1971
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "The Guess Who",
+    "title": "American Woman",
+    "year": 1971
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Carly Simon",
+    "title": "You're So Vain",
+    "year": 1972
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Alice Cooper",
+    "title": "School's Out",
+    "year": 1972
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Bachman-Turner Overdrive",
+    "title": "You Ain't Seen Nothing Yet",
+    "year": 1974
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "George McCrae",
+    "title": "Rock Your Baby",
+    "year": 1974
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Thin Lizzy",
+    "title": "The Boys Are Back In Town",
+    "year": 1976
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Boney M.",
+    "title": "Daddy Cool",
+    "year": 1976
+  },
+  {
+    "in_editions": ["bingo", "celebration"],
+    "artist": "Queen",
+    "title": "We Will Rock You",
+    "year": 1977
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Toto",
+    "title": "Hold The Line",
+    "year": 1978
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Village People",
+    "title": "Y.M.C.A.",
+    "year": 1978
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Gloria Gaynor",
+    "title": "I Will Survive",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "The Knack",
+    "title": "My Sharona",
+    "year": 1979
+  },
+  {
+    "in_editions": ["summer", "movies"],
+    "artist": "Kenny Loggins",
+    "title": "Footloose",
+    "year": 1984
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Eddy Grant",
+    "title": "Gimme Hope Joana",
+    "year": 1988
+  },
+  {
+    "in_editions": ["summer", "bingo"],
+    "artist": "Mariah Carey",
+    "title": "Without You",
+    "year": 1994
+  },
+  {
+    "in_editions": ["classic", "guilty"],
+    "artist": "Backstreet Boys",
+    "title": "Everybody (Backstreet's Back)",
+    "year": 1997
+  },
+  {
+    "in_editions": ["celebration", "celebration"],
+    "artist": "Tiesto & BT",
+    "title": "Love Comes Again",
+    "year": 2004
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Alexandra Stan",
+    "title": "Mr. Saxobeat",
+    "year": 2010
+  },
+  {
+    "in_editions": ["summer", "guilty"],
+    "artist": "Lady Gaga",
+    "title": "The Edge Of Glory",
+    "year": 2011
+  },
+  {
+    "in_editions": ["guilty", "bingo"],
+    "artist": "Robbie Williams",
+    "title": "Candy",
+    "year": 2012
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Justin Timberlake",
+    "title": "Can't Stop The Feeling",
+    "year": 2016
+  },
+  {
+    "in_editions": ["classic", "guilty"],
+    "artist": "Luis Fonsi & Demi Lovato",
+    "title": "Échame La Culpa",
+    "year": 2017
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "J Balvin & Willy William",
+    "title": "Mi Gente",
+    "year": 2017
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Calvin Harris & Dua Lipa",
+    "title": "One Kiss",
+    "year": 2018
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Panic! At The Disco",
+    "title": "High Hopes",
+    "year": 2018
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Billie Eilish",
+    "title": "Bad Guy",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic", "celebration"],
+    "artist": "Tones And I",
+    "title": "Dance Monkey",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic", "summer"],
+    "artist": "Jonas Brothers",
+    "title": "Sucker",
+    "year": 2019
+  },
+  {
+    "in_editions": ["summer", "bingo"],
+    "artist": "Glass Animals",
+    "title": "Heat Waves",
+    "year": 2020
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "BTS",
+    "title": "Dynamite",
+    "year": 2020
+  },
+  {
+    "in_editions": ["bingo", "celebration"],
+    "artist": "Olivia Rodrigo",
+    "title": "Good 4 U",
+    "year": 2021
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Alvaro Soler & Topic",
+    "title": "Solo Para Ti",
+    "year": 2022
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "OneRepublic",
+    "title": "I Ain't Worried",
+    "year": 2022
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Harry Styles",
+    "title": "As It Was",
+    "year": 2022
+  },
+  {
+    "in_editions": ["summer", "celebration"],
+    "artist": "Miley Cyrus",
+    "title": "Flowers",
+    "year": 2023
+  },
+  {
+    "in_editions": ["guilty", "celebration"],
+    "artist": "Peggy Gou",
+    "title": "(It Goes Like) Nanana",
+    "year": 2023
+  },
+  {
+    "in_editions": ["rock", "celebration"],
+    "artist": "Linkin Park",
+    "title": "The Emptiness Machine",
+    "year": 2024
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Enricu Caruso",
+    "title": "La Donna È Mobile (Rigoletto)",
+    "year": 1908
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Joseíto Fernández",
+    "title": "Guajira Guantanamera",
+    "year": 1929
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Glenn Miller",
+    "title": "In The Mood",
+    "year": 1939
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Judy Garland",
+    "title": "Der Zauberer von Oz (Over The Rainbow)",
+    "year": 1939
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Max Steiner",
+    "title": "Vom Winde verweht",
+    "year": 1939
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Cliff Edwards",
+    "title": "Pinocchio (When You Wish Upon A Star)",
+    "year": 1940
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Bing Crosby",
+    "title": "White Christmas",
+    "year": 1941
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Dooley Wilson",
+    "title": "Casablanca (As Time Goes By)",
+    "year": 1942
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Bing Crosby",
+    "title": "I'll Be Home For Christmas",
+    "year": 1943
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Judy Garland",
+    "title": "Have Yourself A Merry Little Christmas",
+    "year": 1944
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Vaughn Monroe",
+    "title": "Let It Snow! Let It Snow! Let It Snow!",
+    "year": 1945
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Nat King Cole Trio",
+    "title": "The Christmas Song",
+    "year": 1946
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Gene Autry",
+    "title": "Here Comes Santa Claus",
+    "year": 1947
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Frank Sinatra",
+    "title": "Jingle Bells",
+    "year": 1948
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Alan Silvestri",
+    "title": "Forrest Gump Suite (Forrest Gump)",
+    "year": 1949
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Gene Autry",
+    "title": "Rudolph, The Red Nosed Reindeer",
+    "year": 1949
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Margaret Whiting & Johnny Mercer",
+    "title": "Baby, It's Cold Outside",
+    "year": 1949
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Gene Autry & Cass County Boys",
+    "title": "Frosty The Snowman",
+    "year": 1950
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Cornelia Froboess",
+    "title": "Pack die Badehose ein",
+    "year": 1951
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Perry Como & The Fontane Sisters",
+    "title": "It's Beginning To Look A Lit Like Christmas",
+    "year": 1951
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Gene Kelly",
+    "title": "Du sollst mein Glücksstern sein",
+    "year": 1952
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Jimm Boyd",
+    "title": "I Saw Mommy Kissing Santa Claus",
+    "year": 1952
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Dean Martin",
+    "title": "That's Anyone",
+    "year": 1953
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Marylin Monroe",
+    "title": "Blondinen bevorzugt (Diamonds Are A Girl's Best Friend)",
+    "year": 1953
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Eartha Kitt & Henri René and His Orchestra",
+    "title": "Santa Baby",
+    "year": 1953
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Caterina Valente",
+    "title": "Ganz Paris Träumt von der Liebe",
+    "year": 1954
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Fats Domino",
+    "title": "Ain't That A Shame",
+    "year": 1955
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Chuck Berry",
+    "title": "Maybellene",
+    "year": 1955
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Little Richard",
+    "title": "Tutti Frutti",
+    "year": 1955
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Harry Belafonte",
+    "title": "Day-O (The Banana Boat Song)",
+    "year": 1956
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Freddy Quinn",
+    "title": "Heimweh (Dort wo die Blumen blüh'n)",
+    "year": 1956
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Gene Vincent",
+    "title": "Be Bop A Lula",
+    "year": 1956
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Elvis Presley",
+    "title": "Hound Dog",
+    "year": 1956
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Doris Day & Frank Devol",
+    "title": "Der Mann, der zuviel wusste (Que Sera Sera)",
+    "year": 1956
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Margot Eskens",
+    "title": "…Denn es ist Weihnachtszeit",
+    "year": 1956
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Danny & The Juniors",
+    "title": "At The Hop",
+    "year": 1957
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Everly Brothers",
+    "title": "Wake Up Little Susie",
+    "year": 1957
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Malcolm Arnold",
+    "title": "Die Brücke am Kwai (The Colonel Bogey March)",
+    "year": 1957
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Bobby Helms",
+    "title": "Jingle Bell Rock",
+    "year": 1957
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Elvis Presley",
+    "title": "Blue Christmas",
+    "year": 1957
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Peter Kraus",
+    "title": "Sugar Baby",
+    "year": 1958
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Little Richard",
+    "title": "Good Golly, Miss Molly",
+    "year": 1958
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "The Chordettes",
+    "title": "Lollipop",
+    "year": 1958
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "The Everly Brothers",
+    "title": "All I Have To Do Is Dream",
+    "year": 1958
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Domenico Modugno",
+    "title": "Volare",
+    "year": 1958
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Jamies",
+    "title": "Summertime, Summertime",
+    "year": 1958
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Chuck Berry",
+    "title": "Run Rudolph Run",
+    "year": 1958
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Harry Simone Chorale",
+    "title": "The Little Drummer Boy",
+    "year": 1958
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Brenda Lee",
+    "title": "Rockin' Around The Christmas Tree",
+    "year": 1958
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Freddy Quinn",
+    "title": "Die Gitarre und das Meer",
+    "year": 1959
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Paul Anka",
+    "title": "Put Your Head On My Shoulder",
+    "year": 1959
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Jay Livingstone & Ray Evans",
+    "title": "Bonanza",
+    "year": 1959
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Trude Herr",
+    "title": "Ich will keine Schokolade",
+    "year": 1960
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Chubby Checker",
+    "title": "The Twist",
+    "year": 1960
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Caterina Valente & Silvio Francesco",
+    "title": "Itsy Bitsy Teenie Weenie Honolulu Strand Bikini",
+    "year": 1960
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Sam Cooke",
+    "title": "(What A) Wonderful World",
+    "year": 1960
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Maurice Williams & The Zodiacs",
+    "title": "Stay",
+    "year": 1960
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Club Honolulu",
+    "title": "Itsy Bitsy Teenie Weenie Honolulu Strandbikini",
+    "year": 1960
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Elvis Presley",
+    "title": "It's Now Or Never",
+    "year": 1960
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Brian Hyland",
+    "title": "Itsy Bitsy Teenie Weenie Yellow Polka Dot Bikini",
+    "year": 1960
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Bernhard Herrmann",
+    "title": "Psycho (Prelude)",
+    "year": 1960
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Willy Millowitsch",
+    "title": "Schnaps, das war sein letztes Wort",
+    "year": 1960
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Charles Brown",
+    "title": "Please Come Home For Christmas",
+    "year": 1960
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Dion",
+    "title": "The Wanderer",
+    "year": 1961
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Elvis Presley",
+    "title": "Can't Help Falling In Love",
+    "year": 1961
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Bill Ramsey",
+    "title": "Zuckerpuppe (aus der Bauchtanz-Truppe)",
+    "year": 1961
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Beach Boys",
+    "title": "Barbara Ann",
+    "year": 1961
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Conny Froboess",
+    "title": "Zwei kleine Italiener",
+    "year": 1961
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Chubby Checker",
+    "title": "Let's Twist Again",
+    "year": 1961
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Leonard Bernstein",
+    "title": "West Side Story (America)",
+    "year": 1961
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Audrey Hepburn",
+    "title": "Frühstück bei Tiffany (Moon River)",
+    "year": 1961
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Gus Backus",
+    "title": "Der Mann im Mond",
+    "year": 1961
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Helen Shapiro",
+    "title": "Walking Back To Happiness",
+    "year": 1961
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Little Eva",
+    "title": "The Loco-Motion",
+    "year": 1962
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Booker T. & The M.G.'s",
+    "title": "Green Onions",
+    "year": 1962
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Freddy Quinn",
+    "title": "Aló-Ahe",
+    "year": 1962
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Manuela",
+    "title": "Schuld war nur der Bossa Nova",
+    "year": 1963
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Johnny Cash",
+    "title": "Ring of Fire",
+    "year": 1963
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Gitte Haenning",
+    "title": "Ich will 'nen Cowboy als Mann",
+    "year": 1963
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Antônio Carlos Jobim & Astrud Gilberto",
+    "title": "Girl From Ipanema",
+    "year": 1963
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Gitte",
+    "title": "Ich Will 'Nen Cowboy Als Mann",
+    "year": 1963
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Roxettes",
+    "title": "Be My Baby",
+    "year": 1963
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Henry Mancini",
+    "title": "Der Rosarote Panther",
+    "year": 1963
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Martha Reeves & The Vandellas",
+    "title": "Heatwave",
+    "year": 1963
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Surfaris",
+    "title": "Wipe Out",
+    "year": 1963
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Crystals",
+    "title": "Da Doo Ron Ron",
+    "year": 1963
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Darlene Love",
+    "title": "Christmas (Baby Please Come Home)",
+    "year": 1963
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "The Ronettes",
+    "title": "Sleigh Ride",
+    "year": 1963
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Andy Williams",
+    "title": "It's The Most Wonderful Time Of The Year",
+    "year": 1963
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Betty Everett",
+    "title": "It's In His Kiss (The Shoop Shoop Song)",
+    "year": 1964
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Manfred Mann",
+    "title": "Do Wah Diddy Diddy",
+    "year": 1964
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Connie Francis",
+    "title": "Schöner fremder Mann",
+    "year": 1964
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Kinks",
+    "title": "All Day And All Of The Night",
+    "year": 1964
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Animals",
+    "title": "House Of The Rising Sun",
+    "year": 1964
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Paul Anka",
+    "title": "Zwei Mädchen aus Germany",
+    "year": 1964
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Kinks",
+    "title": "You Really Got Me",
+    "year": 1964
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Beach Boys",
+    "title": "I Get Around",
+    "year": 1964
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Petula Clark",
+    "title": "Downtown",
+    "year": 1964
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Julie Andrews & Dick Van Dyke",
+    "title": "Mary Poppins (Supercalifragilisticexpialidocious)",
+    "year": 1964
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Supremes",
+    "title": "Where Did Our Love Go",
+    "year": 1964
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Burl Ives",
+    "title": "A Holl Jolly Christmas",
+    "year": 1964
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Drafi Deutscher",
+    "title": "Marmor, Stein und Eisen bricht",
+    "year": 1965
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Sam The Sham & The Pharaohs",
+    "title": "Wooly Bully",
+    "year": 1965
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "James Brown & The Famous Flames",
+    "title": "I Got You (I Feel Good)",
+    "year": 1965
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Nancy Sinatra",
+    "title": "These Boots Are Made For Walkin'",
+    "year": 1965
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Soony & Cher",
+    "title": "I Got You Babe",
+    "year": 1965
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "The Rolling Stones",
+    "title": "(I Can't Get No) Satisfaction",
+    "year": 1965
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Udo Jürgens",
+    "title": "Siebzehn Jahr, blondes Haar",
+    "year": 1965
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Who",
+    "title": "My Generation",
+    "year": 1965
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Mamas & The Papas",
+    "title": "California Dreamin'",
+    "year": 1965
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Supremes",
+    "title": "Stop! In The Name Of Love",
+    "year": 1965
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Tom Jones",
+    "title": "It's Not Unusual",
+    "year": 1965
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Four Tops",
+    "title": "I Can't Help Myself",
+    "year": 1965
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Peggy March",
+    "title": "Mit 17 hat man noch Träume",
+    "year": 1965
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Martha Reeves & The Vandellas",
+    "title": "Dancing In The Street",
+    "year": 1965
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Tom Jones",
+    "title": "Was gibt's Neues, Pussy?",
+    "year": 1965
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Nina Simone",
+    "title": "Feeling Good",
+    "year": 1965
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "France Gall",
+    "title": "Puepée De Cire, Poupé De Son",
+    "year": 1965
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Beach Boys",
+    "title": "California Girls",
+    "year": 1965
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Spencer Davis Group",
+    "title": "Keep On Running",
+    "year": 1965
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Buck Owens",
+    "title": "Santa Looked A Lot Like Daddy",
+    "year": 1965
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Rex Gildo",
+    "title": "Silberglocken läuten",
+    "year": 1965
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Percy Sledge",
+    "title": "When A Man Loves A Woman",
+    "year": 1966
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Buffalo Springfield",
+    "title": "For What It's Worth",
+    "year": 1966
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Jimi Hendrix",
+    "title": "Hey Joe",
+    "year": 1966
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Troggs",
+    "title": "Wild Thing",
+    "year": 1966
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Rolling Stones",
+    "title": "Paint It Black",
+    "year": 1966
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bobby Hebb",
+    "title": "Sunny",
+    "year": 1966
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Nancy Sinatra & Lee Hazlewood",
+    "title": "Summer Wine",
+    "year": 1966
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Mamas & The Papas",
+    "title": "Monday, Monday",
+    "year": 1966
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Frank Sinatra",
+    "title": "Strangers In The Night",
+    "year": 1966
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Wencke Myhre",
+    "title": "Beiss nicht gleich in jeden Apfel",
+    "year": 1966
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Ennio Morricone",
+    "title": "Zwei glorreiche Halunken",
+    "year": 1966
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Easybeats",
+    "title": "Friday On My Mind",
+    "year": 1966
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "James Last",
+    "title": "Petersburger Schlittenfahrt",
+    "year": 1966
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Stevie Wonder",
+    "title": "Someday At Christmas",
+    "year": 1966
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Felice Taylor",
+    "title": "It May Be Winter Outside",
+    "year": 1966
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Erna Franklin",
+    "title": "Piece Of My Heart",
+    "year": 1967
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Doors",
+    "title": "Break On Through (To The Other Side)",
+    "year": 1967
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Jefferson Airplane",
+    "title": "White Rabbit",
+    "year": 1967
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Turtles",
+    "title": "Happy Together",
+    "year": 1967
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Scott MacKenzie",
+    "title": "San Francisco",
+    "year": 1967
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Monkees",
+    "title": "Daydream Believer",
+    "year": 1967
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Doors",
+    "title": "Light My Fire",
+    "year": 1967
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Frankie Valli",
+    "title": "Can't Take My Eyes Off You",
+    "year": 1967
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Phil Harris & Bruce Reitherman",
+    "title": "Das Dschungelbuch (The Bare Necessities)",
+    "year": 1967
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Aretha Franklin",
+    "title": "Think",
+    "year": 1967
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Arthur Conley",
+    "title": "Sweet Soul Music",
+    "year": 1967
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Van Morrison",
+    "title": "Brown Eyed Girl",
+    "year": 1967
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Small Faces",
+    "title": "Itchycoo Park",
+    "year": 1967
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "The Beatles",
+    "title": "All You Need Is Love",
+    "year": 1967
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Stevie Wonder",
+    "title": "What Christmas Means To Me",
+    "year": 1967
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Marvin Gaye",
+    "title": "I Heard It Through The Grapevine",
+    "year": 1968
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Heintje",
+    "title": "Mama",
+    "year": 1968
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Cliff Richard",
+    "title": "Congratulations",
+    "year": 1968
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Desmond Dekker",
+    "title": "Israelites",
+    "year": 1968
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Rolling Stones",
+    "title": "Jumpin' Jack Flash",
+    "year": 1968
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Christian Anders",
+    "title": "Geh' nicht vorbei",
+    "year": 1968
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Simon & Garfunkel",
+    "title": "Mrs. Robinson",
+    "year": 1968
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "The Beatles",
+    "title": "Yellow Submarine",
+    "year": 1968
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Richard Strauss",
+    "title": "2001: Odyssee Im Weltraum (Also sprach Zarathustra)",
+    "year": 1968
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Rolling Stones",
+    "title": "Sympathy For The Devil",
+    "year": 1968
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Tom Jones",
+    "title": "Delilah",
+    "year": 1968
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Sly & The Family Stone",
+    "title": "Everyday People",
+    "year": 1968
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Jimi Hendrix",
+    "title": "All Along The Watchtower",
+    "year": 1968
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Edwin Hawkins Singers",
+    "title": "Oh Happy Day",
+    "year": 1968
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Elvis Presley",
+    "title": "A Little Less Conversation",
+    "year": 1968
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Temptations",
+    "title": "I Could Never Love Another (After Loving You)",
+    "year": 1968
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Heintje",
+    "title": "O Tannenbaum",
+    "year": 1968
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Tony Bennet",
+    "title": "Winter Wonderland",
+    "year": 1968
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Arthur Baker & The Backbeat Disciples (feat. Al Green)",
+    "title": "The Message Is Love",
+    "year": 1968
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Led Zeppelin",
+    "title": "Whole Lotta Love",
+    "year": 1969
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "The Beatles",
+    "title": "Get Back",
+    "year": 1969
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "The Hollies",
+    "title": "He Ain't Heavy He's My Brother",
+    "year": 1969
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Creedence Clearwater Revival",
+    "title": "Fortunate Son",
+    "year": 1969
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Beatles",
+    "title": "Come Together",
+    "year": 1969
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Beatles",
+    "title": "Here Comes The Sun",
+    "year": 1969
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Norman Greenbaum",
+    "title": "Spirit In The Sky",
+    "year": 1969
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Steam",
+    "title": "Na Na Hey Hey Kiss Him Goodbye",
+    "year": 1969
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Archies",
+    "title": "Sugar, Sugar",
+    "year": 1969
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Erik Silvester",
+    "title": "Zucker im Kaffee",
+    "year": 1969
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Sherwood Schwartz & Frank Devol",
+    "title": "Drei Mädchen und drei Jungen",
+    "year": 1969
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Burt Bacharach",
+    "title": "Zwei Banditen (Raindrops Keep Fallin' On My Head)",
+    "year": 1969
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Frank Sinatra",
+    "title": "My Way",
+    "year": 1969
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Michael Jackson",
+    "title": "I Want You Back",
+    "year": 1969
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Rolling Stone",
+    "title": "Honky Tonk Women",
+    "year": 1969
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Elton John",
+    "title": "Your Song",
+    "year": 1970
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Mungo Jerry",
+    "title": "In The Summertime",
+    "year": 1970
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Wencke Myhre",
+    "title": "Er hat ein knallrotes Gummiboot",
+    "year": 1970
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "The Kinks",
+    "title": "Lola",
+    "year": 1970
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Jimmy Cliff",
+    "title": "You Can Get It If You Really Want",
+    "year": 1970
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Free",
+    "title": "All Right Now",
+    "year": 1970
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Creedence Clearwater Revival",
+    "title": "Run Through The Jungle",
+    "year": 1970
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Black Sabbath",
+    "title": "Iron Man",
+    "year": 1970
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Led Zeppelin",
+    "title": "Immigrant Song",
+    "year": 1970
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Lynn Anderson",
+    "title": "Rose Garden",
+    "year": 1970
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Katja Ebstein",
+    "title": "Wunder gibt es immer wieder",
+    "year": 1970
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Peter Maffay",
+    "title": "Du",
+    "year": 1970
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Chris Roberts",
+    "title": "Ich bin verliebt in die Liebe",
+    "year": 1970
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Christie",
+    "title": "Yellow River",
+    "year": 1970
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Miguel Rios",
+    "title": "Song Of Joy",
+    "year": 1970
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Francis Lai",
+    "title": "Love Story",
+    "year": 1970
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "James Brown",
+    "title": "Get Up I Feel Like Being Like A Sex Machine",
+    "year": 1970
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "George Harrison",
+    "title": "My Sweet Lord",
+    "year": 1970
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "James Brown",
+    "title": "Get Up I Feel Like Being A Sex Machine",
+    "year": 1970
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Santana",
+    "title": "Oye Cómo Va",
+    "year": 1970
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Little Richard",
+    "title": "Freedom Blues",
+    "year": 1970
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "The Jackson 5",
+    "title": "Santa Claus Is Coming To Town",
+    "year": 1970
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "José Feliciano",
+    "title": "Feliz Navidad",
+    "year": 1970
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Shawn Phillips",
+    "title": "A Christmas Song",
+    "year": 1970
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Donny Hathaway",
+    "title": "This Christmas",
+    "year": 1970
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Tom Jones",
+    "title": "She's A Lady",
+    "year": 1971
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Black Sabbath",
+    "title": "Children of the Grave",
+    "year": 1971
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Who",
+    "title": "Baba O' Riley",
+    "year": 1971
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Danyel Gerad",
+    "title": "Butterfly",
+    "year": 1971
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Don MacLean",
+    "title": "American Pie",
+    "year": 1971
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "America",
+    "title": "A Horse With No Name",
+    "year": 1971
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Mireille Mathieu",
+    "title": "Akropolis Adieu",
+    "year": 1971
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The New Seekers",
+    "title": "Never Ending Song Of Love",
+    "year": 1971
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "John Denver",
+    "title": "Take Me Home, Country Roads",
+    "year": 1971
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Tony Christie",
+    "title": "(Is This The Way To) Amarillo",
+    "year": 1971
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Tony Marshall",
+    "title": "Komm gib mir deine Hand",
+    "year": 1971
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Three Dog Night",
+    "title": "Joy To The World",
+    "year": 1971
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Middle Of The Road",
+    "title": "Chirpy Chirpy Cheep Cheep",
+    "year": 1971
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Isaac Hayes",
+    "title": "Shaft",
+    "year": 1971
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "José Feliciano",
+    "title": "Ché Sara",
+    "year": 1971
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Don McLean",
+    "title": "American Pie",
+    "year": 1971
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Sweet",
+    "title": "Co-Co",
+    "year": 1971
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Middle of the Road",
+    "title": "Sacramento",
+    "year": 1971
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "The Partridge Family",
+    "title": "My Christmas Card To You",
+    "year": 1971
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "John & Yoko One / The Plastic Ono Band",
+    "title": "Happy Xmas (War Is Over)",
+    "year": 1971
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Jürgen Marcus",
+    "title": "Eine neue Liebe ist wie ein neues Leben",
+    "year": 1972
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Deep Purple",
+    "title": "Highway Star",
+    "year": 1972
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Daniel Boone",
+    "title": "Beautiful Sunday",
+    "year": 1972
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Juliane Werding",
+    "title": "Am Tag als Conny Kramer starb",
+    "year": 1972
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Elton John",
+    "title": "Rocket Man",
+    "year": 1972
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Stevie Wonder",
+    "title": "You Are The Sunshine Of My Life",
+    "year": 1972
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Neil Diamond",
+    "title": "Song Sung Blue",
+    "year": 1972
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Johnny Nash",
+    "title": "I Can See Clearly Now",
+    "year": 1972
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Nino Rota",
+    "title": "Der Pate (The Godfather Waltz)",
+    "year": 1972
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Gata Barbieri",
+    "title": "Der letzte Tango in Paris",
+    "year": 1972
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Liza Minelli",
+    "title": "Cabaret",
+    "year": 1972
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Albert Hammond",
+    "title": "It Never Rains In Southern California",
+    "year": 1972
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Isley Brothers",
+    "title": "Summer Breeze",
+    "year": 1972
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Les Humphries Singers",
+    "title": "Mexico",
+    "year": 1972
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Stevie Wonder",
+    "title": "Superstition",
+    "year": 1972
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Doobie Brothers",
+    "title": "Listen To The Music",
+    "year": 1972
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Freddy Quinn",
+    "title": "Sankt Niklas war ein Schneemann",
+    "year": 1972
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "year": 1973
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Dolly Parton",
+    "title": "Jolene",
+    "year": 1973
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Lynyrd Skynyrd",
+    "title": "Free Bird",
+    "year": 1973
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Pink Floyd",
+    "title": "Money",
+    "year": 1973
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Aerosmith",
+    "title": "Dream On",
+    "year": 1973
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "ZZ Top",
+    "title": "La Grange",
+    "year": 1973
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Gilbert O' Sullivan",
+    "title": "Get Down",
+    "year": 1973
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Terry Jacks",
+    "title": "Seasons in the Sun",
+    "year": 1973
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Oliver Onions",
+    "title": "Flying Through The Air",
+    "year": 1973
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Albert Hammond",
+    "title": "The Free Electric Band",
+    "year": 1973
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Les Humphries",
+    "title": "Mama Loo",
+    "year": 1973
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ike & Tina Turner",
+    "title": "Nutbush City Limits",
+    "year": 1973
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Rex Gildo",
+    "title": "Marie, der letzte Tanz ist nur für dich",
+    "year": 1973
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Deep Purple",
+    "title": "Smoke On The Water",
+    "year": 1973
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Jürgen Marcus",
+    "title": "Ein Festival der Liebe",
+    "year": 1973
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Doobie Brothers",
+    "title": "Long Train Runnin",
+    "year": 1973
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Hues Corporation",
+    "title": "Rock The Boat",
+    "year": 1973
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Barbara Streisand",
+    "title": "So wie wir waren",
+    "year": 1973
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Osmonds",
+    "title": "Goin' Home",
+    "year": 1973
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Freddy Breck",
+    "title": "Rote Rosen",
+    "year": 1973
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Stealers Wheel",
+    "title": "Stuck In The Middle With You",
+    "year": 1973
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Elton John",
+    "title": "Step Into Christmas",
+    "year": 1973
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Slade",
+    "title": "Merry Xmas Everybody",
+    "year": 1973
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Wizzard",
+    "title": "I Wish It Could Be Christmas Everyday",
+    "year": 1973
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Michael Holm",
+    "title": "Tränen lügen nicht",
+    "year": 1974
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Bob Marley & The Wailers",
+    "title": "No Woman No Cry",
+    "year": 1974
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Billy Swan",
+    "title": "I Can Help",
+    "year": 1974
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Reinhard Mey",
+    "title": "Über den Wolken",
+    "year": 1974
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "ABBA",
+    "title": "Waterloo",
+    "year": 1974
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Nazareth",
+    "title": "Love Hurts",
+    "year": 1974
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Sweet",
+    "title": "Fox On The Run",
+    "year": 1974
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Rubettes",
+    "title": "Sugar Baby Love",
+    "year": 1974
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Carl Douglas",
+    "title": "Kung Fu Fighting",
+    "year": 1974
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Golden Earring",
+    "title": "Radar Love",
+    "year": 1974
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Michael Holm",
+    "title": "Nur Ein Kuß Maddalena",
+    "year": 1974
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Dennie Christian",
+    "title": "Rosamunde",
+    "year": 1974
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Carpenters",
+    "title": "Please Mr. Postman",
+    "year": 1974
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Barry Manilow",
+    "title": "Mandy",
+    "year": 1974
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Steve Miller Band",
+    "title": "The Joker",
+    "year": 1974
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Barry White",
+    "title": "You're The Fist, The Last, My Everything",
+    "year": 1974
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "David Rose",
+    "title": "Unsere kleine Farm",
+    "year": 1974
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Nina Hagen",
+    "title": "Du hast den Farbfilm vergessen",
+    "year": 1974
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "First Class",
+    "title": "Beach Baby",
+    "year": 1974
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Mud",
+    "title": "Lonley This Christmas",
+    "year": 1974
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Kiss",
+    "title": "Rock And Roll All Nite",
+    "year": 1975
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Bruce Springsteen",
+    "title": "Born To Run",
+    "year": 1975
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Aerosmith",
+    "title": "Walk This Way",
+    "year": 1975
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "George Baker Selection",
+    "title": "Paloma Blanca",
+    "year": 1975
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Rudi Carell",
+    "title": "Wann wird's mal wieder richtig Sommer",
+    "year": 1975
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "ABBA",
+    "title": "SOS",
+    "year": 1975
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Rod Stewart",
+    "title": "Sailing",
+    "year": 1975
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Hot Chocolate",
+    "title": "You Sexy Thing",
+    "year": 1975
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "K.C. & The Sunshine Band",
+    "title": "That's The Way (I Like It)",
+    "year": 1975
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Abba",
+    "title": "Mamma Mia",
+    "year": 1975
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Eric Carmen",
+    "title": "All By Myself",
+    "year": 1975
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Tom Scott",
+    "title": "Starsky & Hutch (Gotcha)",
+    "year": 1975
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Williams",
+    "title": "Der weiße Hai",
+    "year": 1975
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Arrows",
+    "title": "I Love Rock 'N Roll",
+    "year": 1975
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Stretch",
+    "title": "Why Did You Do It?",
+    "year": 1975
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "5000 Volts",
+    "title": "I'm On Fire",
+    "year": 1975
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "KC and the Sunshine Band",
+    "title": "That's The Way (I Like It)",
+    "year": 1975
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Marianne Rosenberg",
+    "title": "Ich bin wie du",
+    "year": 1975
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Chris de Burgh",
+    "title": "A Spaceman Came Travelling",
+    "year": 1975
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Dana",
+    "title": "It's Gonna Be A Cold, Cold Christmas",
+    "year": 1975
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Kansas",
+    "title": "Carry On Wayward Son",
+    "year": 1976
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Kiss",
+    "title": "Detroit Rock City",
+    "year": 1976
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Fleetwood Mac",
+    "title": "Go Your Own Way",
+    "year": 1976
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Runaways",
+    "title": "Cherry Bomb",
+    "year": 1976
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Blue Öyster Cult",
+    "title": "(Don't Fear) The Reaper",
+    "year": 1976
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "John Miles",
+    "title": "Music",
+    "year": 1976
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Barry White",
+    "title": "Let The Music Play",
+    "year": 1976
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Tina Charles",
+    "title": "I Love To Love (But My Baby Loves To Dance)",
+    "year": 1976
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Marianne Rosenberg",
+    "title": "Marleen",
+    "year": 1976
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Tavares",
+    "title": "Heaven Must Be Missing An Angel",
+    "year": 1976
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Bay City Rollers",
+    "title": "I Only Wanna Be With You",
+    "year": 1976
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Elton John & Kiki Dee",
+    "title": "Don't Go Breaking My Heart",
+    "year": 1976
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Wings",
+    "title": "Silly Love Songs",
+    "year": 1976
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Jack Elliot",
+    "title": "Drei Engel für Charlie",
+    "year": 1976
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "The Snowths",
+    "title": "Die Muppet Show (Mah Na Mah Na)",
+    "year": 1976
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Bill Conti",
+    "title": "Rocky (Gonna Fly Now)",
+    "year": 1976
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Frank Farian",
+    "title": "Rocky",
+    "year": 1976
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "KC & The Sunshine Band",
+    "title": "(Shake Shake Shake) Shake Your Booty",
+    "year": 1976
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Wild Cherry",
+    "title": "Play That Funky Music",
+    "year": 1976
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Bay City Rollers",
+    "title": "Saturday Night",
+    "year": 1976
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Ram Jam",
+    "title": "Black Betty",
+    "year": 1977
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Heart",
+    "title": "Barracuda",
+    "year": 1977
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Foreigner",
+    "title": "Cold As Ice",
+    "year": 1977
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Nana Mouskouri",
+    "title": "Guten Morgen Sonnenschein",
+    "year": 1977
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Grace Jones",
+    "title": "La Vie en Rose",
+    "year": 1977
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Fleetwood Mac",
+    "title": "Don't Stop",
+    "year": 1977
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Donna Summer",
+    "title": "I Feel Love",
+    "year": 1977
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Supertramp",
+    "title": "Give A Little Bit",
+    "year": 1977
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Bee Gees",
+    "title": "How Deep Is Your Love",
+    "year": 1977
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "John Paul Young",
+    "title": "Love Is In The Air",
+    "year": 1977
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Henry Valentino & Uschi",
+    "title": "Im Wagen vor mir",
+    "year": 1977
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Baccara",
+    "title": "Yes Sir, I Can Boogie",
+    "year": 1977
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Williams",
+    "title": "Krieg der Sterne (Star Wars)",
+    "year": 1977
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Bee Gees",
+    "title": "Saturday Night Fever (Night Fever)",
+    "year": 1977
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Bill Withers",
+    "title": "Lovely Day",
+    "year": 1977
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Cheap Trick",
+    "title": "I Want You To Want Me",
+    "year": 1977
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Emotions",
+    "title": "Best Of My Love",
+    "year": 1977
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Vicky Leandros",
+    "title": "O Du Fröhliche",
+    "year": 1977
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Marianne Rosenberg",
+    "title": "Aba Heidschi Bumbeidschi",
+    "year": 1977
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Costa Cordalis",
+    "title": "Wenn's Weihnachten ist",
+    "year": 1977
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Karat",
+    "title": "Über sieben Brücken musst du gehen",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Queen",
+    "title": "Don't Stop Me Now",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Styx",
+    "title": "Renegade",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Cars",
+    "title": "Just What I Needed",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Van Halen",
+    "title": "Ain't Talkin' 'Bout Love",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Police",
+    "title": "Roxanne",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Ramones",
+    "title": "I Wanna Be Sedated",
+    "year": 1978
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "John Travolta & Olivia Newton John",
+    "title": "You're The One That I Want",
+    "year": 1978
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bee Gees",
+    "title": "Night Fever",
+    "year": 1978
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Gerry Rafferty",
+    "title": "Baker Street",
+    "year": 1978
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Luv'",
+    "title": "You're The Greatest Lover",
+    "year": 1978
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Exile",
+    "title": "Kiss You All Over",
+    "year": 1978
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Patty Smith",
+    "title": "Because The Night",
+    "year": 1978
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Boney M.",
+    "title": "Rivers Of Babylon",
+    "year": 1978
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Travolta & Olivia Newton-John",
+    "title": "Grease (Summer Nights)",
+    "year": 1978
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Williams",
+    "title": "Superman",
+    "year": 1978
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Carpenter",
+    "title": "Halloween - Die Nacht des Grauens",
+    "year": 1978
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Dominik Hauser",
+    "title": "Dallas",
+    "year": 1978
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Boney M.",
+    "title": "Rasputin",
+    "year": 1978
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Blondie",
+    "title": "One War Or Another",
+    "year": 1978
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Dire Straits",
+    "title": "Sultans Of Swing",
+    "year": 1978
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Jacksons",
+    "title": "Blame It On The Boogie",
+    "year": 1978
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "The Pointer Sisters",
+    "title": "Fire",
+    "year": 1978
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Racey",
+    "title": "Lay Your Love On Me",
+    "year": 1978
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Boney M.",
+    "title": "Mary's Boy Child / Oh My Lord",
+    "year": 1978
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Peter Alexander",
+    "title": "Schneemann",
+    "year": 1978
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Peter Maffay",
+    "title": "Brief an den Weihnachtsmann",
+    "year": 1978
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Pink Floyd",
+    "title": "Another Brick In The Wall, Pt. 2",
+    "year": 1979
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Electric Light Orchestra",
+    "title": "Don't Bring Me Down",
+    "year": 1979
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Lipps, Inc.",
+    "title": "Funkytown",
+    "year": 1979
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Peter Kent und Luisa Fernandez",
+    "title": "It's A Real Good Feeling",
+    "year": 1979
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ottawan",
+    "title": "D.I.S.C.O.",
+    "year": 1979
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Earth & Fire",
+    "title": "Weekend",
+    "year": 1979
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Goombay Dance Band",
+    "title": "Sun of Jamaica",
+    "year": 1979
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Cliff Richard",
+    "title": "We Don't Talk Anymore",
+    "year": 1979
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Dschinghis Khan",
+    "title": "Hadschi Halef Omar",
+    "year": 1979
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Kiss",
+    "title": "I Was Made For Lovin' You",
+    "year": 1979
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Howard Carpendale",
+    "title": "Nachts, wenn alles schläft",
+    "year": 1979
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Jerry Goldsmith",
+    "title": "Star Trek",
+    "year": 1979
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Monty Python",
+    "title": "Das Leben des Brian (Always Look On The Bright Side Of Life)",
+    "year": 1979
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Frank Farian",
+    "title": "Sie war erst siebzehn (Und neu in der Stadt)",
+    "year": 1979
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Village People",
+    "title": "In The Navy",
+    "year": 1979
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "AC/DC",
+    "title": "Highway To Hell",
+    "year": 1979
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "ABBA",
+    "title": "Gimme! Gimme! Gimme!",
+    "year": 1979
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Police",
+    "title": "Message In A Bottle",
+    "year": 1979
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Village People",
+    "title": "Go West",
+    "year": 1979
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Earth, Wind & Fire",
+    "title": "Boogie Wonderland",
+    "year": 1979
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Paul McCartney",
+    "title": "Wonderful Christmastime",
+    "year": 1979
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Visage",
+    "title": "Fade to Grey",
+    "year": 1980
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Hot Chocolate",
+    "title": "No Doubt About It",
+    "year": 1980
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Oliver Onions",
+    "title": "Santa Maria",
+    "year": 1980
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bob Marley & The Wailers",
+    "title": "Could You Be Loved",
+    "year": 1980
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Olivia Newton-John & Electric Light Orchestra",
+    "title": "Xanado",
+    "year": 1980
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Blondie",
+    "title": "The Tide Is High",
+    "year": 1980
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Heino",
+    "title": "Ja, ja die Katja, die hat ja…",
+    "year": 1980
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Shakin' Stevens",
+    "title": "You Drive Me Crazy",
+    "year": 1980
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Costa Cordalis",
+    "title": "Pan",
+    "year": 1980
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Irene Cara",
+    "title": "Fame - Der Weg zum Ruhm",
+    "year": 1980
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Wendy Carlos",
+    "title": "Shining",
+    "year": 1980
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Teens",
+    "title": "Give Me More",
+    "year": 1980
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Bruce Springsteen",
+    "title": "Hungry Heart",
+    "year": 1980
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Peter Maffay",
+    "title": "Über sieben Brücken mußt du gehn",
+    "year": 1980
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Extrabreit",
+    "title": "Hurra, Hurra, die Schule brennt",
+    "year": 1980
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Blues Brothers",
+    "title": "Everybody Needs Somebody To Love",
+    "year": 1980
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "T. S. Monk",
+    "title": "Bon Bon Vie",
+    "year": 1980
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Jona Lewie",
+    "title": "Stop The Cavalry",
+    "year": 1980
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Electronica's",
+    "title": "Dance Little Birdie",
+    "year": 1981
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Kim Wilde",
+    "title": "Chequered Love",
+    "year": 1981
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Stars On 45",
+    "title": "Stars On 45",
+    "year": 1981
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Richi & Poveri",
+    "title": "Sará Perché Ti Amo",
+    "year": 1981
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Roland Kaiser",
+    "title": "Dich zu lieben",
+    "year": 1981
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Spider Murphy Gang",
+    "title": "Schickeria",
+    "year": 1981
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Marc Bradley",
+    "title": "Falcon Crest",
+    "year": 1981
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Williams",
+    "title": "Jäger des verlorenen Schatzes (Indiana Jones)",
+    "year": 1981
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Vangelis",
+    "title": "Die Stunde des Siegers",
+    "year": 1981
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Christopher Cross",
+    "title": "Arthur - Kein Kind der Traurigkeit (Best That You Can Do)",
+    "year": 1981
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Kraftwerk",
+    "title": "Taschenrechner",
+    "year": 1981
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Ricchi e Poveri",
+    "title": "Sará Perché Ti Amo",
+    "year": 1981
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Grauzone",
+    "title": "Eisbär",
+    "year": 1981
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "BAP",
+    "title": "Verdamp Lang Her",
+    "year": 1981
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Madness",
+    "title": "It Must Be Love",
+    "year": 1981
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "The Waitresses",
+    "title": "Christmas Wrapping",
+    "year": 1981
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Markus",
+    "title": "Ich will Spaß",
+    "year": 1982
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Hubert Kah",
+    "title": "Rosemarie",
+    "year": 1982
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Andy Borg",
+    "title": "Arrivederci Claire",
+    "year": 1982
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Men Without Hats",
+    "title": "The Safety Dance",
+    "year": 1982
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Joe Cocker & Jennifer Warnes",
+    "title": "Up Where We Belong",
+    "year": 1982
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Al Bano & Romina Power",
+    "title": "Felicitá",
+    "year": 1982
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Roxy Music",
+    "title": "More Than This",
+    "year": 1982
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "F.R. David",
+    "title": "Words",
+    "year": 1982
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Stu Phillips",
+    "title": "Knight Rider",
+    "year": 1982
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Gary Portnoy",
+    "title": "Cheers (Where Everybody Knows Your Name)",
+    "year": 1982
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Joe Cocker & Jennifer Warnes",
+    "title": "Ein Offizier und ein Gentleman (Up Where We Belong)",
+    "year": 1982
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Alan Parsons Project",
+    "title": "Eye In The Sky",
+    "year": 1982
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "David Essex",
+    "title": "A Winter's Tale",
+    "year": 1982
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Dolly Parton",
+    "title": "Hard Candy Christmas",
+    "year": 1982
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Wolfgang Petry",
+    "title": "Wahnsinn",
+    "year": 1983
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Accept",
+    "title": "Balls To The Wall",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Irene Cara",
+    "title": "What a Feeling",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Wham!",
+    "title": "Club Tropicana",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Mike Oldfield",
+    "title": "Moonlight Shadow",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Laid Back",
+    "title": "Sunshine Reggae",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Jimmy Cliff",
+    "title": "Reggae Night",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Righeira",
+    "title": "Vamos a la Playa",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Lionel Richie",
+    "title": "All Night Long",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Katrina & The Waves",
+    "title": "Walking On Sunshine",
+    "year": 1983
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Ryan Paris",
+    "title": "Dolce Vita",
+    "year": 1983
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Billy Joel",
+    "title": "Uptown Girl",
+    "year": 1983
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Peter Maffay",
+    "title": "Nessaja",
+    "year": 1983
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Bonnie Tyler",
+    "title": "Total Eclipse Of The Heart",
+    "year": 1983
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Mike Krüger",
+    "title": "Bodo mit dem Bagger",
+    "year": 1983
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Dominik Hauser & Mike Post",
+    "title": "Das A-Team",
+    "year": 1983
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Cyndi Lauper",
+    "title": "Time After Time",
+    "year": 1983
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Spandau Ballet",
+    "title": "True",
+    "year": 1983
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Elton John",
+    "title": "I'm Still Standing",
+    "year": 1983
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Billy Idol",
+    "title": "Rebel Yell",
+    "year": 1983
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Bill Joel",
+    "title": "Uptown Girl",
+    "year": 1983
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Rod Stewart",
+    "title": "Baby Jane",
+    "year": 1983
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Pretenders",
+    "title": "2000 Miles",
+    "year": 1983
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Trio",
+    "title": "Turaluraluralu - Ich mach bubu was machst du",
+    "year": 1983
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Opus",
+    "title": "Live Is Life",
+    "year": 1984
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Harold Faltermeyer",
+    "title": "Axel F",
+    "year": 1984
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Kool & The Gang",
+    "title": "Fresh",
+    "year": 1984
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Bonnie Bianco & Pierre Cosso",
+    "title": "Stay",
+    "year": 1984
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Van Halen",
+    "title": "Jump",
+    "year": 1984
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Julio Iglesias & Willie Nelson",
+    "title": "To All The Girls I've Loved Before",
+    "year": 1984
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Herbert Grönemeyer",
+    "title": "Flugzeuge im Bauch",
+    "year": 1984
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Addison",
+    "title": "Mord ist ihr Hobby",
+    "year": 1984
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Robert Folk",
+    "title": "Police Academy - Dümmer als die Polizei erlaubt",
+    "year": 1984
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Harold Faltermeyer",
+    "title": "Beverly Hills Cop - Ich lös' den Fall auf jeden Fall (Axel F)",
+    "year": 1984
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Ray Parker Jr.",
+    "title": "Ghostbusters - Die Geisterjäger",
+    "year": 1984
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Sade",
+    "title": "Smooth Operator",
+    "year": 1984
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Tina Turner",
+    "title": "What's Love Got To Do With It",
+    "year": 1984
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Stevie Wonder",
+    "title": "I Just Called To Say I Love You",
+    "year": 1984
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Scorpions",
+    "title": "Still Loving You",
+    "year": 1984
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Bronski Beat",
+    "title": "Why?",
+    "year": 1984
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Alphaville",
+    "title": "Big In Japan",
+    "year": 1984
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Nena",
+    "title": "Irgendwie, irgendwo, irgendwann",
+    "year": 1984
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "George Michael",
+    "title": "Careless Whisper",
+    "year": 1984
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Glenn Frey",
+    "title": "The Heat Is One",
+    "year": 1984
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Queen",
+    "title": "Thank God It's Christmas",
+    "year": 1984
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Band Aid",
+    "title": "Do They Know It's Christmas?",
+    "year": 1984
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Wham!",
+    "title": "Last Christmas",
+    "year": 1984
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Tommy Steiner",
+    "title": "Gedanken zur Weihnacht",
+    "year": 1984
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Stevie Wonder",
+    "title": "Part-Time Lovers",
+    "year": 1985
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Cult",
+    "title": "She Sells Sanctuary",
+    "year": 1985
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Beagle Music",
+    "title": "Like Ice In The Sunshine",
+    "year": 1985
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Baltimora",
+    "title": "Tarzan Boy",
+    "year": 1985
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Klaus Lage Band",
+    "title": "Faust auf Faust (Schimanski)",
+    "year": 1985
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Purple Schulz",
+    "title": "Verliebte Jungs",
+    "year": 1985
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "G.G. Anderson",
+    "title": "Sommernacht in Rom",
+    "year": 1985
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Huey Lewis & The News",
+    "title": "The Power Of Love",
+    "year": 1985
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Erste Allgemeine Verunsicherung",
+    "title": "Ba-Ba-Banküberfall",
+    "year": 1985
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Tina Turner",
+    "title": "Mad Max - Jenseits der Donnerkuppel (We Don't Need Another Hero)",
+    "year": 1985
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Barry",
+    "title": "Jenseits von Afrika (I Had A Farm)",
+    "year": 1985
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Modern Talking",
+    "title": "Cheri Cheri Lady",
+    "year": 1985
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Eurythmics",
+    "title": "There Must Be An Angel",
+    "year": 1985
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Matia Bazar",
+    "title": "Ti Sento",
+    "year": 1985
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Shakin' Stevens",
+    "title": "Merry Christmas Everyone",
+    "year": 1985
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Reinhard Mey",
+    "title": "Es ist Weihnachtstag",
+    "year": 1985
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Bryan Adams",
+    "title": "Christmas Time",
+    "year": 1985
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Desireless",
+    "title": "Voyage Voyage",
+    "year": 1986
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Madonna",
+    "title": "La isla Bonita",
+    "year": 1986
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Level 42",
+    "title": "Lessons in Love",
+    "year": 1986
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bananarama",
+    "title": "Venus",
+    "year": 1986
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "M.C. Miker 'G' & Deejay Sven",
+    "title": "Holiday Rap",
+    "year": 1986
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Trio Rio",
+    "title": "New York - Rio - Tokyo",
+    "year": 1986
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Other Ones",
+    "title": "Holiday",
+    "year": 1986
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Europa",
+    "title": "The Final Countdown",
+    "year": 1986
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Bangles",
+    "title": "Walk Like An Egyptian",
+    "year": 1986
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Mecano",
+    "title": "Hijo De La Luna",
+    "year": 1986
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Housemartins",
+    "title": "Caravan Of Love",
+    "year": 1986
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Modern Talking",
+    "title": "Brother Louie",
+    "year": 1986
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Georges Delerue",
+    "title": "Platoon",
+    "year": 1986
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Queen",
+    "title": "Highlander - Es kann nur einen gben (Princes Of The Universe)",
+    "year": 1986
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Dominik Hauser",
+    "title": "L.A. Kaw - Staranwältem Tricks, Prozesse",
+    "year": 1986
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Berlin",
+    "title": "Top Gun - Sie fürchten weder Tod noch Teufel (Take My Breath Away)",
+    "year": 1986
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Münchener Freiheit",
+    "title": "Tausendmal du",
+    "year": 1986
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Heino",
+    "title": "Einsam unter weißen Zweigen",
+    "year": 1986
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Johnny Mathis",
+    "title": "We Need A Little Christmas",
+    "year": 1986
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Chris Rea",
+    "title": "Driving Home For Christmas",
+    "year": 1986
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "DNA & Suzanne Vega",
+    "title": "Tom's Diner",
+    "year": 1987
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Sabrina",
+    "title": "Boys",
+    "year": 1987
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "France Gall",
+    "title": "Ella, elle l'a",
+    "year": 1987
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Billy Idol",
+    "title": "Sweet Sixteen",
+    "year": 1987
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Gipsy Kings",
+    "title": "Bamboléo",
+    "year": 1987
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Los Lobos",
+    "title": "La Bamba",
+    "year": 1987
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Münchener Freiheit mit dem London Symphony Orchestra",
+    "title": "So lang man Träume noch leben kann",
+    "year": 1987
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Rainbirds",
+    "title": "Blueprint",
+    "year": 1987
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Starship",
+    "title": "Mannequin (Nothing's Gonna Stop Us Now)",
+    "year": 1987
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Madonna",
+    "title": "Who's That Girl",
+    "year": 1987
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Clowns & Helden",
+    "title": "Ich liebe dich",
+    "year": 1987
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Pet Shop Boys",
+    "title": "Always On My Mind",
+    "year": 1987
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Eros Ramazotti",
+    "title": "Ma Che Bello Questo Amore",
+    "year": 1987
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Rolf Zucckowski",
+    "title": "In der Weihnachtsbäckerei",
+    "year": 1987
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "The Pogues (feat. Kirsty MacColl)",
+    "title": "Fairytale Of New York",
+    "year": 1987
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Run-D.M.C.",
+    "title": "Christmas in Hollis",
+    "year": 1987
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Mike & The Mechanics",
+    "title": "The Living Years",
+    "year": 1988
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "C.C. Catch",
+    "title": "Backseat Of Your Cadillac",
+    "year": 1988
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ofra Haza",
+    "title": "Im Nin' Alu",
+    "year": 1988
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Tracy Chapman",
+    "title": "Talkin' Bout A Revolution",
+    "year": 1988
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Fairground Attraction",
+    "title": "Perfect",
+    "year": 1988
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Fancy",
+    "title": "Flames Of Love",
+    "year": 1988
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Erasure",
+    "title": "Ship Of Fools",
+    "year": 1988
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Soulsister",
+    "title": "The Way To Your Heart",
+    "year": 1988
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "The Beach Boys",
+    "title": "Cocktail (Kokomo)",
+    "year": 1988
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Carly Simon",
+    "title": "Die Waffen der Frauen (Let The River Run)",
+    "year": 1988
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "James Horner",
+    "title": "Willow",
+    "year": 1988
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Four Tops",
+    "title": "Loco In Acapulco",
+    "year": 1988
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Cliff Richard",
+    "title": "Mistletoe And Wine",
+    "year": 1988
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "UB40",
+    "title": "Kingston Town",
+    "year": 1989
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Jive Bunny & The Mastermixers",
+    "title": "Swing the Mood",
+    "year": 1989
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "David Hasselhoff",
+    "title": "Looking For Freedom",
+    "year": 1989
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Alannah Myles",
+    "title": "Black Velvet",
+    "year": 1989
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Gianna Nannini & Edoardo Bennato",
+    "title": "UN'estate Italiana",
+    "year": 1989
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Madonna",
+    "title": "Like A Prayer",
+    "year": 1989
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Sandra",
+    "title": "We'll Be Together ('89 Remix)",
+    "year": 1989
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Phil Collins",
+    "title": "Another Day In Paradise",
+    "year": 1989
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Jonathan Wolff",
+    "title": "Seinfeld",
+    "year": 1989
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Danny Elfman",
+    "title": "Batman",
+    "year": 1989
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Jimi Jamison",
+    "title": "Baywatch - Die Rettungsschwimmer von Malibu (I'm Always Here)",
+    "year": 1989
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Lisa Stansfield",
+    "title": "All Around The World",
+    "year": 1989
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Black Box",
+    "title": "Ride On Time",
+    "year": 1989
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Helloween",
+    "title": "Dr. Stein",
+    "year": 1989
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Chris Isaak",
+    "title": "Wicked Game",
+    "year": 1989
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Lil' House",
+    "title": "French Kiss",
+    "year": 1989
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Nana Mouskouri",
+    "title": "Ich steh an deiner Krippe hier",
+    "year": 1989
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "New Kids On The Block",
+    "title": "The One's For The Children",
+    "year": 1989
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Matthias Reim",
+    "title": "Verdammt, ich lieb' dich",
+    "year": 1990
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Cher",
+    "title": "The Shoop Shoop Song",
+    "year": 1990
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bernhard Brink",
+    "title": "Blondes Wunder",
+    "year": 1990
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Bette Midler",
+    "title": "From A Distance",
+    "year": 1990
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Westernhagen",
+    "title": "Freiheit (Live)",
+    "year": 1990
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Roxette",
+    "title": "It Must Have Been Love",
+    "year": 1990
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Nick Kamen",
+    "title": "I Promised Yourself",
+    "year": 1990
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Stevie B.",
+    "title": "Because I Love You (The Postman Song)",
+    "year": 1990
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Angelo Badalamenti",
+    "title": "Twin Peaks",
+    "year": 1990
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Davis",
+    "title": "Beverly Hills, 90210",
+    "year": 1990
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Will Smith & DJ Jazzy Jeff",
+    "title": "Der Prinz von Bel-Air",
+    "year": 1990
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Williams",
+    "title": "Kevin - Allein zu Haus (Somewhere In My Memory)",
+    "year": 1990
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Roxette",
+    "title": "Pretty Woman (It Must Have Been Love)",
+    "year": 1990
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Whitney Houston",
+    "title": "Higher Love",
+    "year": 1990
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Enimga",
+    "title": "Sadeness - Pt. 1",
+    "year": 1990
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Depeche Mode",
+    "title": "Personal Jesus",
+    "year": 1990
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Erste Allgemeine Verunsicherung",
+    "title": "Ding Dong",
+    "year": 1990
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Zucchero & Paul Young",
+    "title": "Senza una donna",
+    "year": 1991
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Gipsy Kings",
+    "title": "Baila Me",
+    "year": 1991
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Dj Jazzy Jeff & The Fresh Prince",
+    "title": "Summertime",
+    "year": 1991
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Amy Grant",
+    "title": "Baby Baby",
+    "year": 1991
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Army of Lovers",
+    "title": "Crucified",
+    "year": 1991
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Udo Lindenberg",
+    "title": "Ein Herz kann man nicht repariern",
+    "year": 1991
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Shanice",
+    "title": "I Love Your Smile",
+    "year": 1991
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Angela Lansbury",
+    "title": "Die Schöne und das Biest",
+    "year": 1991
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Bryan Adams",
+    "title": "Robin Hood - König der Diebe ((Everything I Do) I Do It For You)",
+    "year": 1991
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Brad Fiedel",
+    "title": "Terminator 2",
+    "year": 1991
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "EMF",
+    "title": "Unbelievable",
+    "year": 1991
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Metallica",
+    "title": "Nothing Else Matters",
+    "year": 1991
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Michael English",
+    "title": "Mary, Did You Know?",
+    "year": 1991
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Diether Krebs",
+    "title": "Ich bin der Martin, ne",
+    "year": 1992
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Dr. Alban",
+    "title": "It's My Life",
+    "year": 1992
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Double You",
+    "title": "Please Don't Go",
+    "year": 1992
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Arrested Development",
+    "title": "People Everyday",
+    "year": 1992
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Crowded House",
+    "title": "Weather With You",
+    "year": 1992
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Die Fantastischen Vier",
+    "title": "Die Da!?!",
+    "year": 1992
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Valerie's Garten",
+    "title": "Nächstes Mal am Ende der Welt",
+    "year": 1992
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Nicole",
+    "title": "Dann küß mich doch",
+    "year": 1992
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Billy Ray Cyrus",
+    "title": "Achy Breaky Heart",
+    "year": 1992
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Whitney Houston",
+    "title": "I Will Always Love You",
+    "year": 1992
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Annie Lennox",
+    "title": "Bram Stoker's Dracula (Love Song For A Vampire)",
+    "year": 1992
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Whitney Houston",
+    "title": "Bodyguard (I Will Always Love You)",
+    "year": 1992
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Lea Salonga & Brad Kane",
+    "title": "Aladdin (A Whole New World)",
+    "year": 1992
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Vanessa Paradis",
+    "title": "Be My Baby",
+    "year": 1992
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Rage Against The Machine",
+    "title": "Killing In The Name",
+    "year": 1992
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Sandra",
+    "title": "Don't Be Agressive",
+    "year": 1992
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Bon Jovi",
+    "title": "I Wish Everyday Could Be Like Christmas",
+    "year": 1992
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Amy Grant",
+    "title": "Grown-Up Christmas List",
+    "year": 1992
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Darlene Love",
+    "title": "All Alone Christmas",
+    "year": 1992
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "H-Blockx",
+    "title": "Risin' High (Def Core Grind Version)",
+    "year": 1993
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Eros Ramazotti & Tina Turner",
+    "title": "Cose della Vita",
+    "year": 1993
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "DJ BoBo",
+    "title": "Everybody",
+    "year": 1993
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Soul Asylum",
+    "title": "Runaway Train",
+    "year": 1993
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "M People",
+    "title": "Moving On Up",
+    "year": 1993
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Haddaway",
+    "title": "Life",
+    "year": 1993
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Pur",
+    "title": "Indianer",
+    "year": 1993
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Williams",
+    "title": "Jurassic Park",
+    "year": 1993
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Michael Nyman",
+    "title": "Das Piano (The Heart Asks Pleasure First)",
+    "year": 1993
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Beal",
+    "title": "Akte X- Die unheimlichen Fälle des FBI",
+    "year": 1993
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Pe Werner",
+    "title": "Deine Stimme",
+    "year": 1993
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "4 Non Blondes",
+    "title": "What's Up?",
+    "year": 1993
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Duran Duran",
+    "title": "Ordinary World",
+    "year": 1993
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Cranberries",
+    "title": "Dreams",
+    "year": 1993
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Culture Beat",
+    "title": "Got To Get It",
+    "year": 1993
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Corony",
+    "title": "The Rhythm Of The Night",
+    "year": 1993
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Nicole",
+    "title": "Weihnachten Zuhause",
+    "year": 1993
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Gloria Estefan",
+    "title": "Christmas Through Your Eyes",
+    "year": 1993
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Alan Jackson",
+    "title": "Honky Tonk Christmas",
+    "year": 1993
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "All-4-One",
+    "title": "I Swear",
+    "year": 1994
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Sheryl Crow",
+    "title": "All I Wanna Do",
+    "year": 1994
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Prince Ital Joe & Marky Mark",
+    "title": "United",
+    "year": 1994
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Joe Cocker",
+    "title": "Summer in the City",
+    "year": 1994
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Kelly Family",
+    "title": "An Angel",
+    "year": 1994
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Matthias Reim",
+    "title": "Im Himmel geht es weiter",
+    "year": 1994
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Juliane Werding, Maggie Reilly, Victor Lazlo",
+    "title": "Engel wie du",
+    "year": 1994
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Youssou N'Dour & Neneh Cherry",
+    "title": "7 Seconds",
+    "year": 1994
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Nice Little Penguins",
+    "title": "Flying",
+    "year": 1994
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Yossour N'Dour (feat. Neneh Cherry)",
+    "title": "7 Seconds",
+    "year": 1994
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Beck",
+    "title": "Loser",
+    "year": 1994
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Blur",
+    "title": "Parklife",
+    "year": 1994
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Aswad",
+    "title": "Shine",
+    "year": 1994
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Captain Hollywood Project",
+    "title": "Flying High",
+    "year": 1994
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Mariah Carey",
+    "title": "All I Want For Christmas Is You",
+    "year": 1994
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "East 17",
+    "title": "Stay Another Day",
+    "year": 1994
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Scatman John",
+    "title": "Scatman's World",
+    "year": 1995
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Peter André",
+    "title": "Mysterious Girl",
+    "year": 1995
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Outhere Brothers",
+    "title": "Boom Boom Boom",
+    "year": 1995
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Edward Reekers",
+    "title": "So schmeckt der Sommer",
+    "year": 1995
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Sin With Sebastian",
+    "title": "Shut Up (And Sleep With Me)",
+    "year": 1995
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "BND",
+    "title": "Here I Go Again",
+    "year": 1995
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Wolfgang Petry",
+    "title": "Bronze, Silber und Gold",
+    "year": 1995
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Scatman John",
+    "title": "Scatman (Ski-Ba-Bop-Ba-Dop-Bop)",
+    "year": 1995
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Take That",
+    "title": "Back For Good",
+    "year": 1995
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Shaggy",
+    "title": "Boombastic",
+    "year": 1995
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "James Horner",
+    "title": "Braveheart (For The Love Of A Princess)",
+    "year": 1995
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Inner Circle",
+    "title": "Bad Boys - Harte Jungs",
+    "year": 1995
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Tina Turner",
+    "title": "James Bond 007: GoldenEye",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Supergrass",
+    "title": "Alright",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Shaggy",
+    "title": "Boomtastic",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Mike & The Mechanics",
+    "title": "Over My Shoulder",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Ace Of Base",
+    "title": "Beautiful Life",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Pulp",
+    "title": "Common People",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Annie Lennox",
+    "title": "No More \"I Love You's\"",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Oasis",
+    "title": "Don't Look Back In Anger",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Bryan Adams",
+    "title": "Have You Ever Really Loved A Woman?",
+    "year": 1995
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Alanis Morisette",
+    "title": "You Oughta Know",
+    "year": 1995
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Tokoy Ghetto Pussy",
+    "title": "I Kiss Your Lips",
+    "year": 1995
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "The Kelly Family",
+    "title": "One More Happy Christmas",
+    "year": 1995
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Queen",
+    "title": "A Winter's Tale",
+    "year": 1995
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "U96",
+    "title": "Heaven",
+    "year": 1996
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bürger Lars Dietrich",
+    "title": "Sexy Eis",
+    "year": 1996
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "No Mercy",
+    "title": "Where Do You Go",
+    "year": 1996
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Loona",
+    "title": "Bailando",
+    "year": 1996
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "DJ BoBo",
+    "title": "It's My Life",
+    "year": 1996
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "X-Perience",
+    "title": "A Neverending Dream",
+    "year": 1996
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Eric Clapton",
+    "title": "Phenomenon - Das Unmögliche wird wahr (Change The World)",
+    "year": 1996
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "The Wonders",
+    "title": "That Thing You Do!",
+    "year": 1996
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Tic Tac Toe",
+    "title": "Verpiss Dich",
+    "year": 1996
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Fool's Garden",
+    "title": "Lemon Tree",
+    "year": 1996
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Toni Braxton",
+    "title": "You're Makin' Me Hight",
+    "year": 1996
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Wencke Myhre & Gunter Gabriel",
+    "title": "Ich glou'an den Weihnachtsmann",
+    "year": 1996
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Cyndi Lauper",
+    "title": "Early Christmas Morning",
+    "year": 1996
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Los Del Rio",
+    "title": "Macarena Christmas",
+    "year": 1996
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bellini",
+    "title": "Samba de Janeiro",
+    "year": 1997
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Puff Daddy & Faith Evans (feat. 112)",
+    "title": "I'll Be Missing You",
+    "year": 1997
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Nana",
+    "title": "Lonely",
+    "year": 1997
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Members Of Mayday",
+    "title": "Sonic Empire",
+    "year": 1997
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Lighthouse Family",
+    "title": "High",
+    "year": 1997
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Spice Girls",
+    "title": "Spice Up Your Life",
+    "year": 1997
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Mr. President",
+    "title": "JoJo Action",
+    "year": 1997
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Olaf Henning",
+    "title": "Ich bin nicht mehr dein Clown (...Die Manege ist leer)",
+    "year": 1997
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Bell Book & Candle",
+    "title": "Rescue Me",
+    "year": 1997
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Nerf Herder",
+    "title": "Buffy - Im Bann der Dämonen",
+    "year": 1997
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Nicola Piovani",
+    "title": "Das Leben ist schön",
+    "year": 1997
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Èric Serra & Inva Mula",
+    "title": "Das Fünfte Element (The Diva Dance)",
+    "year": 1997
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Smash Mouth",
+    "title": "Walkin' On The Sun",
+    "year": 1997
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Janet Jackson",
+    "title": "Together Again",
+    "year": 1997
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Pur",
+    "title": "Wenn du da bist",
+    "year": 1997
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Sabrina Setlur",
+    "title": "Du liebst mich nicht",
+    "year": 1997
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "RuPaul (feat. Latasha Spencer)",
+    "title": "Christmas Nite",
+    "year": 1997
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Roy Black",
+    "title": "Wünsche und Gedanken",
+    "year": 1997
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Will Smith",
+    "title": "Gettin' Jiggy With It",
+    "year": 1998
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Dario G",
+    "title": "Carnaval de Paris",
+    "year": 1998
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Pras Michel (feat. ODB & introducing Mýa)",
+    "title": "Ghetto Supastar (That Is What You Are)",
+    "year": 1998
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Elvis Crespo",
+    "title": "Suavemente",
+    "year": 1998
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ricky Martin",
+    "title": "La copa de la vida",
+    "year": 1998
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Vengaboys",
+    "title": "Boom, Boom, Boom, Boom!!",
+    "year": 1998
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Cher",
+    "title": "Strong Enough",
+    "year": 1998
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Jessica (Folcker)",
+    "title": "How Will I Know (Who You Are)",
+    "year": 1998
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Douglas J Cuomo",
+    "title": "Sex And The City",
+    "year": 1998
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Aerosmith",
+    "title": "Armageddon - Das jüngste Gericht (I Don't Want To Miss A Thing)",
+    "year": 1998
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Jamiroquai",
+    "title": "Godzilla (Deeper Underground)",
+    "year": 1998
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Blind Guardian",
+    "title": "Mirror Mirror",
+    "year": 1998
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Oli P.",
+    "title": "Flugzeuge im Bauch",
+    "year": 1998
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Manic Street Preachers",
+    "title": "If You Tolerate This Your Children Will Be Next",
+    "year": 1998
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Fatboy Slim",
+    "title": "Right Here Right Now",
+    "year": 1998
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Dido",
+    "title": "Thank You",
+    "year": 1998
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Cardigans",
+    "title": "My Favourite Game",
+    "year": 1998
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Céline Dion",
+    "title": "I Met An Angel (Oh Christmas Day)",
+    "year": 1998
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "*NSYNC",
+    "title": "Merry Christmas, Happy Holidays",
+    "year": 1998
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Céline Dion & Andrea Bocelli",
+    "title": "The Prayer",
+    "year": 1998
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Die Roten Rosen",
+    "title": "Weihnachtsmann vom Dach",
+    "year": 1998
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Rage Against The Machine",
+    "title": "Guerilla Radio",
+    "year": 1999
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Vengaboys",
+    "title": "We're Going to Ibiza",
+    "year": 1999
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ö La Palöma Boys",
+    "title": "Ö La Palöma",
+    "year": 1999
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Eiffel 65",
+    "title": "Blue (Da Ba Dee)",
+    "year": 1999
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Santana (feat. Rob Thomas)",
+    "title": "Smooth",
+    "year": 1999
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Texas",
+    "title": "Summer Son",
+    "year": 1999
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Corrs",
+    "title": "Radio",
+    "year": 1999
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "S Club 7",
+    "title": "Bring It All Back",
+    "year": 1999
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Tom Jones & Mousse T.",
+    "title": "Sex Bomb",
+    "year": 1999
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Thomas Newman",
+    "title": "American Beauty",
+    "year": 1999
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Alabama 3 (The Chosen One Mix)",
+    "title": "Die Sopranos (Woke Up This Morning)",
+    "year": 1999
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Ronan Keating",
+    "title": "Notting Hill (When You Say Nothing At All)",
+    "year": 1999
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Robert D.",
+    "title": "Matrix (Clubbed To Death)",
+    "year": 1999
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Santana (feat. Maná)",
+    "title": "Corazón Espinado",
+    "year": 1999
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Foo Fighters",
+    "title": "Learn To Fly",
+    "year": 1999
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Die Fantastischen Vier",
+    "title": "Mit freundlichen Grüßen",
+    "year": 1999
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Destiny's Child",
+    "title": "Say My Name",
+    "year": 1999
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "MoloKo (Boris Musical Mix)",
+    "title": "Sing It Back",
+    "year": 1999
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Xavier Naidoo",
+    "title": "Sie sieht mich nicht",
+    "year": 1999
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Modjo",
+    "title": "Lady (Hear Me Tonight)",
+    "year": 2000
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Das Bo",
+    "title": "Türlich Türlich (Sicher, Dicker)",
+    "year": 2000
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Sonique",
+    "title": "It Feels So Good",
+    "year": 2000
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "ATC",
+    "title": "Around The World (La La La La La)",
+    "year": 2000
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Jennifer Lopez",
+    "title": "Let's Get Loud",
+    "year": 2000
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "DJ Ötzi",
+    "title": "Hey Baby",
+    "year": 2000
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ibo",
+    "title": "Ratzfatz nach Mallorca",
+    "year": 2000
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "U2",
+    "title": "Beautiful Day",
+    "year": 2000
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "*N Sync",
+    "title": "Bye Bye Bye",
+    "year": 2000
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Orange Blue",
+    "title": "She's Got That Light",
+    "year": 2000
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Clint Mansell",
+    "title": "Requiem For A Dream (Lux Aeterna)",
+    "year": 2000
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Hans Zimmer",
+    "title": "Gladiator (Now We Are Free)",
+    "year": 2000
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "LeAnn Rimes",
+    "title": "Coyote Ugly (Can't Fight The Moonlight)",
+    "year": 2000
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Ricky Martin",
+    "title": "She Bangs",
+    "year": 2000
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Dandy Warhols",
+    "title": "Bohemian Like You",
+    "year": 2000
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "A Touch Of Class",
+    "title": "Around The World (La La La La La)",
+    "year": 2000
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "*NSYNC",
+    "title": "It's Gonna Be Me",
+    "year": 2000
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Enya",
+    "title": "Only Time",
+    "year": 2000
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Morcheeba",
+    "title": "Rome Wasn't Built In A Day",
+    "year": 2000
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Corrs",
+    "title": "Breathless",
+    "year": 2000
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Alcazar",
+    "title": "Crying At The Discoteque",
+    "year": 2000
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Britney Spears",
+    "title": "My Only Wish (This Year)",
+    "year": 2000
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Faith Hill",
+    "title": "Where Are You Christmas?",
+    "year": 2000
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Tiziano Ferro",
+    "title": "Perdona",
+    "year": 2001
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Hermes House Band",
+    "title": "Country Roads",
+    "year": 2001
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Dante Thomas",
+    "title": "Miss California",
+    "year": 2001
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Christian Aguilera, Lil' Kim, Mya & P!nk",
+    "title": "Lady Marmalade",
+    "year": 2001
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Sarah Connor (feat. TQ)",
+    "title": "Let's Get Back To Bed - Boy!",
+    "year": 2001
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Schiller Mit Heppner",
+    "title": "Dream Of You",
+    "year": 2001
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Michelle",
+    "title": "Wer Liebe lebt",
+    "year": 2001
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Die Prinzen",
+    "title": "Deutschland",
+    "year": 2001
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Kylie Minogue",
+    "title": "Can't Get You Out Of My Head",
+    "year": 2001
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Glashaus",
+    "title": "Wenn das Liebe ist",
+    "year": 2001
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Sylver",
+    "title": "Forever In Love",
+    "year": 2001
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "GABRIELLE",
+    "title": "Bridget Jones - Schokolade zum Frühstück (Out Of Reach)",
+    "year": 2001
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "José Feliciano, Ewan McGregor & Jacek Koman",
+    "title": "Moulin Rouge (El Tango De Roxanne)",
+    "year": 2001
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "John Williams",
+    "title": "Harry Potter und der Stein der Weisen (Prologue)",
+    "year": 2001
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Randy Newman",
+    "title": "Die Monster AG",
+    "year": 2001
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Howard Shore",
+    "title": "Der Herr der Ringe (The Shire)",
+    "year": 2001
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Weezer",
+    "title": "Island In The Sun",
+    "year": 2001
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "No Angels",
+    "title": "Daylight In Your Eyes",
+    "year": 2001
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Destiny's Child",
+    "title": "8 Days Of Christmas",
+    "year": 2001
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Tom Braxton (feat. Shaggy)",
+    "title": "Christmas in Jamaica",
+    "year": 2001
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Melanie Thornton",
+    "title": "Wonderful Dream (Holidays Are Coming)",
+    "year": 2001
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Howard Carpendale",
+    "title": "Wo bitte gibt's denn hier noch 'nen Weihnachtsbaum",
+    "year": 2001
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Nelly (feat. Kelly Rowland)",
+    "title": "Dilemma",
+    "year": 2002
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Aventura",
+    "title": "Obsesión",
+    "year": 2002
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Nelly",
+    "title": "Hot In Here",
+    "year": 2002
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "B3",
+    "title": "I.O.I.O.",
+    "year": 2002
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Massive Töne",
+    "title": "Cruisen",
+    "year": 2002
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Christina Aguilera",
+    "title": "Beautiful",
+    "year": 2002
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Sheryl Crow",
+    "title": "Soak Up The Sun",
+    "year": 2002
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Avril Lavigne",
+    "title": "Complicated",
+    "year": 2002
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Kate Ryan",
+    "title": "Désenchantée",
+    "year": 2002
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Wonderwall",
+    "title": "Just More",
+    "year": 2002
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Eminem",
+    "title": "8 Mile (Lose Yourself)",
+    "year": 2002
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Katerine Zeta-Jones",
+    "title": "Chicago (Cell Block Tango)",
+    "year": 2002
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Moby & Richard Hall",
+    "title": "Die Bourne Identität (Extreme Ways)",
+    "year": 2002
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Chad Kroeger (feat. Josey Scott)",
+    "title": "Spider-Man (Hero)",
+    "year": 2002
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Bryan Adams",
+    "title": "Spirit - Der wilde Mustang (Here I Am)",
+    "year": 2002
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Craig David (feat. Sting)",
+    "title": "Rise & Fall",
+    "year": 2002
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Justin Timberlake",
+    "title": "Cry Me A River",
+    "year": 2002
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Herbert Grönemeyer",
+    "title": "Mensch",
+    "year": 2002
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Böhse Onkelz",
+    "title": "Keine Amnestie für MTV",
+    "year": 2002
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Mark 'Oh",
+    "title": "Let This Party Never End",
+    "year": 2002
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Eminem",
+    "title": "Without Me",
+    "year": 2002
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Grils Aloud",
+    "title": "Sound Of The Underground",
+    "year": 2002
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Hilary Duff",
+    "title": "Santa Claus Lane",
+    "year": 2002
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Britney Spears",
+    "title": "Everytime",
+    "year": 2003
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bata Ilic",
+    "title": "Bella Isola",
+    "year": 2003
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Lumidee",
+    "title": "Never Leave You",
+    "year": 2003
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Underdog Project",
+    "title": "Summer Jam 2003",
+    "year": 2003
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Alexander Kalws",
+    "title": "Take Me Tonight",
+    "year": 2003
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Dido",
+    "title": "White Flag",
+    "year": 2003
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Evanescence",
+    "title": "Bring Me To Life",
+    "year": 2003
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Alexander",
+    "title": "Free Like The Wind",
+    "year": 2003
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Sarah Connor (feat. Naturally 7)",
+    "title": "Music Is The Key",
+    "year": 2003
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Chuck Lorre & Lee Aronsohn",
+    "title": "Two And A Half Men (Manly Men)",
+    "year": 2003
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Billy Mack",
+    "title": "Tatsächlich… Liebe (Christmas Is All Around)",
+    "year": 2003
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Klaus Badelt",
+    "title": "Fluch der Karibik (He's A Pirate)",
+    "year": 2003
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Wolfsheim",
+    "title": "Kein Zurück",
+    "year": 2003
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Strokes",
+    "title": "Reptilia",
+    "year": 2003
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Scooter",
+    "title": "Maria (I Like It Loud)",
+    "year": 2003
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Yvonne Catterfeld",
+    "title": "Für dich",
+    "year": 2003
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Sido",
+    "title": "Weihnachtssong",
+    "year": 2003
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Udo Jürgens",
+    "title": "Ach Papi, geh' doch heuer nicht auf die Weihnachtsfeier",
+    "year": 2003
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Kenny Chesney",
+    "title": "All I Want For Christmas Is A Real Good Tan",
+    "year": 2003
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Patrick Lindner",
+    "title": "Weihnachten bin ich daheim",
+    "year": 2003
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "The Darkness",
+    "title": "Christmas Time (Don't Let The Bells End)",
+    "year": 2003
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Whitney Houston",
+    "title": "One Wish (For Christmas)",
+    "year": 2003
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Soul Control",
+    "title": "Chocolate (Choco Choco)",
+    "year": 2004
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "K`Maro",
+    "title": "Femme Like You",
+    "year": 2004
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Michael Gray",
+    "title": "The Weekend",
+    "year": 2004
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Michael Wendler",
+    "title": "Sie liebt den DJ",
+    "year": 2004
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Infernal",
+    "title": "From Paris To Berlin",
+    "year": 2004
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Silbermond",
+    "title": "Symphonie",
+    "year": 2004
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Andrew Lloyd Webber, Gerard Butler & Emmy Rossum",
+    "title": "Das Phantom der Oper",
+    "year": 2004
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Max Mutzke",
+    "title": "Can't Wait Until Tonight",
+    "year": 2004
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Oomph!",
+    "title": "Augen auf",
+    "year": 2004
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Daddy Yankee",
+    "title": "Lo Que Pasó, Pasó",
+    "year": 2004
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Söhne Mannheims",
+    "title": "Und wenn ein Lied",
+    "year": 2004
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Wolfmother",
+    "title": "Joker & The Thief",
+    "year": 2005
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "US5",
+    "title": "Maria",
+    "year": 2005
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Pussycat Dolls (feat. Busta Rhymes)",
+    "title": "Don't Cha",
+    "year": 2005
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Shakiro & Alejandro Sanz",
+    "title": "La Tortura",
+    "year": 2005
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bob Sinclair",
+    "title": "Love Generation",
+    "year": 2005
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Banaroo",
+    "title": "Dubi Dam Dam",
+    "year": 2005
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Melanie C",
+    "title": "First Day Of My Life",
+    "year": 2005
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Joana Zimmer",
+    "title": "I Believe (Give A Little Bit…)",
+    "year": 2005
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Jay Ferguson",
+    "title": "The Office",
+    "year": 2005
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Hey Beautiful",
+    "title": "How I Met Your Mother",
+    "year": 2005
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Fettes Brot",
+    "title": "An Tagen wie diesen",
+    "year": 2005
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Backstreet Boys",
+    "title": "Incomplete",
+    "year": 2005
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Fray",
+    "title": "How To Save A Life",
+    "year": 2005
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Herbert Grönemeyer (feat. Amadou & Mariam)",
+    "title": "Zeit, dass sich was dreht",
+    "year": 2006
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Nelly Furtado",
+    "title": "Maneater",
+    "year": 2006
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Sportfreunde Stiller",
+    "title": "54, '74, '90, 2010",
+    "year": 2006
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Gnarls Barkley",
+    "title": "Crazy",
+    "year": 2006
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Texas Lightning",
+    "title": "No No Never",
+    "year": 2006
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Scissor Sisters",
+    "title": "I Don't Feel Like Dancin'",
+    "year": 2006
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Nelly Furtado",
+    "title": "Say It Right",
+    "year": 2006
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "DJ Ötzi & Nik P.",
+    "title": "Ein Stern (… Der deinen Namen trägt)",
+    "year": 2006
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "High School Musical Cast",
+    "title": "High School Musical (We're All In This Together)",
+    "year": 2006
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Rolfe Kent",
+    "title": "Dexter",
+    "year": 2006
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Beyoncé",
+    "title": "Dreamgirls (Listen)",
+    "year": 2006
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Christina Aguilera",
+    "title": "Ain't No Other Man",
+    "year": 2006
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Amy Winehouse",
+    "title": "Back To Black",
+    "year": 2006
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Snow Patrol",
+    "title": "Chasing Cars",
+    "year": 2006
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Fratellis",
+    "title": "Chelsea Dagger",
+    "year": 2006
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Bianca Ryan",
+    "title": "Why Couldn't It Be Christmas Every Day?",
+    "year": 2006
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Heidi Klum",
+    "title": "Wonderland",
+    "year": 2006
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Monrose",
+    "title": "Hot Summer",
+    "year": 2007
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Rihanna (feat. Jay-Z)",
+    "title": "Umbrella",
+    "year": 2007
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Culcha Candela",
+    "title": "Hamma!",
+    "year": 2007
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Kid Rock",
+    "title": "All Summer Long",
+    "year": 2007
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Mark Medlock & Dieter Bohlen",
+    "title": "You Can Get It",
+    "year": 2007
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Marquess",
+    "title": "Vayamos compañeros",
+    "year": 2007
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Rihanna",
+    "title": "Don't Stop The Music",
+    "year": 2007
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Natasha Bedingfield",
+    "title": "Soulmate",
+    "year": 2007
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Kaiser Chiefs",
+    "title": "Ruby",
+    "year": 2007
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Glen Hansard & Marketa Irglova",
+    "title": "Once (Falling Snow)",
+    "year": 2007
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Linkin Park",
+    "title": "Transformers (What I've Done)",
+    "year": 2007
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Barenaked Ladies",
+    "title": "The Big Bang Theory",
+    "year": 2007
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Madcon",
+    "title": "Beggin",
+    "year": 2007
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Ich + Ich",
+    "title": "So soll es bleiben",
+    "year": 2007
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "M.I.A.",
+    "title": "Paper Planes",
+    "year": 2007
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Leona Lewis",
+    "title": "Better In Time",
+    "year": 2007
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "James Blunt",
+    "title": "1973",
+    "year": 2007
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Alex Guadino (feat. Crystal Waters)",
+    "title": "Destination Calabria",
+    "year": 2007
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Colbie Caillat",
+    "title": "Mistletoe",
+    "year": 2007
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Gabrielle Cilmi",
+    "title": "Sweet About Me",
+    "year": 2008
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Emiliana Torrini",
+    "title": "Jungle Drum",
+    "year": 2008
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Thomas Godoj",
+    "title": "Love Is You",
+    "year": 2008
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ne-Yo",
+    "title": "Closer",
+    "year": 2008
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Peter Fox",
+    "title": "Alles Neu",
+    "year": 2008
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Revolverheld",
+    "title": "Helden 2008",
+    "year": 2008
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Killers",
+    "title": "Human",
+    "year": 2008
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Rosenstolz",
+    "title": "Gib mir Sonne",
+    "year": 2008
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Mark Medlock",
+    "title": "Summer Love",
+    "year": 2008
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Andreas Gabalier",
+    "title": "Amoi Seg' Ma Uns Wieder",
+    "year": 2008
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "A. R. Rahman",
+    "title": "Slumdog Millionär (Jai Ho)",
+    "year": 2008
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Christina Perri",
+    "title": "The Twilight Sage: Breaking Dawn - Biss Zum Ende der Nacht (A Thousand Years)",
+    "year": 2008
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Pussycat Dolls",
+    "title": "When I Grow Up",
+    "year": 2008
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Lily Allen",
+    "title": "Fuck You",
+    "year": 2008
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Soulja Boy (feat. Sammie)",
+    "title": "Kiss Me Thru The Phone",
+    "year": 2008
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Beyoncé",
+    "title": "Halo",
+    "year": 2008
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Barry Manilow",
+    "title": "Christmas Is Just Around Corner",
+    "year": 2008
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Stefanie Hertel",
+    "title": "Ich habe den Weihnachtsmann gesehen",
+    "year": 2008
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "K'Naan",
+    "title": "Wavin' Flag",
+    "year": 2009
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "The Black Eyed Peas",
+    "title": "I Gotta Feeling",
+    "year": 2009
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Cascada",
+    "title": "Evacuate The Dancefloor",
+    "year": 2009
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Cassandra Stehen (feat. Adel Tawil)",
+    "title": "Stadt",
+    "year": 2009
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Lily Allen",
+    "title": "Not Fair",
+    "year": 2009
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Ke$ha",
+    "title": "Tik Tok",
+    "year": 2009
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Kelly Clarkson",
+    "title": "My Life Would Suck Without You",
+    "year": 2009
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Ella Endlich",
+    "title": "Küss mich, halt mich, lieb mich",
+    "year": 2009
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Taio Cruz (feat. Ludacris)",
+    "title": "Break Your Heart",
+    "year": 2009
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Gabriel Mann",
+    "title": "Modern Family",
+    "year": 2009
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Leona Lewis",
+    "title": "Avatar - Aufbruch nach Pandora (I See You)",
+    "year": 2009
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Lady Gaga (feat. Beyoncé)",
+    "title": "Telephone",
+    "year": 2009
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Train",
+    "title": "Shake Up Christmas",
+    "year": 2009
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Unheilig",
+    "title": "Still Still Still",
+    "year": 2009
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Avenged Sevenfold",
+    "title": "Nightmare",
+    "year": 2010
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Lucenzo (feat. Don Omar)",
+    "title": "Danza Kuduro",
+    "year": 2010
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Madcon",
+    "title": "Glow",
+    "year": 2010
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Lena Meyer-Landrut",
+    "title": "Satellite",
+    "year": 2010
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Katy Perry (feat. Snoop Dog)",
+    "title": "California Girls",
+    "year": 2010
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Bruno Mars",
+    "title": "Just The Way You Are",
+    "year": 2010
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Justin Bieber",
+    "title": "Baby",
+    "year": 2010
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Hurts",
+    "title": "Stay",
+    "year": 2010
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Inna",
+    "title": "Amazing",
+    "year": 2010
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Martin Solveig (feat. Dragonette)",
+    "title": "Hello",
+    "year": 2010
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Bear McCreary",
+    "title": "The Walking Dead",
+    "year": 2010
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Drums",
+    "title": "Lets Go Surfing",
+    "year": 2010
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Taio Cruz (feat. Kylie Minogue)",
+    "title": "Higher",
+    "year": 2010
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Coldplay",
+    "title": "Christmas Lights",
+    "year": 2010
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Gusttavo Lima",
+    "title": "Balada",
+    "year": 2011
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "DJ Antoine vs. Timati (feat. Kalenna)",
+    "title": "Welcome To St. Tropez",
+    "year": 2011
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Michel Teló",
+    "title": "Ai Se Eu Te Pego! (Nossa Nossa)",
+    "year": 2011
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Taio Cruz",
+    "title": "World In Our Hand",
+    "year": 2011
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Jessie J",
+    "title": "Domino",
+    "year": 2011
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Lana del Rey",
+    "title": "Video Games",
+    "year": 2011
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Marlon Roudette",
+    "title": "New Age",
+    "year": 2011
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Andreas Bourani",
+    "title": "Nur in meinem Kopf",
+    "year": 2011
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Ramin Djawadi",
+    "title": "Game of Thrones",
+    "year": 2011
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Pitbull (feat. Ne-Yo, Afrojack & Nayer)",
+    "title": "Give Me Everything",
+    "year": 2011
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Kelly Clarkson",
+    "title": "Stronger (What Doesn't Kill You)",
+    "year": 2011
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Florence + The Machine",
+    "title": "Shake It Out",
+    "year": 2011
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Rihanna",
+    "title": "We Found Love",
+    "year": 2011
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Of Monsters And Men",
+    "title": "Little Talks",
+    "year": 2011
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Avicii",
+    "title": "Levels",
+    "year": 2011
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Justin Bieber",
+    "title": "Mistletoe",
+    "year": 2011
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Arcitc Monkeys",
+    "title": "R U Mine?",
+    "year": 2012
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Tacabro",
+    "title": "Tacatá",
+    "year": 2012
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Nur Noch Schuhe An! Mickie Krause",
+    "title": "",
+    "year": 2012
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Marteria, Yasha & Miss Platnum",
+    "title": "Lila Wolken",
+    "year": 2012
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Asaf Avidan & The Mojos",
+    "title": "One Day/Reckoning Song",
+    "year": 2012
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Triggerfinger",
+    "title": "I Follow Rivers",
+    "year": 2012
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "fun. feat. Janelle Monáe",
+    "title": "We Are Young",
+    "year": 2012
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Alicia Keys",
+    "title": "Girl On Fire",
+    "year": 2012
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Train",
+    "title": "Drive By",
+    "year": 2012
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Alan Silvestri",
+    "title": "The Avengers",
+    "year": 2012
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Luis Bacalov & Rocky Roberts",
+    "title": "Django Unchained (Django)",
+    "year": 2012
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Adele",
+    "title": "James Bond 007: Skyfall",
+    "year": 2012
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Olly Murs (feat. Flo Rida)",
+    "title": "Troublemaker",
+    "year": 2012
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Bruno Mars",
+    "title": "Locked Out Of Heaven",
+    "year": 2012
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "fun.",
+    "title": "Some Nights",
+    "year": 2012
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Script (feat. Will.i.am)",
+    "title": "Hall Of Fame",
+    "year": 2012
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Kesha",
+    "title": "Die Young",
+    "year": 2012
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Imagine Dragons",
+    "title": "Demons",
+    "year": 2012
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Cee Lo Green (feat. The Muppets)",
+    "title": "All I Need Is Love",
+    "year": 2012
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "P!nk (feat. Nate Ruess)",
+    "title": "Just Give Me A Reason",
+    "year": 2013
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Pharrel Williams",
+    "title": "Happy",
+    "year": 2013
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Volbeat",
+    "title": "Lola Montez",
+    "year": 2013
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Mr. Probz",
+    "title": "Waves",
+    "year": 2013
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "OneRepublic",
+    "title": "Love Runs Out",
+    "year": 2013
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Christian Stürmer",
+    "title": "Millionen Lichter",
+    "year": 2013
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Cro",
+    "title": "Whatever",
+    "year": 2013
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Naughty Boy (feat. Sam Smith)",
+    "title": "La La La",
+    "year": 2013
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "One Direction",
+    "title": "Story Of My Life",
+    "year": 2013
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "George Ezra",
+    "title": "Budapest",
+    "year": 2013
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "José González",
+    "title": "Das erstaunliche Leben dees Walter Mitty (Stay Alive)",
+    "year": 2013
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Karen O & Ezra Koenig",
+    "title": "Her (The Moon Song)",
+    "year": 2013
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Demi Lovato",
+    "title": "Die Eiskönigin - Völlig unverfroren (Let It Go)",
+    "year": 2013
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Jason Derulo (feat. 2 Chainz)",
+    "title": "Talk Dirty",
+    "year": 2013
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Leona Lewis",
+    "title": "One More Sleep",
+    "year": 2013
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Ariana Grande",
+    "title": "Santa Tell Me",
+    "year": 2013
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Kelly Clarkson",
+    "title": "Underneath The Tree",
+    "year": 2013
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Mark Forster (feat. Sido)",
+    "title": "Au revoir",
+    "year": 2014
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Lilly Wood & the Prick & Robin Schulz",
+    "title": "Prayer in C",
+    "year": 2014
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Marlon Roudette",
+    "title": "When The Beat Drops Out",
+    "year": 2014
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "David Guetta (feat. Sam Martin)",
+    "title": "Lovers In The Sun",
+    "year": 2014
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Calvin Harris",
+    "title": "Summer",
+    "year": 2014
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Sheppard",
+    "title": "Geronimo",
+    "year": 2014
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Unheilig",
+    "title": "Als wär's das erste Mal",
+    "year": 2014
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Mando Diao",
+    "title": "Black Saturday",
+    "year": 2014
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Walk The Moon",
+    "title": "Shut Up & Dance",
+    "year": 2014
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Common & John Legend",
+    "title": "Selma (Glory)",
+    "year": 2014
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Clean Bandit (feat. Jess Glynne)",
+    "title": "Rather Be",
+    "year": 2014
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Maroon 5",
+    "title": "Animals",
+    "year": 2014
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Omi (feat. Felix Jaehn)",
+    "title": "Cheerleader - Remix",
+    "year": 2014
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Jessi J, Ariana Grande & Nicki Minaj",
+    "title": "Bang Bang",
+    "year": 2014
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Meghan Trainor",
+    "title": "I'll Be Home",
+    "year": 2014
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Pentatonix",
+    "title": "That's Christmas To Me",
+    "year": 2014
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Powerwolf",
+    "title": "Army Of The Night",
+    "year": 2015
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "DNCE",
+    "title": "Cake By The Ocean",
+    "year": 2015
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Kygo (feat. Parson James)",
+    "title": "Stole The Show",
+    "year": 2015
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Jason Derulo",
+    "title": "Want To Want Me",
+    "year": 2015
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Felix Jaehn (feat. Jasmine Thompson)",
+    "title": "Ain't Nobody",
+    "year": 2015
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Namika",
+    "title": "Lieblingsmensch",
+    "year": 2015
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Calvin Harris & Disciples",
+    "title": "How Deep Is Your Love",
+    "year": 2015
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Zara Larsson",
+    "title": "Lush Life",
+    "year": 2015
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Charlie Puth feat. Meghan Trainor",
+    "title": "Marvin Gaye",
+    "year": 2015
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Felix Jaehn (feat. Polina)",
+    "title": "Book of Love",
+    "year": 2015
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Ellie Goulding",
+    "title": "Love Me Like You Do",
+    "year": 2015
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Rodrigo Amarante",
+    "title": "Narcos (Tuyo)",
+    "year": 2015
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "EFF",
+    "title": "Stimme",
+    "year": 2015
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "David Guetta (feat. Nicky Minaj, Bebe Rexha & Afrojack)",
+    "title": "Hey Mama",
+    "year": 2015
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Silbermond",
+    "title": "Leichtes Gepäck",
+    "year": 2015
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Meghan Trainor",
+    "title": "Dear Future Husband",
+    "year": 2015
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Justin Bieber",
+    "title": "Love Yourself",
+    "year": 2015
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Joris",
+    "title": "Herz über Kopf",
+    "year": 2015
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Axwell & Ingrosso",
+    "title": "Sun Is Shining",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Namika",
+    "title": "Rudolf, das kleine Rentier",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Kylie Minogue",
+    "title": "Every Day's Like Christmas",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Alexa Feser",
+    "title": "Süßer die Glocken nie klingen",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Truck Stop",
+    "title": "Erwin der dicke Schneemann",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Wincent Weiss",
+    "title": "Der kleine Trommler",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Yvonne Catterfeld",
+    "title": "Winter Wunderland",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Marquess",
+    "title": "Und Frieden für die Welt",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Michael Bublé",
+    "title": "The More You Give (The More You'll Have)",
+    "year": 2015
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Glasperlenspiel",
+    "title": "Das muss wohl der Winter sein",
+    "year": 2015
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Alessia Cara",
+    "title": "Scars To Your Beautiful",
+    "year": 2016
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Max Giesinger",
+    "title": "80 Millionen",
+    "year": 2016
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Royal Republic",
+    "title": "Getting Along",
+    "year": 2016
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Panic! At The Disco",
+    "title": "Don'T Threaten Me With A Good Time",
+    "year": 2016
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Volbeat",
+    "title": "The Devil's Bleeding Crown",
+    "year": 2016
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Ghost",
+    "title": "Square Hammer",
+    "year": 2016
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Skillet",
+    "title": "Feel Invincible",
+    "year": 2016
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Dennis Lloyd",
+    "title": "Nevermind",
+    "year": 2016
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Àlvaro Soler",
+    "title": "Sofia",
+    "year": 2016
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Kungs vs. Cookin' On 3 Burners",
+    "title": "This Girl",
+    "year": 2016
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Drake (feat. Wizkid & Kyla)",
+    "title": "One Dance",
+    "year": 2016
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Andrea Berg",
+    "title": "Ich werde lächeln, wenn du gehst",
+    "year": 2016
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Birdy",
+    "title": "Keeping Your Head Up",
+    "year": 2016
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Clean Bandit (feat. Sean Paul & Anne-Marie)",
+    "title": "Rockabye",
+    "year": 2016
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Shawn Mendes",
+    "title": "Mercy",
+    "year": 2016
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Jonas Blue (feat. JP Cooper)",
+    "title": "Perfect Strangers",
+    "year": 2016
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Ryan Gosling & Emma Stone",
+    "title": "La La Land (City of Stars)",
+    "year": 2016
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Kyle Dixon & Michael Stein",
+    "title": "Stranger Things",
+    "year": 2016
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Hans Zimmer",
+    "title": "The Crown",
+    "year": 2016
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Twenty One Pilots",
+    "title": "Suicide Squad (Heathens)",
+    "year": 2016
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Sia",
+    "title": "Unstoppable",
+    "year": 2016
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Shawn Mendes",
+    "title": "Treat You Better",
+    "year": 2016
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Jennifer López",
+    "title": "Ain't Your Mama",
+    "year": 2016
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Imany, Filatov & Karas",
+    "title": "Don't Be So Shy",
+    "year": 2016
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Galantis",
+    "title": "No Money",
+    "year": 2016
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "DJ Snake & Justin Bieber",
+    "title": "Let Me Love You",
+    "year": 2016
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Ross Antony",
+    "title": "Weihnachtswunderhaus",
+    "year": 2016
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Helene Fischer",
+    "title": "Fröhliche Weihnacht Überall",
+    "year": 2016
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Imagine Dragons",
+    "title": "Thunder",
+    "year": 2017
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Portugal. The Man",
+    "title": "Feel It Still",
+    "year": 2017
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Avicii",
+    "title": "Without You",
+    "year": 2017
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Stone Sour",
+    "title": "Song #3",
+    "year": 2017
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Killers",
+    "title": "Run For Cover",
+    "year": 2017
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Papa Roach",
+    "title": "Help",
+    "year": 2017
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Glorious Sons",
+    "title": "S.O.S. (Sawed Off Shotgun)",
+    "year": 2017
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Asking Alexandria",
+    "title": "Alone In A Room",
+    "year": 2017
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Greta Van Fleet",
+    "title": "Highway Tune",
+    "year": 2017
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Luis Fonsi (feat. Daddy Yankee)",
+    "title": "Despacito",
+    "year": 2017
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ed Sheeran",
+    "title": "Shape Of You",
+    "year": 2017
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Maite Kelly",
+    "title": "Jetzt oder nie",
+    "year": 2017
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Bausa",
+    "title": "Was du Liebe nennst",
+    "year": 2017
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Kygo & Selena Gomez",
+    "title": "It Ain't Me",
+    "year": 2017
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Helene Fischer",
+    "title": "Herzbeben",
+    "year": 2017
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Ben Zucker",
+    "title": "Was für eine geile Zeit",
+    "year": 2017
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Imagine Dragons",
+    "title": "Whatever It Takes",
+    "year": 2017
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Julia Michaels",
+    "title": "Issues",
+    "year": 2017
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Anthony Gonzalez & Gael Garcia Bernal",
+    "title": "Coco - Lebendiger als das Leben! (Un Poco Loco)",
+    "year": 2017
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Keala Settle",
+    "title": "Greatest Showman (This Is Me)",
+    "year": 2017
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Chainsmokers (feat. Coldplay)",
+    "title": "Something Just Like This",
+    "year": 2017
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Calvin Harris (feat. Pharrel Williams, Katy Perry & Big Sean)",
+    "title": "Feels",
+    "year": 2017
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Charlie Puth",
+    "title": "Attention",
+    "year": 2017
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Eh Sheeran",
+    "title": "Shape Of You",
+    "year": 2017
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Sia",
+    "title": "Santa's Coming For Us",
+    "year": 2017
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Dua Lipa",
+    "title": "New Rules",
+    "year": 2017
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Armin van Buuren & Josh Cumbee",
+    "title": "Sunny Days",
+    "year": 2017
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Sia",
+    "title": "Snowman",
+    "year": 2017
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Vanessa Mai",
+    "title": "Letzte Weihnacht",
+    "year": 2017
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Gwen Stefani (feat. Blake Shelton)",
+    "title": "You Make It Feel Like Christmas",
+    "year": 2017
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Álvaro Soler",
+    "title": "La Cintura",
+    "year": 2018
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Lewis Capaldi",
+    "title": "Someone You Loved",
+    "year": 2018
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Lady Gaga & Bradley Cooper",
+    "title": "Shallow",
+    "year": 2018
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Ghost",
+    "title": "Dance Macabre",
+    "year": 2018
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Parkway Drive",
+    "title": "Prey",
+    "year": 2018
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Godsmack",
+    "title": "Bulletproof",
+    "year": 2018
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Greta Van Fleet",
+    "title": "You're The One",
+    "year": 2018
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Dynoro & Gigi D'Agostino",
+    "title": "In My Mind",
+    "year": 2018
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Capital Bra",
+    "title": "One Night Stand",
+    "year": 2018
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Namika",
+    "title": "Je ne parle pas français",
+    "year": 2018
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Calvin Harris & Sam Smith",
+    "title": "Promises",
+    "year": 2018
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Rita Ora",
+    "title": "Anywhere",
+    "year": 2018
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Nocholas Britell",
+    "title": "Succession",
+    "year": 2018
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Lady Gaga",
+    "title": "A Star Is Born (Always Remember Us This Way)",
+    "year": 2018
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Kendrick Lamar (feat. SZA)",
+    "title": "Black Panther (All The Stars)",
+    "year": 2018
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Marshmello (feat. Bastille)",
+    "title": "Happier",
+    "year": 2018
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Rita Ora",
+    "title": "Let You Love Me",
+    "year": 2018
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Weeknd (feat. Kendrick Lamar)",
+    "title": "Pray For Me",
+    "year": 2018
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Clean Bandit (feat. Demi Lovato)",
+    "title": "Solo",
+    "year": 2018
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Martin Garrix (feat. Bonn)",
+    "title": "High On Life",
+    "year": 2018
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Andreas Gabalier",
+    "title": "Hallihallo",
+    "year": 2018
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Katy Perry",
+    "title": "Cozy Little Christmas",
+    "year": 2018
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Billie Eilish",
+    "title": "Come Out And Play",
+    "year": 2018
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Shawn Mendes & Camila Cabello",
+    "title": "Señorita",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Post Malone",
+    "title": "Circles",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Harry Styles",
+    "title": "Adore You",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "The Weeknd",
+    "title": "Blinding Lights",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Mabel",
+    "title": "Don't Call Me Up",
+    "year": 2019
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Motionless In White",
+    "title": "Another Life",
+    "year": 2019
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "I Prevail",
+    "title": "Hurricane",
+    "year": 2019
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Justin Wellington (feat. Small Jam)",
+    "title": "Iko Iko",
+    "year": 2019
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ed Sheeran & Justin Bieber",
+    "title": "I Don't Care",
+    "year": 2019
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Mickie Krause",
+    "title": "Eine Woche wach",
+    "year": 2019
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Topic (feat. A7S)",
+    "title": "Breaking Me",
+    "year": 2019
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ava Max",
+    "title": "So Am I",
+    "year": 2019
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "DJ Snake & J Balvin (feat. Tyga)",
+    "title": "Loco Contigo",
+    "year": 2019
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Duncan Laurence",
+    "title": "Arcade",
+    "year": 2019
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "The Weeknd",
+    "title": "Save Your Tears",
+    "year": 2019
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Sam Feldt (feat. Rani)",
+    "title": "Post Malone",
+    "year": 2019
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Ludwig Görsansson",
+    "title": "The Mandalorian",
+    "year": 2019
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Dua Lipa",
+    "title": "Don't Start Now",
+    "year": 2019
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Lewis Capaldi",
+    "title": "Before You Go",
+    "year": 2019
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Lizzo",
+    "title": "Good As Hell",
+    "year": 2019
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Juju (feat. Henning May)",
+    "title": "Vermissen",
+    "year": 2019
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Apache 207",
+    "title": "Roller",
+    "year": 2019
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Conkarah (feat. Shaggy)",
+    "title": "Banana",
+    "year": 2019
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Dermot Kennedy",
+    "title": "Power Over Me",
+    "year": 2019
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Daddy Yankee & Snow",
+    "title": "Con Calma",
+    "year": 2019
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Little Mix",
+    "title": "One I've Been Missing",
+    "year": 2019
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Taylor Swift",
+    "title": "Christmas Tree Farm",
+    "year": 2019
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Johannes Oerding",
+    "title": "Ich komm nach Haus (Wenn das Jahr zu Ende geht)",
+    "year": 2019
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Jonas Brothers",
+    "title": "Like It's Christmas",
+    "year": 2019
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Dua Lipa",
+    "title": "Break My Heart",
+    "year": 2020
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Drake",
+    "title": "Toosie Slide",
+    "year": 2020
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "All Time Low (feat. Blackbear)",
+    "title": "Monsters",
+    "year": 2020
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "The Pretty Reckless",
+    "title": "Death By Rock And Roll",
+    "year": 2020
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "From Ashes To New",
+    "title": "Panic",
+    "year": 2020
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "MGK",
+    "title": "Bloody Valentine",
+    "year": 2020
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Architects",
+    "title": "Animals",
+    "year": 2020
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Royal Blood",
+    "title": "Trouble's Coming",
+    "year": 2020
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Corey Taylor (feat. Tech N9ne & Kid Bookie)",
+    "title": "CMFT Must Be Stopped",
+    "year": 2020
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Mark Forster",
+    "title": "Übermorgen",
+    "year": 2020
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Capital Bra & Cro",
+    "title": "Frühstück in Paris",
+    "year": 2020
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Vize & Tom Gregory",
+    "title": "Never Let Me Down",
+    "year": 2020
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Robin Schulz (feat. Alida)",
+    "title": "In Your Eyes",
+    "year": 2020
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Joel Corry & MNEK",
+    "title": "Head & Heart",
+    "year": 2020
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Dua Lipa",
+    "title": "Levitating",
+    "year": 2020
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Ava Max",
+    "title": "Kings & Queens",
+    "year": 2020
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Ashley Park",
+    "title": "Emily in Paris (Mon Soleil)",
+    "year": 2020
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Kai Uchis",
+    "title": "Telepatía",
+    "year": 2020
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "The Jonas Brothers",
+    "title": "What A Man Gotta Do",
+    "year": 2020
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Akk Ausserkontrolle",
+    "title": "In meinem Benz",
+    "year": 2020
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Miley Cyrus",
+    "title": "Midnight Sky",
+    "year": 2020
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Jawsh 685 & Jason Derulo",
+    "title": "Savage Love",
+    "year": 2020
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Bürger Lars Dietrich",
+    "title": "Weihnachtszeit",
+    "year": 2020
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Ava Max",
+    "title": "Christmas Without You",
+    "year": 2020
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "In Extremo",
+    "title": "Herr Winter stammt vom Kaukasus",
+    "year": 2020
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Olivia Rodrigo",
+    "title": "Drivers License",
+    "year": 2021
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Wincent Weiss & Johannes Oerding",
+    "title": "Die guten Zeiten",
+    "year": 2021
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Mark Forster feat. Lea",
+    "title": "Drei Uhr nachts",
+    "year": 2021
+  },
+  {
+    "in_editions": ["classic"],
+    "artist": "Justin Bieber",
+    "title": "Anyone",
+    "year": 2021
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Maneskin",
+    "title": "I Wanna Be Your Slave",
+    "year": 2021
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Electric Callboy",
+    "title": "We Got The Moves",
+    "year": 2021
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Spiritbox",
+    "title": "Circle With Me",
+    "year": 2021
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Wage War",
+    "title": "If Tomorrow Never Comes",
+    "year": 2021
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Blind Channel",
+    "title": "Dark Side",
+    "year": 2021
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Avril Lavigne",
+    "title": "Bite Me",
+    "year": 2021
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Riton x Nightcrawlers (feat. Mufasa & Hypeman)",
+    "title": "Friday",
+    "year": 2021
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Tom Gregory",
+    "title": "River",
+    "year": 2021
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Pietro Lombardi",
+    "title": "Ti Amo",
+    "year": 2021
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Leony",
+    "title": "Faded Love",
+    "year": 2021
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "P!nk & Willow Sage Hart",
+    "title": "Cover Me In Sunshine",
+    "year": 2021
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Kungs",
+    "title": "Never Going Home",
+    "year": 2021
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Ofenbach (feat. Lagique)",
+    "title": "Wasted Love",
+    "year": 2021
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Ed Sheeran",
+    "title": "Bad Habits",
+    "year": 2021
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Martin Garrix feat. Bono and The Edge",
+    "title": "We Are The People",
+    "year": 2021
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Alvaro Soler",
+    "title": "Magia",
+    "year": 2021
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Encanto Cast",
+    "title": "Encanto (We Don't Talk About Bruno)",
+    "year": 2021
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "GAYLE",
+    "title": "ABCDEFU",
+    "year": 2021
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Atb (feat. Topic & A7S)",
+    "title": "Your Love (9PM)",
+    "year": 2021
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Ed Sheeran",
+    "title": "Shivers",
+    "year": 2021
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Adele",
+    "title": "Easy On Me",
+    "year": 2021
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Afrojack & David Guetta",
+    "title": "Hero",
+    "year": 2021
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Nathan Evans",
+    "title": "Wellerman",
+    "year": 2021
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Calvin Harris (feat. Tom Greenman)",
+    "title": "By Your Side",
+    "year": 2021
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Ed Sheeran & Elton John",
+    "title": "Merry Christmas",
+    "year": 2021
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Kelly Clarkson & Ariana Grande",
+    "title": "Santa, Can't You Hear Me",
+    "year": 2021
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Linda Hesse",
+    "title": "Weihnachten zu zweit",
+    "year": 2021
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Bad Omens",
+    "title": "Just Pretend",
+    "year": 2022
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Nickelback",
+    "title": "San Quentin",
+    "year": 2022
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Muse",
+    "title": "Won't Stand Down",
+    "year": 2022
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Motionless In White",
+    "title": "Masterpiece",
+    "year": 2022
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Shinedown",
+    "title": "Planet Zero",
+    "year": 2022
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Julian Sommer",
+    "title": "Dicht im Flieger",
+    "year": 2022
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Ben Zucker",
+    "title": "Unsere Lieder",
+    "year": 2022
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "James Hype & Miggy Dela Rosa",
+    "title": "Ferrari",
+    "year": 2022
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Kamrad",
+    "title": "I Believe",
+    "year": 2022
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Lizzo",
+    "title": "About Damn Time",
+    "year": 2022
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "Meghan Trainor",
+    "title": "Made You Look",
+    "year": 2022
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Danny Elfman",
+    "title": "Wednesday",
+    "year": 2022
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Shakira (feat. Rauw Alejandro)",
+    "title": "Te Felicito",
+    "year": 2022
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Karol G",
+    "title": "Provenza",
+    "year": 2022
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Harry Styles",
+    "title": "Late Night Talking",
+    "year": 2022
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Camila Cabello (feat. Ed Sheeran)",
+    "title": "Bam Bam",
+    "year": 2022
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Peter Fox (feat. Inéz)",
+    "title": "Zukunft Pink",
+    "year": 2022
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Purple Disco Machine",
+    "title": "In The Dark",
+    "year": 2022
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Rammstein",
+    "title": "Zeit",
+    "year": 2022
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Kygo (feat. DNCE)",
+    "title": "Dancing Feet",
+    "year": 2022
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Nina Chuba",
+    "title": "Wildberry Lillet",
+    "year": 2022
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Sabrina Carpenter",
+    "title": "A Nonsense Christmas",
+    "year": 2022
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Beartooth",
+    "title": "Riptide",
+    "year": 2023
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Maneskin (feat. Tom Morello)",
+    "title": "Gossip",
+    "year": 2023
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Jelly Roll",
+    "title": "Need A Favor",
+    "year": 2023
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Sleep Token",
+    "title": "The Summoning",
+    "year": 2023
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Bring Me The Horizon",
+    "title": "Lost",
+    "year": 2023
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Udo Lindenberg & Apache 207",
+    "title": "Komet",
+    "year": 2023
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Purple Disco Machine & Kung",
+    "title": "Substitution",
+    "year": 2023
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Michael Schulte & R3HAB",
+    "title": "Waterfall",
+    "year": 2023
+  },
+  {
+    "in_editions": ["summer"],
+    "artist": "Dua Lipa",
+    "title": "Dance The Night",
+    "year": 2023
+  },
+  {
+    "in_editions": ["guilty"],
+    "artist": "P!nk",
+    "title": "Trustfall",
+    "year": 2023
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Ryan Gosling",
+    "title": "Barbie (I'm Just Ken)",
+    "year": 2023
+  },
+  {
+    "in_editions": ["movies"],
+    "artist": "Gustavo Santaolalla",
+    "title": "The Last of Us",
+    "year": 2023
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Ayliva (feat. Mero)",
+    "title": "Sie weiß",
+    "year": 2023
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Tate McRae",
+    "title": "Greedy",
+    "year": 2023
+  },
+  {
+    "in_editions": ["bingo"],
+    "artist": "Kylie Minogue",
+    "title": "Padam Padam",
+    "year": 2023
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Leony",
+    "title": "Holding On",
+    "year": 2023
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Vincent Gross",
+    "title": "Ouzo",
+    "year": 2023
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "SIRA, Bausa & Badchieff",
+    "title": "9 bis 9",
+    "year": 2023
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Becky G (feat.Omega)",
+    "title": "Arranca",
+    "year": 2023
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Mark Forster",
+    "title": "Jingle Bells, Schlittenfahrt im Schnee",
+    "year": 2023
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "OneRepublic",
+    "title": "Dear Santa",
+    "year": 2023
+  },
+  {
+    "in_editions": ["christmas"],
+    "artist": "Noah Levi",
+    "title": "Ach, bitter Winter",
+    "year": 2023
+  },
+  {
+    "in_editions": ["rock"],
+    "artist": "Pearl Jam",
+    "title": "Dark Matter",
+    "year": 2024
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "ROSÈ & Bruno Mars",
+    "title": "APT.",
+    "year": 2024
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Sabrina Carpenter",
+    "title": "Espresso",
+    "year": 2024
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Artemas",
+    "title": "I Like The Way You Kiss Me",
+    "year": 2024
+  },
+  {
+    "in_editions": ["celebration"],
+    "artist": "Beyoncé",
+    "title": "TEXAS HOLD'EM",
+    "year": 2024
+  }
+]

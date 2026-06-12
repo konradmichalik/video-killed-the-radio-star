@@ -1,5 +1,33 @@
 [
   {
+    "title": "(We're Gonna) Rock Around The Clock",
+    "artist": "Bill Haley & His Comets",
+    "year": 1954,
+    "genre": "Pop",
+    "video_id": "ZgdufzXvjqw"
+  },
+  {
+    "title": "See You Later, Alligator",
+    "artist": "Bill Haley & His Comets",
+    "year": 1956,
+    "genre": "Pop",
+    "video_id": "NMP6IGJXG3o"
+  },
+  {
+    "title": "Jailhouse Rock",
+    "artist": "Elvis Presley",
+    "year": 1957,
+    "genre": "Pop",
+    "video_id": "PpsUOOfb-vE"
+  },
+  {
+    "title": "Johnny B. Goode",
+    "artist": "Chuck Berry",
+    "year": 1958,
+    "genre": "Pop",
+    "video_id": "6swgiM9vSEE"
+  },
+  {
     "title": "Rumble",
     "artist": "Link Wray & His Ray Men",
     "year": 1958,
@@ -8,12 +36,40 @@
     "country": "United States"
   },
   {
+    "title": "La Bamba",
+    "artist": "Ritchie Valens",
+    "year": 1958,
+    "genre": "Pop",
+    "video_id": "Jp6j5HJ-Cok"
+  },
+  {
+    "title": "Hit The Road Jack",
+    "artist": "Ray Charles",
+    "year": 1961,
+    "genre": "Pop",
+    "video_id": "uSiHqxgE2d0"
+  },
+  {
     "title": "Girl from the North Country",
     "artist": "Bob Dylan",
     "year": 1963,
     "genre": "Folk",
     "video_id": "Je4Eg77YSSA",
     "country": "United States"
+  },
+  {
+    "title": "It's My Party",
+    "artist": "Lesley Gore",
+    "year": 1963,
+    "genre": "Pop",
+    "video_id": "mIsnIt1p978"
+  },
+  {
+    "title": "Surfin' U.S.A.",
+    "artist": "The Beach Boys",
+    "year": 1963,
+    "genre": "Pop",
+    "video_id": "enlOHxQ0tb4"
   },
   {
     "title": "Louie Louie",
@@ -32,6 +88,13 @@
     "country": "United States"
   },
   {
+    "title": "Oh, Pretty Woman",
+    "artist": "Roy Orbison",
+    "year": 1964,
+    "genre": "Pop",
+    "video_id": "D3a8Seh3Cp4"
+  },
+  {
     "title": "A Change Is Gonna Come",
     "artist": "Sam Cooke",
     "year": 1964,
@@ -46,6 +109,13 @@
     "genre": "Folk",
     "video_id": "NAEppFUWLfc",
     "country": "United States"
+  },
+  {
+    "title": "Liebeskummer lohnt sich nicht",
+    "artist": "Siw Malmkvist",
+    "year": 1964,
+    "genre": "Pop",
+    "video_id": "mUUJxMiznfc"
   },
   {
     "title": "Like a Rolling Stone",
@@ -104,12 +174,33 @@
     "country": "United States"
   },
   {
+    "title": "I'm A Believer",
+    "artist": "The Monkees",
+    "year": 1966,
+    "genre": "Pop",
+    "video_id": "cOJdT-W-lMM"
+  },
+  {
     "title": "You Can't Hurry Love",
     "artist": "The Supremes",
     "year": 1966,
     "genre": "Soul",
     "video_id": "ovoBi3pXD_A",
     "country": "United States"
+  },
+  {
+    "title": "Respect",
+    "artist": "Aretha Franklin",
+    "year": 1967,
+    "genre": "Pop",
+    "video_id": "6FOUqQt3Kg0"
+  },
+  {
+    "title": "Sunshine Of Your Love",
+    "artist": "Cream",
+    "year": 1967,
+    "genre": "Pop",
+    "video_id": "f3y8jf01UY8"
   },
   {
     "title": "Alone Again Or",
@@ -192,6 +283,13 @@
     "country": "United States"
   },
   {
+    "title": "Born To Be Wild",
+    "artist": "Steppenwolf",
+    "year": 1968,
+    "genre": "Pop",
+    "video_id": "egMWlD3fLJ8"
+  },
+  {
     "title": "Blackbird",
     "artist": "The Beatles",
     "year": 1968,
@@ -216,6 +314,20 @@
     "country": "United Kingdom"
   },
   {
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond",
+    "year": 1969,
+    "genre": "Pop",
+    "video_id": "4F_RCWVoL4s"
+  },
+  {
+    "title": "Aquarius/Let The Sunshine In",
+    "artist": "The 5th Dimension",
+    "year": 1969,
+    "genre": "Pop",
+    "video_id": "VlrQ-bOzpkQ"
+  },
+  {
     "title": "Gimme Shelter",
     "artist": "The Rolling Stones",
     "year": 1969,
@@ -238,6 +350,20 @@
     "genre": "Soul",
     "video_id": "A9RMr9KuVZo",
     "country": "United States"
+  },
+  {
+    "title": "Let It Be",
+    "artist": "The Beatles",
+    "year": 1970,
+    "genre": "Rock",
+    "video_id": "CGj85pVzRJs"
+  },
+  {
+    "title": "Have You Ever Seen The Rain?",
+    "artist": "Creedence Clearwater Revival",
+    "year": 1971,
+    "genre": "Pop",
+    "video_id": "u1V8YRJnr4Q"
   },
   {
     "title": "Life on Mars?",
@@ -288,12 +414,40 @@
     "country": "United States"
   },
   {
+    "title": "Get It On",
+    "artist": "T. Rex",
+    "year": 1971,
+    "genre": "Pop",
+    "video_id": "wZkTh_T75QY"
+  },
+  {
     "title": "Surf's Up",
     "artist": "The Beach Boys",
     "year": 1971,
     "genre": "Pop",
     "video_id": "i1HJ35p1Bm8",
     "country": "United States"
+  },
+  {
+    "title": "American Woman",
+    "artist": "The Guess Who",
+    "year": 1971,
+    "genre": "Pop",
+    "video_id": "9uf6EY2BZBw"
+  },
+  {
+    "title": "School's Out",
+    "artist": "Alice Cooper",
+    "year": 1972,
+    "genre": "Rock",
+    "video_id": "2Oo8QzDHimQ"
+  },
+  {
+    "title": "You're So Vain",
+    "artist": "Carly Simon",
+    "year": 1972,
+    "genre": "Pop",
+    "video_id": "j13oJajXx0M"
   },
   {
     "title": "Perfect Day",
@@ -328,12 +482,33 @@
     "country": "United Kingdom"
   },
   {
+    "title": "You Ain't Seen Nothing Yet",
+    "artist": "Bachman-Turner Overdrive",
+    "year": 1974,
+    "genre": "Pop",
+    "video_id": "w3fRBzRngdc"
+  },
+  {
+    "title": "Rock Your Baby",
+    "artist": "George McCrae",
+    "year": 1974,
+    "genre": "Pop",
+    "video_id": "gutE8I0Tk3E"
+  },
+  {
     "title": "Autobahn",
     "artist": "Kraftwerk",
     "year": 1974,
     "genre": "Other",
     "video_id": "x-G28iyPtz0",
     "country": "Germany"
+  },
+  {
+    "title": "Sweet Home Alabama",
+    "artist": "Lynyrd Skynyrd",
+    "year": 1974,
+    "genre": "Pop",
+    "video_id": "-p8GXZcdrIk"
   },
   {
     "title": "Sea Song",
@@ -398,6 +573,13 @@
     "genre": "Disco",
     "video_id": "SFzMs2SN--s",
     "country": "United States"
+  },
+  {
+    "title": "Daddy Cool",
+    "artist": "Boney M.",
+    "year": 1976,
+    "genre": "Pop",
+    "video_id": "FYGTT7YhywA"
   },
   {
     "title": "More Than a Feeling",
@@ -472,6 +654,13 @@
     "country": "United States"
   },
   {
+    "title": "The Boys Are Back In Town",
+    "artist": "Thin Lizzy",
+    "year": 1976,
+    "genre": "Pop",
+    "video_id": "5_xqb416S7o"
+  },
+  {
     "title": "It's a Heartache",
     "artist": "Bonnie Tyler",
     "year": 1977,
@@ -536,6 +725,13 @@
     "country": "Belgium"
   },
   {
+    "title": "We Will Rock You",
+    "artist": "Queen",
+    "year": 1977,
+    "genre": "Rock",
+    "video_id": "-tJYN-eG1zk"
+  },
+  {
     "title": "God Save the Queen",
     "artist": "Sex Pistols",
     "year": 1977,
@@ -566,6 +762,13 @@
     "genre": "Disco",
     "video_id": "aXgSHL7efKg",
     "country": "United States"
+  },
+  {
+    "title": "I Will Survive",
+    "artist": "Gloria Gaynor",
+    "year": 1978,
+    "genre": "Pop",
+    "video_id": "6dYWe1c3OyU"
   },
   {
     "title": "Über sieben Brücken musst du gehn",
@@ -606,6 +809,20 @@
     "genre": "Disco",
     "video_id": "gD6cPE2BHic",
     "country": "United States"
+  },
+  {
+    "title": "Hold The Line",
+    "artist": "Toto",
+    "year": 1978,
+    "genre": "Rock",
+    "video_id": "htgr3pvBr-I"
+  },
+  {
+    "title": "Y.M.C.A.",
+    "artist": "Village People",
+    "year": 1978,
+    "genre": "Pop",
+    "video_id": "fvzs2ozG-mc"
   },
   {
     "title": "Knock On Wood",
@@ -654,6 +871,13 @@
     "genre": "Punk",
     "video_id": "LC2WpBcdM_A",
     "country": "United Kingdom"
+  },
+  {
+    "title": "My Sharona",
+    "artist": "The Knack",
+    "year": 1979,
+    "genre": "Pop",
+    "video_id": "bbr60I0u2Ng"
   },
   {
     "title": "Hells Bells",
@@ -1700,6 +1924,13 @@
     "genre": "Pop",
     "video_id": "k9e157Ner90",
     "country": "United Kingdom"
+  },
+  {
+    "title": "Footloose",
+    "artist": "Kenny Loggins",
+    "year": 1984,
+    "genre": "Pop",
+    "video_id": "ltrMfT4Qz5Y"
   },
   {
     "title": "1000 und 1 Nacht",
@@ -4030,6 +4261,13 @@
     "country": "United States"
   },
   {
+    "title": "Without You",
+    "artist": "Mariah Carey",
+    "year": 1994,
+    "genre": "Pop",
+    "video_id": "Hat1Hc9SNwE"
+  },
+  {
     "title": "Hurt",
     "artist": "Nine Inch Nails",
     "year": 1994,
@@ -4593,6 +4831,13 @@
     "genre": "Pop",
     "video_id": "0Gl2QnHNpkA",
     "country": "United States"
+  },
+  {
+    "title": "Everybody (Backstreet's Back)",
+    "artist": "Backstreet Boys",
+    "year": 1997,
+    "genre": "Pop",
+    "video_id": "6M6samPEMpM"
   },
   {
     "title": "Song 2",
@@ -6420,6 +6665,13 @@
     "country": "Canada"
   },
   {
+    "title": "Love Comes Again",
+    "artist": "Tiesto & BT",
+    "year": 2004,
+    "genre": "Pop",
+    "video_id": "Jbh3GlrRcQ4"
+  },
+  {
     "title": "Yeah!",
     "artist": "Usher (feat. Lil Jon & Ludacris)",
     "year": 2004,
@@ -7498,6 +7750,13 @@
     "country": "United Kingdom"
   },
   {
+    "title": "Mr. Saxobeat",
+    "artist": "Alexandra Stan",
+    "year": 2010,
+    "genre": "Pop",
+    "video_id": "bqSX6T9mw5o"
+  },
+  {
     "title": "Airplanes",
     "artist": "B.o.B (feat. Hayley Williams)",
     "year": 2010,
@@ -7855,6 +8114,13 @@
     "country": "United Kingdom"
   },
   {
+    "title": "The Edge Of Glory",
+    "artist": "Lady Gaga",
+    "year": 2011,
+    "genre": "Pop",
+    "video_id": "QeWBS0JBNzQ"
+  },
+  {
     "title": "Party Rock Anthem",
     "artist": "LMFAO",
     "year": 2011,
@@ -8130,6 +8396,13 @@
     "genre": "Hip-Hop",
     "video_id": "9bZkp7q19f0",
     "country": "South Korea"
+  },
+  {
+    "title": "Candy",
+    "artist": "Robbie Williams",
+    "year": 2012,
+    "genre": "Pop",
+    "video_id": "gtOV7bp-gys"
   },
   {
     "title": "Die Nacht von Freitag auf Montag",
@@ -8734,5 +9007,124 @@
     "genre": "Alternative",
     "video_id": "8j741TUIET0",
     "country": "United States"
+  },
+  {
+    "title": "Can't Stop The Feeling",
+    "artist": "Justin Timberlake",
+    "year": 2016,
+    "genre": "Pop",
+    "video_id": "ru0K8uYEZWw"
+  },
+  {
+    "title": "Mi Gente",
+    "artist": "J Balvin & Willy William",
+    "year": 2017,
+    "genre": "Pop",
+    "video_id": "wnJ6LuUFpMo"
+  },
+  {
+    "title": "Échame La Culpa",
+    "artist": "Luis Fonsi & Demi Lovato",
+    "year": 2017,
+    "genre": "Pop",
+    "video_id": "TyHvyGVs42U"
+  },
+  {
+    "title": "One Kiss",
+    "artist": "Calvin Harris & Dua Lipa",
+    "year": 2018,
+    "genre": "Pop",
+    "video_id": "DkeiKbqa02g"
+  },
+  {
+    "title": "High Hopes",
+    "artist": "Panic! At The Disco",
+    "year": 2018,
+    "genre": "Punk",
+    "video_id": "IPXIgEAGe4U"
+  },
+  {
+    "title": "Bad Guy",
+    "artist": "Billie Eilish",
+    "year": 2019,
+    "genre": "Pop",
+    "video_id": "DyDfgMOUjCI"
+  },
+  {
+    "title": "Sucker",
+    "artist": "Jonas Brothers",
+    "year": 2019,
+    "genre": "Pop",
+    "video_id": "CnAmeh0-E-U"
+  },
+  {
+    "title": "Dance Monkey",
+    "artist": "Tones And I",
+    "year": 2019,
+    "genre": "Pop",
+    "video_id": "q0hyYWKXF0Q"
+  },
+  {
+    "title": "Dynamite",
+    "artist": "BTS",
+    "year": 2020,
+    "genre": "Pop",
+    "video_id": "gdZLi9oWNZg"
+  },
+  {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "year": 2020,
+    "genre": "Pop",
+    "video_id": "mRD0-GxqHVo"
+  },
+  {
+    "title": "Good 4 U",
+    "artist": "Olivia Rodrigo",
+    "year": 2021,
+    "genre": "Pop",
+    "video_id": "gNi_6U5Pm_o"
+  },
+  {
+    "title": "Solo Para Ti",
+    "artist": "Alvaro Soler & Topic",
+    "year": 2022,
+    "genre": "Latin",
+    "video_id": "5D_A4IBWSv4"
+  },
+  {
+    "title": "As It Was",
+    "artist": "Harry Styles",
+    "year": 2022,
+    "genre": "Pop",
+    "video_id": "H5v3kku4y6Q"
+  },
+  {
+    "title": "I Ain't Worried",
+    "artist": "OneRepublic",
+    "year": 2022,
+    "genre": "Pop",
+    "video_id": "mNEUkkoUoIA"
+  },
+  {
+    "title": "Flowers",
+    "artist": "Miley Cyrus",
+    "year": 2023,
+    "genre": "Pop",
+    "video_id": "G7KNmW9a75Y"
+  },
+  {
+    "title": "(It Goes Like) Nanana",
+    "artist": "Peggy Gou",
+    "year": 2023,
+    "genre": "Pop",
+    "video_id": "tyd-Vs0MHH4"
+  },
+  {
+    "title": "The Emptiness Machine",
+    "artist": "Linkin Park",
+    "year": 2024,
+    "genre": "Rock",
+    "video_id": "SRXH9AbT280"
   }
 ]
