@@ -19,9 +19,13 @@
   const dispatch = createEventDispatcher();
   $: phase = $room.session?.phase || 'idle';
   $: round = $room.session?.round || 0;
-  $: connectedCount = ($room.players || []).filter((p) => p.connected !== false).length;
+  $: connectedCount = ($room.players || []).filter((p) => p.connected).length;
   $: submittedCount = Object.keys($room.submissions || {}).length;
   $: startDisabled = connectedCount === 0;
+  // Everyone locked in — flips the Reveal CTA to the bug-yellow "ready" state so
+  // the host notices at a glance, even with the GameSheet closed. Mirrors the
+  // same cue in HostRoomView. `>=` covers a player submitting then dropping.
+  $: everyoneReady = connectedCount > 0 && submittedCount >= connectedCount;
 </script>
 
 <div class="game-bar" role="group" aria-label="Game round controls">
@@ -42,6 +46,7 @@
   {:else if phase === 'guessing'}
     <button
       class="game-bar__cta"
+      class:ready={everyoneReady}
       type="button"
       on:click={() => dispatch('reveal')}
       aria-live="polite"
@@ -101,5 +106,29 @@
     letter-spacing: 1px;
     margin-left: 4px;
     opacity: 0.85;
+  }
+  /* "Everyone ready" — switch the Reveal CTA to the bug-yellow accent with a
+     soft glow pulse so the host's eye is drawn to it the moment the last guess
+     locks in. Mirrors HostRoomView's .cta.ready. */
+  .game-bar__cta.ready {
+    background: var(--bug-yellow);
+    color: #050505;
+    animation: ready-glow 1.6s ease-in-out infinite;
+  }
+  @keyframes ready-glow {
+    0%,
+    100% {
+      box-shadow: 4px 4px 0 #050505;
+    }
+    50% {
+      box-shadow:
+        4px 4px 0 #050505,
+        0 0 18px var(--bug-yellow);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .game-bar__cta.ready {
+      animation: none;
+    }
   }
 </style>
