@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { checkBrokerReachable, joinRoom } from '../../src/lib/multiplayer/peer.js';
-import { PEER_CONNECT_TIMEOUT_MS } from '../../src/lib/constants.js';
+import { PEER_CONNECT_TIMEOUT_MS, ICE_SERVERS } from '../../src/lib/constants.js';
 
 // Minimal in-memory stand-in for the peerjs Peer class. Emits 'open' on a
 // microtask so waitForOpen resolves after handlers are registered, exactly
@@ -20,9 +20,10 @@ const { FakePeer } = vi.hoisted(() => {
   }
   class FakePeer {
     static instances = [];
-    constructor(id) {
+    constructor(id, options) {
       FakePeer.instances.push(this);
       this.id = id;
+      this.options = options;
       this.handlers = {};
       this.connections = [];
       queueMicrotask(() => this.emit('open'));
@@ -83,6 +84,16 @@ describe('checkBrokerReachable', () => {
 
   it('returns false when no fetcher is available', async () => {
     expect(await checkBrokerReachable({ fetcher: null })).toBe(false);
+  });
+});
+
+describe('peer ICE configuration', () => {
+  it('passes the explicit STUN iceServers to the peer so cross-device joins gather candidates', async () => {
+    const client = await joinRoom('VKTRS-ABCD', 'VKTRS-PEER-ice', {});
+    const peer = FakePeer.instances.at(-1);
+    expect(peer.options?.config?.iceServers).toBe(ICE_SERVERS);
+    expect(peer.options.config.iceServers.length).toBeGreaterThan(0);
+    client.close();
   });
 });
 

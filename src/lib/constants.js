@@ -22,6 +22,18 @@ export const LOWER_THIRD_TRACK_CHANGE_DELAY_MS = 2000; // wait this long after a
 // --- Connected Game Mode ---
 export const PEER_CONNECT_TIMEOUT_MS = 8000; // give up establishing a peer connection after this long
 export const PEER_RECONNECT_BACKOFF_MS = [1000, 3000, 9000]; // delays before each reconnect attempt
+// ICE servers for the WebRTC peer connection. PeerJS's bundled default is a
+// single Google STUN entry; giving it several reputable public STUN servers
+// lets each device gather server-reflexive candidates more reliably, which is
+// what cross-device joins on the same network need (a same-machine browser tab
+// connects over loopback and barely needs ICE, which is why that "works" while
+// a real phone times out). STUN only discovers public addresses — it does NOT
+// relay traffic, so no game data leaves the peers. Networks with AP/client
+// isolation or symmetric NAT still need a TURN relay on top of this.
+export const ICE_SERVERS = [
+  { urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302'] },
+  { urls: 'stun:stun.cloudflare.com:3478' },
+];
 export const MAX_PLAYERS = 16; // hard cap on players per room
 export const PLAYER_DISCONNECT_TIMEOUT_MS = 60000; // drop a player after this long without heartbeat
 export const AUTO_ADVANCE_REVEAL_MS = 6000; // with AUTO NEXT ROUND on, how long the reveal stays before rolling the next round

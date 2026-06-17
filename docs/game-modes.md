@@ -48,11 +48,17 @@ signaling only — the actual game traffic goes directly between TV and phones
 once the handshake is done. The broker is a free, community-run service without
 an SLA; if it is rate-limited or down, new rooms cannot be created or joined
 until it recovers. Already-connected rooms keep working because the data path
-is peer-to-peer. No TURN server is configured, so peers behind symmetric NAT
-(some corporate / mobile-carrier networks) may also fail to connect. For
-production-grade reliability, run your own [`peerjs-server`](https://github.com/peers/peerjs-server)
-and pass `{ host, port, path }` into `new Peer(...)` in
-`src/lib/multiplayer/peer.js`.
+is peer-to-peer. Both peers are created with an explicit `iceServers` list
+(`ICE_SERVERS` in `constants.js` — several public STUN servers) so each device
+gathers enough candidates to connect across the network; a same-machine browser
+tab connects over loopback and barely needs ICE, which is why that path can
+"work" while a real phone on the same Wi-Fi times out. STUN only discovers
+public addresses — it does not relay traffic — so no `TURN` server is
+configured; peers behind AP/client isolation or symmetric NAT (some guest /
+corporate / mobile-carrier networks) can still fail to connect. For
+production-grade reliability, add a `TURN` entry to `ICE_SERVERS` and/or run your
+own [`peerjs-server`](https://github.com/peers/peerjs-server) and pass
+`{ host, port, path }` into `new Peer(...)` in `src/lib/multiplayer/peer.js`.
 
 Same Vite bundle for TV and phone; phone mode is triggered by `?join=ABCD` in
 the URL. Both `peerjs` and `qrcode` are lazy-loaded so the channel-only path

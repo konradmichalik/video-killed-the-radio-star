@@ -1,7 +1,12 @@
 // Thin wrapper around peerjs. Lazy-loads the lib so the initial bundle stays
 // untouched for users who never enter Connected Mode. Returns control objects
 // with explicit lifecycle methods so callers don't depend on peerjs types.
-import { PEER_CONNECT_TIMEOUT_MS, PEER_RECONNECT_BACKOFF_MS } from '../constants.js';
+import { PEER_CONNECT_TIMEOUT_MS, PEER_RECONNECT_BACKOFF_MS, ICE_SERVERS } from '../constants.js';
+
+// Shared PeerJS options. The explicit iceServers list replaces PeerJS's sparse
+// default so both ends gather enough candidates to connect across devices on
+// the same network, not just same-machine browser tabs over loopback.
+const PEER_OPTIONS = { config: { iceServers: ICE_SERVERS } };
 
 // Lightweight pre-flight: hit the public PeerJS broker's `/peerjs/id` endpoint
 // (returns a UUID when up) so we can disable Connected Mode in the UI before
@@ -43,7 +48,7 @@ async function loadPeer() {
 
 export async function hostRoom(roomId, handlers = {}) {
   const Peer = await loadPeer();
-  const peer = new Peer(roomId);
+  const peer = new Peer(roomId, PEER_OPTIONS);
   const conns = new Map();
 
   await waitForOpen(peer);
@@ -124,7 +129,7 @@ export async function hostRoom(roomId, handlers = {}) {
 
 export async function joinRoom(roomId, ownPeerId, handlers = {}) {
   const Peer = await loadPeer();
-  const peer = new Peer(ownPeerId);
+  const peer = new Peer(ownPeerId, PEER_OPTIONS);
   await waitForOpen(peer);
 
   let attempts = 0;
