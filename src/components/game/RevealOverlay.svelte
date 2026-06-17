@@ -304,14 +304,15 @@
     border-color: #050505;
     box-shadow: 2px 2px 0 #050505;
   }
+  /* The round's points winner is always highlighted in the design red
+     (--accent). Exact hits keep a stronger, faster pulse to stay distinct
+     within the same red palette. */
   .winner {
-    border-color: var(--bug-yellow);
-    box-shadow: 4px 4px 0 var(--bug-yellow);
+    border-color: var(--accent);
+    box-shadow: 4px 4px 0 var(--accent);
     animation: winner-pulse 1.4s ease-in-out infinite;
   }
   .winner.exact {
-    border-color: var(--accent);
-    box-shadow: 4px 4px 0 var(--accent);
     animation: exact-pulse 1.2s ease-in-out infinite;
   }
   .no-subs {
@@ -347,10 +348,10 @@
   @keyframes winner-pulse {
     0%,
     100% {
-      box-shadow: 4px 4px 0 var(--bug-yellow);
+      box-shadow: 4px 4px 0 var(--accent);
     }
     50% {
-      box-shadow: 8px 8px 0 var(--bug-yellow);
+      box-shadow: 8px 8px 0 var(--accent);
     }
   }
   @keyframes exact-pulse {
