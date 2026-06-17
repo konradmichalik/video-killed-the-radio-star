@@ -24,3 +24,4 @@ export const PEER_CONNECT_TIMEOUT_MS = 8000; // give up establishing a peer conn
 export const PEER_RECONNECT_BACKOFF_MS = [1000, 3000, 9000]; // delays before each reconnect attempt
 export const MAX_PLAYERS = 16; // hard cap on players per room
 export const PLAYER_DISCONNECT_TIMEOUT_MS = 60000; // drop a player after this long without heartbeat
+export const AUTO_ADVANCE_REVEAL_MS = 6000; // with AUTO NEXT ROUND on, skip to a fresh track this long after reveal so the next round starts deterministically (not at song end)

@@ -61,6 +61,7 @@
     submitGuess as reduceSubmit,
   } from './lib/multiplayer/state.js';
   import { closestYearWinners } from './lib/multiplayer/scoring.js';
+  import { AUTO_ADVANCE_REVEAL_MS } from './lib/constants.js';
 
   import StartScreen from './components/StartScreen.svelte';
   import CrtOverlay from './components/CrtOverlay.svelte';
@@ -489,6 +490,38 @@
   // is robust to that drift.
   let autoAdvanceFired = false;
   $: if ($room.session?.phase !== 'revealed') autoAdvanceFired = false;
+
+  // Explicit kick-off: the natural advance above only fires when YouTube moves
+  // off the round's track, which (after an early reveal) can be minutes away —
+  // making AUTO NEXT ROUND feel like it "doesn't start". So once the reveal is
+  // on screen, arm a one-shot timer that skips to a fresh track; the watcher
+  // above then detects the new video_id and starts the next guessing round.
+  // The timer is reset whenever we leave 'revealed' or the toggle/mode change,
+  // so it can't double-fire or fire after the game ends.
+  let autoAdvanceTimer = null;
+  function clearAutoAdvanceTimer() {
+    if (autoAdvanceTimer) {
+      clearTimeout(autoAdvanceTimer);
+      autoAdvanceTimer = null;
+    }
+  }
+  $: armAutoAdvanceKickoff($autoAdvanceRound, $gameMode, $room.session?.phase);
+  function armAutoAdvanceKickoff(enabled, mode, phase) {
+    const shouldArm = enabled && mode === 'connected' && phase === 'revealed';
+    if (!shouldArm) {
+      clearAutoAdvanceTimer();
+      return;
+    }
+    if (autoAdvanceTimer) return; // already armed for this reveal
+    autoAdvanceTimer = setTimeout(() => {
+      autoAdvanceTimer = null;
+      // Re-check: the host may have advanced manually or toggled off meanwhile.
+      if (!get(autoAdvanceRound) || get(gameMode) !== 'connected') return;
+      if (get(room).session?.phase !== 'revealed') return;
+      next(); // skip to a fresh track → maybeAutoAdvance() picks it up
+    }, AUTO_ADVANCE_REVEAL_MS);
+  }
+  onDestroy(clearAutoAdvanceTimer);
 
   $: maybeAutoAdvance(
     $autoAdvanceRound,
