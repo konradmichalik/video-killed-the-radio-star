@@ -47,6 +47,7 @@ export async function hostRoom(roomId, handlers = {}) {
   const conns = new Map();
 
   await waitForOpen(peer);
+  handlers.onBrokerStatus?.('open');
 
   peer.on('connection', (conn) => {
     conn.on('open', () => {
@@ -59,6 +60,35 @@ export async function hostRoom(roomId, handlers = {}) {
       handlers.onLeave?.(conn.peer);
     });
     conn.on('error', (err) => handlers.onError?.(conn.peer, err));
+  });
+
+  // The host can silently lose its socket to the broker (network blip, the TV
+  // sleeping/waking, Wi-Fi roam). PeerJS keeps the local peer object alive but
+  // stops registering the room id — so the QR/code stops resolving and NO new
+  // phone can join, no matter how often it reloads. The host id is deterministic
+  // (the room code), so re-registering the SAME id re-opens the room and lets
+  // clients (which reconnect with backoff) come back. Cap the attempts so a
+  // permanently-dead network surfaces 'unreachable' instead of looping forever.
+  let destroyed = false;
+  let brokerAttempts = 0;
+  peer.on('disconnected', () => {
+    if (destroyed) return;
+    if (brokerAttempts >= PEER_RECONNECT_BACKOFF_MS.length) {
+      handlers.onBrokerStatus?.('unreachable');
+      return;
+    }
+    brokerAttempts++;
+    handlers.onBrokerStatus?.('reconnecting');
+    try {
+      peer.reconnect();
+    } catch {
+      handlers.onBrokerStatus?.('unreachable');
+    }
+  });
+  peer.on('open', () => {
+    if (destroyed) return;
+    brokerAttempts = 0;
+    handlers.onBrokerStatus?.('open');
   });
 
   return {
@@ -82,6 +112,7 @@ export async function hostRoom(roomId, handlers = {}) {
       conns.delete(peerId);
     },
     close() {
+      destroyed = true;
       try {
         peer.destroy();
       } catch {

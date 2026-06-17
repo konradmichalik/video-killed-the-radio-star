@@ -329,6 +329,10 @@
   // True when hostRoom() failed — HostRoomView shows an error banner instead
   // of a join code that doesn't exist on the broker.
   let roomError = false;
+  // Live broker connection status for the host, surfaced via NetworkBadge so
+  // the host can see a drop ('reconnecting'/'unreachable') and know why phones
+  // can't join. Updated by hostRoom()'s onBrokerStatus callback.
+  let brokerStatus = 'connecting';
   // Solo self-rate state — only meaningful during Solo's 'revealed' phase.
 
   // Connected-mode host handle (PeerJS room). null when not hosting.
@@ -342,9 +346,13 @@
     const code = generateRoomId();
     roomCode = code;
     roomError = false;
+    brokerStatus = 'connecting';
     joinUrl = `${globalThis.location.origin}${import.meta.env.BASE_URL}?join=${code}`;
     try {
       host = await hostRoom(PEER_PREFIX + code, {
+        onBrokerStatus: (status) => {
+          brokerStatus = status;
+        },
         onJoin: (peerId) => {
           // Send a welcome snapshot to the joining peer.
           const r = get(room);
@@ -802,6 +810,7 @@
       {roomCode}
       {joinUrl}
       {roomError}
+      {brokerStatus}
       on:close={() => (gameSheetOpen = false)}
       on:startMode={onStartMode}
       on:startRound={onStartRound}

@@ -9,6 +9,7 @@
   export let roomCode = null;
   export let joinUrl = '';
   export let roomError = false;
+  export let brokerStatus = 'connecting';
 
   // Start the import as soon as this wrapper is mounted. The parent only
   // mounts us when the user has actually opened the game or a session is
@@ -23,6 +24,7 @@
     {roomCode}
     {joinUrl}
     {roomError}
+    {brokerStatus}
     on:close
     on:startMode
     on:startRound

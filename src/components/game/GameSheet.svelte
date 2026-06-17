@@ -11,6 +11,7 @@
   export let roomCode = null;
   export let joinUrl = '';
   export let roomError = false;
+  export let brokerStatus = 'connecting';
 
   const dispatch = createEventDispatcher();
   const close = () => dispatch('close');
@@ -36,6 +37,7 @@
       {roomCode}
       {joinUrl}
       {roomError}
+      {brokerStatus}
       players={$room.players}
       submissions={$room.submissions}
       session={$room.session}

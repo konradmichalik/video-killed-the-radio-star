@@ -14,6 +14,7 @@
   export let session; // { round, phase }
   export let connectedCount = 0;
   export let roomError = false; // hostRoom() failed — the code/QR would be dead
+  export let brokerStatus = 'connecting'; // live broker link: open|reconnecting|unreachable
 
   const dispatch = createEventDispatcher();
   let qrEl;
@@ -123,7 +124,7 @@
     {/if}
 
     <div class="meta-row room-meta">
-      <NetworkBadge status={roomError ? 'unreachable' : 'open'} />
+      <NetworkBadge status={roomError ? 'unreachable' : brokerStatus} />
       <span class="peers">{connectedCount}/{players.length} peers</span>
     </div>
 
