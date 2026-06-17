@@ -23,16 +23,30 @@ export const LOWER_THIRD_TRACK_CHANGE_DELAY_MS = 2000; // wait this long after a
 export const PEER_CONNECT_TIMEOUT_MS = 8000; // give up establishing a peer connection after this long
 export const PEER_RECONNECT_BACKOFF_MS = [1000, 3000, 9000]; // delays before each reconnect attempt
 // ICE servers for the WebRTC peer connection. PeerJS's bundled default is a
-// single Google STUN entry; giving it several reputable public STUN servers
-// lets each device gather server-reflexive candidates more reliably, which is
-// what cross-device joins on the same network need (a same-machine browser tab
-// connects over loopback and barely needs ICE, which is why that "works" while
-// a real phone times out). STUN only discovers public addresses — it does NOT
-// relay traffic, so no game data leaves the peers. Networks with AP/client
-// isolation or symmetric NAT still need a TURN relay on top of this.
+// single Google STUN entry; this list adds several reputable public STUN
+// servers plus a TURN relay.
+//
+// STUN lets each device discover its public address so peers can connect
+// directly — enough for two devices on the same network. It does NOT relay
+// traffic, so when a direct path exists no game data leaves the peers (ICE
+// always prefers a direct candidate over the relay).
+//
+// TURN is the fallback for when no direct path exists — chiefly a phone on
+// mobile data (carrier-grade / symmetric NAT) talking to the TV behind a home
+// router. There the relay carries the data channel, so game traffic (incl.
+// player names and guesses) passes through this third-party server. We use the
+// free, no-signup OpenRelay/Metered public TURN; the credentials below are
+// theirs and publicly documented, not secrets. It is best-effort (no SLA, rate
+// limited) — swap in your own TURN credentials for reliable production use. The
+// :443?transport=tcp entry matters on mobile networks that block UDP: TURN then
+// tunnels over TCP/443 and looks like ordinary HTTPS.
+const OPENRELAY = { username: 'openrelayproject', credential: 'openrelayproject' };
 export const ICE_SERVERS = [
   { urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302'] },
   { urls: 'stun:stun.cloudflare.com:3478' },
+  { urls: 'turn:openrelay.metered.ca:80', ...OPENRELAY },
+  { urls: 'turn:openrelay.metered.ca:443', ...OPENRELAY },
+  { urls: 'turn:openrelay.metered.ca:443?transport=tcp', ...OPENRELAY },
 ];
 export const MAX_PLAYERS = 16; // hard cap on players per room
 export const PLAYER_DISCONNECT_TIMEOUT_MS = 60000; // drop a player after this long without heartbeat

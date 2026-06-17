@@ -49,15 +49,26 @@ once the handshake is done. The broker is a free, community-run service without
 an SLA; if it is rate-limited or down, new rooms cannot be created or joined
 until it recovers. Already-connected rooms keep working because the data path
 is peer-to-peer. Both peers are created with an explicit `iceServers` list
-(`ICE_SERVERS` in `constants.js` — several public STUN servers) so each device
-gathers enough candidates to connect across the network; a same-machine browser
-tab connects over loopback and barely needs ICE, which is why that path can
-"work" while a real phone on the same Wi-Fi times out. STUN only discovers
-public addresses — it does not relay traffic — so no `TURN` server is
-configured; peers behind AP/client isolation or symmetric NAT (some guest /
-corporate / mobile-carrier networks) can still fail to connect. For
-production-grade reliability, add a `TURN` entry to `ICE_SERVERS` and/or run your
-own [`peerjs-server`](https://github.com/peers/peerjs-server) and pass
+(`ICE_SERVERS` in `constants.js`) so each device gathers enough candidates to
+connect across the network; a same-machine browser tab connects over loopback
+and barely needs ICE, which is why that path can "work" while a real phone times
+out. The list has two tiers:
+
+- **STUN** (several public servers) discovers each device's public address for a
+  direct peer-to-peer path. It does not relay traffic — two devices on the same
+  network connect directly and no game data leaves the peers.
+- **TURN** (the free OpenRelay/Metered public relay, incl. a `:443?transport=tcp`
+  entry for mobile networks that block UDP) is the fallback when no direct path
+  exists — chiefly a phone on **mobile data** (carrier-grade / symmetric NAT)
+  talking to a TV behind a home router. ICE only uses it when a direct
+  connection is impossible, and then the data channel (incl. player names and
+  guesses) passes through that third-party server. The public relay is
+  best-effort (no SLA, rate limited); for reliable / privacy-controlled use,
+  replace the OpenRelay entries with your own TURN credentials (e.g. Cloudflare,
+  Metered free tier, or self-hosted [`coturn`](https://github.com/coturn/coturn)).
+
+For broker reliability you can also run your own
+[`peerjs-server`](https://github.com/peers/peerjs-server) and pass
 `{ host, port, path }` into `new Peer(...)` in `src/lib/multiplayer/peer.js`.
 
 Same Vite bundle for TV and phone; phone mode is triggered by `?join=ABCD` in

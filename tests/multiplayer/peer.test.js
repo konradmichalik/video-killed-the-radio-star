@@ -95,6 +95,13 @@ describe('peer ICE configuration', () => {
     expect(peer.options.config.iceServers.length).toBeGreaterThan(0);
     client.close();
   });
+
+  it('includes a TURN relay so phones on mobile data (symmetric NAT) can still connect', () => {
+    const urls = ICE_SERVERS.flatMap((s) => (Array.isArray(s.urls) ? s.urls : [s.urls]));
+    expect(urls.some((u) => u.startsWith('turn:'))).toBe(true);
+    // A TCP/443 relay entry is what gets through mobile networks that block UDP.
+    expect(urls.some((u) => u.includes('443?transport=tcp'))).toBe(true);
+  });
 });
 
 describe('joinRoom unreachable reasons', () => {
