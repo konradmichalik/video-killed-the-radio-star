@@ -9,11 +9,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-08D9D6?style=flat-square" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/Svelte-5-FF3E00?style=flat-square&logo=svelte&logoColor=white" alt="Svelte 5">
   <img src="https://img.shields.io/badge/Vite-PWA-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite + PWA">
-  <img src="https://img.shields.io/badge/iPad-optimised-FFE600?style=flat-square" alt="iPad-optimised">
 </p>
 
 <p align="center">
-A full-screen retro-TV PWA that turns a curated catalogue of music videos into a lean-back MTV-style channel — complete with CRT overlay, channel-change static, neo-brutalist UI, and a self-rated guess game. Built with Vite + Svelte 5. Mobile-first, iPad-optimised, installable offline.
+A full-screen retro-TV PWA that turns a curated catalogue of music videos into a lean-back MTV-style channel — complete with CRT overlay, channel-change static, neo-brutalist UI, and a year-guess game you can play solo or together (phones join the TV in Connected mode). Built with Vite + Svelte 5. Mobile-first, installable offline.
 </p>
 
 > It hosts no media. Videos stream via the YouTube IFrame Player API and remain © their respective owners.
@@ -22,7 +21,7 @@ A full-screen retro-TV PWA that turns a curated catalogue of music videos into a
 
 **Watch it live** → [konradmichalik.github.io/video-killed-the-radio-star](https://konradmichalik.github.io/video-killed-the-radio-star/)
 
-Works in any modern browser, but for the canonical experience: open the link on your **iPad / iPhone in Safari → Share → Add to Home Screen**. The installed PWA runs full-screen, supports offline launch, and (thanks to iOS ITP) is practically ad-free.
+Works in any modern browser, but for the canonical experience install it as a PWA: on **iPad / iPhone in Safari → Share → Add to Home Screen**, or on **Android in Chrome → menu → Add to Home screen / Install app**. The installed PWA runs full-screen and supports offline launch.
 
 <details>
 <summary><b>Run it locally</b> — for hacking or LAN testing</summary>
@@ -49,12 +48,12 @@ npm run verify     # Check all videos.json IDs are reachable and embeddable
 </details>
 
 > [!TIP]
-> **About YouTube ads** — VKTRS streams via the YouTube IFrame Player, and YouTube serves pre-roll ads on embedded third-party sites. We use the privacy-enhanced `youtube-nocookie.com` host and detect ad playback (`ADVERTISEMENT` indicator + tap-through to YouTube's own "Skip Ad" button), but the ads themselves cannot be suppressed in a Terms-of-Service-compliant way. **For a (practically) ad-free experience, install VKTRS as a PWA on the iPad/iPhone home screen** — iOS Intelligent Tracking Prevention in standalone webview context dramatically reduces (and often eliminates) embedded ad delivery.
+> **About YouTube ads** — VKTRS streams via the YouTube IFrame Player, and YouTube serves pre-roll ads on embedded third-party sites. We use the privacy-enhanced `youtube-nocookie.com` host and detect ad playback (`ADVERTISEMENT` indicator + tap-through to YouTube's own "Skip Ad" button), but the ads themselves cannot be suppressed in a Terms-of-Service-compliant way. Installing VKTRS as a PWA used to reduce ad delivery (via iOS Intelligent Tracking Prevention), but this no longer reliably holds — expect ads even in the installed app.
 
 ## ✨ Features
 
 - **Full-screen channel** — shuffle play, smooth preloaded song-to-song transitions, "▶ COMING UP" teasers, end-screen suppression (~1.5 s preempt before YouTube's "more videos" overlay)
-- **TV Guide** — year range, genre and country filters, one-tap channel presets, CRT / SONG INFO / STATION LOGO toggles
+- **TV Guide** — build your own channel: year range, genre and country filters, one-tap presets and CRT / SONG INFO / STATION LOGO toggles all tune the catalogue to your own taste
 - **Search** with ranked autocomplete; **Queue** editor with drag-to-reorder; **Settings** panel
 - **Game modes** — opt-in **Solo** (self-rated guess game: REVEAL, ✓/✗, streak + hit-rate stats in the sheet) and **Connected** (phones join the TV via QR, year-guess per round, closest year wins) — see [`docs/game-modes.md`](docs/game-modes.md)
 
@@ -68,7 +67,7 @@ npm run verify     # Check all videos.json IDs are reachable and embeddable
 
 ## 🤝 Contributing
 
-The easiest way to contribute is to suggest tracks for the catalogue or to fix broken / wrong replacement IDs.
+The catalogue currently holds **1,150+ verified music videos** and keeps growing. The easiest way to contribute is to suggest tracks for it or to fix broken / wrong replacement IDs.
 
 **Suggest a new song** — open an issue (or PR) with:
 
