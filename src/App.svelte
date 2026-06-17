@@ -27,7 +27,6 @@
     resetGuessStats,
     autoAdvanceRound,
     exactMatchBonus,
-    adPlaying,
   } from './lib/stores.js';
   import {
     startSession,
@@ -46,6 +45,8 @@
     toggleMute,
     armInitWatchdog,
     debugPlayerState,
+    currentPlayerVideoId,
+    nudgePlay,
   } from './lib/player.js';
   import { enableWakeLock } from './lib/wakelock.js';
   import { requestAppFullscreen } from './lib/fullscreen.js';
@@ -517,8 +518,8 @@
       get(room).session?.phase === 'revealed'
     );
   }
-  function startAutoRound() {
-    const cv = get(currentVideo);
+  function startAutoRound(track) {
+    const cv = track || get(currentVideo);
     if (!cv?.video_id) return; // nothing valid to start on — leave it for manual
     room.update((s) => reduceNextRound(s));
     room.update((s) => reduceStartRound(s, cv));
@@ -536,7 +537,10 @@
       if (!autoAdvanceActive()) return;
       const roundTrackId = get(room).session?.currentVideo?.video_id;
       // Move to a fresh track only if YouTube hasn't already drifted off it.
-      if (get(currentVideo)?.video_id === roundTrackId) next();
+      if (currentPlayerVideoId() === roundTrackId) next();
+      // Some embeds cue the next clip without autoplaying it — force playback so
+      // it actually starts (and so the players hear it once the round begins).
+      nudgePlay();
       autoAdvanceWaited = 0;
       autoAdvanceWatch = setInterval(() => {
         if (!autoAdvanceActive()) {
@@ -544,12 +548,25 @@
           return;
         }
         autoAdvanceWaited += AUTO_ADVANCE_POLL_MS;
-        const cv = get(currentVideo);
-        const onFreshTrack = cv?.video_id && cv.video_id !== roundTrackId && !get(adPlaying);
+        nudgePlay(); // keep nudging until the freshly-skipped clip starts
+        // Detect the fresh track from what the PLAYER actually reports rather
+        // than the currentVideo store: the store only re-syncs on a PLAYING
+        // transition, so a slow-to-start clip would leave it stale and stall
+        // auto-advance until the safety timeout. Matching the reported id back
+        // to the playlist also excludes pre-roll ads for free (ad ids aren't in
+        // the playlist), so we no longer need the flaky adPlaying heuristic.
+        const playedId = currentPlayerVideoId();
+        const fresh =
+          playedId && playedId !== roundTrackId
+            ? get(playlist).find((t) => t.video_id === playedId)
+            : null;
         const timedOut = autoAdvanceWaited >= AUTO_ADVANCE_TRACK_TIMEOUT_MS;
-        if (onFreshTrack || timedOut) {
+        if (fresh) {
           clearAutoAdvance();
-          startAutoRound();
+          startAutoRound(fresh);
+        } else if (timedOut) {
+          clearAutoAdvance();
+          startAutoRound(get(currentVideo));
         }
       }, AUTO_ADVANCE_POLL_MS);
     }, AUTO_ADVANCE_REVEAL_MS);

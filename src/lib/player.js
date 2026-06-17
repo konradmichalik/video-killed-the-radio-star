@@ -272,6 +272,23 @@ export function next() {
   player.nextVideo();
 }
 
+// The video_id YouTube is actually playing right now. This can differ from the
+// `currentVideo` store mid-skip: the store only re-syncs on a PLAYING state
+// change, so when a freshly-skipped clip is slow to start (cued/buffering) the
+// store lags while getVideoData() already reports the new id. The connected
+// auto-advance reads this to detect the next track without waiting for PLAYING.
+export function currentPlayerVideoId() {
+  if (!ready || !player || typeof player.getVideoData !== 'function') return null;
+  return player.getVideoData()?.video_id || null;
+}
+
+// Nudge playback. Some embeds CUE the next clip on nextVideo() without
+// autoplaying it (observed during connected auto-advance), leaving it UNSTARTED
+// so it never reaches PLAYING. Calling this is a no-op when already playing.
+export function nudgePlay() {
+  if (ready && player && typeof player.playVideo === 'function') player.playVideo();
+}
+
 export function prev() {
   if (!ready || !player) return;
   showUpNext.set(false);
