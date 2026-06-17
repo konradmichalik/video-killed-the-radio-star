@@ -519,7 +519,7 @@
     );
   }
   function startAutoRound(track) {
-    const cv = track || get(currentVideo);
+    const cv = track;
     if (!cv?.video_id) return; // nothing valid to start on — leave it for manual
     room.update((s) => reduceNextRound(s));
     room.update((s) => reduceStartRound(s, cv));
