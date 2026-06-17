@@ -11,14 +11,14 @@
     "artist": "Bill Haley & His Comets",
     "year": 1956,
     "genre": "Pop",
-    "video_id": "NMP6IGJXG3o"
+    "video_id": "1Hb66FH9AzI"
   },
   {
     "title": "Jailhouse Rock",
     "artist": "Elvis Presley",
     "year": 1957,
     "genre": "Pop",
-    "video_id": "PpsUOOfb-vE"
+    "video_id": "RdEU9sccnd8"
   },
   {
     "title": "Johnny B. Goode",
@@ -28,48 +28,25 @@
     "video_id": "6swgiM9vSEE"
   },
   {
-    "title": "Rumble",
-    "artist": "Link Wray & His Ray Men",
-    "year": 1958,
-    "genre": "Rock",
-    "video_id": "IVKtbMnsJow",
-    "country": "United States"
-  },
-  {
-    "title": "La Bamba",
-    "artist": "Ritchie Valens",
-    "year": 1958,
-    "genre": "Pop",
-    "video_id": "Jp6j5HJ-Cok"
-  },
-  {
     "title": "Hit The Road Jack",
     "artist": "Ray Charles",
     "year": 1961,
     "genre": "Pop",
-    "video_id": "uSiHqxgE2d0"
-  },
-  {
-    "title": "Girl from the North Country",
-    "artist": "Bob Dylan",
-    "year": 1963,
-    "genre": "Folk",
-    "video_id": "Je4Eg77YSSA",
-    "country": "United States"
+    "video_id": "Q8Tiz6INF7I"
   },
   {
     "title": "It's My Party",
     "artist": "Lesley Gore",
     "year": 1963,
     "genre": "Pop",
-    "video_id": "mIsnIt1p978"
+    "video_id": "mtCIdpnQoWk"
   },
   {
     "title": "Surfin' U.S.A.",
     "artist": "The Beach Boys",
     "year": 1963,
     "genre": "Pop",
-    "video_id": "enlOHxQ0tb4"
+    "video_id": "vsDKMkPCOeA"
   },
   {
     "title": "Louie Louie",
@@ -84,7 +61,7 @@
     "artist": "The Ronettes",
     "year": 1963,
     "genre": "Pop",
-    "video_id": "jSPpbOGnFgk",
+    "video_id": "e-dr1PZZMds",
     "country": "United States"
   },
   {
@@ -93,14 +70,6 @@
     "year": 1964,
     "genre": "Pop",
     "video_id": "D3a8Seh3Cp4"
-  },
-  {
-    "title": "A Change Is Gonna Come",
-    "artist": "Sam Cooke",
-    "year": 1964,
-    "genre": "Soul",
-    "video_id": "wEBlaMOmKV4",
-    "country": "United States"
   },
   {
     "title": "The Sound of Silence",
@@ -122,7 +91,7 @@
     "artist": "Bob Dylan",
     "year": 1965,
     "genre": "Folk",
-    "video_id": "IwOfCgkyEj0",
+    "video_id": "a6Kv0vF41Bc",
     "country": "United States"
   },
   {
@@ -131,22 +100,6 @@
     "year": 1965,
     "genre": "Folk",
     "video_id": "MGxjIBEZvx0",
-    "country": "United States"
-  },
-  {
-    "title": "I Want You",
-    "artist": "Bob Dylan",
-    "year": 1966,
-    "genre": "Folk",
-    "video_id": "-iIS6ZZ9RVA",
-    "country": "United States"
-  },
-  {
-    "title": "Visions of Johanna",
-    "artist": "Bob Dylan",
-    "year": 1966,
-    "genre": "Folk",
-    "video_id": "AwuCF5lYqEE",
     "country": "United States"
   },
   {
@@ -166,14 +119,6 @@
     "country": "United States"
   },
   {
-    "title": "Eight Miles High",
-    "artist": "The Byrds",
-    "year": 1966,
-    "genre": "Rock",
-    "video_id": "NxyOhFBoxSY",
-    "country": "United States"
-  },
-  {
     "title": "I'm A Believer",
     "artist": "The Monkees",
     "year": 1966,
@@ -181,34 +126,18 @@
     "video_id": "cOJdT-W-lMM"
   },
   {
-    "title": "You Can't Hurry Love",
-    "artist": "The Supremes",
-    "year": 1966,
-    "genre": "Soul",
-    "video_id": "ovoBi3pXD_A",
-    "country": "United States"
-  },
-  {
     "title": "Respect",
     "artist": "Aretha Franklin",
     "year": 1967,
     "genre": "Pop",
-    "video_id": "6FOUqQt3Kg0"
+    "video_id": "cYbs_O_iMfU"
   },
   {
     "title": "Sunshine Of Your Love",
     "artist": "Cream",
     "year": 1967,
     "genre": "Pop",
-    "video_id": "f3y8jf01UY8"
-  },
-  {
-    "title": "Alone Again Or",
-    "artist": "Love",
-    "year": 1967,
-    "genre": "Rock",
-    "video_id": "cPbNpIG8x_s",
-    "country": "United States"
+    "video_id": "U67NdlhjZNw"
   },
   {
     "title": "A Day in the Life",
@@ -235,51 +164,11 @@
     "country": "United Kingdom"
   },
   {
-    "title": "Little Wing",
-    "artist": "The Jimi Hendrix Experience",
-    "year": 1967,
-    "genre": "Rock",
-    "video_id": "35luFxHO5E0",
-    "country": "United States"
-  },
-  {
-    "title": "Waterloo Sunset",
-    "artist": "The Kinks",
-    "year": 1967,
-    "genre": "Rock",
-    "video_id": "N_MqfF0WBsU",
-    "country": "United Kingdom"
-  },
-  {
-    "title": "Venus in Furs",
-    "artist": "The Velvet Underground",
-    "year": 1967,
-    "genre": "Rock",
-    "video_id": "KR7Lv8XZtkk",
-    "country": "United States"
-  },
-  {
-    "title": "Wichita Lineman",
-    "artist": "Glen Campbell",
-    "year": 1968,
-    "genre": "Country",
-    "video_id": "Q8P_xTBpAcY",
-    "country": "United States"
-  },
-  {
-    "title": "MacArthur Park",
-    "artist": "Richard Harris",
-    "year": 1968,
-    "genre": "Pop",
-    "video_id": "tRwYQgk05DY",
-    "country": "Ireland"
-  },
-  {
     "title": "America",
     "artist": "Simon & Garfunkel",
     "year": 1968,
     "genre": "Folk",
-    "video_id": "Eo2ZsAOlvEM",
+    "video_id": "SzS2ExeIpRo",
     "country": "United States"
   },
   {
@@ -287,22 +176,14 @@
     "artist": "Steppenwolf",
     "year": 1968,
     "genre": "Pop",
-    "video_id": "egMWlD3fLJ8"
+    "video_id": "HqtLk2kRllI"
   },
   {
     "title": "Blackbird",
     "artist": "The Beatles",
     "year": 1968,
     "genre": "Rock",
-    "video_id": "Man4Xw8Xypo",
-    "country": "United Kingdom"
-  },
-  {
-    "title": "Helter Skelter",
-    "artist": "The Beatles",
-    "year": 1968,
-    "genre": "Rock",
-    "video_id": "vWW2SzoAXMo",
+    "video_id": "svR6-Y7BS_U",
     "country": "United Kingdom"
   },
   {
@@ -318,38 +199,14 @@
     "artist": "Neil Diamond",
     "year": 1969,
     "genre": "Pop",
-    "video_id": "4F_RCWVoL4s"
+    "video_id": "1vhFnTjia_I"
   },
   {
     "title": "Aquarius/Let The Sunshine In",
     "artist": "The 5th Dimension",
     "year": 1969,
     "genre": "Pop",
-    "video_id": "VlrQ-bOzpkQ"
-  },
-  {
-    "title": "Gimme Shelter",
-    "artist": "The Rolling Stones",
-    "year": 1969,
-    "genre": "Rock",
-    "video_id": "RbmS3tQJ7Os",
-    "country": "United Kingdom"
-  },
-  {
-    "title": "Pale Blue Eyes",
-    "artist": "The Velvet Underground",
-    "year": 1969,
-    "genre": "Rock",
-    "video_id": "aNSH8OdHx2A",
-    "country": "United States"
-  },
-  {
-    "title": "Move On Up",
-    "artist": "Curtis Mayfield",
-    "year": 1970,
-    "genre": "Soul",
-    "video_id": "A9RMr9KuVZo",
-    "country": "United States"
+    "video_id": "kjxSCAalsBE"
   },
   {
     "title": "Let It Be",
@@ -363,14 +220,14 @@
     "artist": "Creedence Clearwater Revival",
     "year": 1971,
     "genre": "Pop",
-    "video_id": "u1V8YRJnr4Q"
+    "video_id": "a11nBxc8kDQ"
   },
   {
     "title": "Life on Mars?",
     "artist": "David Bowie",
     "year": 1971,
     "genre": "Rock",
-    "video_id": "AZKcl4-tcuo",
+    "video_id": "ft3b1-Cm-0M",
     "country": "United Kingdom"
   },
   {
@@ -386,16 +243,8 @@
     "artist": "Led Zeppelin",
     "year": 1971,
     "genre": "Rock",
-    "video_id": "QkF3oxziUI4",
+    "video_id": "Ly6ZhQVnVow",
     "country": "United Kingdom"
-  },
-  {
-    "title": "Famous Blue Raincoat",
-    "artist": "Leonard Cohen",
-    "year": 1971,
-    "genre": "Folk",
-    "video_id": "ohk3DP5fMCg",
-    "country": "Canada"
   },
   {
     "title": "What's Going On",
@@ -406,34 +255,11 @@
     "country": "United States"
   },
   {
-    "title": "Family Affair",
-    "artist": "Sly & The Family Stone",
-    "year": 1971,
-    "genre": "Funk",
-    "video_id": "xag5RKD0VHk",
-    "country": "United States"
-  },
-  {
     "title": "Get It On",
     "artist": "T. Rex",
     "year": 1971,
     "genre": "Pop",
     "video_id": "wZkTh_T75QY"
-  },
-  {
-    "title": "Surf's Up",
-    "artist": "The Beach Boys",
-    "year": 1971,
-    "genre": "Pop",
-    "video_id": "i1HJ35p1Bm8",
-    "country": "United States"
-  },
-  {
-    "title": "American Woman",
-    "artist": "The Guess Who",
-    "year": 1971,
-    "genre": "Pop",
-    "video_id": "9uf6EY2BZBw"
   },
   {
     "title": "School's Out",
@@ -450,19 +276,11 @@
     "video_id": "j13oJajXx0M"
   },
   {
-    "title": "Perfect Day",
-    "artist": "Lou Reed",
-    "year": 1972,
-    "genre": "Rock",
-    "video_id": "9wxI4KK9ZYo",
-    "country": "United States"
-  },
-  {
     "title": "Walk on the Wild Side",
     "artist": "Lou Reed",
     "year": 1972,
     "genre": "Rock",
-    "video_id": "oG6fayQBm9w",
+    "video_id": "RsVLIiI8Vfo",
     "country": "United States"
   },
   {
@@ -470,23 +288,15 @@
     "artist": "Neil Young",
     "year": 1972,
     "genre": "Folk",
-    "video_id": "c7eB7Wns1-M",
+    "video_id": "WZn9QZykx10",
     "country": "Canada"
-  },
-  {
-    "title": "Pink Moon",
-    "artist": "Nick Drake",
-    "year": 1972,
-    "genre": "Folk",
-    "video_id": "xqe6TF2y8i4",
-    "country": "United Kingdom"
   },
   {
     "title": "You Ain't Seen Nothing Yet",
     "artist": "Bachman-Turner Overdrive",
     "year": 1974,
     "genre": "Pop",
-    "video_id": "w3fRBzRngdc"
+    "video_id": "4cia_v4vxfE"
   },
   {
     "title": "Rock Your Baby",
@@ -500,7 +310,7 @@
     "artist": "Kraftwerk",
     "year": 1974,
     "genre": "Other",
-    "video_id": "x-G28iyPtz0",
+    "video_id": "-ncwiAC2ACg",
     "country": "Germany"
   },
   {
@@ -508,22 +318,14 @@
     "artist": "Lynyrd Skynyrd",
     "year": 1974,
     "genre": "Pop",
-    "video_id": "-p8GXZcdrIk"
-  },
-  {
-    "title": "Sea Song",
-    "artist": "Robert Wyatt",
-    "year": 1974,
-    "genre": "Other",
-    "video_id": "KgE8qoH_x7s",
-    "country": "United Kingdom"
+    "video_id": "iwjZSi_3vxw"
   },
   {
     "title": "This Town Ain't Big Enough for Both of Us",
     "artist": "Sparks",
     "year": 1974,
     "genre": "Pop",
-    "video_id": "BI9gOtRMogY",
+    "video_id": "eUJ_ifjKopM",
     "country": "United States"
   },
   {
@@ -532,14 +334,6 @@
     "year": 1975,
     "genre": "Folk",
     "video_id": "YwSZvHqf9qM",
-    "country": "United States"
-  },
-  {
-    "title": "Thunder Road",
-    "artist": "Bruce Springsteen",
-    "year": 1975,
-    "genre": "Rock",
-    "video_id": "JGBXnw86Mgc",
     "country": "United States"
   },
   {
@@ -2858,7 +2652,7 @@
     "artist": "Die Ärzte",
     "year": 1988,
     "genre": "Punk",
-    "video_id": "G-NrSn3K6gM",
+    "video_id": "BdObvla9QeU",
     "country": "Germany"
   },
   {
@@ -6647,13 +6441,6 @@
     "genre": "Punk",
     "video_id": "E3oDVDyOrAQ",
     "country": "Canada"
-  },
-  {
-    "title": "Love Comes Again",
-    "artist": "Tiesto & BT",
-    "year": 2004,
-    "genre": "Pop",
-    "video_id": "Jbh3GlrRcQ4"
   },
   {
     "title": "Yeah!",
