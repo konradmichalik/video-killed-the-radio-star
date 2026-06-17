@@ -21,7 +21,7 @@ A full-screen retro-TV PWA that turns a curated catalogue of music videos into a
 
 **Watch it live** → [konradmichalik.github.io/video-killed-the-radio-star](https://konradmichalik.github.io/video-killed-the-radio-star/)
 
-Works in any modern browser, but for the canonical experience install it as a PWA: on **iPad / iPhone in Safari → Share → Add to Home Screen**, or on **Android in Chrome → menu → Add to Home screen / Install app**. The installed PWA runs full-screen and supports offline launch.
+Works in any modern browser, but for the canonical experience install it as a PWA: on **iPad / iPhone in Safari → Share → Add to Home Screen**, or on **Android in Chrome → menu → Add to Home screen / Install app**. The installed PWA runs full-screen (note: video streaming always needs a network connection).
 
 <details>
 <summary><b>Run it locally</b> — for hacking or LAN testing</summary>
@@ -67,7 +67,7 @@ npm run verify     # Check all videos.json IDs are reachable and embeddable
 
 ## 🤝 Contributing
 
-The catalogue currently holds **1,150+ verified music videos** and keeps growing. The easiest way to contribute is to suggest tracks for it or to fix broken / wrong replacement IDs.
+The catalogue currently holds **1,100+ verified music videos** and keeps growing. The easiest way to contribute is to suggest tracks for it or to fix broken / wrong replacement IDs.
 
 **Suggest a new song** — open an issue (or PR) with:
 
