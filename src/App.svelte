@@ -61,7 +61,11 @@
     submitGuess as reduceSubmit,
   } from './lib/multiplayer/state.js';
   import { closestYearWinners } from './lib/multiplayer/scoring.js';
-  import { AUTO_ADVANCE_REVEAL_MS } from './lib/constants.js';
+  import {
+    AUTO_ADVANCE_REVEAL_MS,
+    AUTO_ADVANCE_POLL_MS,
+    AUTO_ADVANCE_TRACK_TIMEOUT_MS,
+  } from './lib/constants.js';
 
   import StartScreen from './components/StartScreen.svelte';
   import CrtOverlay from './components/CrtOverlay.svelte';
@@ -429,6 +433,11 @@
     );
   }
 
+  function broadcastRound(phase) {
+    const r = get(room);
+    host?.broadcast(encode('round', { round: r.session.round, phase }));
+  }
+
   function closeConnectedRoom() {
     host?.close();
     host = null;
@@ -461,10 +470,7 @@
   function onStartRound() {
     const cv = get(currentVideo);
     room.update((s) => reduceStartRound(s, cv));
-    if (get(gameMode) === 'connected') {
-      const r = get(room);
-      host?.broadcast(encode('round', { round: r.session.round, phase: 'guessing' }));
-    }
+    if (get(gameMode) === 'connected') broadcastRound('guessing');
   }
 
   function onReveal() {
@@ -473,87 +479,82 @@
 
   function onNextRound() {
     room.update((s) => reduceNextRound(s));
-    if (get(gameMode) === 'connected') {
-      const r = get(room);
-      host?.broadcast(encode('round', { round: r.session.round, phase: 'idle' }));
-    }
+    if (get(gameMode) === 'connected') broadcastRound('idle');
     // Advance to the next track so each round plays something new.
     next();
   }
 
-  // Auto-advance: when the host enables it, the next round starts as soon as
-  // YouTube has moved off the round's track (pre-roll finished, music plays).
-  // Skips the intermediate 'idle' state and goes straight to 'guessing' so
-  // the current track is the new round's track.
+  // Auto-advance ("AUTO NEXT ROUND"): once the reveal has been on screen for a
+  // beat, deterministically roll the next round so the host never has to touch
+  // the controls between tracks. Driven by an explicit timer + poll rather than
+  // by reacting to YouTube's track change: the native playlist advance, the
+  // channel-change static mask and the ad-detection heuristic all update at
+  // different moments, so reacting to them was unreliable and routinely left
+  // the host stuck on the manual "Start round" button.
   //
-  // The reference id is the round's IMMUTABLE start track
-  // (`session.currentVideo`, set once in `reduceStartRound`), NOT a snapshot
-  // of `$currentVideo` taken at reveal time. Reason: `setLoop(true)` +
-  // `loadPlaylist` makes YouTube natively auto-advance between tracks, and
-  // `autoAdvanceBlocked()` in player.js only stops our own next() calls, not
-  // YT's native end-of-track advance. If a track ends during 'guessing',
-  // `$currentVideo` is already the next track by the time the host reveals —
-  // a reveal-time snapshot would then never differ from $currentVideo and
-  // the trigger would be stuck. Comparing against the round's start track
-  // is robust to that drift.
-  let autoAdvanceFired = false;
-  $: if ($room.session?.phase !== 'revealed') autoAdvanceFired = false;
-
-  // Explicit kick-off: the natural advance above only fires when YouTube moves
-  // off the round's track, which (after an early reveal) can be minutes away —
-  // making AUTO NEXT ROUND feel like it "doesn't start". So once the reveal is
-  // on screen, arm a one-shot timer that skips to a fresh track; the watcher
-  // above then detects the new video_id and starts the next guessing round.
-  // The timer is reset whenever we leave 'revealed' or the toggle/mode change,
-  // so it can't double-fire or fire after the game ends.
+  // Sequence once the reveal delay elapses:
+  //   1. If we're still on the round's track, skip to a fresh one via next().
+  //      If YouTube already drifted off it on its own, don't skip again.
+  //   2. Poll until a fresh, non-ad track is actually playing (or a safety
+  //      timeout elapses), then start the next round on it — straight to
+  //      'guessing', skipping the intermediate 'idle'.
+  // Everything is torn down when we leave 'revealed', the mode/toggle changes
+  // or the component is destroyed, so it can never double-fire.
   let autoAdvanceTimer = null;
-  function clearAutoAdvanceTimer() {
-    if (autoAdvanceTimer) {
-      clearTimeout(autoAdvanceTimer);
-      autoAdvanceTimer = null;
-    }
+  let autoAdvanceWatch = null;
+  let autoAdvanceWaited = 0;
+  function clearAutoAdvance() {
+    if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+    if (autoAdvanceWatch) clearInterval(autoAdvanceWatch);
+    autoAdvanceTimer = null;
+    autoAdvanceWatch = null;
+    autoAdvanceWaited = 0;
   }
-  $: armAutoAdvanceKickoff($autoAdvanceRound, $gameMode, $room.session?.phase);
-  function armAutoAdvanceKickoff(enabled, mode, phase) {
-    const shouldArm = enabled && mode === 'connected' && phase === 'revealed';
-    if (!shouldArm) {
-      clearAutoAdvanceTimer();
+  function autoAdvanceActive() {
+    return (
+      get(autoAdvanceRound) &&
+      get(gameMode) === 'connected' &&
+      get(room).session?.phase === 'revealed'
+    );
+  }
+  function startAutoRound() {
+    const cv = get(currentVideo);
+    if (!cv?.video_id) return; // nothing valid to start on — leave it for manual
+    room.update((s) => reduceNextRound(s));
+    room.update((s) => reduceStartRound(s, cv));
+    broadcastRound('guessing');
+  }
+  $: armAutoAdvance($autoAdvanceRound, $gameMode, $room.session?.phase);
+  function armAutoAdvance(enabled, mode, phase) {
+    if (!(enabled && mode === 'connected' && phase === 'revealed')) {
+      clearAutoAdvance();
       return;
     }
-    if (autoAdvanceTimer) return; // already armed for this reveal
+    if (autoAdvanceTimer || autoAdvanceWatch) return; // already armed for this reveal
     autoAdvanceTimer = setTimeout(() => {
       autoAdvanceTimer = null;
-      // Re-check: the host may have advanced manually or toggled off meanwhile.
-      if (!get(autoAdvanceRound) || get(gameMode) !== 'connected') return;
-      if (get(room).session?.phase !== 'revealed') return;
-      next(); // skip to a fresh track → maybeAutoAdvance() picks it up
+      if (!autoAdvanceActive()) return;
+      const roundTrackId = get(room).session?.currentVideo?.video_id;
+      // Move to a fresh track only if YouTube hasn't already drifted off it.
+      if (get(currentVideo)?.video_id === roundTrackId) next();
+      autoAdvanceWaited = 0;
+      autoAdvanceWatch = setInterval(() => {
+        if (!autoAdvanceActive()) {
+          clearAutoAdvance();
+          return;
+        }
+        autoAdvanceWaited += AUTO_ADVANCE_POLL_MS;
+        const cv = get(currentVideo);
+        const onFreshTrack = cv?.video_id && cv.video_id !== roundTrackId && !get(adPlaying);
+        const timedOut = autoAdvanceWaited >= AUTO_ADVANCE_TRACK_TIMEOUT_MS;
+        if (onFreshTrack || timedOut) {
+          clearAutoAdvance();
+          startAutoRound();
+        }
+      }, AUTO_ADVANCE_POLL_MS);
     }, AUTO_ADVANCE_REVEAL_MS);
   }
-  onDestroy(clearAutoAdvanceTimer);
-
-  $: maybeAutoAdvance(
-    $autoAdvanceRound,
-    $gameMode,
-    $room.session?.phase,
-    $currentVideo?.video_id,
-    $adPlaying,
-    $room.session?.currentVideo?.video_id,
-  );
-  function maybeAutoAdvance(enabled, mode, phase, videoId, adOn, roundTrackId) {
-    if (autoAdvanceFired) return;
-    if (!enabled || mode !== 'connected' || phase !== 'revealed') return;
-    if (!videoId || !roundTrackId) return;
-    if (videoId === roundTrackId) return; // still on the round's track
-    if (adOn) return; // pre-roll still playing — wait for the music
-    autoAdvanceFired = true;
-    // Skip 'idle' and jump straight to the next guessing round on the new
-    // track. No manual next() call here — YouTube has already advanced.
-    room.update((s) => reduceNextRound(s));
-    const cv = get(currentVideo);
-    room.update((s) => reduceStartRound(s, cv));
-    const r = get(room);
-    host?.broadcast(encode('round', { round: r.session.round, phase: 'guessing' }));
-  }
+  onDestroy(clearAutoAdvance);
 
   // End-game flow is split in two so Connected mode can show a celebration
   // overlay BEFORE the session is torn down. Solo skips the overlay because

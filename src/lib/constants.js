@@ -24,4 +24,6 @@ export const PEER_CONNECT_TIMEOUT_MS = 8000; // give up establishing a peer conn
 export const PEER_RECONNECT_BACKOFF_MS = [1000, 3000, 9000]; // delays before each reconnect attempt
 export const MAX_PLAYERS = 16; // hard cap on players per room
 export const PLAYER_DISCONNECT_TIMEOUT_MS = 60000; // drop a player after this long without heartbeat
-export const AUTO_ADVANCE_REVEAL_MS = 6000; // with AUTO NEXT ROUND on, skip to a fresh track this long after reveal so the next round starts deterministically (not at song end)
+export const AUTO_ADVANCE_REVEAL_MS = 6000; // with AUTO NEXT ROUND on, how long the reveal stays before rolling the next round
+export const AUTO_ADVANCE_POLL_MS = 300; // cadence while waiting for the fresh track to settle before auto-starting the round
+export const AUTO_ADVANCE_TRACK_TIMEOUT_MS = 20000; // safety net: start the next round anyway if a fresh non-ad track never settles (e.g. long/stuck pre-roll)
