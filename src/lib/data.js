@@ -144,9 +144,10 @@ export function filterVideos(all, { yearMin, yearMax, genres, countries }) {
   return all.filter((v) => {
     if (v.year < yearMin || v.year > yearMax) return false;
     if (genres && !genres.has(v.genre)) return false;
-    // country filter only applies to entries that have a country, so entries
-    // without one are never hidden by it (keeps the field optional)
-    if (countries && v.country && !countries.has(v.country)) return false;
+    // when a country subset is active, only entries from those countries pass —
+    // entries without a country are excluded too (asking for "Germany" should
+    // not surface unattributed tracks)
+    if (countries && !countries.has(v.country)) return false;
     return true;
   });
 }

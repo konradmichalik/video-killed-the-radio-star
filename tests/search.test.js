@@ -46,24 +46,24 @@ describe('countriesOf', () => {
 describe('filterVideos with countries', () => {
   const all = new Set(['Synthpop', 'Alternative', 'Hip-Hop', 'Dance', 'Rock']);
 
-  it('keeps the selected countries (and never hides country-less entries)', () => {
+  it('keeps only the selected countries', () => {
     const out = filterVideos(sample, {
       yearMin: 1900,
       yearMax: 2100,
       genres: all,
       countries: new Set(['United Kingdom', 'France']),
     });
-    expect(out.map((v) => v.title)).toEqual(['Creep', 'Get Lucky', 'No Country']);
+    expect(out.map((v) => v.title)).toEqual(['Creep', 'Get Lucky']);
   });
 
-  it('never hides entries that have no country', () => {
+  it('excludes entries that have no country when a subset is active', () => {
     const out = filterVideos(sample, {
       yearMin: 1900,
       yearMax: 2100,
       genres: all,
       countries: new Set(['United States']),
     });
-    expect(out.map((v) => v.title)).toEqual(['Lose Yourself', 'No Country']);
+    expect(out.map((v) => v.title)).toEqual(['Lose Yourself']);
   });
 
   it('applies no country constraint when countries is null', () => {
