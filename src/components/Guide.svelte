@@ -102,6 +102,14 @@
     selCountry = { ...selCountry, [c]: !selCountry[c] };
   }
 
+  function setAllGenres(on) {
+    selected = selectionMap(genres, () => on);
+  }
+
+  function setAllCountries(on) {
+    selCountry = selectionMap(countries, () => on);
+  }
+
   // one-tap channel presets, generated from the data. Favorites preset is
   // prepended whenever the user has tagged at least one track.
   $: dataPresets = buildPresets($videos);
@@ -377,6 +385,14 @@
     </button>
     {#if openSections.genres}
       <div class="block-body" transition:slide={{ duration: 220 }}>
+        <div class="bulk-actions">
+          <button type="button" class="bulk-btn" on:click={() => setAllGenres(true)}
+            >Select all</button
+          >
+          <button type="button" class="bulk-btn" on:click={() => setAllGenres(false)}
+            >Deselect all</button
+          >
+        </div>
         <div class="genre-list">
           {#each genres as g}
             <button
@@ -408,6 +424,14 @@
       </button>
       {#if openSections.origin}
         <div class="block-body" transition:slide={{ duration: 220 }}>
+          <div class="bulk-actions">
+            <button type="button" class="bulk-btn" on:click={() => setAllCountries(true)}
+              >Select all</button
+            >
+            <button type="button" class="bulk-btn" on:click={() => setAllCountries(false)}
+              >Deselect all</button
+            >
+          </div>
           {#each continentGroups as g (g.continent)}
             <div class="continent-group">
               <span class="continent-label">{g.label}</span>
@@ -611,6 +635,28 @@
     letter-spacing: 3px;
     color: rgba(255, 255, 255, 0.4);
     margin-bottom: 8px;
+  }
+  .bulk-actions {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 14px;
+  }
+  .bulk-btn {
+    font-family: 'VT323', monospace;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.12s ease;
+  }
+  .bulk-btn:hover {
+    color: var(--accent-2);
   }
   .chip {
     font-family: 'Archivo', sans-serif;
