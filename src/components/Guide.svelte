@@ -45,6 +45,11 @@
   let foot = '';
   let initd = false;
 
+  // build a { [key]: value } selection map for the genre/country chip state
+  function selectionMap(keys, valueOf) {
+    return Object.fromEntries(keys.map((k) => [k, valueOf(k)]));
+  }
+
   // initialise once videos are loaded — restoring the last saved channel if any
   $: if ($videos.length && !initd) {
     [boundsLo, boundsHi] = yearBounds($videos);
@@ -59,20 +64,20 @@
         yearHi = boundsHi;
       }
       const savedGenres = new Set(saved.genres ?? genres);
-      selected = Object.fromEntries(genres.map((g) => [g, savedGenres.has(g)]));
+      selected = selectionMap(genres, (g) => savedGenres.has(g));
       if (!genres.some((g) => selected[g])) {
-        selected = Object.fromEntries(genres.map((g) => [g, true]));
+        selected = selectionMap(genres, () => true);
       }
       const savedCountries = new Set(saved.countries ?? countries);
-      selCountry = Object.fromEntries(countries.map((c) => [c, savedCountries.has(c)]));
+      selCountry = selectionMap(countries, (c) => savedCountries.has(c));
       if (!countries.some((c) => selCountry[c])) {
-        selCountry = Object.fromEntries(countries.map((c) => [c, true]));
+        selCountry = selectionMap(countries, () => true);
       }
     } else {
       yearLo = boundsLo;
       yearHi = boundsHi;
-      selected = Object.fromEntries(genres.map((g) => [g, true]));
-      selCountry = Object.fromEntries(countries.map((c) => [c, true]));
+      selected = selectionMap(genres, () => true);
+      selCountry = selectionMap(countries, () => true);
     }
     initd = true;
   }
@@ -130,9 +135,9 @@
     yearLo = Math.min(Math.max(p.yearMin, boundsLo), boundsHi);
     yearHi = Math.min(Math.max(p.yearMax, boundsLo), boundsHi);
     const wantG = p.genres ? new Set(p.genres) : new Set(genres);
-    selected = Object.fromEntries(genres.map((g) => [g, wantG.has(g)]));
+    selected = selectionMap(genres, (g) => wantG.has(g));
     const wantC = p.countries ? new Set(p.countries) : new Set(countries);
-    selCountry = Object.fromEntries(countries.map((c) => [c, wantC.has(c)]));
+    selCountry = selectionMap(countries, (c) => wantC.has(c));
     apply(); // reflect in the UI, save, build queue and play immediately
   }
 
