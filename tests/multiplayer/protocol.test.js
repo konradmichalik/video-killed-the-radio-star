@@ -35,4 +35,30 @@ describe('encode / parseMessage roundtrip', () => {
     expect(parseMessage(null)).toBeNull();
     expect(parseMessage(42)).toBeNull();
   });
+
+  it('PROTOCOL_VERSION is 2', () => {
+    expect(PROTOCOL_VERSION).toBe(2);
+  });
+
+  it('roundtrips a control grant', () => {
+    const wire = encode('control', { granted: true });
+    expect(parseMessage(wire)).toEqual({ type: 'control', payload: { granted: true } });
+  });
+
+  it('roundtrips an autocountdown', () => {
+    const wire = encode('autocountdown', { active: true, endsAt: 1000 });
+    expect(parseMessage(wire)).toEqual({
+      type: 'autocountdown',
+      payload: { active: true, endsAt: 1000 },
+    });
+  });
+
+  it('roundtrips a command', () => {
+    const wire = encode('command', { action: 'reveal' });
+    expect(parseMessage(wire)).toEqual({ type: 'command', payload: { action: 'reveal' } });
+  });
+
+  it('rejects a v1 message now that we are on v2', () => {
+    expect(parseMessage({ v: 1, type: 'join', payload: {} })).toBeNull();
+  });
 });

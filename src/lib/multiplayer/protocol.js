@@ -1,4 +1,4 @@
-export const PROTOCOL_VERSION = 1;
+export const PROTOCOL_VERSION = 2;
 
 const VALID_TYPES = new Set([
   'join',
@@ -10,6 +10,9 @@ const VALID_TYPES = new Set([
   'score',
   'end',
   'kick',
+  'control',
+  'autocountdown',
+  'command',
 ]);
 
 export function encode(type, payload = {}) {

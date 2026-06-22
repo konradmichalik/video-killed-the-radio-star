@@ -43,6 +43,58 @@ connection budget.
 - **End of game** → a neo-brutalist winner overlay with confetti glitch and
   the final scoreboard.
 
+### Auto-advance
+
+The GAME tab exposes two independent auto-advance toggles:
+
+- **AUTO-START** (`autoStartRound`, key `vktrs-auto-start`) — automatically
+  starts a new round when a fresh track settles into the player (phase
+  `idle`). `armAutoStart` in `App.svelte` polls until the track is stable
+  before firing (`AUTO_ADVANCE_POLL_MS` cadence, `AUTO_ADVANCE_TRACK_TIMEOUT_MS`
+  safety-net timeout).
+- **AUTO-CONTINUE** (`autoAdvanceReveal`, key `vktrs-auto-advance`) —
+  automatically rolls the next round after the reveal. When active,
+  `armAutoContinue` sets a `AUTO_ADVANCE_REVEAL_MS` (6 s) countdown stored in
+  the `autoCountdown` writable (`{ endsAt }` or `null`). The host GAME tab
+  shows a dashed-border countdown bar ("Next round in Xs") with a **Cancel**
+  button that clears the timer. Cancelling also broadcasts an `autocountdown`
+  message so delegated controller phones (see below) mirror the cancellation
+  immediately.
+
+**Legacy migration.** Before the split, a single toggle stored its value under
+`vktrs-auto-advance`. On first load the old value seeds `autoStartRound` (key
+`vktrs-auto-start`); `autoAdvanceReveal` reuses the same key and therefore
+retains whatever the user had set. This means upgrading users keep their
+previous behaviour for both toggles by default.
+
+### Control delegation
+
+The host can hand game controls to exactly one connected phone. Tapping the 🎮
+button next to a player in the ROOM tab player list grants that phone the
+controller role; tapping it again (or granting another player) revokes it. Only
+one controller exists at a time — granting a new one automatically revokes the
+previous.
+
+- The host sends a `control` message to the phone's peer id (`{ granted: true
+| false }`). When a controller drops and rejoins, `onPeerMessage` re-sends
+  `{ granted: true }` automatically so the role survives reconnects.
+- **Authorization is host-side**: when the host receives a `command` message it
+  checks `players.find(p => p.id === playerId)?.isController` and silently
+  drops the message if the sender is not the current controller.
+- The designated controller phone gets an additional **control strip** rendered
+  above the normal year-guess UI. The strip is phase-aware:
+  - `idle` → **Start round**
+  - `guessing` → **Reveal** (with a "Reveal now?" confirm overlay when not
+    everyone has locked in)
+  - `revealed` → **Next round**
+  - Secondary row: **Skip song** and **End game** (End requires a confirm
+    overlay).
+- If AUTO-CONTINUE is running, the controller phone also shows the countdown
+  bar ("Next round in Xs") with its own **Cancel** button that sends a
+  `command { action: 'cancelCountdown' }` to the host.
+- The controller still plays the game normally — they submit a year guess and
+  see the reveal card just like any other phone.
+
 Transport: WebRTC P2P via the **PeerJS public broker** (`0.peerjs.com`) for
 signaling only — the actual game traffic goes directly between TV and phones
 once the handshake is done. The broker is a free, community-run service without
@@ -84,9 +136,31 @@ stays slim.
   - `multiplayer/scoring.js` — `closestYearWinners`, unit-tested.
   - `multiplayer/room.js` — room ID generator/validator.
 - **Side-effectful**: `multiplayer/peer.js` (PeerJS host/client wrappers),
-  `multiplayer/protocol.js` (typed encode/parse).
+  `multiplayer/protocol.js` (typed encode/parse, `PROTOCOL_VERSION = 2`).
 - **UI**: `components/GuessGame.svelte` (Solo bar), `components/game/`
   (`GameSheet`, `HostRoomView`, `PhoneRoomView`, `FloatingControls`,
-  `EndGameCelebration`, `Scoreboard`, …).
-- **State**: `gameMode`, `room`, `phoneRoom`, `guessStats` stores in
-  `src/lib/stores.js`. Both bars share `.game-bar*` classes in `src/app.css`.
+  `EndGameCelebration`, `Scoreboard`, `PlayerList`, …).
+- **State**: `gameMode`, `room`, `phoneRoom`, `guessStats`, `autoStartRound`,
+  `autoAdvanceReveal`, `autoCountdown` stores in `src/lib/stores.js`. Both
+  bars share `.game-bar*` classes in `src/app.css`.
+
+### Wire protocol (v2)
+
+All messages are JSON `{ v: 2, type, payload }`. `parseMessage` returns `null`
+for any message whose `v` field does not equal `PROTOCOL_VERSION` (currently
+`2`) — v2 is **not** back-compatible with v1 clients.
+
+| Direction    | Type            | Payload                                        | Purpose                                                                                                                                                                                               |
+| ------------ | --------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| phone → host | `join`          | `{ id, name }`                                 | Phone connects and registers                                                                                                                                                                          |
+| phone → host | `guess`         | `{ year }`                                     | Player submits a year guess                                                                                                                                                                           |
+| phone → host | `ping`          | `{}`                                           | Heartbeat                                                                                                                                                                                             |
+| phone → host | `command`       | `{ action }`                                   | Delegated controller drives the game; `action` ∈ `reveal` · `round` · `skip` · `end` · `cancelCountdown`; the `round` action is phase-aware (starts or advances the round depending on current phase) |
+| host → phone | `welcome`       | `{ roomCode, players, session?, scoreboard }`  | Sent on (re)join; includes `isController` per player                                                                                                                                                  |
+| host → phone | `round`         | `{ round, phase }`                             | Round state change                                                                                                                                                                                    |
+| host → phone | `reveal`        | `{ year, artist, title, winners, scoreboard }` | Reveal result                                                                                                                                                                                         |
+| host → phone | `score`         | `{ scoreboard }`                               | Score edit                                                                                                                                                                                            |
+| host → phone | `end`           | `{ scoreboard }`                               | Game over                                                                                                                                                                                             |
+| host → phone | `kick`          | `{}`                                           | Player removed                                                                                                                                                                                        |
+| host → phone | `control`       | `{ granted: boolean }`                         | Grants or revokes the controller role for this phone                                                                                                                                                  |
+| host → phone | `autocountdown` | `{ active: boolean, endsAt?: number }`         | Broadcast when AUTO-CONTINUE starts (`active: true, endsAt: <epoch ms>`) or is cancelled (`active: false`); phone mirrors the countdown bar when `isController`                                       |

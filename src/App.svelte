@@ -25,7 +25,9 @@
     gameMode,
     room,
     resetGuessStats,
-    autoAdvanceRound,
+    autoStartRound,
+    autoAdvanceReveal,
+    autoCountdown,
     exactMatchBonus,
   } from './lib/stores.js';
   import {
@@ -60,6 +62,7 @@
     addPlayer,
     markPlayerDisconnected,
     submitGuess as reduceSubmit,
+    setController,
   } from './lib/multiplayer/state.js';
   import { closestYearWinners } from './lib/multiplayer/scoring.js';
   import {
@@ -180,6 +183,13 @@
       phoneRoom.update((s) => ({ ...s, scoreboard: msg.payload.scoreboard || [] }));
     } else if (msg.type === 'end') {
       phoneRoom.update((s) => ({ ...s, session: null }));
+    } else if (msg.type === 'control') {
+      phoneRoom.update((s) => ({ ...s, isController: !!msg.payload.granted }));
+    } else if (msg.type === 'autocountdown') {
+      phoneRoom.update((s) => ({
+        ...s,
+        autoCountdownEndsAt: msg.payload.active ? (msg.payload.endsAt ?? null) : null,
+      }));
     } else if (msg.type === 'kick') {
       phoneClient?.close();
       phoneClient = null;
@@ -196,6 +206,10 @@
   function onPhoneGuess(e) {
     phoneClient?.send(encode('guess', { year: e.detail.year }));
     phoneRoom.update((s) => ({ ...s, mySubmission: { year: e.detail.year } }));
+  }
+
+  function onPhoneCommand(e) {
+    phoneClient?.send(encode('command', { action: e.detail.action }));
   }
 
   onDestroy(() => {
@@ -366,7 +380,12 @@
             encode('welcome', {
               sessionState: r.session,
               players: r.players,
-              scoreboard: r.players.map(({ id, name, score }) => ({ id, name, score })),
+              scoreboard: r.players.map(({ id, name, score, isController }) => ({
+                id,
+                name,
+                score,
+                isController,
+              })),
               yearRange: yearRange(get(videos)),
             }),
           );
@@ -390,11 +409,27 @@
     if (msg.type === 'join') {
       room.update((s) => addPlayer(s, { id: playerId, name: msg.payload.name || 'Player' }));
       broadcastScore();
+      // A controller that dropped and rejoined keeps its role — re-tell the phone.
+      if (get(room).players.find((p) => p.id === playerId)?.isController) {
+        host?.sendTo(peerId, encode('control', { granted: true }));
+      }
     } else if (msg.type === 'guess') {
       const r = get(room);
       if (r.session?.phase === 'guessing') {
         room.update((s) => reduceSubmit(s, playerId, msg.payload.year));
       }
+    } else if (msg.type === 'command') {
+      const r = get(room);
+      const isCtrl = r.players.find((p) => p.id === playerId)?.isController;
+      if (!isCtrl) return; // only the delegated controller may drive the game
+      const action = msg.payload.action;
+      if (action === 'reveal') onReveal();
+      else if (action === 'round') {
+        if (r.session?.phase === 'idle') onStartRound();
+        else if (r.session?.phase === 'revealed') onNextRound();
+      } else if (action === 'skip') next();
+      else if (action === 'end') onEndSession();
+      else if (action === 'cancelCountdown') cancelAutoContinue();
     }
   }
 
@@ -429,7 +464,12 @@
     const r = get(room);
     host?.broadcast(
       encode('score', {
-        scoreboard: r.players.map(({ id, name, score }) => ({ id, name, score })),
+        scoreboard: r.players.map(({ id, name, score, isController }) => ({
+          id,
+          name,
+          score,
+          isController,
+        })),
       }),
     );
   }
@@ -485,93 +525,100 @@
     next();
   }
 
-  // Auto-advance ("AUTO NEXT ROUND"): once the reveal has been on screen for a
-  // beat, deterministically roll the next round so the host never has to touch
-  // the controls between tracks. Driven by an explicit timer + poll rather than
-  // by reacting to YouTube's track change: the native playlist advance, the
-  // channel-change static mask and the ad-detection heuristic all update at
-  // different moments, so reacting to them was unreliable and routinely left
-  // the host stuck on the manual "Start round" button.
-  //
-  // Sequence once the reveal delay elapses:
-  //   1. If we're still on the round's track, skip to a fresh one via next().
-  //      If YouTube already drifted off it on its own, don't skip again.
-  //   2. Poll until a fresh, non-ad track is actually playing (or a safety
-  //      timeout elapses), then start the next round on it — straight to
-  //      'guessing', skipping the intermediate 'idle'.
-  // Everything is torn down when we leave 'revealed', the mode/toggle changes
-  // or the component is destroyed, so it can never double-fire.
-  let autoAdvanceTimer = null;
-  let autoAdvanceWatch = null;
-  let autoAdvanceWaited = 0;
-  function clearAutoAdvance() {
-    if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
-    if (autoAdvanceWatch) clearInterval(autoAdvanceWatch);
-    autoAdvanceTimer = null;
-    autoAdvanceWatch = null;
-    autoAdvanceWaited = 0;
+  // ----- Auto-mode (two independent machines) ----------------------------
+  // AUTO-START: while a round is idle, poll until a fresh, playable track is
+  // actually playing (matched from what the PLAYER reports back to the
+  // playlist, which excludes ads for free), then start the round straight to
+  // 'guessing'. Covers session start, post-next-round and post-skip. The
+  // last-started id guard prevents re-starting the same track if the phase
+  // bounces to idle without a track change.
+  let autoStartWatch = null;
+  let autoStartWaited = 0;
+  let lastAutoStartedTrackId = null;
+  function clearAutoStart() {
+    if (autoStartWatch) clearInterval(autoStartWatch);
+    autoStartWatch = null;
+    autoStartWaited = 0;
   }
-  function autoAdvanceActive() {
+  function autoStartActive() {
     return (
-      get(autoAdvanceRound) &&
-      get(gameMode) === 'connected' &&
-      get(room).session?.phase === 'revealed'
+      get(autoStartRound) && get(gameMode) === 'connected' && get(room).session?.phase === 'idle'
     );
   }
-  function startAutoRound(track) {
-    const cv = track;
-    if (!cv?.video_id) return; // nothing valid to start on — leave it for manual
-    room.update((s) => reduceNextRound(s));
-    room.update((s) => reduceStartRound(s, cv));
+  function beginRound(track) {
+    if (!track?.video_id) return;
+    lastAutoStartedTrackId = track.video_id;
+    room.update((s) => reduceStartRound(s, track));
     broadcastRound('guessing');
   }
-  $: armAutoAdvance($autoAdvanceRound, $gameMode, $room.session?.phase);
-  function armAutoAdvance(enabled, mode, phase) {
-    if (!(enabled && mode === 'connected' && phase === 'revealed')) {
-      clearAutoAdvance();
+  $: armAutoStart($autoStartRound, $gameMode, $room.session?.phase);
+  function armAutoStart(enabled, mode, phase) {
+    if (!(enabled && mode === 'connected' && phase === 'idle')) {
+      clearAutoStart();
       return;
     }
-    if (autoAdvanceTimer || autoAdvanceWatch) return; // already armed for this reveal
-    autoAdvanceTimer = setTimeout(() => {
-      autoAdvanceTimer = null;
-      if (!autoAdvanceActive()) return;
-      const roundTrackId = get(room).session?.currentVideo?.video_id;
-      // Move to a fresh track only if YouTube hasn't already drifted off it.
-      if (currentPlayerVideoId() === roundTrackId) next();
-      // Some embeds cue the next clip without autoplaying it — force playback so
-      // it actually starts (and so the players hear it once the round begins).
+    if (autoStartWatch) return; // already armed
+    autoStartWaited = 0;
+    autoStartWatch = setInterval(() => {
+      if (!autoStartActive()) {
+        clearAutoStart();
+        return;
+      }
+      autoStartWaited += AUTO_ADVANCE_POLL_MS;
       nudgePlay();
-      autoAdvanceWaited = 0;
-      autoAdvanceWatch = setInterval(() => {
-        if (!autoAdvanceActive()) {
-          clearAutoAdvance();
-          return;
-        }
-        autoAdvanceWaited += AUTO_ADVANCE_POLL_MS;
-        nudgePlay(); // keep nudging until the freshly-skipped clip starts
-        // Detect the fresh track from what the PLAYER actually reports rather
-        // than the currentVideo store: the store only re-syncs on a PLAYING
-        // transition, so a slow-to-start clip would leave it stale and stall
-        // auto-advance until the safety timeout. Matching the reported id back
-        // to the playlist also excludes pre-roll ads for free (ad ids aren't in
-        // the playlist), so we no longer need the flaky adPlaying heuristic.
-        const playedId = currentPlayerVideoId();
-        const fresh =
-          playedId && playedId !== roundTrackId
-            ? get(playlist).find((t) => t.video_id === playedId)
-            : null;
-        const timedOut = autoAdvanceWaited >= AUTO_ADVANCE_TRACK_TIMEOUT_MS;
-        if (fresh) {
-          clearAutoAdvance();
-          startAutoRound(fresh);
-        } else if (timedOut) {
-          clearAutoAdvance();
-          startAutoRound(get(currentVideo));
-        }
-      }, AUTO_ADVANCE_POLL_MS);
+      const playedId = currentPlayerVideoId();
+      const fresh =
+        playedId && playedId !== lastAutoStartedTrackId
+          ? get(playlist).find((t) => t.video_id === playedId)
+          : null;
+      const timedOut = autoStartWaited >= AUTO_ADVANCE_TRACK_TIMEOUT_MS;
+      if (fresh) {
+        clearAutoStart();
+        beginRound(fresh);
+      } else if (timedOut) {
+        clearAutoStart();
+        beginRound(get(currentVideo));
+      }
+    }, AUTO_ADVANCE_POLL_MS);
+  }
+
+  // AUTO-CONTINUE: once the reveal has been on screen, run a visible,
+  // cancellable countdown, then perform "Next round" (advance the track ->
+  // idle). If AUTO-START is on it then starts the round; otherwise it waits
+  // for a manual / delegated Start. The countdown end time is mirrored to the
+  // delegated controller phone via the 'autocountdown' message.
+  let autoContinueTimer = null;
+  function clearAutoContinue() {
+    if (autoContinueTimer) clearTimeout(autoContinueTimer);
+    autoContinueTimer = null;
+    autoCountdown.set(null);
+  }
+  function cancelAutoContinue() {
+    clearAutoContinue();
+    host?.broadcast(encode('autocountdown', { active: false }));
+  }
+  $: armAutoContinue($autoAdvanceReveal, $gameMode, $room.session?.phase);
+  function armAutoContinue(enabled, mode, phase) {
+    if (!(enabled && mode === 'connected' && phase === 'revealed')) {
+      clearAutoContinue();
+      return;
+    }
+    if (autoContinueTimer) return; // already armed for this reveal
+    const endsAt = Date.now() + AUTO_ADVANCE_REVEAL_MS;
+    autoCountdown.set({ endsAt });
+    host?.broadcast(encode('autocountdown', { active: true, endsAt }));
+    autoContinueTimer = setTimeout(() => {
+      autoContinueTimer = null;
+      autoCountdown.set(null);
+      host?.broadcast(encode('autocountdown', { active: false }));
+      if (get(room).session?.phase !== 'revealed') return;
+      onNextRound();
     }, AUTO_ADVANCE_REVEAL_MS);
   }
-  onDestroy(clearAutoAdvance);
+  onDestroy(() => {
+    clearAutoStart();
+    clearAutoContinue();
+  });
 
   // End-game flow is split in two so Connected mode can show a celebration
   // overlay BEFORE the session is torn down. Solo skips the overlay because
@@ -638,6 +685,19 @@
         Object.entries(s.submissions).filter(([id]) => id !== playerId),
       ),
     }));
+    broadcastScore();
+  }
+
+  function onSetController(e) {
+    const { playerId } = e.detail; // string to grant, or null to clear
+    const prev = get(room).players.find((p) => p.isController);
+    room.update((s) => setController(s, playerId));
+    if (prev && prev.id !== playerId) {
+      host?.sendTo(`${PEER_PREFIX}PEER-${prev.id}`, encode('control', { granted: false }));
+    }
+    if (playerId) {
+      host?.sendTo(`${PEER_PREFIX}PEER-${playerId}`, encode('control', { granted: true }));
+    }
     broadcastScore();
   }
 
@@ -743,7 +803,7 @@
 <svelte:window on:keydown={onKey} />
 
 {#if isPhoneMode}
-  <PhoneShell on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
+  <PhoneShell on:setName={onPhoneSetName} on:guess={onPhoneGuess} on:command={onPhoneCommand} />
 {:else}
   <main
     id="tv"
@@ -837,6 +897,8 @@
       on:endSession={onEndSession}
       on:scoreChange={onScoreChange}
       on:kick={onKickPlayer}
+      on:setController={onSetController}
+      on:cancelCountdown={cancelAutoContinue}
     />
   {/if}
 

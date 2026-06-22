@@ -38,8 +38,11 @@
       lastReveal={$phoneRoom.lastReveal}
       yearMin={$phoneRoom.yearRange?.min}
       yearMax={$phoneRoom.yearRange?.max}
+      isController={$phoneRoom.isController}
+      autoCountdownEndsAt={$phoneRoom.autoCountdownEndsAt}
       on:setName={forward('setName')}
       on:guess={forward('guess')}
+      on:command={forward('command')}
     />
   </div>
 </div>

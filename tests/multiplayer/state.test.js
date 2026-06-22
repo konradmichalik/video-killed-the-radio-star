@@ -9,6 +9,7 @@ import {
   endSession,
   addPlayer,
   markPlayerDisconnected,
+  setController,
 } from '../../src/lib/multiplayer/state.js';
 
 describe('state reducer', () => {
@@ -28,7 +29,14 @@ describe('state reducer', () => {
   it('addPlayer adds a fresh player with score 0', () => {
     const s = addPlayer(EMPTY_ROOM, { id: 'p1', name: 'Kim' });
     expect(s.players).toEqual([
-      { id: 'p1', name: 'Kim', connected: true, score: 0, lastSubmission: null },
+      {
+        id: 'p1',
+        name: 'Kim',
+        connected: true,
+        score: 0,
+        lastSubmission: null,
+        isController: false,
+      },
     ]);
   });
 
@@ -98,5 +106,34 @@ describe('state reducer', () => {
     let s = addPlayer(EMPTY_ROOM, { id: 'p1', name: 'Kim' });
     s = markPlayerDisconnected(s, 'p1');
     expect(s.players[0].connected).toBe(false);
+  });
+
+  it('setController marks exactly one player as controller', () => {
+    let s = addPlayer(EMPTY_ROOM, { id: 'p1', name: 'Kim' });
+    s = addPlayer(s, { id: 'p2', name: 'Jordan' });
+    s = setController(s, 'p2');
+    expect(s.players.find((p) => p.id === 'p2').isController).toBe(true);
+    expect(s.players.find((p) => p.id === 'p1').isController).toBe(false);
+  });
+
+  it('setController moves control from a previous controller', () => {
+    let s = addPlayer(EMPTY_ROOM, { id: 'p1', name: 'Kim' });
+    s = addPlayer(s, { id: 'p2', name: 'Jordan' });
+    s = setController(s, 'p1');
+    s = setController(s, 'p2');
+    expect(s.players.find((p) => p.id === 'p1').isController).toBe(false);
+    expect(s.players.find((p) => p.id === 'p2').isController).toBe(true);
+  });
+
+  it('setController(null) clears all controllers', () => {
+    let s = addPlayer(EMPTY_ROOM, { id: 'p1', name: 'Kim' });
+    s = setController(s, 'p1');
+    s = setController(s, null);
+    expect(s.players.every((p) => !p.isController)).toBe(true);
+  });
+
+  it('addPlayer adds a fresh player with isController false', () => {
+    const s = addPlayer(EMPTY_ROOM, { id: 'p1', name: 'Kim' });
+    expect(s.players[0].isController).toBe(false);
   });
 });

@@ -1,11 +1,29 @@
 <!-- src/components/game/HostRoomView.svelte -->
 <script>
-  import { createEventDispatcher, tick } from 'svelte';
+  import { createEventDispatcher, onDestroy, tick } from 'svelte';
   import PlayerList from './PlayerList.svelte';
   import Scoreboard from './Scoreboard.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
   import Toggle from '../Toggle.svelte';
-  import { autoAdvanceRound, exactMatchBonus } from '../../lib/stores.js';
+  import { trapFocus } from '../../lib/a11y.js';
+  import {
+    autoStartRound,
+    autoAdvanceReveal,
+    exactMatchBonus,
+    autoCountdown, // pre-imported; used in Task 5 countdown bar
+  } from '../../lib/stores.js';
+  let nowMs = Date.now();
+  let cdInterval = null;
+  $: if ($autoCountdown && !cdInterval) {
+    cdInterval = setInterval(() => (nowMs = Date.now()), 250);
+  } else if (!$autoCountdown && cdInterval) {
+    clearInterval(cdInterval);
+    cdInterval = null;
+  }
+  $: cdRemaining = $autoCountdown
+    ? Math.max(0, Math.ceil(($autoCountdown.endsAt - nowMs) / 1000))
+    : 0;
+  onDestroy(() => cdInterval && clearInterval(cdInterval));
 
   export let roomCode;
   export let joinUrl;
@@ -130,7 +148,7 @@
 
     <div>
       <h4 class="lists-title">Players ({connectedCount})</h4>
-      <PlayerList {players} {submissions} editable={true} on:kick />
+      <PlayerList {players} {submissions} editable={true} on:kick on:setController />
     </div>
   {:else}
     <div class="status">
@@ -162,11 +180,27 @@
       <button class="ghost" on:click={() => dispatch('end')}>End game</button>
     </div>
 
+    {#if $autoCountdown}
+      <div class="countdown" role="status" aria-live="polite">
+        <span class="countdown-label">Next round in {cdRemaining}s</span>
+        <button type="button" class="ghost" on:click={() => dispatch('cancelCountdown')}
+          >Cancel</button
+        >
+      </div>
+    {/if}
+
     <Toggle
-      label="AUTO NEXT ROUND"
-      hint="(when the next track starts)"
-      checked={$autoAdvanceRound}
-      on:toggle={() => autoAdvanceRound.update((v) => !v)}
+      label="AUTO-START"
+      hint="(start a round when a new song plays)"
+      checked={$autoStartRound}
+      on:toggle={() => autoStartRound.update((v) => !v)}
+    />
+
+    <Toggle
+      label="AUTO-CONTINUE"
+      hint="(roll the next round after the reveal)"
+      checked={$autoAdvanceReveal}
+      on:toggle={() => autoAdvanceReveal.update((v) => !v)}
     />
 
     <Toggle
@@ -196,6 +230,7 @@
     aria-modal="true"
     aria-labelledby="confirm-reveal-title"
     tabindex="-1"
+    use:trapFocus={confirmRevealOpen}
   >
     <h3 id="confirm-reveal-title" class="confirm-title">Reveal anyway?</h3>
     <p class="confirm-body">
@@ -570,5 +605,21 @@
     .confirm-backdrop {
       animation: none;
     }
+  }
+
+  .countdown {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--bug-yellow);
+  }
+  .countdown-label {
+    flex: 1;
+    font-family: 'VT323', monospace;
+    font-size: clamp(18px, 3vw, 22px);
+    letter-spacing: 2px;
+    color: var(--bug-yellow);
   }
 </style>

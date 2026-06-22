@@ -48,6 +48,8 @@
       on:end={forward('endSession')}
       on:scoreChange={forward('scoreChange')}
       on:kick={forward('kick')}
+      on:setController={forward('setController')}
+      on:cancelCountdown={forward('cancelCountdown')}
     />
   {:else if $gameMode === 'solo'}
     <!-- Solo plays via the GuessGame bar bottom-center (Reveal + self-rate).

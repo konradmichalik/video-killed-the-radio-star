@@ -19,6 +19,15 @@
       {/if}
       {#if editable}
         <button
+          class="ctrl"
+          type="button"
+          class:active={p.isController}
+          aria-pressed={p.isController}
+          aria-label={p.isController ? 'Revoke game control' : 'Give game control'}
+          on:click={() => dispatch('setController', { playerId: p.isController ? null : p.id })}
+          >🎮</button
+        >
+        <button
           class="kick"
           type="button"
           aria-label="Remove player"
@@ -77,6 +86,35 @@
     border: 2px solid #050505;
     padding: 2px 8px;
   }
+  .ctrl {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 1;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    filter: grayscale(1);
+    opacity: 0.55;
+    transition:
+      filter 0.12s ease,
+      opacity 0.12s ease,
+      border-color 0.12s ease;
+  }
+  .ctrl:hover,
+  .ctrl:focus-visible {
+    opacity: 1;
+    border-color: var(--accent-2);
+  }
+  .ctrl.active {
+    filter: none;
+    opacity: 1;
+    border-color: var(--bug-yellow);
+    box-shadow: 0 0 6px var(--bug-yellow);
+  }
   .kick {
     margin-left: 6px;
     width: 28px;
@@ -96,12 +134,20 @@
       border-color 0.12s ease,
       background 0.12s ease;
   }
-  /* When LOCKED badge is present it claims margin-left:auto; the kick button
-     should sit immediately after it without pushing further. */
-  .badge + .kick {
+  /* When LOCKED badge is present it claims margin-left:auto; action buttons
+     that follow (ctrl and/or kick) should not push further. */
+  .badge ~ .ctrl,
+  .badge ~ .kick {
     margin-left: 6px;
   }
-  /* Without the LOCKED badge, the kick button still floats to the right. */
+  /* Without the LOCKED badge, action buttons float to the right.
+     .ctrl is the first action button so it gets margin-left:auto; .kick follows at 6px. */
+  .name ~ .ctrl {
+    margin-left: auto;
+  }
+  .ctrl + .kick {
+    margin-left: 6px;
+  }
   .name ~ .kick {
     margin-left: auto;
   }

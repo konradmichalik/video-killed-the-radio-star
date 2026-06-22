@@ -138,10 +138,24 @@ export const skipReviewedOk = persistedBool('vktrs-skip-reviewed-ok', false);
 // When true, ANY reviewed track (OK or issue) is auto-skipped — only tracks
 // with no review status play. Persisted across sessions.
 export const skipReviewed = persistedBool('vktrs-skip-reviewed', false);
-// Connected mode: when true, the next round auto-starts as soon as the next
-// track plays (ad finished, fresh video_id), so the host doesn't have to tap
-// "Next round" between every track. Persisted across sessions.
-export const autoAdvanceRound = persistedBool('vktrs-auto-advance', false);
+// Connected mode: AUTO-START — when on, a round auto-starts (idle -> guessing)
+// as soon as a fresh, playable track is actually playing. Covers session start,
+// post-next-round and post-skip. Default seeds from the legacy single-toggle
+// value so users who had the old "AUTO NEXT ROUND" on keep auto-starting.
+const legacyAutoAdvance = (() => {
+  try {
+    const raw = localStorage.getItem('vktrs-auto-advance');
+    return raw === '1' || raw === 'on';
+  } catch {
+    return false;
+  }
+})();
+export const autoStartRound = persistedBool('vktrs-auto-start', legacyAutoAdvance);
+// Connected mode: AUTO-CONTINUE — when on, after a reveal a visible, cancellable
+// countdown runs and then rolls the next round. Reuses the legacy key.
+export const autoAdvanceReveal = persistedBool('vktrs-auto-advance', false);
+// Host-side reveal countdown surfaced to HostRoomView. null when inactive.
+export const autoCountdown = writable(null); // { endsAt } | null
 // Connected mode: when true, an EXACT year hit awards 2 points instead of 1.
 // Non-exact closest guesses still get the standard 1 point. Persisted.
 export const exactMatchBonus = persistedBool('vktrs-exact-bonus', false);
@@ -213,4 +227,6 @@ export const phoneRoom = writable({
   connectionStatus: 'idle', // 'idle' | 'connecting' | 'open' | 'reconnecting' | 'unreachable'
   unreachableReason: null, // 'room-not-found' | 'timeout' | 'broker-down' — set with connectionStatus 'unreachable'
   lastReveal: null, // { year, title, artist, winners, submissions } — set on reveal, cleared on next round
+  isController: false, // host delegated game controls to this phone
+  autoCountdownEndsAt: null, // epoch ms when AUTO-CONTINUE will roll the next round; null = inactive
 });
