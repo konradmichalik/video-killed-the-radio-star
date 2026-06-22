@@ -555,7 +555,6 @@
     autoContinueTimer = null;
     autoCountdown.set(null);
   }
-  // eslint-disable-next-line no-unused-vars -- called by Task 5/6 (host UI + cancelCountdown command)
   function cancelAutoContinue() {
     clearAutoContinue();
     host?.broadcast(encode('autocountdown', { active: false }));
@@ -847,6 +846,7 @@
       on:endSession={onEndSession}
       on:scoreChange={onScoreChange}
       on:kick={onKickPlayer}
+      on:cancelCountdown={cancelAutoContinue}
     />
   {/if}
 

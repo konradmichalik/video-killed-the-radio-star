@@ -1,6 +1,6 @@
 <!-- src/components/game/HostRoomView.svelte -->
 <script>
-  import { createEventDispatcher, tick } from 'svelte';
+  import { createEventDispatcher, onDestroy, tick } from 'svelte';
   import PlayerList from './PlayerList.svelte';
   import Scoreboard from './Scoreboard.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
@@ -11,7 +11,18 @@
     exactMatchBonus,
     autoCountdown, // pre-imported; used in Task 5 countdown bar
   } from '../../lib/stores.js';
-  $: void $autoCountdown; // referenced in Task 5 countdown bar — keeps the import alive
+  let nowMs = Date.now();
+  let cdInterval = null;
+  $: if ($autoCountdown && !cdInterval) {
+    cdInterval = setInterval(() => (nowMs = Date.now()), 250);
+  } else if (!$autoCountdown && cdInterval) {
+    clearInterval(cdInterval);
+    cdInterval = null;
+  }
+  $: cdRemaining = $autoCountdown
+    ? Math.max(0, Math.ceil(($autoCountdown.endsAt - nowMs) / 1000))
+    : 0;
+  onDestroy(() => cdInterval && clearInterval(cdInterval));
 
   export let roomCode;
   export let joinUrl;
@@ -167,6 +178,15 @@
       {/if}
       <button class="ghost" on:click={() => dispatch('end')}>End game</button>
     </div>
+
+    {#if $autoCountdown}
+      <div class="countdown" role="status" aria-live="polite">
+        <span class="countdown-label">Next round in {cdRemaining}s</span>
+        <button type="button" class="ghost" on:click={() => dispatch('cancelCountdown')}
+          >Cancel</button
+        >
+      </div>
+    {/if}
 
     <Toggle
       label="AUTO-START"
@@ -583,5 +603,21 @@
     .confirm-backdrop {
       animation: none;
     }
+  }
+
+  .countdown {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--bug-yellow);
+  }
+  .countdown-label {
+    flex: 1;
+    font-family: 'VT323', monospace;
+    font-size: clamp(18px, 3vw, 22px);
+    letter-spacing: 2px;
+    color: var(--bug-yellow);
   }
 </style>
