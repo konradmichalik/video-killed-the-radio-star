@@ -4,6 +4,7 @@
   import Scoreboard from './Scoreboard.svelte';
   import YearInput from './YearInput.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
+  import { trapFocus } from '../../lib/a11y.js';
 
   export let player; // {id, name}
   export let roomCode;
@@ -43,6 +44,12 @@
     confirmRevealOpen = false;
     cmd('reveal');
   };
+  function onConfirmKeydown(e) {
+    if (e.key === 'Escape') {
+      confirmRevealOpen = false;
+      confirmEndOpen = false;
+    }
+  }
   let editingName = !player?.name;
   let nameDraft = player?.name || '';
 
@@ -135,6 +142,8 @@
   // let the banner carry the status instead.
   $: showUnreachableCard = connectionStatus === 'unreachable' && !session;
 </script>
+
+<svelte:window on:keydown={confirmRevealOpen || confirmEndOpen ? onConfirmKeydown : null} />
 
 <section class="phone">
   {#if connectionStatus !== 'open' && !showUnreachableCard}
@@ -310,6 +319,7 @@
     aria-modal="true"
     aria-labelledby="ph-reveal-title"
     tabindex="-1"
+    use:trapFocus={true}
   >
     <h3 id="ph-reveal-title" class="confirm-title">Reveal now?</h3>
     <p class="confirm-body">Some players may not have locked in yet.</p>
@@ -334,6 +344,7 @@
     aria-modal="true"
     aria-labelledby="ph-end-title"
     tabindex="-1"
+    use:trapFocus={true}
   >
     <h3 id="ph-end-title" class="confirm-title">End the game?</h3>
     <p class="confirm-body">This ends the game for everyone.</p>

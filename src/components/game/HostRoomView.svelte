@@ -5,6 +5,7 @@
   import Scoreboard from './Scoreboard.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
   import Toggle from '../Toggle.svelte';
+  import { trapFocus } from '../../lib/a11y.js';
   import {
     autoStartRound,
     autoAdvanceReveal,
@@ -229,6 +230,7 @@
     aria-modal="true"
     aria-labelledby="confirm-reveal-title"
     tabindex="-1"
+    use:trapFocus={confirmRevealOpen}
   >
     <h3 id="confirm-reveal-title" class="confirm-title">Reveal anyway?</h3>
     <p class="confirm-body">
