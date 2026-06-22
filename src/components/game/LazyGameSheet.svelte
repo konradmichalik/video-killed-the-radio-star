@@ -33,5 +33,7 @@
     on:endSession
     on:scoreChange
     on:kick
+    on:setController
+    on:cancelCountdown
   />
 {/await}
