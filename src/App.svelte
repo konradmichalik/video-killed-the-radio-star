@@ -183,6 +183,13 @@
       phoneRoom.update((s) => ({ ...s, scoreboard: msg.payload.scoreboard || [] }));
     } else if (msg.type === 'end') {
       phoneRoom.update((s) => ({ ...s, session: null }));
+    } else if (msg.type === 'control') {
+      phoneRoom.update((s) => ({ ...s, isController: !!msg.payload.granted }));
+    } else if (msg.type === 'autocountdown') {
+      phoneRoom.update((s) => ({
+        ...s,
+        autoCountdownEndsAt: msg.payload.active ? (msg.payload.endsAt ?? null) : null,
+      }));
     } else if (msg.type === 'kick') {
       phoneClient?.close();
       phoneClient = null;
@@ -199,6 +206,10 @@
   function onPhoneGuess(e) {
     phoneClient?.send(encode('guess', { year: e.detail.year }));
     phoneRoom.update((s) => ({ ...s, mySubmission: { year: e.detail.year } }));
+  }
+
+  function onPhoneCommand(e) {
+    phoneClient?.send(encode('command', { action: e.detail.action }));
   }
 
   onDestroy(() => {
@@ -792,7 +803,7 @@
 <svelte:window on:keydown={onKey} />
 
 {#if isPhoneMode}
-  <PhoneShell on:setName={onPhoneSetName} on:guess={onPhoneGuess} />
+  <PhoneShell on:setName={onPhoneSetName} on:guess={onPhoneGuess} on:command={onPhoneCommand} />
 {:else}
   <main
     id="tv"

@@ -1,6 +1,6 @@
 <!-- src/components/game/PhoneRoomView.svelte -->
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, onDestroy } from 'svelte';
   import Scoreboard from './Scoreboard.svelte';
   import YearInput from './YearInput.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
@@ -15,8 +15,34 @@
   export let lastReveal = null; // { year, title, artist, winners, submissions, points }
   export let yearMin = 1900;
   export let yearMax = new Date().getFullYear();
+  export let isController = false;
+  export let autoCountdownEndsAt = null;
 
   const dispatch = createEventDispatcher();
+
+  let nowMs = Date.now();
+  let cdInterval = null;
+  $: if (autoCountdownEndsAt && !cdInterval) {
+    cdInterval = setInterval(() => (nowMs = Date.now()), 250);
+  } else if (!autoCountdownEndsAt && cdInterval) {
+    clearInterval(cdInterval);
+    cdInterval = null;
+  }
+  $: cdRemaining = autoCountdownEndsAt
+    ? Math.max(0, Math.ceil((autoCountdownEndsAt - nowMs) / 1000))
+    : 0;
+  onDestroy(() => cdInterval && clearInterval(cdInterval));
+
+  const cmd = (action) => dispatch('command', { action });
+  let confirmEndOpen = false;
+  let confirmRevealOpen = false;
+  // Everyone-ready mirror for the phone (host sends scoreboard, not submissions),
+  // so the controller's Reveal always confirms when guesses may be outstanding.
+  const askReveal = () => (confirmRevealOpen = true);
+  const doReveal = () => {
+    confirmRevealOpen = false;
+    cmd('reveal');
+  };
   let editingName = !player?.name;
   let nameDraft = player?.name || '';
 
@@ -216,6 +242,32 @@
         {/if}
       </div>
     {/if}
+
+    {#if isController && session}
+      <div class="ctrl-strip" aria-label="Game controls">
+        {#if phase === 'idle'}
+          <button type="button" class="cta" on:click={() => cmd('round')}>Start round</button>
+        {:else if phase === 'guessing'}
+          <button type="button" class="cta" on:click={askReveal}>Reveal</button>
+        {:else}
+          <button type="button" class="cta" on:click={() => cmd('round')}>Next round</button>
+        {/if}
+        {#if autoCountdownEndsAt}
+          <div class="cd" role="status" aria-live="polite">
+            <span>Next round in {cdRemaining}s</span>
+            <button type="button" class="ghost" on:click={() => cmd('cancelCountdown')}
+              >Cancel</button
+            >
+          </div>
+        {/if}
+        <div class="ctrl-row">
+          <button type="button" class="ghost" on:click={() => cmd('skip')}>Skip song</button>
+          <button type="button" class="ghost danger" on:click={() => (confirmEndOpen = true)}
+            >End game</button
+          >
+        </div>
+      </div>
+    {/if}
   </main>
 
   {#if !sessionEnded}
@@ -244,6 +296,60 @@
     </footer>
   {/if}
 </section>
+
+{#if confirmRevealOpen}
+  <button
+    type="button"
+    class="confirm-backdrop"
+    aria-label="Cancel"
+    on:click={() => (confirmRevealOpen = false)}
+  ></button>
+  <div
+    class="confirm-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ph-reveal-title"
+    tabindex="-1"
+  >
+    <h3 id="ph-reveal-title" class="confirm-title">Reveal now?</h3>
+    <p class="confirm-body">Some players may not have locked in yet.</p>
+    <div class="confirm-actions">
+      <button type="button" class="ghost" on:click={() => (confirmRevealOpen = false)}
+        >Cancel</button
+      >
+      <button type="button" class="cta" on:click={doReveal}>Reveal</button>
+    </div>
+  </div>
+{/if}
+{#if confirmEndOpen}
+  <button
+    type="button"
+    class="confirm-backdrop"
+    aria-label="Cancel"
+    on:click={() => (confirmEndOpen = false)}
+  ></button>
+  <div
+    class="confirm-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ph-end-title"
+    tabindex="-1"
+  >
+    <h3 id="ph-end-title" class="confirm-title">End the game?</h3>
+    <p class="confirm-body">This ends the game for everyone.</p>
+    <div class="confirm-actions">
+      <button type="button" class="ghost" on:click={() => (confirmEndOpen = false)}>Cancel</button>
+      <button
+        type="button"
+        class="cta"
+        on:click={() => {
+          confirmEndOpen = false;
+          cmd('end');
+        }}>End game</button
+      >
+    </div>
+  </div>
+{/if}
 
 <style>
   .phone {
@@ -873,5 +979,110 @@
     max-height: 40vh;
     overflow-y: auto;
     padding-right: 2px;
+  }
+
+  .cta {
+    min-height: 48px;
+    padding: 0 20px;
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #050505;
+    background: var(--accent-2);
+    border: 3px solid #050505;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #050505;
+    transition:
+      transform 0.1s ease,
+      box-shadow 0.1s ease;
+  }
+  .cta:hover {
+    box-shadow: 6px 6px 0 #050505;
+    transform: translate(-1px, -1px);
+  }
+  .cta:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 #050505;
+  }
+  .ctrl-strip {
+    display: grid;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 2px dashed rgba(255, 255, 255, 0.25);
+  }
+  .ctrl-row {
+    display: flex;
+    gap: 10px;
+  }
+  .ctrl-row .ghost {
+    flex: 1;
+  }
+  .ghost.danger:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .cd {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--bug-yellow);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--bug-yellow);
+  }
+  .cd span {
+    flex: 1;
+  }
+  .confirm-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background: rgba(5, 5, 5, 0.78);
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+  .confirm-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 71;
+    width: min(420px, calc(100% - 32px));
+    display: grid;
+    gap: 14px;
+    padding: 22px;
+    background: #050505;
+    border: 3px solid #fff;
+    box-shadow: 8px 8px 0 var(--bug-yellow);
+  }
+  .confirm-title {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(20px, 5vw, 26px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bug-yellow);
+  }
+  .confirm-body {
+    margin: 0;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .confirm-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .confirm-actions .ghost,
+  .confirm-actions .cta {
+    flex: 1;
   }
 </style>
