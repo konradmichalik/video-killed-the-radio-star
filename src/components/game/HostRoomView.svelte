@@ -5,7 +5,13 @@
   import Scoreboard from './Scoreboard.svelte';
   import NetworkBadge from './NetworkBadge.svelte';
   import Toggle from '../Toggle.svelte';
-  import { autoAdvanceRound, exactMatchBonus } from '../../lib/stores.js';
+  import {
+    autoStartRound,
+    autoAdvanceReveal,
+    exactMatchBonus,
+    autoCountdown, // pre-imported; used in Task 5 countdown bar
+  } from '../../lib/stores.js';
+  $: void $autoCountdown; // referenced in Task 5 countdown bar — keeps the import alive
 
   export let roomCode;
   export let joinUrl;
@@ -163,10 +169,17 @@
     </div>
 
     <Toggle
-      label="AUTO NEXT ROUND"
-      hint="(when the next track starts)"
-      checked={$autoAdvanceRound}
-      on:toggle={() => autoAdvanceRound.update((v) => !v)}
+      label="AUTO-START"
+      hint="(start a round when a new song plays)"
+      checked={$autoStartRound}
+      on:toggle={() => autoStartRound.update((v) => !v)}
+    />
+
+    <Toggle
+      label="AUTO-CONTINUE"
+      hint="(roll the next round after the reveal)"
+      checked={$autoAdvanceReveal}
+      on:toggle={() => autoAdvanceReveal.update((v) => !v)}
     />
 
     <Toggle

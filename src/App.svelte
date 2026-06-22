@@ -25,7 +25,7 @@
     gameMode,
     room,
     resetGuessStats,
-    autoAdvanceRound,
+    autoAdvanceReveal,
     exactMatchBonus,
   } from './lib/stores.js';
   import {
@@ -513,7 +513,7 @@
   }
   function autoAdvanceActive() {
     return (
-      get(autoAdvanceRound) &&
+      get(autoAdvanceReveal) &&
       get(gameMode) === 'connected' &&
       get(room).session?.phase === 'revealed'
     );
@@ -525,7 +525,7 @@
     room.update((s) => reduceStartRound(s, cv));
     broadcastRound('guessing');
   }
-  $: armAutoAdvance($autoAdvanceRound, $gameMode, $room.session?.phase);
+  $: armAutoAdvance($autoAdvanceReveal, $gameMode, $room.session?.phase);
   function armAutoAdvance(enabled, mode, phase) {
     if (!(enabled && mode === 'connected' && phase === 'revealed')) {
       clearAutoAdvance();
