@@ -24,9 +24,23 @@
           class:active={p.isController}
           aria-pressed={p.isController}
           aria-label={p.isController ? 'Revoke game control' : 'Give game control'}
+          title={p.isController ? 'Revoke game control' : 'Give game control'}
           on:click={() => dispatch('setController', { playerId: p.isController ? null : p.id })}
-          >🎮</button
         >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <!-- crown: hand control to this player ("game leader") -->
+            <path d="M4 17 L4 8 L9 12 L12 6 L15 12 L20 8 L20 17 Z" />
+            <line x1="4" y1="20" x2="20" y2="20" />
+          </svg>
+        </button>
         <button
           class="kick"
           type="button"
@@ -92,26 +106,27 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
-    line-height: 1;
+    color: rgba(255, 255, 255, 0.5);
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
     cursor: pointer;
-    filter: grayscale(1);
-    opacity: 0.55;
     transition:
-      filter 0.12s ease,
-      opacity 0.12s ease,
-      border-color 0.12s ease;
+      color 0.12s ease,
+      border-color 0.12s ease,
+      box-shadow 0.12s ease;
+  }
+  .ctrl svg {
+    width: 15px;
+    height: 15px;
+    display: block;
   }
   .ctrl:hover,
   .ctrl:focus-visible {
-    opacity: 1;
+    color: var(--accent-2);
     border-color: var(--accent-2);
   }
   .ctrl.active {
-    filter: none;
-    opacity: 1;
+    color: var(--bug-yellow);
     border-color: var(--bug-yellow);
     box-shadow: 0 0 6px var(--bug-yellow);
   }
