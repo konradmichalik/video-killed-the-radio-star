@@ -147,7 +147,7 @@
 
     <div>
       <h4 class="lists-title">Players ({connectedCount})</h4>
-      <PlayerList {players} {submissions} editable={true} on:kick />
+      <PlayerList {players} {submissions} editable={true} on:kick on:setController />
     </div>
   {:else}
     <div class="status">

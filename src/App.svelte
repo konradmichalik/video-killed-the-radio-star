@@ -62,6 +62,7 @@
     addPlayer,
     markPlayerDisconnected,
     submitGuess as reduceSubmit,
+    setController,
   } from './lib/multiplayer/state.js';
   import { closestYearWinners } from './lib/multiplayer/scoring.js';
   import {
@@ -368,7 +369,12 @@
             encode('welcome', {
               sessionState: r.session,
               players: r.players,
-              scoreboard: r.players.map(({ id, name, score }) => ({ id, name, score })),
+              scoreboard: r.players.map(({ id, name, score, isController }) => ({
+                id,
+                name,
+                score,
+                isController,
+              })),
               yearRange: yearRange(get(videos)),
             }),
           );
@@ -392,11 +398,27 @@
     if (msg.type === 'join') {
       room.update((s) => addPlayer(s, { id: playerId, name: msg.payload.name || 'Player' }));
       broadcastScore();
+      // A controller that dropped and rejoined keeps its role — re-tell the phone.
+      if (get(room).players.find((p) => p.id === playerId)?.isController) {
+        host?.sendTo(peerId, encode('control', { granted: true }));
+      }
     } else if (msg.type === 'guess') {
       const r = get(room);
       if (r.session?.phase === 'guessing') {
         room.update((s) => reduceSubmit(s, playerId, msg.payload.year));
       }
+    } else if (msg.type === 'command') {
+      const r = get(room);
+      const isCtrl = r.players.find((p) => p.id === playerId)?.isController;
+      if (!isCtrl) return; // only the delegated controller may drive the game
+      const action = msg.payload.action;
+      if (action === 'reveal') onReveal();
+      else if (action === 'round') {
+        if (r.session?.phase === 'idle') onStartRound();
+        else if (r.session?.phase === 'revealed') onNextRound();
+      } else if (action === 'skip') next();
+      else if (action === 'end') onEndSession();
+      else if (action === 'cancelCountdown') cancelAutoContinue();
     }
   }
 
@@ -431,7 +453,12 @@
     const r = get(room);
     host?.broadcast(
       encode('score', {
-        scoreboard: r.players.map(({ id, name, score }) => ({ id, name, score })),
+        scoreboard: r.players.map(({ id, name, score, isController }) => ({
+          id,
+          name,
+          score,
+          isController,
+        })),
       }),
     );
   }
@@ -650,6 +677,19 @@
     broadcastScore();
   }
 
+  function onSetController(e) {
+    const { playerId } = e.detail; // string to grant, or null to clear
+    const prev = get(room).players.find((p) => p.isController);
+    room.update((s) => setController(s, playerId));
+    if (prev && prev.id !== playerId) {
+      host?.sendTo(`${PEER_PREFIX}PEER-${prev.id}`, encode('control', { granted: false }));
+    }
+    if (playerId) {
+      host?.sendTo(`${PEER_PREFIX}PEER-${playerId}`, encode('control', { granted: true }));
+    }
+    broadcastScore();
+  }
+
   // Keyboard / remote control (desktop). Ignored while typing in form controls.
   function onKey(e) {
     if (isPhoneMode) return;
@@ -846,6 +886,7 @@
       on:endSession={onEndSession}
       on:scoreChange={onScoreChange}
       on:kick={onKickPlayer}
+      on:setController={onSetController}
       on:cancelCountdown={cancelAutoContinue}
     />
   {/if}

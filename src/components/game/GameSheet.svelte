@@ -48,6 +48,7 @@
       on:end={forward('endSession')}
       on:scoreChange={forward('scoreChange')}
       on:kick={forward('kick')}
+      on:setController={forward('setController')}
       on:cancelCountdown={forward('cancelCountdown')}
     />
   {:else if $gameMode === 'solo'}
