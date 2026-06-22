@@ -74,7 +74,10 @@ export function addPlayer(state, { id, name }) {
   }
   return {
     ...state,
-    players: [...state.players, { id, name, connected: true, score: 0, lastSubmission: null }],
+    players: [
+      ...state.players,
+      { id, name, connected: true, score: 0, lastSubmission: null, isController: false },
+    ],
   };
 }
 
@@ -82,5 +85,12 @@ export function markPlayerDisconnected(state, playerId) {
   return {
     ...state,
     players: state.players.map((p) => (p.id === playerId ? { ...p, connected: false } : p)),
+  };
+}
+
+export function setController(state, playerId) {
+  return {
+    ...state,
+    players: state.players.map((p) => ({ ...p, isController: p.id === playerId })),
   };
 }
